@@ -28,13 +28,14 @@ if (isNull player) exitWith {};
 
 // No audio, a hint that does not make a sound
 if (vehicle player == _vehicle) then {
-    hintSilent format [
+    // The text has one line per piece of information, separated by |
+    hintSilent parseText ((format [
         LLSTRING(boomerang_hint),
         _clock,
         _range,
         _bearing,
         [LLSTRING(boomerang_elevation_high), LLSTRING(boomerang_elevation_level), LLSTRING(boomerang_elevation_low)] select _elevation
-    ];
+    ]) splitString "|" joinString "<br/>");
 };
 
 // Markers are local, so only the side of the vehicle gets to see where the shot came from
