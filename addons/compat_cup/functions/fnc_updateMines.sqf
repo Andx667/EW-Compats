@@ -20,7 +20,7 @@
 params [["_key", "", [""]], ["_vehicle", objNull, [objNull]]];
 
 private _old = GVAR(active) getOrDefault [_key, []];
-private _radius = GVAR(radius);
+private _radius = _vehicle call FUNC(getRadius);
 
 private _inRange = allMines inAreaArray [getPosWorld _vehicle, _radius, _radius] select {_x isKindOf "PipeBombBase"};
 

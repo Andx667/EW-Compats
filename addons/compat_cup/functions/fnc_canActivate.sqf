@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Checks if the DUKE of a vehicle can be switched on: vehicle alive, antenna shown and, if required, engine running.
+ * Checks if the DUKE of a vehicle can be switched on: vehicle alive, at least one antenna shown and, if required, engine running.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -18,5 +18,5 @@
 params [["_vehicle", objNull, [objNull]]];
 
 alive _vehicle
-    && {_vehicle call FUNC(isDukeShown)}
+    && {(_vehicle call FUNC(getRangeScale)) > 0}
     && {!GVAR(requireEngine) || {isEngineOn _vehicle}}

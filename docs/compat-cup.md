@@ -6,18 +6,21 @@ CUP only has the DUKE as a model without function, so unlike the RHS and BWmod a
 
 ## Using it
 
-- The vehicle needs a **shown DUKE antenna**. CUP lets you hide it in the vehicle appearance options, and then the DUKE is not available.
+- The vehicle needs a **shown DUKE antenna**. CUP lets you hide it in the vehicle appearance options, and then the DUKE is not available. With a second (CREW DUKE) antenna hidden the range drops to 60 %.
 - Crew switch the DUKE with the **scroll wheel** (*Activate DUKE* / *Deactivate DUKE*), the **ACE self-interaction** menu, or both. Choose in the CBA settings.
 - The DUKE needs the **engine running** and switches off when the engine stops, the antenna is hidden or the vehicle is destroyed.
 
 ## Range
 
-| | Effective | Falloff band | Outer edge |
-|---|---|---|---|
-| Radio jammer | **50 m** | 75 m | **125 m** |
-| IED jamming | **50 m** | none | **50 m** |
+| State | Radio effective | Radio falloff band | Radio outer edge | IEDs |
+|---|---|---|---|---|
+| All antennas shown | **50 m** | 75 m | **125 m** | within **50 m** |
+| One of two antennas shown | **30 m** (60 %) | 45 m | **75 m** | within **30 m** |
+| No antenna shown | off | off | off | off |
 
-The radius is a setting. 50 m is what the RHS DUKE uses, the Dingo CG13 uses 40 m. The falloff band of the radio jammer is 1.5 times the effective radius. IEDs in range are disabled and enabled again when they leave the range or the DUKE stops.
+The radius is a setting, the values above use the default. 50 m is what the RHS DUKE uses, the Dingo CG13 uses 40 m. The falloff band of the radio jammer is 1.5 times the effective radius. IEDs in range are disabled and enabled again when they leave the range or the DUKE stops.
+
+Most vehicles have one DUKE antenna and are either on full range or off. The M1240 family (Hunter, M1245 and others) has a DUKE and a CREW DUKE antenna. With only one shown it has 60 % of the range, as the RHS DUKE has with a destroyed antenna.
 
 ## Settings
 
@@ -33,7 +36,7 @@ The radius is a setting. 50 m is what the RHS DUKE uses, the Dingo CG13 uses 40 
 - **Crow's own actions are hidden.** Its (de)activate actions would desync from the DUKE, so only the DUKE switch is offered.
 - **Everybody in range is jammed**, including the own crew and allies.
 - **Only IEDs are disabled**, not every mine.
-- **Up to a second of delay** when the antenna is hidden or the engine stops, because the DUKE is checked once per second.
+- **Up to a second of delay** when an antenna is hidden or the engine stops, because the DUKE is checked once per second. A change of range replaces the Crow's Electronic Warfare jammer, which briefly re-broadcasts the jammer list.
 - **Multiplayer only.**
 
 ## Dependencies

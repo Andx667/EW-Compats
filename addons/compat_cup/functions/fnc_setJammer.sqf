@@ -44,7 +44,7 @@ if (_state isEqualTo []) exitWith {};
 
 _state params ["_wasEnabled", "_radius"];
 
-if (_radius != GVAR(radius)) exitWith {
+if (_radius != (_vehicle call FUNC(getRadius))) exitWith {
     // Crows has no way to change the radii of a jammer, so replace it
     [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
     [_vehicle, _enabled] call FUNC(registerJammer);

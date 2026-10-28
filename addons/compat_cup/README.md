@@ -6,7 +6,7 @@ Vehicles with a **DUKE antenna** (CUP HMMWV, MATV, M1A1/M1A2 Abrams, RG-31 and o
 
 - CUP only models the DUKE. The antenna is an animation source that can be hidden, and there is no jammer behind it, so this addon provides the whole function.
 - A vehicle counts as DUKE equipped if its `AnimationSources` contain one of `hide_antenna_duke` (M1151), `hide_Duke_antenna` and `hide_crew_duke` (M1240), `hide_duke_antennas` (Abrams) or `SYS_crewduke` (RG-31). `fnc_getDukeSources` collects them per class and caches the result, so no class list has to be kept.
-- The antenna is shown at phase 0 and hidden at phase 1. A vehicle only has a working DUKE while one of its antennas is shown (`fnc_isDukeShown`).
+- The antenna is shown at phase 0 and hidden at phase 1. A vehicle only has a working DUKE while at least one of its antennas is shown. The M1240 family (Hunter, M1245 and others) has two, `hide_Duke_antenna` and `hide_crew_duke`: all shown gives the full range, only one shown 60 % of it (like RHS with a destroyed antenna), none shown switches the DUKE off (`fnc_getRangeScale`, `fnc_getRadius`).
 - Crew can switch the DUKE with a scroll wheel action, an ACE self-interaction or both (CBA setting `ewc_compat_cup_actionMode`). The request goes to the server (`ewc_compat_cup_toggle`), which checks it again (`fnc_handleToggle`) and then switches the DUKE (`fnc_setJammer`). The state is the public variable `ewc_compat_cup_dukeOn`.
 - Every DUKE vehicle is registered once by the server as a disabled radio jammer (`VoiceCommsJammer`) in Crow's Electronic Warfare (`crowsEW_main_addJammer`), only once `CBA_missionTime > 0`, because editor-placed vehicles initialise before Crow's Electronic Warfare has registered its handlers. Switching the DUKE toggles that jammer.
 - While at least one DUKE is on, a server side loop (`fnc_jamLoop`, once per second) switches a DUKE off when its vehicle is destroyed, its antenna is hidden or, if required, its engine stops. It also keeps the IEDs in range disabled.
@@ -22,14 +22,14 @@ Vehicles with a **DUKE antenna** (CUP HMMWV, MATV, M1A1/M1A2 Abrams, RG-31 and o
 | Jam IEDs | on | Set by the server |
 | Require running engine | on | Set by the server |
 
-A changed radius replaces the Crow's Electronic Warfare jammer of a vehicle the next time its DUKE is switched.
+A changed radius, or an antenna hidden or shown again on a vehicle with two, replaces the Crow's Electronic Warfare jammer, because it cannot change the radii of a jammer.
 
 ## Limitations
 
 - Everybody in range is jammed, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - Only IEDs are disabled, not every mine.
 - Disabled IEDs are shared with the Dingo CG13. If both jam the same IED and one stops first, the IED is free for up to a second, until the other one disables it again.
-- The check of the antenna runs once per second, so a hidden antenna keeps jamming for up to a second.
+- The check of the antennas runs once per second, so a hidden antenna keeps jamming for up to a second at the old range.
 - Which animation phase is shown was derived from the CUP configs and still has to be confirmed in game for every vehicle type.
 - Crow's Electronic Warfare only works in multiplayer.
 

@@ -2,7 +2,7 @@
 /*
  * Author: Andx
  * Registers a vehicle with a DUKE as radio jammer in Crows Electronic Warfare.
- * The full jamming radius is the radius from the settings, the falloff radius is 1.5 times that.
+ * The full jamming radius is the radius from the settings scaled by the shown antennas, the falloff radius is 1.5 times that.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -21,7 +21,7 @@ params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]]];
 
 if (isNull _vehicle || {!isServer}) exitWith {};
 
-private _radius = GVAR(radius);
+private _radius = _vehicle call FUNC(getRadius);
 
 _vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];
 
