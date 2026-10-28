@@ -13,12 +13,19 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-28
+
 ### Added
 
 - Localization - Add French, Spanish, Polish and Russian translations of all strings, German for the mod name and a localized mod description
 - Compat CUP - Add Boomerang shot finder for CUP vehicles that reports shots near the vehicle with a hint and map markers, excludes the DUKE, is deaf after its own fire and works up to 95 km/h
 - Compat CUP - Add settings to disable the DUKE and the Boomerang
 - Compat CUP - Add DUKE switch (scroll wheel or ACE) for CUP vehicles with a shown DUKE antenna, jamming radios via Crow's EW and IEDs
+
+### Changed
+
+- Compat CUP - Only offer the DUKE and Boomerang switches to driver, commander and gunners, not to passengers
+- Compat CUP - Show each piece of the Boomerang shot hint on its own line
 
 ## [0.1.0] - 2026-10-28
 
