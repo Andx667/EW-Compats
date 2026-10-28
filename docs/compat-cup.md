@@ -20,7 +20,7 @@ CUP only has the DUKE as a model without function, so unlike the RHS and BWmod a
 
 The radius is a setting, the values above use the default. 50 m is what the RHS DUKE uses, the Dingo CG13 uses 40 m. The falloff band of the radio jammer is 1.5 times the effective radius. IEDs in range are disabled and enabled again when they leave the range or the DUKE stops.
 
-Most vehicles have one DUKE antenna and are either on full range or off. The M1240 family (Hunter, M1245 and others) has a DUKE and a CREW DUKE antenna. With only one shown it has 60 % of the range, as the RHS DUKE has with a destroyed antenna.
+Most vehicles have one DUKE antenna and are either on full range or off. The M1240 family (Hunter, M1245 and others) has a DUKE and a CREW DUKE antenna. With only one shown it has 60 % of the range, as the RHS DUKE has with a destroyed antenna. The unarmed Hunter (`CUP_M1245_Unarmed_*`) and the ION M1240 start with the CREW DUKE hidden, so they start at 60 %. Show it in the vehicle appearance options for the full range.
 
 ## Settings
 

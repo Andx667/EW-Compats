@@ -21,7 +21,22 @@ params [["_vehicle", objNull, [objNull]]];
 // getOrDefaultCall provides _key
 #pragma hemtt ignore_variables ["_key"]
 GVAR(sourceCache) getOrDefaultCall [typeOf _vehicle, {
-    (configProperties [configFile >> "CfgVehicles" >> _key >> "AnimationSources", "isClass _x", true])
-        apply {configName _x}
-        select {toLower _x in DUKE_SOURCES}
+    private _sources = [];
+    private _config = configFile >> "CfgVehicles" >> _key;
+
+    // Classes inherited from a parent are not listed as children, so every class up the chain has to be read.
+    // The DUKE sources are usually defined in the base class of a vehicle family
+    while {isClass _config} do {
+        {
+            private _name = configName _x;
+
+            if (toLower _name in DUKE_SOURCES) then {
+                _sources pushBackUnique _name;
+            };
+        } forEach ("isClass _x" configClasses (_config >> "AnimationSources"));
+
+        _config = inheritsFrom _config;
+    };
+
+    _sources
 }, true]
