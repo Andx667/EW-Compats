@@ -18,7 +18,6 @@ The 40 m is the IED jammer radius hardcoded in BWA3. The falloff band is 1.5 tim
 - **Use the CG13 actions, not Crow's.** Crow's own (de)activate actions would switch the jammer without the CG13 and desync the two, so they are removed from the Dingos. Use `TurnOnCG13` / `TurnOffCG13`.
 - **Everybody in range is jammed**, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - **Multiplayer only.** Crow's Electronic Warfare does not work in singleplayer.
-- If BWA3 changes its range, `ECM_EFFECTIVE_RADIUS` has to be adjusted.
 
 ## How it works
 

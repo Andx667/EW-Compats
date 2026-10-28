@@ -22,7 +22,6 @@ The 50 m is the IED jammer radius hardcoded in RHS. The falloff band is 1.5 time
 - **Everybody in range is jammed**, including the own crew and allies.
 - **Multiplayer only.**
 - **CUP vehicles are not supported.** They only have a DUKE model without function.
-- If RHS changes its range, `DUKE_EFFECTIVE_RADIUS` has to be adjusted.
 
 ## Dependencies
 
