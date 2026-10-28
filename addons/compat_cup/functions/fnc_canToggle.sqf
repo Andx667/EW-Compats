@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Condition of the system actions: shown to crew of the vehicle, in the interaction style chosen in the settings.
+ * Condition of the system actions: shown to driver, commander and gunners of the vehicle, in the interaction style chosen in the settings.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -29,6 +29,9 @@ private _allowed = if (_scroll) then {
 };
 
 if (!_allowed || {!alive _vehicle} || {vehicle _unit != _vehicle}) exitWith {false};
+
+// Driver, commander and gunners operate the systems, passengers do not
+if (toLower ((assignedVehicleRole _unit) select 0) in ["cargo", ""]) exitWith {false};
 
 private _isOn = _vehicle getVariable [[QGVAR(boomerangOn), QGVAR(dukeOn)] select (_system == SYSTEM_DUKE), false];
 

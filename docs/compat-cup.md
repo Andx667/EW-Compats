@@ -7,7 +7,7 @@ CUP models two systems on some of its vehicles but gives them no function: the *
 
 A vehicle can only run one of them. Switching one on switches the other off.
 
-Both systems are switched on with the **scroll wheel**, the **ACE self-interaction** menu, or both. Choose in the CBA settings. They need a **shown antenna** and the **engine running**. CUP lets you hide the antennas in the vehicle appearance options, and then the system is not available.
+Both systems are switched on with the **scroll wheel**, the **ACE self-interaction** menu, or both. Choose in the CBA settings. Only the **driver, commander and gunners** get the switch, passengers do not. They need a **shown antenna** and the **engine running**. CUP lets you hide the antennas in the vehicle appearance options, and then the system is not available.
 
 ## DUKE
 
