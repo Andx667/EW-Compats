@@ -1,10 +1,13 @@
 # EW Compats
 
 <p align="center">
-    <img src="https://github.com/Andx667/EW-Compats/blob/main/img/icon.png" alt="EW Compats Logo">
+    <img src="https://github.com/Andx667/EW-Compats/blob/main/img/icon_512.png" alt="EW Compats Logo">
 </p>
 
 <p align="center">
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3828821912">
+        <img src="https://img.shields.io/badge/Steam-Workshop-171a21?style=flat-square&logo=steam" alt="EW Compats on Steam Workshop">
+    </a>
     <a href="https://github.com/Andx667/EW-Compats/issues">
         <img src="https://img.shields.io/github/issues-raw/Andx667/EW-Compats.svg?style=flat-square&label=Issues" alt="EW Compats Issues">
     </a>
@@ -21,6 +24,8 @@ __Requires__ [CBA_A3](https://github.com/CBATeam/CBA_A3) and [Crow's Electronic 
 __EW Compats__ (EWC) connects other mods to Crow's Electronic Warfare, so their jammers and jamming effects work with its radio and spectrum systems.
 
 The project is entirely __open-source__ and any contributions are welcome.
+
+Steam Workshop: <https://steamcommunity.com/sharedfiles/filedetails/?id=3828821912>
 
 Discord: <https://discord.gg/ag4v6kxYAa>
 
