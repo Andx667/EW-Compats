@@ -27,6 +27,10 @@ import xml.etree.ElementTree as ET
 
 ######## GLOBALS #########
 PROJECT_NAME = "ewc"
+
+# Languages every key is expected to be translated into, besides English. Missing translations are only
+# reported (see report_coverage), they do not fail the validation, as untranslated keys fall back to English
+TRANSLATIONS = ["German", "French", "Spanish", "Polish", "Russian"]
 ##########################
 
 
@@ -148,6 +152,43 @@ def check_stringtable(filepath):
     return errors
 
 
+def report_coverage(filepaths, root_dir):
+    # Count the keys translated into each language and list the keys that are not
+    totals = {language: 0 for language in TRANSLATIONS}
+    key_count = 0
+    missing = []
+
+    for filepath in filepaths:
+        try:
+            package = ET.parse(filepath).getroot().find("Package")
+        except Exception:
+            continue
+
+        if package is None:
+            continue
+
+        for key in package.findall("Key"):
+            key_count += 1
+            languages = [entry.tag for entry in key]
+
+            for language in TRANSLATIONS:
+                if language in languages:
+                    totals[language] += 1
+                else:
+                    missing.append((os.path.relpath(filepath, root_dir), key.get("ID"), language))
+
+    print("Translation coverage ({} keys)".format(key_count))
+    print("-----------------------")
+
+    for language in TRANSLATIONS:
+        print("  {:<8} {}/{}".format(language, totals[language], key_count))
+
+    for filepath, key_id, language in missing:
+        print("  WARNING: {} has no {} translation in {}.".format(key_id, language, filepath))
+
+    print()
+
+
 def main():
     print("Validating Stringtables")
     print("-----------------------")
@@ -179,6 +220,8 @@ def main():
             bad_count += 1
 
     print()
+
+    report_coverage(stringtable_files, root_dir)
 
     if bad_count == 0:
         print("Stringtable Validation PASSED")
