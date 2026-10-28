@@ -33,7 +33,7 @@ Vehicles with a Boomerang shot finder (HMMWV, MATV and RG-31 families) get *Acti
 
 An active Boomerang reports bullets that are fired nearby:
 
-- The **crew** gets a hint, for example *Boomerang: shot detected, 3 o'clock, ~300 m, bearing 87°, level*. It makes no sound.
+- The **crew** gets a hint with one line per information (shot detected, 3 o'clock, ~300 m, bearing 87°, level). It makes no sound.
 - Everybody **friendly to the vehicle** gets a red map marker at the estimated position of the shooter. It disappears after 30 seconds. The marker is local, the enemy does not see it.
 - Reports are not exact, like the real system: the bearing is off by up to 7.5° and the range by up to 20 %.
 - A burst is reported once per second, not bullet by bullet.

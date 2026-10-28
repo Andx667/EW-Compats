@@ -50,12 +50,12 @@
             <German>tiefer</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_boomerang_hint">
-            <English>Boomerang: shot detected, %1 o'clock, ~%2 m, bearing %3°, %4</English>
-            <French>Boomerang : tir détecté, %1 heures, ~%2 m, azimut %3°, %4</French>
-            <Spanish>Boomerang: disparo detectado, a las %1, ~%2 m, azimut %3°, %4</Spanish>
-            <Polish>Boomerang: wykryto strzał, godz. %1, ~%2 m, azymut %3°, %4</Polish>
-            <Russian>Boomerang: обнаружен выстрел, %1 часов, ~%2 м, азимут %3°, %4</Russian>
-            <German>Boomerang: Schuss erkannt, %1 Uhr, ca. %2 m, Peilung %3°, %4</German>
+            <English>Boomerang: shot detected|%1 o'clock|~%2 m|bearing %3°|%4</English>
+            <French>Boomerang : tir détecté|%1 heures|~%2 m|azimut %3°|%4</French>
+            <Spanish>Boomerang: disparo detectado|a las %1|~%2 m|azimut %3°|%4</Spanish>
+            <Polish>Boomerang: wykryto strzał|godz. %1|~%2 m|azymut %3°|%4</Polish>
+            <Russian>Boomerang: обнаружен выстрел|%1 часов|~%2 м|азимут %3°|%4</Russian>
+            <German>Boomerang: Schuss erkannt|%1 Uhr|ca. %2 m|Peilung %3°|%4</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_boomerang_markerText">
             <English>Shot</English>
