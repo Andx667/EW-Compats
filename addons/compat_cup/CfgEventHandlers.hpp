@@ -16,6 +16,15 @@ class Extended_PostInit_EventHandlers {
     };
 };
 
+// Runs for every unit and vehicle, but leaves at once while no Boomerang is on
+class Extended_Fired_EventHandlers {
+    class AllVehicles {
+        class ADDON {
+            fired = QUOTE(call FUNC(onFired));
+        };
+    };
+};
+
 class Extended_InitPost_EventHandlers {
     class LandVehicle {
         class ADDON {

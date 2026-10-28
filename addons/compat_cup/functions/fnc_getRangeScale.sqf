@@ -18,8 +18,8 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-private _sources = _vehicle call FUNC(getDukeSources);
-private _shown = {_vehicle animationSourcePhase _x < DUKE_SHOWN_BELOW} count _sources;
+private _sources = [_vehicle, SYSTEM_DUKE] call FUNC(getSources);
+private _shown = {_vehicle animationSourcePhase _x < ANTENNA_SHOWN_BELOW} count _sources;
 
 if (_shown == 0) exitWith {0};
 

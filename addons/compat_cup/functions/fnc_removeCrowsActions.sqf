@@ -20,7 +20,7 @@ params [["_jamMap", createHashMap, [createHashMap]]];
 {
     private _jammer = _y select 0;
 
-    if (!isNull _jammer && {(_jammer call FUNC(getDukeSources)) isNotEqualTo []}) then {
+    if (!isNull _jammer && {([_jammer, SYSTEM_DUKE] call FUNC(getSources)) isNotEqualTo []}) then {
         _jammer call FUNC(clearCrowsActions);
     };
 } forEach _jamMap;
