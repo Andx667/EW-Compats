@@ -1,0 +1,20 @@
+#include "script_component.hpp"
+
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"ewc_main", "rhsusf_c_heavyweapons", "crowsEW_main"};
+        author = AUTHOR;
+        authors[] = {"Andx"};
+        url = "https://github.com/Andx667/EW-Compats";
+        VERSION_CONFIG;
+
+        skipWhenMissingDependencies = 1;
+    };
+};
+
+#include "CfgEventHandlers.hpp"
+#include "CfgAmmo.hpp"

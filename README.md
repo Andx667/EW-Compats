@@ -1,39 +1,40 @@
-# MOD_TITLE
+# EW Compats
 
 <p align="center">
-    <img src="https://github.com/Andx667/MOD_REPO/blob/main/img/icon.png" alt="MOD_TITLE Logo">
+    <img src="https://github.com/Andx667/EW-Compats/blob/main/img/icon.png" alt="EW Compats Logo">
 </p>
 
 <p align="center">
-    <a href="https://github.com/Andx667/MOD_REPO/issues">
-        <img src="https://img.shields.io/github/issues-raw/Andx667/MOD_REPO.svg?style=flat-square&label=Issues" alt="MOD_TITLE Issues">
+    <a href="https://github.com/Andx667/EW-Compats/issues">
+        <img src="https://img.shields.io/github/issues-raw/Andx667/EW-Compats.svg?style=flat-square&label=Issues" alt="EW Compats Issues">
     </a>
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=0">
-        <img src="https://img.shields.io/steam/downloads/0.svg?style=flat-square&label=Downloads" alt="MOD_TITLE Downloads">
-    </a>
-    <a href="https://github.com/Andx667/MOD_REPO/blob/main/LICENSE">
-        <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MOD_TITLE License">
+    <a href="https://github.com/Andx667/EW-Compats/blob/main/LICENSE">
+        <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="EW Compats License">
     </a>
     <br>
-    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/MOD_REPO/check.yml?style=flat-square&label=Check" alt="Check">
-    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/MOD_REPO/validate.yml?style=flat-square&label=Validate" alt="Validate">
+    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/EW-Compats/check.yml?style=flat-square&label=Check" alt="Check">
+    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/EW-Compats/validate.yml?style=flat-square&label=Validate" alt="Validate">
 </p>
 
-__Requires__ [CBA_A3](https://github.com/CBATeam/CBA_A3).
-<!-- TEMPLATE: if this mod has no hard dependency, replace the line above with something like: -->
-<!-- __No hard dependencies__ — built on Arma 3's own <X> module. -->
+__Requires__ [CBA_A3](https://github.com/CBATeam/CBA_A3) and [Crow's Electronic Warfare](https://steamcommunity.com/sharedfiles/filedetails/?id=2515887728).
 
-__MOD_TITLE__ (MOD_ABBR) one-sentence description of what the mod does.
+__EW Compats__ (EWC) connects other mods to Crow's Electronic Warfare, so their jammers and jamming effects work with its radio and spectrum systems.
 
 The project is entirely __open-source__ and any contributions are welcome.
 
-Steam Workshop: <https://steamcommunity.com/sharedfiles/filedetails/?id=0>
 Discord: <https://discord.gg/ag4v6kxYAa>
 
 ## Features
 
-- Feature one
-- Feature two
+Every feature is its own addon and is skipped when the mod it extends is not loaded.
+
+| Addon | Extends | What it does |
+|---|---|---|
+| [`bft_jamming`](./addons/bft_jamming/README.md) | [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) | Editor module that turns an object into a jammer for cTab's Blue Force Tracker (blackout, position drift or both) |
+| [`compat_bwa3`](./addons/compat_bwa3/README.md) | [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) | The Dingo 2 CG13 also jams radios while its IED jammer is switched on |
+| [`compat_rhs`](./addons/compat_rhs/README.md) | [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Vehicles with a DUKE also jam radios while the DUKE is online |
+
+Radio jamming needs [ACRE](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892) (the radio effect of Crow's Electronic Warfare is applied to the receiving side). Crow's Electronic Warfare only works in multiplayer.
 
 ## Contributing
 
@@ -41,4 +42,4 @@ For new contributors, see the [Contributing Setup & Guidelines](./.github/CONTRI
 
 ## License
 
-MOD_TITLE is licensed under [MIT](./LICENSE).
+EW Compats is licensed under [MIT](./LICENSE).

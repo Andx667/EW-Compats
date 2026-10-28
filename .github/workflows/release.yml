@@ -30,7 +30,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: releases/MOD_PREFIX-latest.zip
-          asset_name: MOD_PREFIX-${{ github.ref_name }}.zip
+          file: releases/ewc-latest.zip
+          asset_name: ewc-${{ github.ref_name }}.zip
           tag: ${{ github.ref }}
           overwrite: true

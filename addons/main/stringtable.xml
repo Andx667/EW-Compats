@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="MOD_PREFIX">
+<Project name="ewc">
     <Package name="main">
-        <Key ID="STR_MOD_PREFIX_main_displayName">
-            <English>MOD_TITLE</English>
+        <Key ID="STR_ewc_main_displayName">
+            <English>EW Compats</English>
         </Key>
     </Package>
 </Project>

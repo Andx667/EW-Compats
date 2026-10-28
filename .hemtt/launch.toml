@@ -1,4 +1,28 @@
+# Launched with `hemtt launch`, or `hemtt launch bft/bwa3/rhs` to also load the mod a feature extends
 [default]
 workshop = [
     "450814997",  # CBA_A3
+    "463939057",  # ACE3
+    "1779063631", # ZEN
+    "2515887728", # Crow's Electronic Warfare
+    "751965892",  # ACRE
+]
+
+[bft]
+extends = "default"
+workshop = [
+    "3438246217", # cTab
+]
+
+[bwa3]
+extends = "default"
+workshop = [
+    "1200127537", # BWmod
+]
+
+[rhs]
+extends = "default"
+workshop = [
+    "843425103",  # RHS AFRF
+    "843577117",  # RHS USAF
 ]

@@ -1,6 +1,6 @@
-name = "MOD_TITLE"
+name = "EW Compats"
 author = "Andx"
-prefix = "MOD_PREFIX"
+prefix = "ewc"
 mainprefix = "z"
 
 [version]

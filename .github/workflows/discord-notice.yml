@@ -13,9 +13,9 @@ jobs:
         uses: SethCohen/github-releases-to-discord@v1.19.0
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          username: "MOD_TITLE - Release Bot"
+          username: "EW Compats - Release Bot"
           avatar_url: ""
           content: "||<@&1556219251327762533>||"
-          footer_title: "MOD_TITLE"
+          footer_title: "EW Compats"
           footer_icon_url: ""
           footer_timestamp: true

@@ -13,8 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-09-14
+## [0.1.0] - 2026-10-28
 
 ### Added
 
-- Initial release
+- BFT Jamming - Add editor module that jams cTab's Blue Force Tracker (blackout, drift, mixed) as Crow's EW jammer
+- Compat BWA3 - Add Crow's EW radio jammer to the Dingo 2 CG13, driven by its existing switch
+- Compat RHS - Add Crow's EW radio jammer to vehicles with a DUKE, including antenna damage

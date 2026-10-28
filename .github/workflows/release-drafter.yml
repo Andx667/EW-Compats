@@ -12,7 +12,7 @@ jobs:
   draft:
     # TEMPLATE: after creating a repo from this template, set this to that repo's
     # "owner/name" so release-drafter doesn't run on forks of it.
-    if: github.repository == 'Andx667/MOD_REPO'
+    if: github.repository == 'Andx667/EW-Compats'
     permissions:
       # write permission is required to create a github release
       contents: write
