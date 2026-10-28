@@ -16,9 +16,9 @@ class CfgVehicles {
     class GVAR(moduleAddBftJammer): Module_F {
         scope = 2;
         displayName = CSTRING(moduleAddBftJammer_displayName);
-        icon = "\A3\ui_f\data\map\markers\nato\b_sensor.paa";
+        icon = "\z\crowsEW\addons\zeus\data\spectrum_signal.paa";
         vehicleClass = "Modules";
-        category = "Sensors";
+        category = "crowsEW_modules";
         function = QFUNC(addBftJammer);
         functionPriority = 1;
         isGlobal = 0;
