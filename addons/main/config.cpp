@@ -22,6 +22,6 @@ class CfgMods {
         hideName = "true";
         actionName = "Website";
         action = "https://github.com/Andx667/EW-Compats";
-        description = "Electronic warfare compatibility: BFT jamming for cTab, Dingo CG13 and RHS DUKE radio jammers via Crow's Electronic Warfare.";
+        description = "Electronic warfare compatibility: BFT jamming for cTab, Dingo CG13, RHS DUKE and CUP DUKE jammers via Crow's Electronic Warfare.";
     };
 };

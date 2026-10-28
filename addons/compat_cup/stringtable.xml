@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="compat_cup">
+        <Key ID="STR_ewc_compat_cup_activate">
+            <English>Activate DUKE</English>
+            <German>DUKE aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_category">
+            <English>CUP DUKE</English>
+            <German>CUP DUKE</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_deactivate">
+            <English>Deactivate DUKE</English>
+            <German>DUKE deaktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_mode_ace">
+            <English>ACE self-interaction</English>
+            <German>ACE-Selbstinteraktion</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_mode_both">
+            <English>Both</English>
+            <German>Beides</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_mode_scroll">
+            <English>Scroll wheel</English>
+            <German>Mausrad</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_actionMode">
+            <English>DUKE switch</English>
+            <German>DUKE-Schalter</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_actionMode_tooltip">
+            <English>How the DUKE is switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
+            <German>Wie der DUKE in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_jamMines">
+            <English>Jam IEDs</English>
+            <German>IEDs stören</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_jamMines_tooltip">
+            <English>An active DUKE disables the IEDs within its radius, like the Dingo CG13 does. The radio jammer is not affected.</English>
+            <German>Ein aktiver DUKE deaktiviert die IEDs in seinem Radius, wie es der Dingo CG13 tut. Der Funkstörsender ist davon nicht betroffen.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_radius">
+            <English>Jamming radius (m)</English>
+            <German>Störradius (m)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_radius_tooltip">
+            <English>Radius with full jamming strength, for radios and IEDs. The radio falloff band adds 50 percent on top. RHS uses 50 m, BWmod 40 m.</English>
+            <German>Radius mit voller Störwirkung, für Funk und IEDs. Der Abklingbereich des Funks kommt mit 50 Prozent obendrauf. RHS nutzt 50 m, BWmod 40 m.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_requireEngine">
+            <English>Require running engine</English>
+            <German>Laufenden Motor voraussetzen</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_requireEngine_tooltip">
+            <English>The DUKE can only be switched on with the engine running and switches off when the engine stops.</English>
+            <German>Der DUKE lässt sich nur bei laufendem Motor einschalten und schaltet sich ab, wenn der Motor ausgeht.</German>
+        </Key>
+    </Package>
+</Project>

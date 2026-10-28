@@ -1,0 +1,15 @@
+PREP(addAceActions);
+PREP(canActivate);
+PREP(canToggle);
+PREP(clearCrowsActions);
+PREP(getDukeSources);
+PREP(getRadius);
+PREP(getRangeScale);
+PREP(handleToggle);
+PREP(initVehicle);
+PREP(jamLoop);
+PREP(registerJammer);
+PREP(releaseMines);
+PREP(removeCrowsActions);
+PREP(setJammer);
+PREP(updateMines);

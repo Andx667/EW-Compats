@@ -75,4 +75,5 @@ nav:
   - Home: index.md
   - BFT Jamming: bft-jamming.md
   - Compat BWA3: compat-bwa3.md
+  - Compat CUP: compat-cup.md
   - Compat RHS: compat-rhs.md

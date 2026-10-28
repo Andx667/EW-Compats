@@ -21,7 +21,7 @@ The 50 m is the IED jammer radius hardcoded in RHS. The falloff band is 1.5 time
 - **Use the DUKE weapon, not Crow's actions.** Crow's own (de)activate actions are removed from DUKE vehicles, because they would desync the two.
 - **Everybody in range is jammed**, including the own crew and allies.
 - **Multiplayer only.**
-- **CUP vehicles are not supported.** They only have a DUKE model without function.
+- **CUP vehicles are not covered.** They only have a DUKE model without function, see [Compat CUP](compat-cup.md).
 
 ## Dependencies
 
