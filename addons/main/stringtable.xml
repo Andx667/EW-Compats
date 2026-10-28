@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="MOD_PREFIX">
+    <Package name="main">
+        <Key ID="STR_MOD_PREFIX_main_displayName">
+            <English>MOD_TITLE</English>
+        </Key>
+    </Package>
+</Project>
