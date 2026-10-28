@@ -20,3 +20,4 @@ version, and start a fresh empty [Unreleased] section above it. -->
 - BFT Jamming - Add editor module that jams cTab's Blue Force Tracker (blackout, drift, mixed) as Crow's EW jammer
 - Compat BWA3 - Add Crow's EW radio jammer to the Dingo 2 CG13, driven by its existing switch
 - Compat RHS - Add Crow's EW radio jammer to vehicles with a DUKE, including antenna damage
+- Mod logo and icon for the launcher and main menu
