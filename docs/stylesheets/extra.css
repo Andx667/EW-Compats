@@ -1,0 +1,15 @@
+/* EW Compats brand color: signal teal. Header text is fixed white, so light mode
+   uses a darkened teal for contrast; dark mode gets the brighter accent. */
+:root {
+  --md-primary-fg-color: #00695C;
+  --md-primary-fg-color--light: #26A69A;
+  --md-primary-fg-color--dark: #004D40;
+}
+
+[data-md-color-scheme="default"] {
+  --md-accent-fg-color: #00695C;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #26A69A;
+}

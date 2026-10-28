@@ -1,0 +1,79 @@
+site_name: EW Compats Documentation
+site_description: Documentation for the EW Compats mod for Arma 3
+site_url: https://andx667.github.io/EW-Compats/
+
+repo_url: https://github.com/Andx667/EW-Compats
+repo_name: Andx667/EW-Compats
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  logo: icon.png
+  favicon: icon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - content.action.edit
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - search.share
+
+plugins:
+  - privacy
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - def_list
+  - abbr
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+nav:
+  - Home: index.md
+  - BFT Jamming: bft-jamming.md
+  - Compat BWA3: compat-bwa3.md
+  - Compat RHS: compat-rhs.md
+  - Jammer ranges: ranges.md
