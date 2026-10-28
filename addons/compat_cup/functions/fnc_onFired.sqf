@@ -81,7 +81,7 @@ private _supersonic = _speed >= BOOMERANG_SONIC_SPEED;
                 _vehicle setVariable [QGVAR(lastReport), CBA_missionTime];
 
                 private _range = sqrt _distanceSqr;
-                private _elevation = ((-(_toVehicle select 2)) atan2 _range) max -90 min 90;
+                private _elevation = (-(_toVehicle select 2)) atan2 (vectorMagnitude [_toVehicle select 0, _toVehicle select 1]);
 
                 // The real system is not exact, so neither is the report
                 private _bearing = (_vehicle getDir _origin) + (random (2 * BOOMERANG_BEARING_ERROR)) - BOOMERANG_BEARING_ERROR;

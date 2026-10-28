@@ -31,5 +31,4 @@ if (_enabled) then {
     GVAR(boomerangVehicles) = GVAR(boomerangVehicles) - [_vehicle];
 };
 
-publicVariable QGVAR(boomerangVehicles);
 [QGVAR(listChanged), [GVAR(boomerangVehicles)]] call CBA_fnc_globalEvent;

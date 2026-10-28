@@ -3,10 +3,16 @@
 if (isServer) then {
     [QGVAR(toggle), LINKFUNC(handleToggle)] call CBA_fnc_addEventHandler;
     [QGVAR(vehicleFired), LINKFUNC(handleVehicleFired)] call CBA_fnc_addEventHandler;
+
+    // A player who joins late has missed the list of Boomerangs that are on
+    [QGVAR(requestList), {
+        params ["_owner"];
+
+        [QGVAR(listChanged), [GVAR(boomerangVehicles)], _owner] call CBA_fnc_ownerEvent;
+    }] call CBA_fnc_addEventHandler;
 };
 
-// The server broadcasts the list of Boomerangs that are on. A machine only watches projectiles while it is not empty.
-// The public variable is for players who join later, the event for everybody else
+// The server sends the list of Boomerangs that are on. A machine only watches projectiles while it is not empty
 [QGVAR(listChanged), {
     params ["_vehicles"];
 
@@ -15,6 +21,11 @@ if (isServer) then {
 }] call CBA_fnc_addEventHandler;
 
 call FUNC(updateListening);
+
+// The handler above has to exist before the answer comes
+if (didJIP && {!isServer}) then {
+    [QGVAR(requestList), [clientOwner]] call CBA_fnc_serverEvent;
+};
 
 if (hasInterface) then {
     [QGVAR(shotDetected), LINKFUNC(onShotDetected)] call CBA_fnc_addEventHandler;

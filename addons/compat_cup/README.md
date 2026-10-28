@@ -30,8 +30,8 @@ CUP models two systems on some of its vehicles and gives them no function: the *
 
 ### Boomerang
 
-- The Boomerang does not need Crow's Electronic Warfare. `fnc_setBoomerang` keeps a list of the vehicles with a Boomerang that is on (`ewc_compat_cup_boomerangVehicles`) and broadcasts it. A server side loop (`fnc_boomerangLoop`) switches a Boomerang off when its vehicle is destroyed, its antenna is hidden, its engine stops or it is disabled.
-- Every projectile of the mission would go through a handler, so there is none while no Boomerang is on. `fnc_updateListening` adds a `ProjectileCreated` mission event handler on each machine when the list of Boomerangs that are on gets its first vehicle, and removes it when the list is empty again. The server sends the list with the event `ewc_compat_cup_listChanged` and keeps it in a public variable for players who join later.
+- The Boomerang does not use Crow's Electronic Warfare itself, but the addon is only loaded together with it. `fnc_setBoomerang` keeps a list of the vehicles with a Boomerang that is on (`ewc_compat_cup_boomerangVehicles`) and broadcasts it. A server side loop (`fnc_boomerangLoop`) switches a Boomerang off when its vehicle is destroyed, its antenna is hidden, its engine stops or it is disabled.
+- Every projectile of the mission would go through a handler, so there is none while no Boomerang is on. `fnc_updateListening` adds a `ProjectileCreated` mission event handler on each machine when the list of Boomerangs that are on gets its first vehicle, and removes it when the list is empty again. The server sends the list with the event `ewc_compat_cup_listChanged`. A player who joins late asks for it with `ewc_compat_cup_requestList`.
 - The handler (`fnc_onFired`) only looks at local projectiles, so the shot is checked on the machine it comes from and never has to be sent to the server. The cheap checks come first, and the expensive ones only run for a shot that is really heard:
   - bullet or not, cached per ammo class
   - vehicle within 1000 m, bullet flying towards it, no report from the vehicle within the last second
