@@ -5,6 +5,17 @@ if (isServer) then {
     [QGVAR(vehicleFired), LINKFUNC(handleVehicleFired)] call CBA_fnc_addEventHandler;
 };
 
+// The server broadcasts the list of Boomerangs that are on. A machine only watches projectiles while it is not empty.
+// The public variable is for players who join later, the event for everybody else
+[QGVAR(listChanged), {
+    params ["_vehicles"];
+
+    GVAR(boomerangVehicles) = _vehicles;
+    call FUNC(updateListening);
+}] call CBA_fnc_addEventHandler;
+
+call FUNC(updateListening);
+
 if (hasInterface) then {
     [QGVAR(shotDetected), LINKFUNC(onShotDetected)] call CBA_fnc_addEventHandler;
 

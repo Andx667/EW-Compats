@@ -13,6 +13,12 @@ GVAR(boomerangVehicles) = [];
 GVAR(boomerangLoopHandle) = -1;
 GVAR(markerCounter) = 0;
 
+// Handle of the mission event handler that sees the projectiles, while a Boomerang is on
+GVAR(projectileHandler) = -1;
+
+// Ammo class -> is it a bullet. The inheritance of an ammo class is only walked once
+GVAR(bulletCache) = createHashMap;
+
 // Vehicle (net ID) -> mines it holds disabled. Only exists on the server
 GVAR(active) = createHashMap;
 GVAR(loopHandle) = -1;

@@ -39,7 +39,9 @@ if (_hasBoomerang) then {
         params ["_vehicle", "", "", "", "_ammo"];
 
         // Smoke launchers and flares are no weapons the sensor hears
-        if (_ammo isKindOf "SmokeLauncherAmmo" || {_ammo isKindOf "CMflareAmmo"}) exitWith {};
+        private _ammoConfig = configFile >> "CfgAmmo";
+
+        if (_ammo isKindOf ["SmokeLauncherAmmo", _ammoConfig] || {_ammo isKindOf ["CMflareAmmo", _ammoConfig]}) exitWith {};
 
         // A burst is one event for the server
         if (CBA_missionTime - (_vehicle getVariable [QGVAR(lastFired), -1]) < 1) exitWith {};

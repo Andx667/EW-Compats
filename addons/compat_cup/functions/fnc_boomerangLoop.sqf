@@ -26,6 +26,7 @@
 if (GVAR(boomerangVehicles) findIf {isNull _x} != -1) then {
     GVAR(boomerangVehicles) = GVAR(boomerangVehicles) select {!isNull _x};
     publicVariable QGVAR(boomerangVehicles);
+    [QGVAR(listChanged), [GVAR(boomerangVehicles)]] call CBA_fnc_globalEvent;
 };
 
 if (GVAR(boomerangVehicles) isEqualTo []) then {

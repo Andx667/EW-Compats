@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Switches the Boomerang of a vehicle. Active vehicles are in a public list, so the machine of a shooter can check
- * its shot against them.
+ * Switches the Boomerang of a vehicle. Active vehicles are in a list every machine gets, so the machine of a
+ * shooter can check its shot against them.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -32,3 +32,4 @@ if (_enabled) then {
 };
 
 publicVariable QGVAR(boomerangVehicles);
+[QGVAR(listChanged), [GVAR(boomerangVehicles)]] call CBA_fnc_globalEvent;

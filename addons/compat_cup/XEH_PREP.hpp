@@ -20,4 +20,5 @@ PREP(releaseMines);
 PREP(removeCrowsActions);
 PREP(setBoomerang);
 PREP(setJammer);
+PREP(updateListening);
 PREP(updateMines);

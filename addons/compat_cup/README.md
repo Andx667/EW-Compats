@@ -31,10 +31,12 @@ CUP models two systems on some of its vehicles and gives them no function: the *
 ### Boomerang
 
 - The Boomerang does not need Crow's Electronic Warfare. `fnc_setBoomerang` keeps a list of the vehicles with a Boomerang that is on (`ewc_compat_cup_boomerangVehicles`) and broadcasts it. A server side loop (`fnc_boomerangLoop`) switches a Boomerang off when its vehicle is destroyed, its antenna is hidden, its engine stops or it is disabled.
-- A Fired event handler on every unit and vehicle (`fnc_onFired`) runs on the machine the shot comes from, and leaves at once while the list is empty. This way a shot never has to be sent to the server. For each listening vehicle it takes the closest approach of the bullet to the vehicle:
-  - a supersonic bullet (from 340 m/s) is heard if it passes within the detection distance, up to 1000 m
-  - a slower bullet only within 100 m
-  - only `BulletBase` ammo, not from inside the vehicle, and not friendly if friendly fire reports are off
+- Every projectile of the mission would go through a handler, so there is none while no Boomerang is on. `fnc_updateListening` adds a `ProjectileCreated` mission event handler on each machine when the list of Boomerangs that are on gets its first vehicle, and removes it when the list is empty again. The server sends the list with the event `ewc_compat_cup_listChanged` and keeps it in a public variable for players who join later.
+- The handler (`fnc_onFired`) only looks at local projectiles, so the shot is checked on the machine it comes from and never has to be sent to the server. The cheap checks come first, and the expensive ones only run for a shot that is really heard:
+  - bullet or not, cached per ammo class
+  - vehicle within 1000 m, bullet flying towards it, no report from the vehicle within the last second
+  - a supersonic bullet (from 340 m/s) is heard if its path passes within the detection distance, a slower one only within 100 m
+  - then the state of the vehicle (`fnc_isBoomerangReady`) and the shooter (`getShotParents`): not from inside the vehicle, and not friendly if friendly fire reports are off
 - A report has a random bearing error of up to 7.5° and range error of up to 20 %, the 2009 accuracy of the real system, and is limited to one per second and vehicle. It goes to all machines (`ewc_compat_cup_shotDetected`, `fnc_onShotDetected`): a silent hint for the crew and a local map marker for everybody friendly to the vehicle.
 - The Boomerang listens (`fnc_isBoomerangReady`) while it is on, not above 95 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_cup_deafUntil` for the lockout time. Smoke launchers and flares do not count.
 
