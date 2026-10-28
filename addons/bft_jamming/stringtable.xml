@@ -3,62 +3,122 @@
     <Package name="bft_jamming">
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_description">
             <English>Registers the synced object (or a spawned data terminal, if none is synced) as a Crow's EW jammer that jams cTab's Blue Force Tracker instead of radio or drones. Detectable with the Spectrum Device like any other jammer.</English>
+            <French>Enregistre l'objet synchronisé (ou un terminal de données créé automatiquement si aucun n'est synchronisé) comme brouilleur Crow's EW qui brouille le Blue Force Tracker de cTab au lieu de la radio ou des drones. Détectable avec l'analyseur de spectre comme tout autre brouilleur.</French>
+            <Spanish>Registra el objeto sincronizado (o un terminal de datos generado, si no hay ninguno sincronizado) como inhibidor de Crow's EW que interfiere el Blue Force Tracker de cTab en lugar de la radio o los drones. Detectable con el dispositivo de espectro como cualquier otro inhibidor.</Spanish>
+            <Polish>Rejestruje zsynchronizowany obiekt (lub utworzony terminal danych, jeśli żaden nie jest zsynchronizowany) jako zagłuszarkę Crow's EW, która zagłusza Blue Force Tracker z cTab zamiast radia lub dronów. Wykrywalna za pomocą analizatora widma jak każda inna zagłuszarka.</Polish>
+            <Russian>Регистрирует синхронизированный объект (или созданный терминал данных, если ничего не синхронизировано) как станцию помех Crow's EW, которая подавляет Blue Force Tracker из cTab вместо радио или дронов. Как и любая другая станция помех, обнаруживается с помощью анализатора спектра.</Russian>
             <German>Registriert das synchronisierte Objekt (oder ein erzeugtes Datenterminal, falls keines synchronisiert ist) als Crow's-EW-Störsender, der cTabs Blue Force Tracker anstelle von Funk oder Drohnen stört. Wie jeder andere Störsender mit dem Spektrumgerät erkennbar.</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_displayName">
             <English>Set as BFT Jammer</English>
+            <French>Définir comme brouilleur BFT</French>
+            <Spanish>Definir como inhibidor de BFT</Spanish>
+            <Polish>Ustaw jako zagłuszarkę BFT</Polish>
+            <Russian>Назначить станцией помех BFT</Russian>
             <German>Als BFT-Störsender festlegen</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_effectiveRadius_displayName">
             <English>Effective Radius</English>
+            <French>Rayon effectif</French>
+            <Spanish>Radio efectivo</Spanish>
+            <Polish>Zasięg efektywny</Polish>
+            <Russian>Эффективный радиус</Russian>
             <German>Effektiver Radius</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_effectiveRadius_tooltip">
             <English>Inner radius (meters) with full jamming strength. Blackout jams fully out to Effective + Falloff radius; Drift reaches maximum position error inside this radius.</English>
+            <French>Rayon intérieur (en mètres) avec la pleine puissance de brouillage. Le blackout brouille entièrement jusqu'au rayon effectif + rayon d'atténuation ; la dérive atteint l'erreur de position maximale à l'intérieur de ce rayon.</French>
+            <Spanish>Radio interior (en metros) con plena potencia de interferencia. El apagón interfiere por completo hasta el radio efectivo + radio de atenuación; la deriva alcanza el error de posición máximo dentro de este radio.</Spanish>
+            <Polish>Wewnętrzny promień (w metrach) z pełną mocą zagłuszania. Blackout zagłusza całkowicie do zasięgu efektywnego + zasięgu zanikania; dryf osiąga maksymalny błąd pozycji wewnątrz tego promienia.</Polish>
+            <Russian>Внутренний радиус (в метрах) с полной силой подавления. Блэкаут полностью подавляет до эффективного радиуса + радиуса затухания; дрейф достигает максимальной ошибки позиции внутри этого радиуса.</Russian>
             <German>Innerer Radius (Meter) mit voller Störwirkung. Blackout stört vollständig bis zum Radius Effektiv + Abklingen; Abweichung erreicht innerhalb dieses Radius den maximalen Positionsfehler.</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_falloffRadius_displayName">
             <English>Falloff Radius</English>
+            <French>Rayon d'atténuation</French>
+            <Spanish>Radio de atenuación</Spanish>
+            <Polish>Zasięg zanikania</Polish>
+            <Russian>Радиус затухания</Russian>
             <German>Abklingradius</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_falloffRadius_tooltip">
             <English>Extra radius (meters) beyond the effective radius. Drift strength ramps linearly from full at the effective radius down to zero at the outer edge of this band. Blackout treats this whole band as fully jammed too.</English>
+            <French>Rayon supplémentaire (en mètres) au-delà du rayon effectif. La dérive diminue linéairement, de son maximum au rayon effectif jusqu'à zéro au bord extérieur de cette bande. Le blackout considère toute cette bande comme entièrement brouillée.</French>
+            <Spanish>Radio adicional (en metros) más allá del radio efectivo. La deriva disminuye linealmente desde su máximo en el radio efectivo hasta cero en el borde exterior de esta franja. El apagón también trata toda esta franja como totalmente interferida.</Spanish>
+            <Polish>Dodatkowy promień (w metrach) poza zasięgiem efektywnym. Siła dryfu maleje liniowo od maksimum na granicy zasięgu efektywnego do zera na zewnętrznej krawędzi tego pasa. Blackout traktuje cały ten pas jako całkowicie zagłuszony.</Polish>
+            <Russian>Дополнительный радиус (в метрах) за пределами эффективного. Сила дрейфа линейно убывает от максимума на границе эффективного радиуса до нуля на внешнем краю этой полосы. Блэкаут также считает всю эту полосу полностью подавленной.</Russian>
             <German>Zusätzlicher Radius (Meter) über den effektiven Radius hinaus. Die Stärke der Abweichung nimmt linear von voll am effektiven Radius bis auf null am äußeren Rand dieses Bereichs ab. Blackout behandelt auch diesen gesamten Bereich als vollständig gestört.</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_frequency_displayName">
             <English>Spectrum Frequency</English>
+            <French>Fréquence du spectre</French>
+            <Spanish>Frecuencia del espectro</Spanish>
+            <Polish>Częstotliwość widma</Polish>
+            <Russian>Частота спектра</Russian>
             <German>Spektrum-Frequenz</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_frequency_tooltip">
             <English>Frequency (MHz) at which this jammer's signal appears on the Crow's EW Spectrum Device, whenever it is active. Any value within the Spectrum Device's range works.</English>
+            <French>Fréquence (en MHz) à laquelle le signal de ce brouilleur apparaît sur l'analyseur de spectre de Crow's EW lorsqu'il est actif. Toute valeur dans la plage de l'analyseur convient.</French>
+            <Spanish>Frecuencia (en MHz) a la que aparece la señal de este inhibidor en el dispositivo de espectro de Crow's EW mientras esté activo. Sirve cualquier valor dentro del rango del dispositivo.</Spanish>
+            <Polish>Częstotliwość (w MHz), na której sygnał tej zagłuszarki pojawia się w analizatorze widma Crow's EW, gdy jest aktywna. Działa każda wartość z zakresu analizatora.</Polish>
+            <Russian>Частота (в МГц), на которой сигнал этой станции помех отображается на анализаторе спектра Crow's EW, пока она активна. Подойдёт любое значение в диапазоне анализатора.</Russian>
             <German>Frequenz (MHz), auf der das Signal dieses Störsenders auf dem Crow's-EW-Spektrumgerät erscheint, solange er aktiv ist. Jeder Wert innerhalb des Bereichs des Spektrumgeräts funktioniert.</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_jamType_blackout">
             <English>Blackout (hide unit)</English>
+            <French>Blackout (masquer l'unité)</French>
+            <Spanish>Apagón (ocultar unidad)</Spanish>
+            <Polish>Blackout (ukryj jednostkę)</Polish>
+            <Russian>Блэкаут (скрыть юнита)</Russian>
             <German>Blackout (Einheit ausblenden)</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_jamType_displayName">
             <English>Jamming Type</English>
+            <French>Type de brouillage</French>
+            <Spanish>Tipo de interferencia</Spanish>
+            <Polish>Rodzaj zagłuszania</Polish>
+            <Russian>Тип подавления</Russian>
             <German>Störungsart</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_jamType_drift">
             <English>Drift (corrupt position)</English>
+            <French>Dérive (fausser la position)</French>
+            <Spanish>Deriva (falsear posición)</Spanish>
+            <Polish>Dryf (zafałszuj pozycję)</Polish>
+            <Russian>Дрейф (искажать позицию)</Russian>
             <German>Abweichung (Position verfälschen)</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_jamType_mixed">
             <English>Mixed (blackout core, drift outer)</English>
+            <French>Mixte (blackout au centre, dérive à l'extérieur)</French>
+            <Spanish>Mixto (apagón en el centro, deriva en el exterior)</Spanish>
+            <Polish>Mieszany (blackout w środku, dryf na zewnątrz)</Polish>
+            <Russian>Смешанный (блэкаут в центре, дрейф снаружи)</Russian>
             <German>Gemischt (Blackout innen, Abweichung außen)</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_jamType_tooltip">
             <English>Blackout: units inside the jammer's range disappear from BFT entirely. Drift: units stay visible but their displayed position gets progressively less accurate the closer they are to the jammer's center. Mixed: Blackout inside the Effective Radius, Drift (tapering off) in the Falloff Radius band around it.</English>
+            <French>Blackout : les unités dans la portée du brouilleur disparaissent entièrement du BFT. Dérive : les unités restent visibles, mais leur position affichée devient de moins en moins précise à mesure qu'elles s'approchent du centre du brouilleur. Mixte : blackout dans le rayon effectif, dérive (décroissante) dans la bande du rayon d'atténuation qui l'entoure.</French>
+            <Spanish>Apagón: las unidades dentro del alcance del inhibidor desaparecen por completo del BFT. Deriva: las unidades siguen visibles, pero su posición mostrada es cada vez menos precisa cuanto más cerca están del centro del inhibidor. Mixto: apagón dentro del radio efectivo y deriva (decreciente) en la franja del radio de atenuación que lo rodea.</Spanish>
+            <Polish>Blackout: jednostki w zasięgu zagłuszarki całkowicie znikają z BFT. Dryf: jednostki pozostają widoczne, ale ich wyświetlana pozycja jest tym mniej dokładna, im bliżej środka zagłuszarki się znajdują. Mieszany: blackout w zasięgu efektywnym, dryf (zanikający) w otaczającym go pasie zasięgu zanikania.</Polish>
+            <Russian>Блэкаут: юниты в зоне действия станции помех полностью исчезают из BFT. Дрейф: юниты остаются видимыми, но их позиция отображается тем менее точно, чем ближе они к центру станции помех. Смешанный: блэкаут в эффективном радиусе, дрейф (затухающий) в окружающей его полосе радиуса затухания.</Russian>
             <German>Blackout: Einheiten innerhalb der Reichweite des Störsenders verschwinden vollständig vom BFT. Abweichung: Einheiten bleiben sichtbar, aber ihre angezeigte Position wird zunehmend ungenauer, je näher sie sich am Zentrum des Störsenders befinden. Gemischt: Blackout innerhalb des effektiven Radius, Abweichung (abnehmend) im Abklingradius darum herum.</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_missionStart_displayName">
             <English>Active at Mission Start</English>
+            <French>Actif au début de la mission</French>
+            <Spanish>Activo al inicio de la misión</Spanish>
+            <Polish>Aktywna na początku misji</Polish>
+            <Russian>Активна в начале миссии</Russian>
             <German>Aktiv bei Missionsbeginn</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_missionStart_tooltip">
             <English>If disabled, the jammer starts turned off and can be activated later (e.g. via Zeus).</English>
+            <French>Si désactivé, le brouilleur démarre éteint et peut être activé plus tard (par ex. via Zeus).</French>
+            <Spanish>Si está desactivado, el inhibidor empieza apagado y puede activarse más tarde (p. ej., mediante Zeus).</Spanish>
+            <Polish>Jeśli wyłączone, zagłuszarka startuje wyłączona i można ją włączyć później (np. przez Zeusa).</Polish>
+            <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже (например, через Зевса).</Russian>
             <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später aktiviert werden (z. B. über Zeus).</German>
         </Key>
     </Package>

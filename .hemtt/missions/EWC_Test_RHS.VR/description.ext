@@ -1,0 +1,28 @@
+onLoadName = "EWC Test - RHS DUKE";
+onLoadMission = "Test of the RHS DUKE radio and IED jamming.";
+author = "Andx";
+overviewText = "Test of the RHS DUKE radio and IED jamming.";
+
+enableDebugConsole = 1;
+respawn = "BASE";
+respawnDelay = 5;
+disabledAI = 1;
+joinUnassigned = 0;
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 2;
+};
+
+class CfgFunctions
+{
+	class ewc_test
+	{
+		class Functions
+		{
+			class vehicleState { file = "fn_vehicleState.sqf"; };
+		};
+	};
+};

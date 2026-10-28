@@ -1,0 +1,28 @@
+onLoadName = "EWC Test - CUP DUKE and Boomerang";
+onLoadMission = "Test of the CUP DUKE jamming and the Boomerang shot finder.";
+author = "Andx";
+overviewText = "Test of the CUP DUKE jamming and the Boomerang shot finder.";
+
+enableDebugConsole = 1;
+respawn = "BASE";
+respawnDelay = 5;
+disabledAI = 1;
+joinUnassigned = 0;
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 2;
+};
+
+class CfgFunctions
+{
+	class ewc_test
+	{
+		class Functions
+		{
+			class vehicleState { file = "fn_vehicleState.sqf"; };
+		};
+	};
+};

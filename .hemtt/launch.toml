@@ -1,4 +1,5 @@
 # Launched with `hemtt launch`, or `hemtt launch bft/bwa3/cup/rhs` to also load the mod a feature extends
+# (bwa3/cup/rhs start in their test mission from .hemtt/missions)
 [default]
 workshop = [
     "450814997",  # CBA_A3
@@ -15,6 +16,7 @@ workshop = [
 
 [bwa3]
 extends = "default"
+mission = "EWC_Test_BWA3.VR"
 workshop = [
     "1200127537", # BWmod
     "751965892",  # ACRE
@@ -22,6 +24,7 @@ workshop = [
 
 [cup]
 extends = "default"
+mission = "EWC_Test_CUP.VR"
 workshop = [
     "497660133",  # CUP Weapons
     "497661914",  # CUP Units
@@ -31,6 +34,7 @@ workshop = [
 
 [rhs]
 extends = "default"
+mission = "EWC_Test_RHS.VR"
 workshop = [
     "843425103",  # RHS AFRF
     "843577117",  # RHS USAF

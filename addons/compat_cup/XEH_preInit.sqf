@@ -4,8 +4,20 @@ ADDON = false;
 
 #include "XEH_PREP.hpp"
 
-// Vehicle class -> animation sources of its DUKE antennas
+// Vehicle class -> animation sources of its DUKE and Boomerang antennas, per system
 GVAR(sourceCache) = createHashMap;
+
+// Vehicles with a Boomerang that is on. The server keeps the list and broadcasts it, so the machine of a
+// shooter can check its shots without asking the server
+GVAR(boomerangVehicles) = [];
+GVAR(boomerangLoopHandle) = -1;
+GVAR(markerCounter) = 0;
+
+// Handle of the mission event handler that sees the projectiles, while a Boomerang is on
+GVAR(projectileHandler) = -1;
+
+// Ammo class -> is it a bullet. The inheritance of an ammo class is only walked once
+GVAR(bulletCache) = createHashMap;
 
 // Vehicle (net ID) -> mines it holds disabled. Only exists on the server
 GVAR(active) = createHashMap;
@@ -22,6 +34,24 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     _category,
     [[ACTION_MODE_SCROLL, ACTION_MODE_ACE, ACTION_MODE_BOTH], [LLSTRING(mode_scroll), LLSTRING(mode_ace), LLSTRING(mode_both)], ACTION_MODE_SCROLL],
     false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(enableDuke),
+    "CHECKBOX",
+    [LLSTRING(setting_enableDuke), LLSTRING(setting_enableDuke_tooltip)],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(enableBoomerang),
+    "CHECKBOX",
+    [LLSTRING(setting_enableBoomerang), LLSTRING(setting_enableBoomerang_tooltip)],
+    _category,
+    true,
+    true
 ] call CBA_fnc_addSetting;
 
 [
@@ -49,6 +79,42 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     _category,
     true,
     true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(friendlyFire),
+    "CHECKBOX",
+    [LLSTRING(setting_friendlyFire), LLSTRING(setting_friendlyFire_tooltip)],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(missDistance),
+    "SLIDER",
+    [LLSTRING(setting_missDistance), LLSTRING(setting_missDistance_tooltip)],
+    _category,
+    [10, 150, 50, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(lockout),
+    "SLIDER",
+    [LLSTRING(setting_lockout), LLSTRING(setting_lockout_tooltip)],
+    _category,
+    [1, 30, 5, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(markerLifetime),
+    "SLIDER",
+    [LLSTRING(setting_markerLifetime), LLSTRING(setting_markerLifetime_tooltip)],
+    _category,
+    [0, 120, 30, 0],
+    false
 ] call CBA_fnc_addSetting;
 
 ADDON = true;

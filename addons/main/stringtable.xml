@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ewc">
     <Package name="main">
+        <Key ID="STR_ewc_main_description">
+            <English>Electronic warfare compatibility: BFT jamming for cTab, Dingo CG13, RHS DUKE and CUP DUKE jammers via Crow's Electronic Warfare.</English>
+            <French>Compatibilité de guerre électronique : brouillage BFT pour cTab et brouilleurs du CG13 du Dingo, du DUKE RHS et du DUKE CUP via Crow's Electronic Warfare.</French>
+            <Spanish>Compatibilidad de guerra electrónica: interferencia de BFT para cTab e inhibidores del CG13 del Dingo, del DUKE de RHS y del DUKE de CUP mediante Crow's Electronic Warfare.</Spanish>
+            <Polish>Kompatybilność walki elektronicznej: zagłuszanie BFT dla cTab oraz zagłuszarki CG13 w Dingo, DUKE z RHS i DUKE z CUP przez Crow's Electronic Warfare.</Polish>
+            <Russian>Совместимость радиоэлектронной борьбы: подавление BFT для cTab и станции помех CG13 на Dingo, DUKE из RHS и DUKE из CUP через Crow's Electronic Warfare.</Russian>
+            <German>Kompatibilität für elektronische Kampfführung: BFT-Störung für cTab sowie Dingo-CG13-, RHS-DUKE- und CUP-DUKE-Störsender über Crow's Electronic Warfare.</German>
+        </Key>
         <Key ID="STR_ewc_main_displayName">
             <English>EW Compats</English>
+            <French>EW Compats</French>
+            <Spanish>EW Compats</Spanish>
+            <Polish>EW Compats</Polish>
+            <Russian>EW Compats</Russian>
+            <German>EW Compats</German>
         </Key>
     </Package>
 </Project>
