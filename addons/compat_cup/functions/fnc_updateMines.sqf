@@ -22,7 +22,9 @@ params [["_key", "", [""]], ["_vehicle", objNull, [objNull]]];
 private _old = GVAR(active) getOrDefault [_key, []];
 private _radius = _vehicle call FUNC(getRadius);
 
-private _inRange = allMines inAreaArray [getPosWorld _vehicle, _radius, _radius] select {_x isKindOf "PipeBombBase"};
+// Let the engine search around the vehicle, instead of going through all mines of the mission every second.
+// The search is flat, like the area check it replaces, and unsorted, as the order is of no use here
+private _inRange = nearestMines [_vehicle, ["PipeBombBase"], _radius, false, true];
 
 private _kept = _old arrayIntersect _inRange;
 // Mines that are already disabled belong to another jammer, which frees them itself
