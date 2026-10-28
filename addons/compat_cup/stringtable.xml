@@ -9,13 +9,69 @@
             <Russian>Включить DUKE</Russian>
             <German>DUKE aktivieren</German>
         </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_activate">
+            <English>Activate Boomerang</English>
+            <French>Activer le Boomerang</French>
+            <Spanish>Activar Boomerang</Spanish>
+            <Polish>Włącz Boomerang</Polish>
+            <Russian>Включить Boomerang</Russian>
+            <German>Boomerang aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_deactivate">
+            <English>Deactivate Boomerang</English>
+            <French>Désactiver le Boomerang</French>
+            <Spanish>Desactivar Boomerang</Spanish>
+            <Polish>Wyłącz Boomerang</Polish>
+            <Russian>Выключить Boomerang</Russian>
+            <German>Boomerang deaktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_elevation_high">
+            <English>elevated</English>
+            <French>en hauteur</French>
+            <Spanish>elevado</Spanish>
+            <Polish>wyżej</Polish>
+            <Russian>выше</Russian>
+            <German>erhöht</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_elevation_level">
+            <English>level</English>
+            <French>de niveau</French>
+            <Spanish>a nivel</Spanish>
+            <Polish>na tym samym poziomie</Polish>
+            <Russian>на одном уровне</Russian>
+            <German>auf gleicher Höhe</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_elevation_low">
+            <English>below</English>
+            <French>en contrebas</French>
+            <Spanish>por debajo</Spanish>
+            <Polish>niżej</Polish>
+            <Russian>ниже</Russian>
+            <German>tiefer</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_hint">
+            <English>Boomerang: shot detected, %1 o'clock, ~%2 m, bearing %3°, %4</English>
+            <French>Boomerang : tir détecté, %1 heures, ~%2 m, azimut %3°, %4</French>
+            <Spanish>Boomerang: disparo detectado, a las %1, ~%2 m, azimut %3°, %4</Spanish>
+            <Polish>Boomerang: wykryto strzał, godz. %1, ~%2 m, azymut %3°, %4</Polish>
+            <Russian>Boomerang: обнаружен выстрел, %1 часов, ~%2 м, азимут %3°, %4</Russian>
+            <German>Boomerang: Schuss erkannt, %1 Uhr, ca. %2 m, Peilung %3°, %4</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_markerText">
+            <English>Shot</English>
+            <French>Tir</French>
+            <Spanish>Disparo</Spanish>
+            <Polish>Strzał</Polish>
+            <Russian>Выстрел</Russian>
+            <German>Schuss</German>
+        </Key>
         <Key ID="STR_ewc_compat_cup_category">
-            <English>CUP DUKE</English>
-            <French>CUP DUKE</French>
-            <Spanish>CUP DUKE</Spanish>
-            <Polish>CUP DUKE</Polish>
-            <Russian>CUP DUKE</Russian>
-            <German>CUP DUKE</German>
+            <English>CUP DUKE and Boomerang</English>
+            <French>CUP DUKE and Boomerang</French>
+            <Spanish>CUP DUKE and Boomerang</Spanish>
+            <Polish>CUP DUKE and Boomerang</Polish>
+            <Russian>CUP DUKE and Boomerang</Russian>
+            <German>CUP DUKE and Boomerang</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_deactivate">
             <English>Deactivate DUKE</English>
@@ -65,6 +121,54 @@
             <Russian>Как включается и выключается DUKE в технике. Без ACE колесо мыши доступно всегда.</Russian>
             <German>Wie der DUKE in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
         </Key>
+        <Key ID="STR_ewc_compat_cup_setting_enableBoomerang">
+            <English>Enable CUP Boomerang</English>
+            <French>Activer le Boomerang CUP</French>
+            <Spanish>Activar Boomerang de CUP</Spanish>
+            <Polish>Włącz Boomerang z CUP</Polish>
+            <Russian>Включить Boomerang из CUP</Russian>
+            <German>CUP Boomerang aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_enableBoomerang_tooltip">
+            <English>If disabled, CUP vehicles get no Boomerang switch and active Boomerangs switch off.</English>
+            <French>Si désactivé, les véhicules CUP n'ont plus de commande du Boomerang et les Boomerang actifs s'éteignent.</French>
+            <Spanish>Si está desactivado, los vehículos de CUP no tienen control del Boomerang y los Boomerang activos se apagan.</Spanish>
+            <Polish>Jeśli wyłączone, pojazdy z CUP nie mają przełącznika Boomerang, a aktywne Boomerangi się wyłączają.</Polish>
+            <Russian>Если выключено, у техники из CUP нет переключателя Boomerang, а активные Boomerang выключаются.</Russian>
+            <German>Wenn deaktiviert, erhalten CUP-Fahrzeuge keinen Boomerang-Schalter und aktive Boomerangs schalten sich ab.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_enableDuke">
+            <English>Enable CUP DUKE</English>
+            <French>Activer le DUKE CUP</French>
+            <Spanish>Activar DUKE de CUP</Spanish>
+            <Polish>Włącz DUKE z CUP</Polish>
+            <Russian>Включить DUKE из CUP</Russian>
+            <German>CUP DUKE aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_enableDuke_tooltip">
+            <English>If disabled, CUP vehicles get no DUKE switch and running DUKEs switch off.</English>
+            <French>Si désactivé, les véhicules CUP n'ont plus de commande du DUKE et les DUKE en marche s'éteignent.</French>
+            <Spanish>Si está desactivado, los vehículos de CUP no tienen control del DUKE y los DUKE en marcha se apagan.</Spanish>
+            <Polish>Jeśli wyłączone, pojazdy z CUP nie mają przełącznika DUKE, a działające DUKE się wyłączają.</Polish>
+            <Russian>Если выключено, у техники из CUP нет переключателя DUKE, а работающие DUKE выключаются.</Russian>
+            <German>Wenn deaktiviert, erhalten CUP-Fahrzeuge keinen DUKE-Schalter und laufende DUKEs schalten sich ab.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_friendlyFire">
+            <English>Report friendly fire</English>
+            <French>Signaler les tirs amis</French>
+            <Spanish>Notificar fuego amigo</Spanish>
+            <Polish>Zgłaszaj ogień własny</Polish>
+            <Russian>Сообщать о дружественном огне</Russian>
+            <German>Eigenen Beschuss melden</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_friendlyFire_tooltip">
+            <English>The Boomerang also reports shots from friendly units, like the real system. If disabled, only shots from units that are not friendly to the vehicle are reported.</English>
+            <French>Le Boomerang signale aussi les tirs des unités amies, comme le vrai système. Si désactivé, seuls les tirs d'unités non amies du véhicule sont signalés.</French>
+            <Spanish>El Boomerang también notifica los disparos de unidades amigas, como el sistema real. Si está desactivado, solo se notifican los disparos de unidades que no son amigas del vehículo.</Spanish>
+            <Polish>Boomerang zgłasza także strzały jednostek sojuszniczych, tak jak prawdziwy system. Jeśli wyłączone, zgłaszane są tylko strzały jednostek niesojuszniczych względem pojazdu.</Polish>
+            <Russian>Boomerang сообщает и о выстрелах дружественных юнитов, как настоящая система. Если выключено, сообщается только о выстрелах юнитов, не дружественных технике.</Russian>
+            <German>Der Boomerang meldet auch Schüsse befreundeter Einheiten, wie das echte System. Wenn deaktiviert, werden nur Schüsse von Einheiten gemeldet, die dem Fahrzeug nicht freundlich gesinnt sind.</German>
+        </Key>
         <Key ID="STR_ewc_compat_cup_setting_jamMines">
             <English>Jam IEDs</English>
             <French>Brouiller les IED</French>
@@ -80,6 +184,54 @@
             <Polish>Aktywny DUKE wyłącza ładunki IED w swoim zasięgu, tak jak CG13 w Dingo. Zagłuszarka radiowa nie jest tym objęta.</Polish>
             <Russian>Включённый DUKE отключает СВУ в своём радиусе, как CG13 на Dingo. Радиопомехи это не затрагивает.</Russian>
             <German>Ein aktiver DUKE deaktiviert die IEDs in seinem Radius, wie es der Dingo CG13 tut. Der Funkstörsender ist davon nicht betroffen.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_lockout">
+            <English>Lockout after own fire (s)</English>
+            <French>Blocage après tir propre (s)</French>
+            <Spanish>Bloqueo tras fuego propio (s)</Spanish>
+            <Polish>Blokada po własnym ogniu (s)</Polish>
+            <Russian>Блокировка после своего огня (с)</Russian>
+            <German>Sperrzeit nach eigenem Feuer (s)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_lockout_tooltip">
+            <English>The Boomerang is deaf for this many seconds after the weapons of its own vehicle were fired.</English>
+            <French>Le Boomerang est sourd pendant ce nombre de secondes après que les armes de son propre véhicule ont tiré.</French>
+            <Spanish>El Boomerang queda sordo durante estos segundos después de que se disparen las armas de su propio vehículo.</Spanish>
+            <Polish>Boomerang jest głuchy przez tyle sekund po strzale z broni własnego pojazdu.</Polish>
+            <Russian>Boomerang глохнет на столько секунд после выстрелов из оружия своей машины.</Russian>
+            <German>Der Boomerang ist so viele Sekunden taub, nachdem die Waffen des eigenen Fahrzeugs gefeuert haben.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_markerLifetime">
+            <English>Marker lifetime (s)</English>
+            <French>Durée du marqueur (s)</French>
+            <Spanish>Duración del marcador (s)</Spanish>
+            <Polish>Czas trwania znacznika (s)</Polish>
+            <Russian>Время жизни маркера (с)</Russian>
+            <German>Dauer der Markierung (s)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_markerLifetime_tooltip">
+            <English>How long the map marker of a detected shooter stays. 0 disables the markers. Set per player.</English>
+            <French>Durée d'affichage du marqueur de carte d'un tireur détecté. 0 désactive les marqueurs. Réglage propre à chaque joueur.</French>
+            <Spanish>Cuánto permanece en el mapa el marcador de un tirador detectado. 0 desactiva los marcadores. Se ajusta por jugador.</Spanish>
+            <Polish>Jak długo na mapie widoczny jest znacznik wykrytego strzelca. 0 wyłącza znaczniki. Ustawienie dla każdego gracza.</Polish>
+            <Russian>Как долго на карте остаётся маркер обнаруженного стрелка. 0 отключает маркеры. Настраивается для каждого игрока.</Russian>
+            <German>Wie lange die Kartenmarkierung eines erkannten Schützen bleibt. 0 deaktiviert die Markierungen. Pro Spieler einstellbar.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_missDistance">
+            <English>Detection distance (m)</English>
+            <French>Distance de détection (m)</French>
+            <Spanish>Distancia de detección (m)</Spanish>
+            <Polish>Odległość wykrywania (m)</Polish>
+            <Russian>Дистанция обнаружения (м)</Russian>
+            <German>Erfassungsabstand (m)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_missDistance_tooltip">
+            <English>A supersonic shot is detected if it passes within this distance of the Boomerang vehicle. Slower shots are only heard within 100 m.</English>
+            <French>Un tir supersonique est détecté s'il passe à cette distance du véhicule équipé du Boomerang. Les tirs plus lents ne sont entendus que dans un rayon de 100 m.</French>
+            <Spanish>Un disparo supersónico se detecta si pasa a esta distancia del vehículo con Boomerang. Los disparos más lentos solo se oyen a menos de 100 m.</Spanish>
+            <Polish>Strzał naddźwiękowy jest wykrywany, jeśli przeleci w tej odległości od pojazdu z Boomerangiem. Wolniejsze strzały słychać tylko w promieniu 100 m.</Polish>
+            <Russian>Сверхзвуковой выстрел обнаруживается, если проходит в пределах этой дистанции от машины с Boomerang. Более медленные выстрелы слышны только в пределах 100 м.</Russian>
+            <German>Ein Überschallschuss wird erkannt, wenn er in diesem Abstand am Boomerang-Fahrzeug vorbeifliegt. Langsamere Schüsse werden nur innerhalb von 100 m gehört.</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_radius">
             <English>Jamming radius (m)</English>
@@ -106,12 +258,12 @@
             <German>Laufenden Motor voraussetzen</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_requireEngine_tooltip">
-            <English>The DUKE can only be switched on with the engine running and switches off when the engine stops.</English>
-            <French>Le DUKE ne peut être activé que moteur en marche et s'éteint à l'arrêt du moteur.</French>
-            <Spanish>El DUKE solo se puede encender con el motor en marcha y se apaga cuando el motor se detiene.</Spanish>
-            <Polish>DUKE można włączyć tylko przy pracującym silniku i wyłącza się on po zatrzymaniu silnika.</Polish>
-            <Russian>DUKE можно включить только при работающем двигателе, и он выключается при остановке двигателя.</Russian>
-            <German>Der DUKE lässt sich nur bei laufendem Motor einschalten und schaltet sich ab, wenn der Motor ausgeht.</German>
+            <English>The DUKE and the Boomerang can only be switched on with the engine running and switch off when the engine stops.</English>
+            <French>Le DUKE et le Boomerang ne peuvent être activés que moteur en marche et s'éteignent à l'arrêt du moteur.</French>
+            <Spanish>El DUKE y el Boomerang solo se pueden encender con el motor en marcha y se apagan cuando el motor se detiene.</Spanish>
+            <Polish>DUKE i Boomerang można włączyć tylko przy pracującym silniku i wyłączają się one po zatrzymaniu silnika.</Polish>
+            <Russian>DUKE и Boomerang можно включить только при работающем двигателе, и они выключаются при остановке двигателя.</Russian>
+            <German>DUKE und Boomerang lassen sich nur bei laufendem Motor einschalten und schalten sich ab, wenn der Motor ausgeht.</German>
         </Key>
     </Package>
 </Project>
