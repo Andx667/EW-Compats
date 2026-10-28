@@ -15,3 +15,9 @@ The project is entirely open-source and any contributions are welcome.
 | [Compat BWA3](compat-bwa3.md) | [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) | The Dingo 2 CG13 also jams radios |
 | [Compat CUP](compat-cup.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Vehicles with a shown DUKE antenna get a DUKE switch that jams radios and IEDs |
 | [Compat RHS](compat-rhs.md) | [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Vehicles with a DUKE also jam radios |
+
+## Potential Upgrades
+
+- Compat for RHS AFRF
+- Check how the BWmod Dingo behaves on destruction
+- Translations
