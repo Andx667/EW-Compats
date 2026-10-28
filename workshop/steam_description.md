@@ -4,18 +4,18 @@
 
 # Requirements
 
-- [CBA_A3](https://github.com/CBATeam/CBA_A3)
+- [CBA_A3](https://steamcommunity.com/sharedfiles/filedetails/?id=450814997)
 - [Crow's Electronic Warfare](https://steamcommunity.com/sharedfiles/filedetails/?id=2515887728)
 
 Every feature below is skipped when the mod it extends is not loaded.
 
 # Features
 
-- **BFT Jamming** (needs cTab) — editor module that turns an object into a jammer for the Blue Force Tracker: blackout, position drift or both, detectable with the Spectrum Device
-- **Dingo CG13** (needs BWmod) — the CG13 also jams radios while its IED jammer is switched on
-- **RHS DUKE** (needs RHS USAF) — vehicles with a DUKE also jam radios while it is online, including reduced range with damaged antennas
+- **BFT Jamming** (needs [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217)) — editor module that turns an object into a jammer for the Blue Force Tracker: blackout, position drift or both, detectable with the Spectrum Device
+- **Dingo CG13** (needs [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537)) — the CG13 also jams radios while its IED jammer is switched on
+- **RHS DUKE** (needs [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117)) — vehicles with a DUKE also jam radios while it is online, including reduced range with damaged antennas
 
-Radio jamming needs ACRE. Crow's Electronic Warfare only works in multiplayer.
+Radio jamming needs [ACRE](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892). Crow's Electronic Warfare only works in multiplayer.
 
 # Source & Issues
 

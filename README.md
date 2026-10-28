@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/github/actions/workflow/status/Andx667/EW-Compats/validate.yml?style=flat-square&label=Validate" alt="Validate">
 </p>
 
-__Requires__ [CBA_A3](https://github.com/CBATeam/CBA_A3) and [Crow's Electronic Warfare](https://steamcommunity.com/sharedfiles/filedetails/?id=2515887728).
+__Requires__ [CBA_A3](https://steamcommunity.com/sharedfiles/filedetails/?id=450814997) ([GitHub](https://github.com/CBATeam/CBA_A3)) and [Crow's Electronic Warfare](https://steamcommunity.com/sharedfiles/filedetails/?id=2515887728).
 
 __EW Compats__ (EWC) connects other mods to Crow's Electronic Warfare, so their jammers and jamming effects work with its radio and spectrum systems.
 
