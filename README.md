@@ -42,12 +42,6 @@ Every feature is its own addon and is skipped when the mod it extends is not loa
 
 Radio jamming needs [ACRE](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892) (the radio effect of Crow's Electronic Warfare is applied to the receiving side). Crow's Electronic Warfare only works in multiplayer.
 
-## Potential Upgrades
-
-- Compat for RHS AFRF
-- Check how the BWmod Dingo behaves on destruction
-- Translations
-
 ## Contributing
 
 For new contributors, see the [Contributing Setup & Guidelines](./.github/CONTRIBUTING.md).
