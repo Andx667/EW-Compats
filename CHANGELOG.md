@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Compat CUP - Add DUKE switch (scroll wheel or ACE) for CUP vehicles with a shown DUKE antenna, jamming radios via Crow's EW and IEDs
+
 ## [0.1.0] - 2026-10-28
 
 ### Added

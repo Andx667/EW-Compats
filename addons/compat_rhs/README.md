@@ -22,7 +22,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam 
 - The full jamming radius is the radius of the DUKE's IED jamming (50 m, hardcoded in RHS, so `DUKE_EFFECTIVE_RADIUS` has to be adjusted if RHS changes it). The falloff radius is 1.5 times that.
 - RHS only starts the jamming script if gunner and vehicle are local on the same machine (not for a gunner in the turret of someone else's vehicle, for example). In that case `RHS_DUKE_OP` does not change and the radio jammer stays off, like the IED jammer.
 - Crow's Electronic Warfare only works in multiplayer.
-- CUP vehicles only have a DUKE model without function and are not supported.
+- CUP vehicles have no RHS DUKE function and are not covered here, see `compat_cup`.
 
 ## Dependencies
 
