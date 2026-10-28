@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-20.494324,9.4274893,4.1860957};
-		dir[]={0.10184474,-0.51628971,0.85059309};
-		up[]={0.061379083,0.85663819,0.51263249};
-		aside[]={0.99293047,9.1421498e-08,-0.11888606};
+		pos[]={-34.92469,67.42749,52.543343};
+		dir[]={-0.17818871,-0.63740903,0.74963892};
+		up[]={-0.14740469,0.77052557,0.62013072};
+		aside[]={0.97289288,0,0.23125604};
 	};
 };
 binarizationWanted=0;
@@ -87,10 +87,54 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=1;
 					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male10ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.95999998;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item1
 				{
