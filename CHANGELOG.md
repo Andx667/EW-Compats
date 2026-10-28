@@ -15,6 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
+- Localization - Add French, Spanish, Polish and Russian translations of all strings, German for the mod name and a localized mod description
 - Compat CUP - Add DUKE switch (scroll wheel or ACE) for CUP vehicles with a shown DUKE antenna, jamming radios via Crow's EW and IEDs
 
 ## [0.1.0] - 2026-10-28
