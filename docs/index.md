@@ -13,8 +13,7 @@ The project is entirely open-source and any contributions are welcome.
 |---|---|---|
 | [BFT Jamming](bft-jamming.md) | [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) | Editor module that turns an object into a jammer for cTab's Blue Force Tracker |
 | [Compat BWA3](compat-bwa3.md) | [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) | The Dingo 2 CG13 also jams radios |
-| [Compat CUP](compat-cup.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Vehicles with a shown DUKE antenna get a DUKE switch that jams radios and IEDs, and ones with a Boomerang shot finder get shot detection with hints and map markers |
-| Compat CUP cTab (see [Compat CUP](compat-cup.md)) | [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) and CUP Vehicles | The shots a CUP Boomerang detects also show as red enemy markers on cTab |
+| [Compat CUP](compat-cup.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Vehicles with a shown DUKE antenna get a DUKE switch that jams radios and IEDs, and ones with a Boomerang shot finder get shot detection with hints and markers on the map and, with cTab, on the tablets |
 | [Compat RHS](compat-rhs.md) | [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Vehicles with a DUKE also jam radios |
 
 ## Planned

@@ -11,7 +11,7 @@
  * Encryption key <STRING>
  *
  * Example:
- * [west] call ewc_compat_cup_ctab_fnc_getEncryptionKey
+ * [west] call ewc_compat_cup_fnc_ctab_getEncryptionKey
  *
  * Public: No
  */

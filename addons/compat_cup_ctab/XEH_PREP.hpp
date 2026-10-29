@@ -1,2 +1,0 @@
-PREP(addMarker);
-PREP(getEncryptionKey);

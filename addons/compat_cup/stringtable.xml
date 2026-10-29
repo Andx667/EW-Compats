@@ -73,6 +73,46 @@
             <Russian>CUP DUKE and Boomerang</Russian>
             <German>CUP DUKE and Boomerang</German>
         </Key>
+        <Key ID="STR_ewc_compat_cup_ctab_setting_markerTarget">
+            <English>Show shots on</English>
+            <French>Afficher les tirs sur</French>
+            <Spanish>Mostrar disparos en</Spanish>
+            <Polish>Pokaż strzały na</Polish>
+            <Russian>Показывать выстрелы на</Russian>
+            <German>Schüsse anzeigen auf</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_ctab_setting_markerTarget_tooltip">
+            <English>Where the Boomerang shows the estimated position of a shooter: on the map, on the cTab of the side of the vehicle (as a red enemy marker), or both.</English>
+            <French>Où le Boomerang affiche la position estimée d'un tireur : sur la carte, sur le cTab du camp du véhicule (comme marqueur ennemi rouge) ou les deux.</French>
+            <Spanish>Dónde muestra el Boomerang la posición estimada de un tirador: en el mapa, en el cTab del bando del vehículo (como marcador enemigo rojo) o en ambos.</Spanish>
+            <Polish>Gdzie Boomerang pokazuje szacowaną pozycję strzelca: na mapie, na cTab strony pojazdu (jako czerwony znacznik wroga) lub w obu miejscach.</Polish>
+            <Russian>Где Boomerang показывает предполагаемое положение стрелка: на карте, на cTab стороны машины (как красный маркер противника) или в обоих местах.</Russian>
+            <German>Wo der Boomerang die geschätzte Position eines Schützen zeigt: auf der Karte, auf dem cTab der Seite des Fahrzeugs (als rote Feindmarkierung) oder auf beidem.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_ctab_target_both">
+            <English>Map and cTab</English>
+            <French>Carte et cTab</French>
+            <Spanish>Mapa y cTab</Spanish>
+            <Polish>Mapa i cTab</Polish>
+            <Russian>Карта и cTab</Russian>
+            <German>Karte und cTab</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_ctab_target_ctab">
+            <English>cTab</English>
+            <French>cTab</French>
+            <Spanish>cTab</Spanish>
+            <Polish>cTab</Polish>
+            <Russian>cTab</Russian>
+            <German>cTab</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_ctab_target_map">
+            <English>Map</English>
+            <French>Carte</French>
+            <Spanish>Mapa</Spanish>
+            <Polish>Mapa</Polish>
+            <Russian>Карта</Russian>
+            <German>Karte</German>
+        </Key>
         <Key ID="STR_ewc_compat_cup_deactivate">
             <English>Deactivate DUKE</English>
             <French>Désactiver le DUKE</French>
@@ -217,22 +257,6 @@
             <Russian>Как долго остаётся маркер обнаруженного стрелка. 0 отключает маркеры. Для карты настраивается для каждого игрока, маркеры cTab используют значение сервера.</Russian>
             <German>Wie lange die Markierung eines erkannten Schützen bleibt. 0 deaktiviert die Markierungen. Für die Karte pro Spieler einstellbar, cTab-Markierungen nutzen den Wert des Servers.</German>
         </Key>
-        <Key ID="STR_ewc_compat_cup_setting_markerTarget">
-            <English>Show shots on</English>
-            <French>Afficher les tirs sur</French>
-            <Spanish>Mostrar disparos en</Spanish>
-            <Polish>Pokaż strzały na</Polish>
-            <Russian>Показывать выстрелы на</Russian>
-            <German>Schüsse anzeigen auf</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_setting_markerTarget_tooltip">
-            <English>Where the Boomerang shows the estimated position of a shooter: on the map, on the cTab of the side of the vehicle (as a red enemy marker), or both. cTab needs the CUP cTab addon of EW Compats. Without it the map is used.</English>
-            <French>Où le Boomerang affiche la position estimée d'un tireur : sur la carte, sur le cTab du camp du véhicule (comme marqueur ennemi rouge) ou les deux. cTab nécessite l'addon CUP cTab d'EW Compats. Sans lui, la carte est utilisée.</French>
-            <Spanish>Dónde muestra el Boomerang la posición estimada de un tirador: en el mapa, en el cTab del bando del vehículo (como marcador enemigo rojo) o en ambos. cTab necesita el addon CUP cTab de EW Compats. Sin él se usa el mapa.</Spanish>
-            <Polish>Gdzie Boomerang pokazuje szacowaną pozycję strzelca: na mapie, na cTab strony pojazdu (jako czerwony znacznik wroga) lub w obu miejscach. cTab wymaga dodatku CUP cTab z EW Compats. Bez niego używana jest mapa.</Polish>
-            <Russian>Где Boomerang показывает предполагаемое положение стрелка: на карте, на cTab стороны машины (как красный маркер противника) или в обоих местах. Для cTab нужен аддон CUP cTab из EW Compats. Без него используется карта.</Russian>
-            <German>Wo der Boomerang die geschätzte Position eines Schützen zeigt: auf der Karte, auf dem cTab der Seite des Fahrzeugs (als rote Feindmarkierung) oder auf beidem. cTab braucht das Addon CUP cTab von EW Compats. Ohne wird die Karte verwendet.</German>
-        </Key>
         <Key ID="STR_ewc_compat_cup_setting_missDistance">
             <English>Detection distance (m)</English>
             <French>Distance de détection (m)</French>
@@ -280,30 +304,6 @@
             <Polish>DUKE i Boomerang można włączyć tylko przy pracującym silniku i wyłączają się one po zatrzymaniu silnika.</Polish>
             <Russian>DUKE и Boomerang можно включить только при работающем двигателе, и они выключаются при остановке двигателя.</Russian>
             <German>DUKE und Boomerang lassen sich nur bei laufendem Motor einschalten und schalten sich ab, wenn der Motor ausgeht.</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_target_both">
-            <English>Map and cTab</English>
-            <French>Carte et cTab</French>
-            <Spanish>Mapa y cTab</Spanish>
-            <Polish>Mapa i cTab</Polish>
-            <Russian>Карта и cTab</Russian>
-            <German>Karte und cTab</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_target_ctab">
-            <English>cTab</English>
-            <French>cTab</French>
-            <Spanish>cTab</Spanish>
-            <Polish>cTab</Polish>
-            <Russian>cTab</Russian>
-            <German>cTab</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_target_map">
-            <English>Map</English>
-            <French>Carte</French>
-            <Spanish>Mapa</Spanish>
-            <Polish>Mapa</Polish>
-            <Russian>Карта</Russian>
-            <German>Karte</German>
         </Key>
     </Package>
 </Project>

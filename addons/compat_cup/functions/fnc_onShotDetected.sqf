@@ -3,7 +3,7 @@
  * Author: Andx
  * Shows a shot a Boomerang detected: a hint for the crew of the vehicle and, for everybody friendly to it, a map
  * marker at the estimated position of the shooter for a while. The marker is left out when the setting sends the
- * shots to cTab only (ewc_compat_cup_ctab adds the marker there).
+ * shots to cTab only (the cTab sub-addon adds the marker there).
  *
  * Arguments:
  * 0: Vehicle that heard the shot <OBJECT>
@@ -39,8 +39,8 @@ if (vehicle player == _vehicle) then {
     ]) splitString "|" joinString "<br/>");
 };
 
-// Without the cTab addon the map is the only place for a marker, whatever the setting says
-private _onMap = GVAR(markerTarget) != MARKER_TARGET_CTAB || {!GVAR(ctabLoaded)};
+// The setting belongs to the cTab sub-addon. Without cTab it does not exist and the map is the only place for a marker
+private _onMap = isNil QGVAR(ctab_markerTarget) || {GVAR(ctab_markerTarget) != MARKER_TARGET_CTAB};
 
 // Markers are local, so only the side of the vehicle gets to see where the shot came from
 if (_onMap && {GVAR(markerLifetime) > 0} && {(playerSide getFriend _side) >= 0.6}) then {

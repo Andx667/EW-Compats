@@ -19,7 +19,7 @@
  * None
  *
  * Example:
- * [_vehicle, [100, 200, 0], 3, 300, 90, 1, west] call ewc_compat_cup_ctab_fnc_addMarker
+ * [_vehicle, [100, 200, 0], 3, 300, 90, 1, west] call ewc_compat_cup_fnc_ctab_addMarker
  *
  * Public: No
  */
@@ -28,12 +28,12 @@ params [["_vehicle", objNull, [objNull]], ["_position", [0, 0, 0], [[]]], "", ""
 
 if (!isServer) exitWith {};
 
-private _lifetime = EGVAR(compat_cup,markerLifetime);
+private _lifetime = GVAR(markerLifetime);
 
 // Nothing to do when the setting keeps the shots on the map, or the markers are switched off
-if (EGVAR(compat_cup,markerTarget) == MARKER_TARGET_MAP || {_lifetime <= 0} || {isNull _vehicle}) exitWith {};
+if (GVAR(ctab_markerTarget) == MARKER_TARGET_MAP || {_lifetime <= 0} || {isNull _vehicle}) exitWith {};
 
-private _key = [_side] call FUNC(getEncryptionKey);
+private _key = [_side] call FUNC(ctab_getEncryptionKey);
 
 // Marker data of cTab: 2D position (cTab makes it ASL), icon, size, octant of movement, time and creator
 private _markerData = [
