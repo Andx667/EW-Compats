@@ -49,6 +49,22 @@
             <Russian>Как включается и выключается DUKE в технике. Без ACE колесо мыши доступно всегда.</Russian>
             <German>Wie der DUKE in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
         </Key>
+        <Key ID="STR_ewc_compat_cup_setting_allowBoth">
+            <English>Allow DUKE and Boomerang together</English>
+            <French>Autoriser DUKE et Boomerang ensemble</French>
+            <Spanish>Permitir DUKE y Boomerang a la vez</Spanish>
+            <Polish>Zezwól na jednoczesne DUKE i Boomerang</Polish>
+            <Russian>Разрешить DUKE и Boomerang одновременно</Russian>
+            <German>DUKE und Boomerang gleichzeitig erlauben</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_setting_allowBoth_tooltip">
+            <English>A vehicle with both antennas can run the DUKE and the Boomerang at the same time. Off: switching one on switches the other off.</English>
+            <French>Un véhicule avec les deux antennes peut utiliser le DUKE et le Boomerang en même temps. Désactivé : activer l'un désactive l'autre.</French>
+            <Spanish>Un vehículo con ambas antenas puede usar el DUKE y el Boomerang a la vez. Desactivado: encender uno apaga el otro.</Spanish>
+            <Polish>Pojazd z obiema antenami może używać DUKE i Boomerang jednocześnie. Wyłączone: włączenie jednego wyłącza drugi.</Polish>
+            <Russian>Машина с обеими антеннами может использовать DUKE и Boomerang одновременно. Выключено: включение одной системы выключает другую.</Russian>
+            <German>Ein Fahrzeug mit beiden Antennen kann DUKE und Boomerang gleichzeitig betreiben. Aus: Das Einschalten des einen schaltet das andere aus.</German>
+        </Key>
         <Key ID="STR_ewc_compat_cup_setting_requireEngine">
             <English>Require running engine</English>
             <French>Moteur en marche requis</French>

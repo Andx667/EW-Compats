@@ -2,7 +2,7 @@
 /*
  * Author: Andx
  * Server handler of a DUKE switch request. Checks that the DUKE can be switched as asked. DUKE and Boomerang
- * exclude each other, so switching the DUKE on tells the Boomerang to switch off.
+ * exclude each other unless the setting allows both, so switching the DUKE on tells the Boomerang to switch off.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>

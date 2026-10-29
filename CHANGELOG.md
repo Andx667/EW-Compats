@@ -19,6 +19,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
+- Compat CUP - Add the server setting *Allow DUKE and Boomerang together* (default off). When on, a CUP vehicle with both antennas can run the DUKE and the Boomerang at the same time
 - Compat RHS USAF Boomerang - Add the Boomerang shot finder to the RHS USAF M1245 SOCOM vehicles (`hide_boomerang`), with the same function as the CUP Boomerang. Does not need Crow's Electronic Warfare
 - Compat Boomerang - Registry `CfgEWC >> Boomerangs` with the animation sources of the antenna, so a compat addon only has to list them
 - Compat Boomerang - Show a silent hint to the crew when the Boomerang goes deaf after the own fire of the vehicle, and when it listens again
