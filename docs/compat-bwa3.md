@@ -29,6 +29,7 @@ The 40 m is the IED jammer radius hardcoded in BWA3. The falloff band is 1.5 tim
 
 ## Quirks
 
+- **The driver getting out does not stop a running CG13.** Arma stops the engine when the driver gets out, which would switch the CG13 off, but not when he ejects. The addon starts the engine again when it stops without a driver while the CG13 is on, so both ways of leaving behave the same. The engine keeps running until somebody stops it.
 - **Engine off means jammer off.** BWA3 switches the CG13 off when the engine stops, without any event. The addon watches the `Engine` event and switches the radio jammer off as well. It has to be registered on every client, because the event only fires where the vehicle is local.
 - **A triggered IED explodes when it leaves the jamming range.** The jammer does not defuse an IED, it only holds it back. If an IED is triggered while it is inside the 40 m, it stays inert, but it explodes as soon as the jammer is out of range, for example when the Dingo drives on or the engine is stopped. This is BWA3's own behaviour, this addon does not change it. Keep the distance until the IED is cleared.
 - **IEDs of CUP are not jammed.** BWA3 only jams `PipeBombBase` IEDs, which are the vanilla and ACE IEDs. The IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`) derive from `MineBase` and explode as normal, also with CUP and BWmod loaded together. This is BWA3's own behaviour, this addon does not change it. The CUP DUKE of [Compat CUP DUKE](compat-cup-duke.md) does jam them.
