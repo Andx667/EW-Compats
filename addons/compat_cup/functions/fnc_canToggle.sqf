@@ -10,13 +10,13 @@
  * 1: Unit <OBJECT>
  * 2: Action switches the system on <BOOL>
  * 3: Called by the scroll wheel action, not by ACE <BOOL>
- * 4: System, "duke" or "boomerang" <STRING>
+ * 4: System, "duke" <STRING>
  *
  * Return Value:
  * Show the action <BOOL>
  *
  * Example:
- * [_vehicle, player, true, true, "boomerang"] call ewc_compat_cup_fnc_canToggle
+ * [_vehicle, player, true, true, "duke"] call ewc_compat_cup_fnc_canToggle
  *
  * Public: No
  */

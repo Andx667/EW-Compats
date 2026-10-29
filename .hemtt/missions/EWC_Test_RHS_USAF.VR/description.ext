@@ -1,7 +1,7 @@
-onLoadName = "EWC Test - RHS DUKE";
-onLoadMission = "Test of the RHS DUKE radio and IED jamming.";
+onLoadName = "EWC Test - RHS USAF DUKE and Boomerang";
+onLoadMission = "Test of the RHS DUKE radio and IED jamming and the Boomerang shot finder.";
 author = "Andx";
-overviewText = "Test of the RHS DUKE radio and IED jamming.";
+overviewText = "Test of the RHS DUKE radio and IED jamming and the Boomerang shot finder.";
 
 enableDebugConsole = 1;
 respawn = "BASE";

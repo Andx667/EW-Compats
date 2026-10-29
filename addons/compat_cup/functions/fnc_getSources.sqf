@@ -2,17 +2,17 @@
 /*
  * Author: Andx
  * Returns the animation sources of a vehicle that belong to the antennas of a CUP system.
- * CUP's DUKE and Boomerang only exist as models, so this is what marks a vehicle as equipped.
+ * CUP's DUKE only exists as a model, so this is what marks a vehicle as equipped.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
- * 1: System, "duke" or "boomerang" <STRING> (default: "duke")
+ * 1: System, "duke" <STRING> (default: "duke")
  *
  * Return Value:
  * Animation sources, empty if the vehicle does not have the system <ARRAY>
  *
  * Example:
- * [_vehicle, "boomerang"] call ewc_compat_cup_fnc_getSources
+ * [_vehicle, "duke"] call ewc_compat_cup_fnc_getSources
  *
  * Public: No
  */
@@ -24,7 +24,6 @@ private _systems = GVAR(sourceCache) get _class;
 
 if (isNil "_systems") then {
     private _duke = [];
-    private _boomerang = [];
     private _config = configFile >> "CfgVehicles" >> _class;
 
     // Classes inherited from a parent are not listed as children, so every class up the chain has to be read.
@@ -37,16 +36,12 @@ if (isNil "_systems") then {
             if (_lower in DUKE_SOURCES) then {
                 _duke pushBackUnique _name;
             };
-
-            if (_lower in BOOMERANG_SOURCES) then {
-                _boomerang pushBackUnique _name;
-            };
         } forEach ("isClass _x" configClasses (_config >> "AnimationSources"));
 
         _config = inheritsFrom _config;
     };
 
-    _systems = createHashMapFromArray [[SYSTEM_DUKE, _duke], [SYSTEM_BOOMERANG, _boomerang]];
+    _systems = createHashMapFromArray [[SYSTEM_DUKE, _duke]];
     GVAR(sourceCache) set [_class, _systems];
 };
 

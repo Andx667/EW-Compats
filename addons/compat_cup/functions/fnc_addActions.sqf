@@ -7,13 +7,13 @@
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
- * 1: System, "duke" or "boomerang" <STRING>
+ * 1: System, "duke" <STRING>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_vehicle, "boomerang"] call ewc_compat_cup_fnc_addActions
+ * [_vehicle, "duke"] call ewc_compat_cup_fnc_addActions
  *
  * Public: No
  */

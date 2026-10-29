@@ -5,13 +5,13 @@
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
- * 1: System, "duke" or "boomerang" <STRING>
+ * 1: System, "duke" <STRING>
  *
  * Return Value:
  * At least one antenna shown <BOOL>
  *
  * Example:
- * [_vehicle, "boomerang"] call ewc_compat_cup_fnc_isShown
+ * [_vehicle, "duke"] call ewc_compat_cup_fnc_isShown
  *
  * Public: No
  */

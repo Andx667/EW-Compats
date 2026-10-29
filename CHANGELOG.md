@@ -13,6 +13,16 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Compat RHS USAF Boomerang - Add the Boomerang shot finder to the RHS USAF M1245 SOCOM vehicles (`hide_boomerang`), with the same function as the CUP Boomerang. Does not need Crow's Electronic Warfare
+- Compat Boomerang - Registry `CfgEWC >> Boomerangs` with the animation sources of the antenna, so a compat addon only has to list them
+
+### Changed
+
+- Compat Boomerang - Move the Boomerang of `compat_cup_boomerang` into the common addon `compat_boomerang`, shared by CUP and RHS USAF. `compat_cup_boomerang` and `compat_rhs_usaf_boomerang` only register their vehicles. The Boomerang has its own switch setting (*Boomerang switch*) and engine requirement, and one set of settings, variables and events for both mods (`ewc_compat_cup_boomerang_*` became `ewc_compat_boomerang_*`), so saved values of the old Boomerang settings are not taken over
+- Compat CUP - The switch setting and the engine requirement of `compat_cup` are for the DUKE only again, the label of the setting is *DUKE switch* (the Boomerang has its own)
+
 ## [1.0.0] - 2026-10-29
 
 ### Added
