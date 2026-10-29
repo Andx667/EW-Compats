@@ -2,7 +2,7 @@
 params ["_vehicle"];
 
 private _duke = _vehicle getVariable ["ewc_compat_cup_duke_on", false];
-private _boomerang = _vehicle getVariable ["ewc_compat_boomerang_on", false];
-private _deaf = (_vehicle getVariable ["ewc_compat_boomerang_deafUntil", 0]) > CBA_missionTime;
+private _boomerang = _vehicle getVariable ["ewc_boomerang_on", false];
+private _deaf = (_vehicle getVariable ["ewc_boomerang_deafUntil", 0]) > CBA_missionTime;
 
 [format ["DUKE %1 | Boomerang %2%3 | engine %4", ["off", "ON"] select _duke, ["off", "ON"] select _boomerang, ["", " (deaf)"] select (_boomerang && _deaf), ["off", "on"] select isEngineOn _vehicle], _duke || _boomerang]

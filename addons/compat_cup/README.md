@@ -1,6 +1,6 @@
 # Compat CUP
 
-CUP models two systems on some of its vehicles and gives them no function: the **DUKE** antenna and the **Boomerang** shot finder. `compat_cup_duke` makes the DUKE work and builds on this addon, the Boomerang is the common `compat_boomerang` with the CUP vehicles registered by `compat_cup_boomerang`. This addon has no function of its own and does not need Crow's Electronic Warfare.
+CUP models two systems on some of its vehicles and gives them no function: the **DUKE** antenna and the **Boomerang** shot finder. `compat_cup_duke` makes the DUKE work and builds on this addon, the Boomerang is the common `boomerang` with the CUP vehicles registered by `compat_cup_boomerang`. This addon has no function of its own and does not need Crow's Electronic Warfare.
 
 ## How it works
 
@@ -20,11 +20,11 @@ CUP models two systems on some of its vehicles and gives them no function: the *
   | Name | Provided by the system addon |
   |---|---|
   | `ewc_compat_cup_<system>_on` | Public variable on the vehicle, the state of the system |
-  | `ewc_compat_cup_<system>_fnc_canActivate` | Can the system be switched on, takes the vehicle |
+  | `ewc_compat_cup_fnc_<system>_canActivate` | Can the system be switched on, takes the vehicle |
   | `ewc_compat_cup_<system>_toggle` | Server event the actions send, with the vehicle and the wanted state |
   | `STR_ewc_compat_cup_<system>_activate` / `_deactivate` | Titles of the actions |
 
-- The DUKE and the Boomerang exclude each other unless the server setting `ewc_compat_cup_allowBoth` is on. A system tells the other one with the local server event `ewc_compat_cup_systemOn` when it is switched on, and the other one switches off if it is loaded (`compat_cup_boomerang` passes the event to and from `compat_boomerang`).
+- The DUKE and the Boomerang exclude each other unless the server setting `ewc_compat_cup_allowBoth` is on. A system tells the other one with the local server event `ewc_compat_cup_systemOn` when it is switched on, and the other one switches off if it is loaded (`compat_cup_boomerang` passes the event to and from `boomerang`).
 
 ## Functions
 

@@ -4,7 +4,7 @@
 #include "common.hpp"
 
 // Every vehicle with a DUKE or a Boomerang antenna, one per model so camouflage variants are not repeated.
-// The Boomerang source is in the base class of a family, so the whole inheritance chain is read (like compat_boomerang does)
+// The Boomerang source is in the base class of a family, so the whole inheritance chain is read (like boomerang does)
 private _hasBoomerang = {
     private _config = _this;
     private _found = false;

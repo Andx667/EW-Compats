@@ -13,6 +13,11 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Changed
+
+- Compat CUP, Compat RHS USAF - The addons `compat_cup_duke`, `compat_cup_boomerang`, `compat_rhs_usaf_boomerang` and the DUKE of `compat_rhs_usaf` are sub-addons now, as in ACE: folders `compat_cup_duke`, `compat_cup_boomerang`, `compat_rhs_usaf_duke` and `compat_rhs_usaf_boomerang` of `compat_cup` and `compat_rhs_usaf`, each with a `config.cpp` of its own, so a mod has one PBO. The patch names stay (`ewc_compat_cup_duke`...), and a sub-addon is still skipped alone when its dependencies are missing. The functions are named `ewc_compat_cup_fnc_duke_*` and `ewc_compat_rhs_usaf_fnc_duke_*` instead of `ewc_compat_cup_duke_fnc_*`. Settings, variables and events keep their names
+- Boomerang - Rename the addon `compat_boomerang` to `boomerang`, as it is the Boomerang itself and the compat is in `compat_cup_boomerang` and `compat_rhs_usaf_boomerang`. The patch is `ewc_boomerang`, the functions, variables, events, settings and strings are named `ewc_boomerang_*` instead of `ewc_compat_boomerang_*`, so the saved values of its settings are not taken over. The cTab sub-addon is the folder `boomerang_ctab`
+
 ## [1.2.0] - 2026-10-29
 
 ### Fixed

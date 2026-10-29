@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="boomerang">
+        <Key ID="STR_ewc_boomerang_activate">
+            <English>Activate Boomerang</English>
+            <French>Activer le Boomerang</French>
+            <Spanish>Activar Boomerang</Spanish>
+            <Polish>Włącz Boomerang</Polish>
+            <Russian>Включить Boomerang</Russian>
+            <German>Boomerang aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_category">
+            <English>Boomerang</English>
+            <French>Boomerang</French>
+            <Spanish>Boomerang</Spanish>
+            <Polish>Boomerang</Polish>
+            <Russian>Boomerang</Russian>
+            <German>Boomerang</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_deactivate">
+            <English>Deactivate Boomerang</English>
+            <French>Désactiver le Boomerang</French>
+            <Spanish>Desactivar Boomerang</Spanish>
+            <Polish>Wyłącz Boomerang</Polish>
+            <Russian>Выключить Boomerang</Russian>
+            <German>Boomerang deaktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_elevation_high">
+            <English>elevated</English>
+            <French>en hauteur</French>
+            <Spanish>elevado</Spanish>
+            <Polish>wyżej</Polish>
+            <Russian>выше</Russian>
+            <German>erhöht</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_elevation_level">
+            <English>level</English>
+            <French>de niveau</French>
+            <Spanish>a nivel</Spanish>
+            <Polish>na tym samym poziomie</Polish>
+            <Russian>на одном уровне</Russian>
+            <German>auf gleicher Höhe</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_elevation_low">
+            <English>below</English>
+            <French>en contrebas</French>
+            <Spanish>por debajo</Spanish>
+            <Polish>niżej</Polish>
+            <Russian>ниже</Russian>
+            <German>tiefer</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_hint">
+            <English>Boomerang: shot detected|%1 o'clock|~%2 m|bearing %3°|%4</English>
+            <French>Boomerang : tir détecté|%1 heures|~%2 m|azimut %3°|%4</French>
+            <Spanish>Boomerang: disparo detectado|a las %1|~%2 m|azimut %3°|%4</Spanish>
+            <Polish>Boomerang: wykryto strzał|godz. %1|~%2 m|azymut %3°|%4</Polish>
+            <Russian>Boomerang: обнаружен выстрел|%1 часов|~%2 м|азимут %3°|%4</Russian>
+            <German>Boomerang: Schuss erkannt|%1 Uhr|ca. %2 m|Peilung %3°|%4</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_hint_deaf">
+            <English>Boomerang deaf: own fire</English>
+            <French>Boomerang sourd : tir du véhicule</French>
+            <Spanish>Boomerang sordo: fuego propio</Spanish>
+            <Polish>Boomerang ogłuszony: ogień własny</Polish>
+            <Russian>Boomerang оглушён: свой огонь</Russian>
+            <German>Boomerang taub: eigenes Feuer</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_hint_listening">
+            <English>Boomerang listening</English>
+            <French>Boomerang à l'écoute</French>
+            <Spanish>Boomerang a la escucha</Spanish>
+            <Polish>Boomerang nasłuchuje</Polish>
+            <Russian>Boomerang слушает</Russian>
+            <German>Boomerang hört wieder zu</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_markerText">
+            <English>Shot</English>
+            <French>Tir</French>
+            <Spanish>Disparo</Spanish>
+            <Polish>Strzał</Polish>
+            <Russian>Выстрел</Russian>
+            <German>Schuss</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_mode_ace">
+            <English>ACE self-interaction</English>
+            <French>Auto-interaction ACE</French>
+            <Spanish>Autointeracción de ACE</Spanish>
+            <Polish>Samointerakcja ACE</Polish>
+            <Russian>Самовзаимодействие ACE</Russian>
+            <German>ACE-Selbstinteraktion</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_mode_both">
+            <English>Both</English>
+            <French>Les deux</French>
+            <Spanish>Ambos</Spanish>
+            <Polish>Oba</Polish>
+            <Russian>Оба</Russian>
+            <German>Beides</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_mode_scroll">
+            <English>Scroll wheel</English>
+            <French>Molette de la souris</French>
+            <Spanish>Rueda del ratón</Spanish>
+            <Polish>Kółko myszy</Polish>
+            <Russian>Колесо мыши</Russian>
+            <German>Mausrad</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_actionMode">
+            <English>Boomerang switch</English>
+            <French>Commande du Boomerang</French>
+            <Spanish>Control del Boomerang</Spanish>
+            <Polish>Przełącznik Boomerang</Polish>
+            <Russian>Переключатель Boomerang</Russian>
+            <German>Boomerang-Schalter</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_actionMode_tooltip">
+            <English>How the Boomerang is switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
+            <French>Comment le Boomerang est activé et désactivé dans les véhicules. Sans ACE, la molette de la souris est toujours disponible.</French>
+            <Spanish>Cómo se enciende y apaga el Boomerang en los vehículos. Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
+            <Polish>Sposób włączania i wyłączania Boomerang w pojazdach. Bez ACE zawsze dostępne jest kółko myszy.</Polish>
+            <Russian>Как включается и выключается Boomerang в технике. Без ACE колесо мыши доступно всегда.</Russian>
+            <German>Wie der Boomerang in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_enable">
+            <English>Enable Boomerang</English>
+            <French>Activer le Boomerang</French>
+            <Spanish>Activar Boomerang</Spanish>
+            <Polish>Włącz Boomerang</Polish>
+            <Russian>Включить Boomerang</Russian>
+            <German>Boomerang aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_enable_tooltip">
+            <English>If disabled, vehicles get no Boomerang switch and active Boomerangs switch off.</English>
+            <French>Si désactivé, les véhicules n'ont plus de commande du Boomerang et les Boomerang actifs s'éteignent.</French>
+            <Spanish>Si está desactivado, los vehículos no tienen control del Boomerang y los Boomerang activos se apagan.</Spanish>
+            <Polish>Jeśli wyłączone, pojazdy nie mają przełącznika Boomerang, a aktywne Boomerangi się wyłączają.</Polish>
+            <Russian>Если выключено, у техники нет переключателя Boomerang, а активные Boomerang выключаются.</Russian>
+            <German>Wenn deaktiviert, erhalten Fahrzeuge keinen Boomerang-Schalter und aktive Boomerangs schalten sich ab.</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_friendlyFire">
+            <English>Report friendly fire</English>
+            <French>Signaler les tirs amis</French>
+            <Spanish>Notificar fuego amigo</Spanish>
+            <Polish>Zgłaszaj ogień własny</Polish>
+            <Russian>Сообщать о дружественном огне</Russian>
+            <German>Eigenen Beschuss melden</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_friendlyFire_tooltip">
+            <English>The Boomerang also reports shots from friendly units, like the real system. If disabled, only shots from units that are not friendly to the vehicle are reported.</English>
+            <French>Le Boomerang signale aussi les tirs des unités amies, comme le vrai système. Si désactivé, seuls les tirs d'unités non amies du véhicule sont signalés.</French>
+            <Spanish>El Boomerang también notifica los disparos de unidades amigas, como el sistema real. Si está desactivado, solo se notifican los disparos de unidades que no son amigas del vehículo.</Spanish>
+            <Polish>Boomerang zgłasza także strzały jednostek sojuszniczych, tak jak prawdziwy system. Jeśli wyłączone, zgłaszane są tylko strzały jednostek niesojuszniczych względem pojazdu.</Polish>
+            <Russian>Boomerang сообщает и о выстрелах дружественных юнитов, как настоящая система. Если выключено, сообщается только о выстрелах юнитов, не дружественных технике.</Russian>
+            <German>Der Boomerang meldet auch Schüsse befreundeter Einheiten, wie das echte System. Wenn deaktiviert, werden nur Schüsse von Einheiten gemeldet, die dem Fahrzeug nicht freundlich gesinnt sind.</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_markerLifetime">
+            <English>Marker lifetime (s)</English>
+            <French>Durée du marqueur (s)</French>
+            <Spanish>Duración del marcador (s)</Spanish>
+            <Polish>Czas trwania znacznika (s)</Polish>
+            <Russian>Время жизни маркера (с)</Russian>
+            <German>Dauer der Markierung (s)</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_markerLifetime_tooltip">
+            <English>How long the marker of a detected shooter stays. 0 disables the markers. Set per player for the map, cTab markers use the value of the server.</English>
+            <French>Durée d'affichage du marqueur d'un tireur détecté. 0 désactive les marqueurs. Réglage propre à chaque joueur pour la carte, les marqueurs cTab utilisent la valeur du serveur.</French>
+            <Spanish>Cuánto permanece el marcador de un tirador detectado. 0 desactiva los marcadores. Se ajusta por jugador para el mapa, los marcadores de cTab usan el valor del servidor.</Spanish>
+            <Polish>Jak długo widoczny jest znacznik wykrytego strzelca. 0 wyłącza znaczniki. Dla mapy ustawienie dla każdego gracza, znaczniki cTab używają wartości serwera.</Polish>
+            <Russian>Как долго остаётся маркер обнаруженного стрелка. 0 отключает маркеры. Для карты настраивается для каждого игрока, маркеры cTab используют значение сервера.</Russian>
+            <German>Wie lange die Markierung eines erkannten Schützen bleibt. 0 deaktiviert die Markierungen. Für die Karte pro Spieler einstellbar, cTab-Markierungen nutzen den Wert des Servers.</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_markerTarget">
+            <English>Show shots</English>
+            <French>Afficher les tirs</French>
+            <Spanish>Mostrar disparos</Spanish>
+            <Polish>Pokaż strzały</Polish>
+            <Russian>Показывать выстрелы</Russian>
+            <German>Schüsse anzeigen</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_setting_markerTarget_tooltip">
+            <English>Where a detected shot is marked: not at all, on the map, or on cTab (only with cTab loaded). The hint for the crew is not affected.</English>
+            <French>Où un tir détecté est marqué : nulle part, sur la carte ou sur cTab (seulement avec cTab chargé). L'indication pour l'équipage n'est pas concernée.</French>
+            <Spanish>Dónde se marca un disparo detectado: en ningún sitio, en el mapa o en cTab (solo con cTab cargado). El aviso para la tripulación no se ve afectado.</Spanish>
+            <Polish>Gdzie oznaczany jest wykryty strzał: nigdzie, na mapie lub na cTab (tylko z załadowanym cTab). Nie dotyczy komunikatu dla załogi.</Polish>
+            <Russian>Где отмечается обнаруженный выстрел: нигде, на карте или на cTab (только при загруженном cTab). Подсказка для экипажа не меняется.</Russian>
+            <German>Wo ein erkannter Schuss markiert wird: nirgends, auf der Karte oder auf cTab (nur mit geladenem cTab). Der Hinweis für die Besatzung bleibt davon unberührt.</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_target_ctab">
+            <English>cTab</English>
+            <French>cTab</French>
+            <Spanish>cTab</Spanish>
+            <Polish>cTab</Polish>
+            <Russian>cTab</Russian>
+            <German>cTab</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_target_map">
+            <English>Map</English>
+            <French>Carte</French>
+            <Spanish>Mapa</Spanish>
+            <Polish>Mapa</Polish>
+            <Russian>Карта</Russian>
+            <German>Karte</German>
+        </Key>
+        <Key ID="STR_ewc_boomerang_target_none">
+            <English>Nothing</English>
+            <French>Rien</French>
+            <Spanish>Nada</Spanish>
+            <Polish>Nic</Polish>
+            <Russian>Ничего</Russian>
+            <German>Nichts</German>
+        </Key>
+    </Package>
+</Project>

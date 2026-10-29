@@ -1,0 +1,12 @@
+PREP_SUB(duke,canActivate);
+PREP_SUB(duke,getBlockReason);
+PREP_SUB(duke,getRadius);
+PREP_SUB(duke,getRangeScale);
+PREP_SUB(duke,handleToggle);
+PREP_SUB(duke,initVehicle);
+PREP_SUB(duke,jamLoop);
+PREP_SUB(duke,registerJammer);
+PREP_SUB(duke,releaseMines);
+PREP_SUB(duke,removeCrowsActions);
+PREP_SUB(duke,setJammer);
+PREP_SUB(duke,updateMines);

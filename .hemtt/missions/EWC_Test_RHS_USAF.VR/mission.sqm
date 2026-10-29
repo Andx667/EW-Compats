@@ -13,14 +13,17 @@ class EditorData
 	class Camera
 	{
 		pos[]={0,8,-20};
-		dir[]={0,-0.2,0.98};
-		up[]={0,0.98,0.2};
-		aside[]={1,0,0};
+		dir[]={-0.38475788,-0.3496581,0.85447228};
+		up[]={-0.14356503,0.93708634,0.31882992};
+		aside[]={0.91183323,4.1152816e-08,0.41058707};
 	};
 };
 binarizationWanted=0;
-sourceName="EWC_Test_RHS_USAF";
-addons[]={"A3_Characters_F"};
+sourceName="ewc_test_rhs_usaf";
+addons[]=
+{
+	"A3_Characters_F"
+};
 class AddonsMetaData
 {
 	class List
@@ -53,6 +56,8 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
 		year=2035;
 		month=6;
 		day=15;
@@ -76,23 +81,67 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={-20,0,10};
+						position[]={-20,5.0014391,10};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=1;
 					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male10ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.95999998;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={-22,0,10};
+						position[]={-22,5.0014391,10};
 					};
 					side="West";
 					flags=5;
