@@ -89,3 +89,12 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     [0, 120, 30, 0],
     false
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(markerTarget),
+    "LIST",
+    [LLSTRING(setting_markerTarget), LLSTRING(setting_markerTarget_tooltip)],
+    _category,
+    [[MARKER_TARGET_MAP, MARKER_TARGET_CTAB, MARKER_TARGET_BOTH], [LLSTRING(target_map), LLSTRING(target_ctab), LLSTRING(target_both)], MARKER_TARGET_BOTH],
+    true
+] call CBA_fnc_addSetting;

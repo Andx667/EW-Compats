@@ -48,7 +48,7 @@ The shots of friendly units are reported too, like the real system does. A setti
 An active Boomerang reports a heard bullet:
 
 - The **crew** gets a hint with one line per information (shot detected, 3 o'clock, ~300 m, bearing 87°, level). It makes no sound.
-- Everybody **friendly to the vehicle** gets a red map marker at the estimated position of the shooter. It disappears after 30 seconds. The marker is local, the enemy does not see it.
+- Everybody **friendly to the vehicle** gets a red marker at the estimated position of the shooter, on the map, on cTab or both (setting *Show shots on*). It disappears after 30 seconds. The map marker is local, the enemy does not see it. On cTab it is a red enemy marker of the side of the vehicle, so everybody with that side's cTab sees it, with the usual cTab notification. This needs [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) and the addon *Compat CUP cTab* of EW Compats, without it the map is used.
 - Reports are not exact, like the real system: the bearing is off by up to 2.5° and the range by up to 10 %.
 - A burst is reported once per second, not bullet by bullet.
 
@@ -65,7 +65,8 @@ An active Boomerang reports a heard bullet:
 | Report friendly fire | on | Boomerang. Set by the server |
 | Detection distance | 30 m | Boomerang, for supersonic bullets. Set by the server |
 | Lockout after own fire | 5 s | Boomerang. Set by the server |
-| Marker lifetime | 30 s | Boomerang. 0 turns the markers off. Per player |
+| Marker lifetime | 30 s | Boomerang. 0 turns the markers off. Per player for the map, cTab markers use the value of the server |
+| Show shots on | Map and cTab | Boomerang. Map, cTab or both. cTab needs the addon Compat CUP cTab. Set by the server |
 
 ## Quirks
 

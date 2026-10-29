@@ -1,0 +1,2 @@
+PREP(addMarker);
+PREP(getEncryptionKey);

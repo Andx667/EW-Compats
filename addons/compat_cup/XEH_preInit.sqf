@@ -25,6 +25,9 @@ GVAR(loopHandle) = -1;
 
 GVAR(aceLoaded) = isClass (configFile >> "CfgPatches" >> "ace_interact_menu");
 
+// The addon that shows shots on cTab. Without it the map is the only place for a marker
+GVAR(ctabLoaded) = isClass (configFile >> "CfgPatches" >> "ewc_compat_cup_ctab");
+
 #include "initSettings.inc.sqf"
 
 ADDON = true;
