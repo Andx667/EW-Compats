@@ -79,7 +79,7 @@ nav:
   - Compat CUP:
       - Overview: compat-cup.md
       - DUKE: compat-cup-duke.md
-  - Compat Boomerang: compat-boomerang.md
+  - Boomerang: boomerang.md
   - Compat RHS:
       - USAF DUKE: compat-rhs-usaf.md
       - AFRF: compat-rhs-afrf.md

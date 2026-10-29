@@ -4,7 +4,7 @@ Parent addon of the RHS USAF sub-addons. Each sub-addon is a folder with a `conf
 
 | Sub-addon | What it does |
 |---|---|
-| [`duke`](duke/README.md) | The radio jammer follows the DUKE switch of RHS. Needs Crow's Electronic Warfare |
-| [`boomerang`](boomerang/README.md) | Gives the Boomerang of [Compat Boomerang](../compat_boomerang/README.md) to the M1245 SOCOM vehicles |
+| [`compat_rhs_usaf_duke`](compat_rhs_usaf_duke/README.md) | The radio jammer follows the DUKE switch of RHS. Needs Crow's Electronic Warfare |
+| [`compat_rhs_usaf_boomerang`](compat_rhs_usaf_boomerang/README.md) | Gives the Boomerang of [Boomerang](../boomerang/README.md) to the M1245 SOCOM vehicles |
 
 This addon has no code of its own. It holds the stringtable (the settings category and the strings of the sub-addons) and the patch the sub-addons build on.

@@ -4,7 +4,7 @@
 #include "\z\ewc\addons\main\script_mod.hpp"
 #include "\z\ewc\addons\main\script_macros.hpp"
 
-// The system CUP only models and this addon switches. Its function is in the sub-addon duke (the Boomerang of CUP is in compat_boomerang)
+// The system CUP only models and this addon switches. Its function is in the sub-addon duke (the Boomerang of CUP is in boomerang)
 #define SYSTEM_DUKE "duke"
 
 // Raised when one of the two systems is switched on, the other one switches off. Used by both sub-addons
