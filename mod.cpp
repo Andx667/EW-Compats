@@ -10,5 +10,5 @@ action			= "https://github.com/Andx667/EW-Compats";	// Website URL, that can be 
 overview		= "Electronic warfare compatibility: BFT jamming for cTab, Dingo CG13 and RHS DUKE radio jammers via Crow's Electronic Warfare.";	// Supports structured text
 hideName		= 0;						// Hide the extension name
 hidePicture		= 0;						// Hide the extension menu
-dlcColor[]		= { 0.23, 0.39, 0.30, 1 };	// Color used for DLC stripes and backgrounds (RGBA)
+dlcColor[]		= { 1.0, 0.839, 0.302, 1 };	// Color used for DLC stripes and backgrounds (RGBA)
 logoSmall		= "img\icon_ca.paa";			// Display in creative lists, next to the entities added by the mod

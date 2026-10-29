@@ -1,15 +1,21 @@
-/* EW Compats brand color: signal teal. Header text is fixed white, so light mode
-   uses a darkened teal for contrast; dark mode gets the brighter accent. */
+/* EW Compats brand color: Zitronengelb (RAL 1018), the Waffenfarbe of the Bundeswehr Fernmelde- and
+   Elektronische Kampfführung troops. It is a light color, so the header text is near black
+   (15:1 on the header) instead of the fixed white of the theme (1.4:1). Links get a dark yellow on the
+   light page (6.8:1 on white) and the bright yellow on the dark page (11:1 on the page background). */
 :root {
-  --md-primary-fg-color: #00695C;
-  --md-primary-fg-color--light: #26A69A;
-  --md-primary-fg-color--dark: #004D40;
+  --md-primary-fg-color: #FFD64D;
+  --md-primary-fg-color--light: #FFE183;
+  --md-primary-fg-color--dark: #E6B800;
+  --md-primary-bg-color: #1A1A1A;
+  --md-primary-bg-color--light: #4A3E00;
 }
 
 [data-md-color-scheme="default"] {
-  --md-accent-fg-color: #00695C;
+  --md-accent-fg-color: #5C4600;
+  --md-typeset-a-color: #735700;
 }
 
 [data-md-color-scheme="slate"] {
-  --md-accent-fg-color: #26A69A;
+  --md-accent-fg-color: #FFE58A;
+  --md-typeset-a-color: #FFD64D;
 }
