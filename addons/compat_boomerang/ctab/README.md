@@ -4,7 +4,7 @@ Sub-addon of [Compat Boomerang](../README.md): shows the shots a Boomerang detec
 
 ## Usage
 
-The CBA setting **Show shots on** (set by the server) decides where a detected shot is shown: on the **map**, on **cTab**, or **both** (default). The setting only exists when cTab is loaded, without cTab the map is used. The hint for the crew is not affected.
+The CBA setting **Show shots** of Compat Boomerang (set by the server) decides where a detected shot is shown: **nothing**, on the **map** (default) or on **cTab**. cTab is only an option when it is loaded, which is when this sub-addon exists. The hint for the crew is not affected.
 
 ## Structure
 

@@ -4,8 +4,6 @@ SUBADDON = false;
 
 #include "XEH_PREP.hpp"
 
-#include "initSettings.inc.sqf"
-
 // Encryption key -> the cTab markers of detected shots that are still there, each [ID, position, expiry time]. Only the
 // server has it. A new shot close to one is merged into it
 GVAR(ctab_shotMarkers) = createHashMap;

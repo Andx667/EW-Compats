@@ -5,7 +5,6 @@ class CfgEWC {
             value = 1;
             radius = ECM_EFFECTIVE_RADIUS;
             falloffFactor = ECM_FALLOFF_FACTOR;
-            enableVariable = QGVAR(enableCG13);
         };
     };
 };

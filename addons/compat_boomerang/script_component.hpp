@@ -39,10 +39,10 @@
 // Seconds a marker may outlive its expiry time before it is removed, so a timer that fires a hair early does not reschedule
 #define MARKER_EXPIRY_TOLERANCE 0.1
 
-// Where the Boomerang shows the position of a shooter (the setting is in the cTab sub-addon, folder ctab)
-#define MARKER_TARGET_MAP 0
-#define MARKER_TARGET_CTAB 1
-#define MARKER_TARGET_BOTH 2
+// Where the Boomerang shows the position of a shooter. cTab is only offered when it is loaded, see the sub-addon in folder ctab
+#define MARKER_TARGET_NONE 0
+#define MARKER_TARGET_MAP 1
+#define MARKER_TARGET_CTAB 2
 
 // Seconds between two checks of an active Boomerang (antenna, engine, vehicle)
 #define LOOP_INTERVAL 1

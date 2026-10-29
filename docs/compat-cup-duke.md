@@ -25,13 +25,41 @@ Most vehicles have one DUKE antenna and are either on full range or off. The M12
 
 ## Settings
 
-| Setting | Default | |
-|---|---|---|
-| Enable CUP DUKE | on | If off, no DUKE switch and running DUKEs switch off. Set by the server |
-| Jamming radius | 50 m | For radios and IEDs. Set by the server |
-| Jam IEDs | on | Set by the server |
+### `ewc_compat_cup_duke_enable`
 
-The switch and the engine requirement are settings of `compat_cup`, see [Compat CUP](compat-cup.md#settings).
+- Name: Enable CUP DUKE
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: if off, there is no DUKE switch and running DUKEs switch off.
+
+### `ewc_compat_cup_duke_radius`
+
+- Name: Jamming radius
+- Type: `SLIDER`
+- Range: `10` to `200` m
+- Default: `50`
+- Set by: the server
+- Purpose: full jamming radius for radios and IEDs.
+
+### `ewc_compat_cup_duke_jamMines`
+
+- Name: Jam IEDs
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: jam IEDs in range.
+
+### Complete example
+
+``` cpp
+// cba_settings.sqf
+force ewc_compat_cup_duke_enable = false; // default: true
+force ewc_compat_cup_duke_radius = 80; // default: 50
+force ewc_compat_cup_duke_jamMines = false; // default: true
+```
+
+The switch is a setting of `compat_cup`, see [Compat CUP](compat-cup.md#settings).
 
 ## Quirks
 

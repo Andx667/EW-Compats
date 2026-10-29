@@ -43,7 +43,6 @@ CUP models two systems on some of its vehicles and gives them no function: the *
 | Setting | Default | |
 |---|---|---|
 | DUKE switch | Scroll wheel | Scroll wheel, ACE self-interaction or both. Per client. Without ACE the scroll wheel is always used |
-| Require running engine | on | Set by the server |
 | Allow DUKE and Boomerang together | off | Set by the server. Off: switching one system on switches the other off |
 
 ## Limitations

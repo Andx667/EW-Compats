@@ -3,7 +3,7 @@
  * Author: Andx
  * Enables the simulation of the IEDs around a vehicle whose DUKE went offline. rhs_duke.sqf releases the IEDs it holds
  * with a plain enableSimulationGlobal at its end, which does nothing for IEDs that are not local to the machine of
- * the gunner, so they would stay disabled. IEDs another jammer still holds are left alone.
+ * the gunner, so they would stay disabled. IEDs another running DUKE still holds are left alone.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -24,10 +24,9 @@ if (isNull _vehicle) exitWith {};
 // The DUKE was switched on again meanwhile and holds its IEDs
 if (_vehicle getVariable [DUKE_STATE_VAR, false]) exitWith {};
 
-// Other jammers that disable IEDs: running RHS DUKEs, CG13 and CUP DUKEs, each with its range
-private _others = (_vehicle nearEntities [["LandVehicle", "Air", "Ship"], 150]) select {
-    _x != _vehicle
-    && {(_x getVariable [DUKE_STATE_VAR, false]) || {_x getVariable ["BWA3_Dingo2_ECM_on", false]} || {_x getVariable ["ewc_compat_cup_duke_on", false]}}
+// Other running DUKEs
+private _others = (_vehicle nearEntities [["LandVehicle"], DUKE_EFFECTIVE_RADIUS * 2]) select {
+    _x != _vehicle && {_x getVariable [DUKE_STATE_VAR, false]}
 };
 
 {
@@ -37,7 +36,10 @@ private _others = (_vehicle nearEntities [["LandVehicle", "Air", "Ship"], 150]) 
         !simulationEnabled _mine
         && {_mine isKindOf "PipeBombBase"}
         && {_others findIf {
-            _mine distance _x < ([DUKE_EFFECTIVE_RADIUS, ECM_EFFECTIVE_RADIUS] select (_x getVariable ["BWA3_Dingo2_ECM_on", false]))
+            // The range a DUKE has left with one antenna destroyed
+            private _hit = ((_x getHitPointDamage "HitDuke1") >= DUKE_ANTENNA_DESTROYED) || {(_x getHitPointDamage "HitDuke2") >= DUKE_ANTENNA_DESTROYED};
+
+            _mine distance _x < DUKE_EFFECTIVE_RADIUS * ([1, DUKE_SINGLE_ANTENNA_SCALE] select _hit)
         } == -1}
     ) then {
         _mine enableSimulationGlobal true;

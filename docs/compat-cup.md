@@ -17,11 +17,30 @@ By default a vehicle can only run the DUKE or the Boomerang. Switching one on sw
 
 ## Settings
 
-| Setting | Default | |
-|---|---|---|
-| DUKE switch | Scroll wheel | Scroll wheel, ACE self-interaction or both. Without ACE the scroll wheel is always used. Per player |
-| Require running engine | on | Set by the server |
-| Allow DUKE and Boomerang together | off | Set by the server. Off: switching one system on switches the other off |
+### `ewc_compat_cup_actionMode`
+
+- Name: DUKE switch
+- Type: `LIST`
+- Values: `0` scroll wheel, `1` ACE self-interaction, `2` both
+- Default: `0`
+- Set by: each player (client setting)
+- Purpose: how the DUKE is switched. Without ACE the scroll wheel is always used.
+
+### `ewc_compat_cup_allowBoth`
+
+- Name: Allow DUKE and Boomerang together
+- Type: `CHECKBOX`
+- Default: `false`
+- Set by: the server
+- Purpose: if off, switching one of the two systems on switches the other off.
+
+### Complete example
+
+``` cpp
+// cba_settings.sqf
+ewc_compat_cup_actionMode = 2; // default: 0
+force ewc_compat_cup_allowBoth = true; // default: false
+```
 
 The settings of the DUKE are on its page.
 

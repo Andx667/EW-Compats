@@ -24,7 +24,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) 
 | `fnc_initVehicle` | every machine | Class event handler for vehicles with `rhs_duke_type`: registers the `Dammaged` handler |
 | `fnc_onFired` | machine of the shooter | `fired` handler of the DUKE ammo: after `DUKE_SYNC_DELAY` asks the server to sync |
 | `fnc_onDammaged` | machine where the vehicle is local | Asks the server to sync after antenna damage, merging hits within the delay |
-| `fnc_releaseMines` | server | Enables the simulation of the IEDs in 50 m again after the DUKE went offline, except those another jammer holds (RHS DUKE, CG13, CUP DUKE). `rhs_duke.sqf` does this itself with a plain `enableSimulationGlobal`, which does nothing for IEDs that are not local to the gunner |
+| `fnc_releaseMines` | server | Enables the simulation of the IEDs in 50 m again after the DUKE went offline, except those another running RHS DUKE holds. `rhs_duke.sqf` does this itself with a plain `enableSimulationGlobal`, which does nothing for IEDs that are not local to the gunner |
 | `fnc_syncJammer` | server | Matches the jammer to the DUKE: on/off from `RHS_DUKE_OP`, range from the antenna damage. Shows the hint of `ewc_main_fnc_notifyState` when the state changed |
 
 ## Settings

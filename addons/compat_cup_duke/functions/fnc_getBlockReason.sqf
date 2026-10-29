@@ -21,6 +21,6 @@ params [["_vehicle", objNull, [objNull]]];
 if (!GVAR(enable)) exitWith {"disabled"};
 if (!alive _vehicle) exitWith {"dead"};
 if ((_vehicle call FUNC(getRangeScale)) == 0) exitWith {"antenna"};
-if (EGVAR(compat_cup,requireEngine) && {!isEngineOn _vehicle}) exitWith {"engine"};
+if (!isEngineOn _vehicle) exitWith {"engine"};
 
 ""

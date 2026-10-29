@@ -16,7 +16,7 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
   - then the state of the vehicle (`fnc_isReady`) and the shooter (`getShotParents`): not from inside the vehicle, and not friendly if friendly fire reports are off
 - A report has a random bearing error of up to 2.5° and range error of up to 10 %, the accuracy in the data sheet of the vehicle system, and is limited to one per second and vehicle. It goes to all machines (`ewc_compat_boomerang_shotDetected`, `fnc_onShotDetected`): a silent hint for the crew and a local map marker for everybody friendly to the vehicle.
 - A report close to the map marker of an earlier shot does not create one. `fnc_findNearMarker` looks for it in `ewc_compat_boomerang_shotMarkers` (name, position, expiry time of every marker that is still there): within `BOOMERANG_MARKER_MERGE_DISTANCE` (50 m) or twice the range error of the report (`2 * BOOMERANG_RANGE_ERROR * range`, 20 % of the range), whichever is larger. The expiry time of that marker moves to a full lifetime from now. A marker is removed by `fnc_expireShotMarker` at its expiry time, which schedules itself again for the time that is left when it was moved. Every client decides the same, as every client gets the same reports.
-- With cTab loaded, the sub-addon in the folder `ctab` also shows a detected shot as a red marker on cTab, see its [README](ctab/README.md). It adds the setting *Show shots on* (map, cTab or both), which `fnc_onShotDetected` reads to leave out the map marker when it is set to cTab only.
+- With cTab loaded, the sub-addon in the folder `ctab` also shows a detected shot as a red marker on cTab, see its [README](ctab/README.md). The setting *Show shots* (nothing, map or cTab, the last only when cTab is loaded) is in this addon, `fnc_onShotDetected` adds the map marker when it is set to map and the sub-addon the cTab marker when it is set to cTab.
 - The Boomerang listens (`fnc_isReady`) while it is on, not above 97 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang (`fnc_initVehicle`) tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_boomerang_deafUntil` for `BOOMERANG_LOCKOUT` (5 s). Smoke launchers and flares do not count. The first shot of a stretch of fire raises `ewc_compat_boomerang_deafChanged` (deaf), the end of the lockout raises it again (listening); bursts that only move the end do not.
 - A change of the state shows a hint to the people in the vehicle (`ewc_main_fnc_notifyState` in `fnc_setState`). A Boomerang the loop switches off passes the reason of `fnc_getBlockReason`.
 
@@ -59,9 +59,8 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 | Enable Boomerang | on | Set by the server |
 | Report friendly fire | on | Set by the server |
 | Marker lifetime | 30 s | 0 turns the markers off. Per client for the map, cTab markers use the value of the server |
-| Show shots on | Map and cTab | Map, cTab or both. Only there when cTab is loaded, by the sub-addon `ctab`. Set by the server |
+| Show shots | Map | Nothing, map or cTab. cTab is only offered when it is loaded. Set by the server |
 | Boomerang switch | Scroll wheel | Scroll wheel, ACE self-interaction or both. Per client. Without ACE the scroll wheel is always used |
-| Require running engine | on | The Boomerang can only be switched on with the engine running and switches off when it stops. Set by the server |
 
 ## Limitations
 

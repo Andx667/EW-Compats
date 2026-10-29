@@ -25,12 +25,48 @@ The effective radius is the setting *R-142N jamming radius*, the falloff band is
 
 ## Settings
 
-| Setting | Default | |
-|---|---|---|
-| Enable R-142N jamming | on | If off, the R-142N does not jam. Set by the server, applied the next time the mast is deployed or folded |
-| R-142N jamming radius (m) | 500 | 100 to 2000 m. Set by the server, applied the next time the mast is deployed |
-| Jam radios | on | Set by the server, applied the next time the mast is deployed |
-| Jam drones | on | Set by the server, applied the next time the mast is deployed |
+### `ewc_compat_rhs_afrf_enable`
+
+- Name: Enable R-142N jamming
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: if off, the R-142N does not jam. Applied the next time the mast is deployed or folded.
+
+### `ewc_compat_rhs_afrf_radius`
+
+- Name: R-142N jamming radius (m)
+- Type: `SLIDER`
+- Range: `100` to `2000` m
+- Default: `500`
+- Set by: the server
+- Purpose: full jamming radius. Applied the next time the mast is deployed.
+
+### `ewc_compat_rhs_afrf_jamRadio`
+
+- Name: Jam radios
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: jam radios. Applied the next time the mast is deployed.
+
+### `ewc_compat_rhs_afrf_jamDrones`
+
+- Name: Jam drones
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: jam drones. Applied the next time the mast is deployed.
+
+### Complete example
+
+``` cpp
+// cba_settings.sqf
+force ewc_compat_rhs_afrf_enable = false; // default: true
+force ewc_compat_rhs_afrf_radius = 1000; // default: 500
+force ewc_compat_rhs_afrf_jamRadio = true; // default: true
+force ewc_compat_rhs_afrf_jamDrones = false; // default: true
+```
 
 With both Jam radios and Jam drones off, the R-142N does not jam.
 

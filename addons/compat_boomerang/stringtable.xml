@@ -17,46 +17,6 @@
             <Russian>Boomerang</Russian>
             <German>Boomerang</German>
         </Key>
-        <Key ID="STR_ewc_compat_boomerang_ctab_setting_markerTarget">
-            <English>Show shots on</English>
-            <French>Afficher les tirs sur</French>
-            <Spanish>Mostrar disparos en</Spanish>
-            <Polish>Pokaż strzały na</Polish>
-            <Russian>Показывать выстрелы на</Russian>
-            <German>Schüsse anzeigen auf</German>
-        </Key>
-        <Key ID="STR_ewc_compat_boomerang_ctab_setting_markerTarget_tooltip">
-            <English>Where the Boomerang shows the estimated position of a shooter: on the map, on the cTab of the side of the vehicle (as a red enemy marker), or both.</English>
-            <French>Où le Boomerang affiche la position estimée d'un tireur : sur la carte, sur le cTab du camp du véhicule (comme marqueur ennemi rouge) ou les deux.</French>
-            <Spanish>Dónde muestra el Boomerang la posición estimada de un tirador: en el mapa, en el cTab del bando del vehículo (como marcador enemigo rojo) o en ambos.</Spanish>
-            <Polish>Gdzie Boomerang pokazuje szacowaną pozycję strzelca: na mapie, na cTab strony pojazdu (jako czerwony znacznik wroga) lub w obu miejscach.</Polish>
-            <Russian>Где Boomerang показывает предполагаемое положение стрелка: на карте, на cTab стороны машины (как красный маркер противника) или в обоих местах.</Russian>
-            <German>Wo der Boomerang die geschätzte Position eines Schützen zeigt: auf der Karte, auf dem cTab der Seite des Fahrzeugs (als rote Feindmarkierung) oder auf beidem.</German>
-        </Key>
-        <Key ID="STR_ewc_compat_boomerang_ctab_target_both">
-            <English>Map and cTab</English>
-            <French>Carte et cTab</French>
-            <Spanish>Mapa y cTab</Spanish>
-            <Polish>Mapa i cTab</Polish>
-            <Russian>Карта и cTab</Russian>
-            <German>Karte und cTab</German>
-        </Key>
-        <Key ID="STR_ewc_compat_boomerang_ctab_target_ctab">
-            <English>cTab</English>
-            <French>cTab</French>
-            <Spanish>cTab</Spanish>
-            <Polish>cTab</Polish>
-            <Russian>cTab</Russian>
-            <German>cTab</German>
-        </Key>
-        <Key ID="STR_ewc_compat_boomerang_ctab_target_map">
-            <English>Map</English>
-            <French>Carte</French>
-            <Spanish>Mapa</Spanish>
-            <Polish>Mapa</Polish>
-            <Russian>Карта</Russian>
-            <German>Karte</German>
-        </Key>
         <Key ID="STR_ewc_compat_boomerang_deactivate">
             <English>Deactivate Boomerang</English>
             <French>Désactiver le Boomerang</French>
@@ -209,21 +169,45 @@
             <Russian>Как долго остаётся маркер обнаруженного стрелка. 0 отключает маркеры. Для карты настраивается для каждого игрока, маркеры cTab используют значение сервера.</Russian>
             <German>Wie lange die Markierung eines erkannten Schützen bleibt. 0 deaktiviert die Markierungen. Für die Karte pro Spieler einstellbar, cTab-Markierungen nutzen den Wert des Servers.</German>
         </Key>
-        <Key ID="STR_ewc_compat_boomerang_setting_requireEngine">
-            <English>Require running engine</English>
-            <French>Moteur en marche requis</French>
-            <Spanish>Requerir motor en marcha</Spanish>
-            <Polish>Wymagaj pracującego silnika</Polish>
-            <Russian>Требовать работающий двигатель</Russian>
-            <German>Laufenden Motor voraussetzen</German>
+        <Key ID="STR_ewc_compat_boomerang_setting_markerTarget">
+            <English>Show shots</English>
+            <French>Afficher les tirs</French>
+            <Spanish>Mostrar disparos</Spanish>
+            <Polish>Pokaż strzały</Polish>
+            <Russian>Показывать выстрелы</Russian>
+            <German>Schüsse anzeigen</German>
         </Key>
-        <Key ID="STR_ewc_compat_boomerang_setting_requireEngine_tooltip">
-            <English>The Boomerang can only be switched on with the engine running and switches off when the engine stops.</English>
-            <French>Le Boomerang ne peut être activé que moteur en marche et se désactive à l'arrêt du moteur.</French>
-            <Spanish>El Boomerang solo se puede encender con el motor en marcha y se apaga cuando el motor se detiene.</Spanish>
-            <Polish>Boomerang można włączyć tylko przy pracującym silniku i wyłącza się, gdy silnik zgaśnie.</Polish>
-            <Russian>Boomerang можно включить только при работающем двигателе, он выключается при остановке двигателя.</Russian>
-            <German>Der Boomerang lässt sich nur bei laufendem Motor einschalten und schaltet sich aus, wenn der Motor stoppt.</German>
+        <Key ID="STR_ewc_compat_boomerang_setting_markerTarget_tooltip">
+            <English>Where a detected shot is marked: not at all, on the map, or on cTab (only with cTab loaded). The hint for the crew is not affected.</English>
+            <French>Où un tir détecté est marqué : nulle part, sur la carte ou sur cTab (seulement avec cTab chargé). L'indication pour l'équipage n'est pas concernée.</French>
+            <Spanish>Dónde se marca un disparo detectado: en ningún sitio, en el mapa o en cTab (solo con cTab cargado). El aviso para la tripulación no se ve afectado.</Spanish>
+            <Polish>Gdzie oznaczany jest wykryty strzał: nigdzie, na mapie lub na cTab (tylko z załadowanym cTab). Nie dotyczy komunikatu dla załogi.</Polish>
+            <Russian>Где отмечается обнаруженный выстрел: нигде, на карте или на cTab (только при загруженном cTab). Подсказка для экипажа не меняется.</Russian>
+            <German>Wo ein erkannter Schuss markiert wird: nirgends, auf der Karte oder auf cTab (nur mit geladenem cTab). Der Hinweis für die Besatzung bleibt davon unberührt.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_boomerang_target_ctab">
+            <English>cTab</English>
+            <French>cTab</French>
+            <Spanish>cTab</Spanish>
+            <Polish>cTab</Polish>
+            <Russian>cTab</Russian>
+            <German>cTab</German>
+        </Key>
+        <Key ID="STR_ewc_compat_boomerang_target_map">
+            <English>Map</English>
+            <French>Carte</French>
+            <Spanish>Mapa</Spanish>
+            <Polish>Mapa</Polish>
+            <Russian>Карта</Russian>
+            <German>Karte</German>
+        </Key>
+        <Key ID="STR_ewc_compat_boomerang_target_none">
+            <English>Nothing</English>
+            <French>Rien</French>
+            <Spanish>Nada</Spanish>
+            <Polish>Nic</Polish>
+            <Russian>Ничего</Russian>
+            <German>Nichts</German>
         </Key>
     </Package>
 </Project>

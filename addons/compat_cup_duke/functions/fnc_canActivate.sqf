@@ -2,7 +2,7 @@
 /*
  * Author: Andx
  * Checks if the DUKE of a vehicle can be switched on: DUKE enabled in the settings, vehicle alive,
- * at least one antenna shown and, if required, engine running.
+ * at least one antenna shown and the engine running.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>

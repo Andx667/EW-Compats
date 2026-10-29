@@ -32,8 +32,8 @@ if (!isServer) exitWith {};
 
 private _lifetime = GVAR(markerLifetime);
 
-// Nothing to do when the setting keeps the shots on the map, or the markers are switched off
-if (GVAR(ctab_markerTarget) == MARKER_TARGET_MAP || {_lifetime <= 0} || {isNull _vehicle}) exitWith {};
+// Nothing to do when the setting does not show the shots on cTab, or the markers are switched off
+if (GVAR(markerTarget) != MARKER_TARGET_CTAB || {_lifetime <= 0} || {isNull _vehicle}) exitWith {};
 
 private _key = [_side] call FUNC(ctab_getEncryptionKey);
 

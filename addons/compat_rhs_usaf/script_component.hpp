@@ -18,8 +18,6 @@
 
 #define DUKE_STATE_VAR "RHS_DUKE_OP"
 
-// Range of the CG13 of BWA3, to leave the IEDs it holds alone
-#define ECM_EFFECTIVE_RADIUS 40
 // Seconds after the DUKE went offline until its IEDs are freed, rhs_duke.sqf ends its loop within half a second
 #define DUKE_RELEASE_DELAY 1.5
 
