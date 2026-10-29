@@ -17,7 +17,7 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-private _state = _vehicle getVariable QEGVAR(main,jammerState);
+private _state = _vehicle getVariable QEGVAR(common,jammerState);
 
 if (isNull _vehicle || {isNil "_state"}) exitWith {};
 
@@ -38,7 +38,7 @@ private _wantEnabled = _alive
     && {_vehicle getVariable [DUKE_STATE_VAR, false]}
     && {!(_damage1 >= DUKE_BOTH_ANTENNAS_DESTROYED && {_damage2 >= DUKE_BOTH_ANTENNAS_DESTROYED})};
 private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
-private _wantRadius = getNumber (([_vehicle] call EFUNC(main,getJammerConfig)) >> "radius") * _wantScale;
+private _wantRadius = getNumber (([_vehicle] call EFUNC(common,getJammerConfig)) >> "radius") * _wantScale;
 
 // rhs_duke.sqf frees its IEDs from the machine of the gunner, which only works for local ones. Free them from here
 if (_enabled && {!_wantEnabled}) then {
@@ -49,16 +49,16 @@ if (_enabled && {!_wantEnabled}) then {
 if (_alive && {_wantEnabled != _enabled}) then {
     private _reason = ["", ["damage", "disabled"] select !GVAR(enableDuke)] select (_vehicle getVariable [DUKE_STATE_VAR, false]);
 
-    [_vehicle, SYSTEM_NAME, _wantEnabled, _reason] call EFUNC(main,notifyState);
+    [_vehicle, SYSTEM_NAME, _wantEnabled, _reason] call EFUNC(common,notifyState);
 };
 
 if (_alive && {_wantRadius != _radius}) exitWith {
     // Crows has no way to change the radii of a jammer, so replace it
     [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
-    [_vehicle, _wantEnabled, _wantRadius] call EFUNC(main,addJammer);
+    [_vehicle, _wantEnabled, _wantRadius] call EFUNC(common,addJammer);
 };
 
 if (_wantEnabled != _enabled) then {
-    _vehicle setVariable [QEGVAR(main,jammerState), [_wantEnabled, _radius]];
+    _vehicle setVariable [QEGVAR(common,jammerState), [_wantEnabled, _radius]];
     [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _wantEnabled]] call CBA_fnc_localEvent;
 };

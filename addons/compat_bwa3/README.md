@@ -6,16 +6,16 @@ The Dingo 2 CG13 also jams ACRE radios, in addition to the IED jammer. Both are 
 
 - BWA3 switches the CG13 only through the variable `BWA3_Dingo2_ECM_on` (user actions `TurnOnCG13` / `TurnOffCG13`) and offers no event or callback. The `statement` entries of both user actions are therefore overridden in `CfgVehicles.hpp`: they still set the variable and additionally send the event `ewc_compat_bwa3_ecmToggled` to the server.
 - BWA3 switches the CG13 off when the engine stops (its `POWER_FAILURE` transition) without any event. An `Engine` event handler (`fnc_initVehicle`) therefore sends the same event with `false` when the engine stops. It has to be registered on every client, because `Engine` only fires where the vehicle is local. When the engine stops without a driver (he got out) while the CG13 is on, the handler starts it again, because getting out stops the engine and an eject does not.
-- Every vehicle with `BWA3_hasECM = 1` is a jammer of the registry in `ewc_main` (`CfgEWC >> Jammers >> BWA3_CG13`). `ewc_main` registers it once on the server as a disabled radio jammer in Crow's Electronic Warfare, see the main addon.
+- Every vehicle with `BWA3_hasECM = 1` is a jammer of the registry in `ewc_common` (`CfgEWC >> Jammers >> BWA3_CG13`). `ewc_common` registers it once on the server as a disabled radio jammer in Crow's Electronic Warfare, see the common addon.
 - `fnc_handleToggle` switches the jammer with `crowsEW_main_toggleJammer`. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
-- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the CG13 switch. `ewc_main` removes them from the Dingos, see the main addon.
+- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the CG13 switch. `ewc_common` removes them from the Dingos, see the common addon.
 
 ## Functions
 
 | Function | Runs on | Purpose |
 |---|---|---|
 | `fnc_initVehicle` | every machine | Class event handler for vehicles with `BWA3_hasECM`: watches the `Engine` event |
-| `fnc_handleToggle` | server | Switches that jammer with the CG13 (`ewc_compat_bwa3_ecmToggled`, with the reason when the engine switched it off) and shows the hint of `ewc_main_fnc_notifyState` |
+| `fnc_handleToggle` | server | Switches that jammer with the CG13 (`ewc_compat_bwa3_ecmToggled`, with the reason when the engine switched it off) and shows the hint of `ewc_common_fnc_notifyState` |
 
 ## Settings
 

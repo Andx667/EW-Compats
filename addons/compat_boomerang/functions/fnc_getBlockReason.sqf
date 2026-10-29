@@ -8,7 +8,7 @@
  * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Reason, the end of the string ewc_main_reason_<reason>, "dead" without a text of its own, or "" if the Boomerang can be on <STRING>
+ * Reason, the end of the string ewc_common_reason_<reason>, "dead" without a text of its own, or "" if the Boomerang can be on <STRING>
  *
  * Example:
  * [_vehicle] call ewc_compat_boomerang_fnc_getBlockReason

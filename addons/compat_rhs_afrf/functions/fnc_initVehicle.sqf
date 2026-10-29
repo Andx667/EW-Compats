@@ -29,7 +29,7 @@ _vehicle setVariable [RHS_DEPLOY_HOOK_VAR, _hooks];
 
 if (!isServer) exitWith {};
 
-// A mast deployed in the editor is up before the jammer exists. Wait for the registration of ewc_main
-[{!isNil {_this getVariable QEGVAR(main,jammerState)}}, {
+// A mast deployed in the editor is up before the jammer exists. Wait for the registration of ewc_common
+[{!isNil {_this getVariable QEGVAR(common,jammerState)}}, {
     [QGVAR(mastToggled), [_this, _this doorPhase MAST_SOURCE > 0.5]] call CBA_fnc_serverEvent;
 }, _vehicle] call CBA_fnc_waitUntilAndExecute;

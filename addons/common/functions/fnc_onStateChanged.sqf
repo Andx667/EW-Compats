@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [_vehicle, "DUKE", false, "engine"] call ewc_main_fnc_onStateChanged
+ * [_vehicle, "DUKE", false, "engine"] call ewc_common_fnc_onStateChanged
  *
  * Public: No
  */
@@ -22,7 +22,7 @@ params [["_vehicle", objNull, [objNull]], ["_name", "", [""]], ["_on", false, [f
 
 if (isNull player || {vehicle player != _vehicle}) exitWith {};
 
-private _reasonKey = format ["STR_ewc_main_reason_%1", _reason];
+private _reasonKey = format ["STR_ewc_common_reason_%1", _reason];
 
 hintSilent (if (_on) then {
     format [LLSTRING(state_on), _name]

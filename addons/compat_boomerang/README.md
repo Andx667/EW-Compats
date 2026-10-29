@@ -18,7 +18,7 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 - A report close to the map marker of an earlier shot does not create one. `fnc_findNearMarker` looks for it in `ewc_compat_boomerang_shotMarkers` (name, position, expiry time of every marker that is still there): within `BOOMERANG_MARKER_MERGE_DISTANCE` (50 m) or twice the range error of the report (`2 * BOOMERANG_RANGE_ERROR * range`, 20 % of the range), whichever is larger. The expiry time of that marker moves to a full lifetime from now. A marker is removed by `fnc_expireShotMarker` at its expiry time, which schedules itself again for the time that is left when it was moved. Every client decides the same, as every client gets the same reports.
 - With cTab loaded, the sub-addon in the folder `ctab` also shows a detected shot as a red marker on cTab, see its [README](ctab/README.md). The setting *Show shots* (nothing, map or cTab, the last only when cTab is loaded) is in this addon, `fnc_onShotDetected` adds the map marker when it is set to map and the sub-addon the cTab marker when it is set to cTab.
 - The Boomerang listens (`fnc_isReady`) while it is on, not above 97 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang (`fnc_initVehicle`) tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_boomerang_deafUntil` for `BOOMERANG_LOCKOUT` (5 s). Smoke launchers and flares do not count. The first shot of a stretch of fire raises `ewc_compat_boomerang_deafChanged` (deaf), the end of the lockout raises it again (listening); bursts that only move the end do not.
-- A change of the state shows a hint to the people in the vehicle (`ewc_main_fnc_notifyState` in `fnc_setState`). A Boomerang the loop switches off passes the reason of `fnc_getBlockReason`.
+- A change of the state shows a hint to the people in the vehicle (`ewc_common_fnc_notifyState` in `fnc_setState`). A Boomerang the loop switches off passes the reason of `fnc_getBlockReason`.
 
 ## Compat addons
 
@@ -70,7 +70,7 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 
 ## Dependencies
 
-- None besides `ewc_main`. The vehicles come from the compat addons `compat_cup_boomerang` and `compat_rhs_usaf_boomerang`.
+- None besides `ewc_common`. The vehicles come from the compat addons `compat_cup_boomerang` and `compat_rhs_usaf_boomerang`.
 - Optional: [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) for the sub-addon `ctab`
 
 ## Maintainer

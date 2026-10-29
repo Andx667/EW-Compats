@@ -19,7 +19,7 @@
 
 params [["_vehicle", objNull, [objNull]], ["_deployed", false, [false]]];
 
-if (isNull _vehicle || {isNil {_vehicle getVariable QEGVAR(main,jammerState)}}) exitWith {};
+if (isNull _vehicle || {isNil {_vehicle getVariable QEGVAR(common,jammerState)}}) exitWith {};
 
 _vehicle setVariable [QGVAR(mastWanted), _deployed];
 

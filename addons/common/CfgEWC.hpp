@@ -14,7 +14,7 @@
  *       };
  *   };
  *
- * An addon that has to follow the vehicle listens to the CBA event ewc_main_vehicleInit, [vehicle, class name of the entry].
+ * An addon that has to follow the vehicle listens to the CBA event ewc_common_vehicleInit, [vehicle, class name of the entry].
  */
 class CfgEWC {
     class Jammers {};

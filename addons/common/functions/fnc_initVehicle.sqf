@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [_vehicle] call ewc_main_fnc_initVehicle
+ * [_vehicle] call ewc_common_fnc_initVehicle
  *
  * Public: No
  */

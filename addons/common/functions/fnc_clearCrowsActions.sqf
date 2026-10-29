@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [_vehicle] call ewc_main_fnc_clearCrowsActions
+ * [_vehicle] call ewc_common_fnc_clearCrowsActions
  *
  * Public: Yes
  */
