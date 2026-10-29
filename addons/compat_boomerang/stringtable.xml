@@ -97,6 +97,22 @@
             <Russian>Boomerang: обнаружен выстрел|%1 часов|~%2 м|азимут %3°|%4</Russian>
             <German>Boomerang: Schuss erkannt|%1 Uhr|ca. %2 m|Peilung %3°|%4</German>
         </Key>
+        <Key ID="STR_ewc_compat_boomerang_hint_deaf">
+            <English>Boomerang deaf: own fire</English>
+            <French>Boomerang sourd : tir du véhicule</French>
+            <Spanish>Boomerang sordo: fuego propio</Spanish>
+            <Polish>Boomerang ogłuszony: ogień własny</Polish>
+            <Russian>Boomerang оглушён: свой огонь</Russian>
+            <German>Boomerang taub: eigenes Feuer</German>
+        </Key>
+        <Key ID="STR_ewc_compat_boomerang_hint_listening">
+            <English>Boomerang listening</English>
+            <French>Boomerang à l'écoute</French>
+            <Spanish>Boomerang a la escucha</Spanish>
+            <Polish>Boomerang nasłuchuje</Polish>
+            <Russian>Boomerang слушает</Russian>
+            <German>Boomerang hört wieder zu</German>
+        </Key>
         <Key ID="STR_ewc_compat_boomerang_markerText">
             <English>Shot</English>
             <French>Tir</French>

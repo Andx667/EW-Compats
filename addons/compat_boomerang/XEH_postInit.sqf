@@ -29,6 +29,7 @@ if (didJIP && {!isServer}) then {
 
 if (hasInterface) then {
     [QGVAR(shotDetected), LINKFUNC(onShotDetected)] call CBA_fnc_addEventHandler;
+    [QGVAR(deafChanged), LINKFUNC(onDeafChanged)] call CBA_fnc_addEventHandler;
 
     if (GVAR(aceLoaded)) then {
         call FUNC(addAceActions);
