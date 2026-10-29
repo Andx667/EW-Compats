@@ -13,6 +13,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-10-29
+
 ### Fixed
 
 - Compat RHS USAF - Free the IEDs of a vehicle that is destroyed with the DUKE on, and stop the DUKE script of RHS
