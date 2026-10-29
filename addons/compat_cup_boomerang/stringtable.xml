@@ -129,22 +129,6 @@
             <Russian>Boomerang сообщает и о выстрелах дружественных юнитов, как настоящая система. Если выключено, сообщается только о выстрелах юнитов, не дружественных технике.</Russian>
             <German>Der Boomerang meldet auch Schüsse befreundeter Einheiten, wie das echte System. Wenn deaktiviert, werden nur Schüsse von Einheiten gemeldet, die dem Fahrzeug nicht freundlich gesinnt sind.</German>
         </Key>
-        <Key ID="STR_ewc_compat_cup_boomerang_setting_lockout">
-            <English>Lockout after own fire (s)</English>
-            <French>Blocage après tir propre (s)</French>
-            <Spanish>Bloqueo tras fuego propio (s)</Spanish>
-            <Polish>Blokada po własnym ogniu (s)</Polish>
-            <Russian>Блокировка после своего огня (с)</Russian>
-            <German>Sperrzeit nach eigenem Feuer (s)</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_boomerang_setting_lockout_tooltip">
-            <English>The Boomerang is deaf for this many seconds after the weapons of its own vehicle were fired.</English>
-            <French>Le Boomerang est sourd pendant ce nombre de secondes après que les armes de son propre véhicule ont tiré.</French>
-            <Spanish>El Boomerang queda sordo durante estos segundos después de que se disparen las armas de su propio vehículo.</Spanish>
-            <Polish>Boomerang jest głuchy przez tyle sekund po strzale z broni własnego pojazdu.</Polish>
-            <Russian>Boomerang глохнет на столько секунд после выстрелов из оружия своей машины.</Russian>
-            <German>Der Boomerang ist so viele Sekunden taub, nachdem die Waffen des eigenen Fahrzeugs gefeuert haben.</German>
-        </Key>
         <Key ID="STR_ewc_compat_cup_boomerang_setting_markerLifetime">
             <English>Marker lifetime (s)</English>
             <French>Durée du marqueur (s)</French>
@@ -160,22 +144,6 @@
             <Polish>Jak długo widoczny jest znacznik wykrytego strzelca. 0 wyłącza znaczniki. Dla mapy ustawienie dla każdego gracza, znaczniki cTab używają wartości serwera.</Polish>
             <Russian>Как долго остаётся маркер обнаруженного стрелка. 0 отключает маркеры. Для карты настраивается для каждого игрока, маркеры cTab используют значение сервера.</Russian>
             <German>Wie lange die Markierung eines erkannten Schützen bleibt. 0 deaktiviert die Markierungen. Für die Karte pro Spieler einstellbar, cTab-Markierungen nutzen den Wert des Servers.</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_boomerang_setting_missDistance">
-            <English>Detection distance (m)</English>
-            <French>Distance de détection (m)</French>
-            <Spanish>Distancia de detección (m)</Spanish>
-            <Polish>Odległość wykrywania (m)</Polish>
-            <Russian>Дистанция обнаружения (м)</Russian>
-            <German>Erfassungsabstand (m)</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_boomerang_setting_missDistance_tooltip">
-            <English>A supersonic shot is detected if it passes within this distance of the Boomerang vehicle. Slower shots are only heard within 100 m.</English>
-            <French>Un tir supersonique est détecté s'il passe à cette distance du véhicule équipé du Boomerang. Les tirs plus lents ne sont entendus que dans un rayon de 100 m.</French>
-            <Spanish>Un disparo supersónico se detecta si pasa a esta distancia del vehículo con Boomerang. Los disparos más lentos solo se oyen a menos de 100 m.</Spanish>
-            <Polish>Strzał naddźwiękowy jest wykrywany, jeśli przeleci w tej odległości od pojazdu z Boomerangiem. Wolniejsze strzały słychać tylko w promieniu 100 m.</Polish>
-            <Russian>Сверхзвуковой выстрел обнаруживается, если проходит в пределах этой дистанции от машины с Boomerang. Более медленные выстрелы слышны только в пределах 100 м.</Russian>
-            <German>Ein Überschallschuss wird erkannt, wenn er in diesem Abstand am Boomerang-Fahrzeug vorbeifliegt. Langsamere Schüsse werden nur innerhalb von 100 m gehört.</German>
         </Key>
     </Package>
 </Project>

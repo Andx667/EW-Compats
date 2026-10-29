@@ -9,12 +9,12 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 - The handler (`fnc_onFired`) only looks at local projectiles, so the shot is checked on the machine it comes from and never has to be sent to the server. The cheap checks come first, and the expensive ones only run for a shot that is really heard:
   - bullet or not, cached per ammo class
   - vehicle within 1000 m, bullet flying towards it, no report from the vehicle within the last second
-  - a supersonic bullet (from 340 m/s) is heard if its path passes within the detection distance, a slower one only within 100 m
+  - a supersonic bullet (from 340 m/s) is heard if its path passes within `BOOMERANG_MISS_DISTANCE` (30 m), a slower one only within 100 m
   - then the state of the vehicle (`fnc_isReady`) and the shooter (`getShotParents`): not from inside the vehicle, and not friendly if friendly fire reports are off
 - A report has a random bearing error of up to 2.5° and range error of up to 10 %, the accuracy in the data sheet of the vehicle system, and is limited to one per second and vehicle. It goes to all machines (`ewc_compat_cup_boomerang_shotDetected`, `fnc_onShotDetected`): a silent hint for the crew and a local map marker for everybody friendly to the vehicle.
 - A report close to the map marker of an earlier shot does not create one. `fnc_findNearMarker` looks for it in `ewc_compat_cup_boomerang_shotMarkers` (name, position, expiry time of every marker that is still there): within `BOOMERANG_MARKER_MERGE_DISTANCE` (50 m) or twice the range error of the report (`2 * BOOMERANG_RANGE_ERROR * range`, 20 % of the range), whichever is larger. The expiry time of that marker moves to a full lifetime from now. A marker is removed by `fnc_expireShotMarker` at its expiry time, which schedules itself again for the time that is left when it was moved. Every client decides the same, as every client gets the same reports.
 - With cTab loaded, the sub-addon in the folder `ctab` also shows a detected shot as a red marker on cTab, see its [README](ctab/README.md). It adds the setting *Show shots on* (map, cTab or both), which `fnc_onShotDetected` reads to leave out the map marker when it is set to cTab only.
-- The Boomerang listens (`fnc_isReady`) while it is on, not above 97 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang (`fnc_initVehicle`) tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_cup_boomerang_deafUntil` for the lockout time. Smoke launchers and flares do not count.
+- The Boomerang listens (`fnc_isReady`) while it is on, not above 97 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang (`fnc_initVehicle`) tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_cup_boomerang_deafUntil` for `BOOMERANG_LOCKOUT` (5 s). Smoke launchers and flares do not count.
 - A change of the state shows a hint to the people in the vehicle (`ewc_main_fnc_notifyState` in `fnc_setState`). A Boomerang the loop switches off passes the reason of `fnc_getBlockReason`.
 - The DUKE and the Boomerang exclude each other, see `compat_cup`. The Boomerang listens to `ewc_compat_cup_systemOn` and switches off when the DUKE is switched on.
 
@@ -42,8 +42,6 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 |---|---|---|
 | Enable CUP Boomerang | on | Set by the server |
 | Report friendly fire | on | Set by the server |
-| Detection distance | 30 m | For supersonic bullets. Set by the server |
-| Lockout after own fire | 5 s | Set by the server |
 | Marker lifetime | 30 s | 0 turns the markers off. Per client for the map, cTab markers use the value of the server |
 | Show shots on | Map and cTab | Map, cTab or both. Only there when cTab is loaded, by the sub-addon `ctab`. Set by the server |
 
@@ -51,6 +49,7 @@ The switch and the engine requirement are settings of `compat_cup`.
 
 ## Limitations
 
+- The detection distance (30 m, from the data sheet) and the lockout after own fire (5 s) are fixed values, not settings.
 - The Boomerang hears small arms only, no shells or missiles. The 1000 m limit, the 100 m muzzle blast range and the 340 m/s speed of sound are estimates, as the real system's range is not public.
 - The Boomerang is checked once per second, so a hidden antenna keeps working for up to a second.
 

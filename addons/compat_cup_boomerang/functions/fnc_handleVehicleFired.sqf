@@ -2,7 +2,7 @@
 /*
  * Author: Andx
  * Server handler of the weapons of a vehicle with a Boomerang being fired. The sensor is deafened for the
- * lockout time set in the settings.
+ * lockout time.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -20,4 +20,4 @@ params [["_vehicle", objNull, [objNull]]];
 
 if (isNull _vehicle) exitWith {};
 
-_vehicle setVariable [QGVAR(deafUntil), CBA_missionTime + GVAR(lockout), true];
+_vehicle setVariable [QGVAR(deafUntil), CBA_missionTime + BOOMERANG_LOCKOUT, true];

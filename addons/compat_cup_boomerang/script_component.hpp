@@ -17,6 +17,10 @@
 // Bullets at or above this speed (m/s) have a shockwave. Slower ones are only heard as muzzle blast, on short range (m)
 #define BOOMERANG_SONIC_SPEED 340
 #define BOOMERANG_SUBSONIC_RANGE 100
+// Bullets that pass the vehicle closer than this (m) are heard, 30 m according to the data sheet of Raytheon BBN
+#define BOOMERANG_MISS_DISTANCE 30
+// Seconds the sensor is deaf after the weapons of its own vehicle were fired
+#define BOOMERANG_LOCKOUT 5
 // Accuracy of a report: bearing in degrees, range as fraction. Vehicle system according to the data sheet of Raytheon BBN
 // (the 7.5 degrees and 20 percent are the ones of the dismounted Boomerang Warrior)
 #define BOOMERANG_BEARING_ERROR 2.5
