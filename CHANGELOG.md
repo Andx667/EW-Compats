@@ -13,6 +13,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-29
+
 ### Added
 
 - Main - Show a silent hint to the people in a vehicle when the DUKE, the CG13 or the Boomerang is switched on or off, with the reason when it switches itself off (engine stopped, antenna hidden, antennas destroyed, disabled in the settings)
@@ -24,10 +26,6 @@ version, and start a fresh empty [Unreleased] section above it. -->
 - Main - `ewc_main_fnc_addJammer` takes optional Crow's capabilities, to override those of the registry entry
 - Compat BWA3 - Add setting to disable the CG13 jammer
 
-### Fixed
-
-- Compat CUP DUKE - Jam the IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`), which were ignored because they are no `PipeBombBase`
-
 ### Changed
 
 - Compat CUP - Rename the displayed name of the setting *DUKE switch* to *System switch*, as it switches the Boomerang too. The setting itself (`ewc_compat_cup_actionMode`) is unchanged
@@ -38,6 +36,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 - Compat CUP - Split into the shared base `compat_cup` and the addons `compat_cup_duke` and `compat_cup_boomerang`. The Boomerang no longer needs Crow's Electronic Warfare. Their CBA settings, public variables and events are renamed with the addon prefix (for example `ewc_compat_cup_duke_enable`, `ewc_compat_cup_boomerang_enable`), so saved values of the old settings are not taken over
 - Settings - Move CBA settings into an `initSettings.inc.sqf` per addon
 - Compat CUP - Use the accuracy of the vehicle Boomerang from the manufacturer data sheet (bearing 2.5°, range 10 %, up to 97 km/h) instead of the figures of the dismounted variant, and a default detection distance of 30 m
+
+### Fixed
+
+- Compat CUP DUKE - Jam the IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`), which were ignored because they are no `PipeBombBase`
 
 ## [0.2.0] - 2026-10-28
 
