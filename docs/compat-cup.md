@@ -7,6 +7,9 @@ CUP models two systems on some of its vehicles but gives them no function: the *
 
 A vehicle can only run one of them. Switching one on switches the other off.
 
+!!! note "Gameplay values"
+    The real DUKE (AN/VLQ-12 CREW Duke) is a vehicle-mounted counter-RCIED jammer. Its frequency bands and jamming range are not publicly documented in detail, so the radii here are gameplay values. The DUKE jammer is modelled as simply on or off and jams continuously in its radius while on.
+
 Both systems are switched on with the **scroll wheel**, the **ACE self-interaction** menu, or both. Choose in the CBA settings. Only the **driver, commander and gunners** get the switch, passengers do not. They need a **shown antenna** and the **engine running**. CUP lets you hide the antennas in the vehicle appearance options, and then the system is not available.
 
 ## DUKE
