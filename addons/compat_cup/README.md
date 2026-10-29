@@ -37,8 +37,8 @@ CUP models two systems on some of its vehicles and gives them no function: the *
   - vehicle within 1000 m, bullet flying towards it, no report from the vehicle within the last second
   - a supersonic bullet (from 340 m/s) is heard if its path passes within the detection distance, a slower one only within 100 m
   - then the state of the vehicle (`fnc_isBoomerangReady`) and the shooter (`getShotParents`): not from inside the vehicle, and not friendly if friendly fire reports are off
-- A report has a random bearing error of up to 7.5° and range error of up to 20 %, the 2009 accuracy of the real system, and is limited to one per second and vehicle. It goes to all machines (`ewc_compat_cup_shotDetected`, `fnc_onShotDetected`): a silent hint for the crew and a local map marker for everybody friendly to the vehicle.
-- The Boomerang listens (`fnc_isBoomerangReady`) while it is on, not above 95 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_cup_deafUntil` for the lockout time. Smoke launchers and flares do not count.
+- A report has a random bearing error of up to 2.5° and range error of up to 10 %, the accuracy in the data sheet of the vehicle system, and is limited to one per second and vehicle. It goes to all machines (`ewc_compat_cup_shotDetected`, `fnc_onShotDetected`): a silent hint for the crew and a local map marker for everybody friendly to the vehicle.
+- The Boomerang listens (`fnc_isBoomerangReady`) while it is on, not above 97 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_cup_deafUntil` for the lockout time. Smoke launchers and flares do not count.
 
 ## Settings
 

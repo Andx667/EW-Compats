@@ -34,16 +34,19 @@ Most vehicles have one DUKE antenna and are either on full range or off. The M12
 
 Vehicles with a Boomerang shot finder (HMMWV, MATV and RG-31 families) get *Activate Boomerang* / *Deactivate Boomerang*. The real system is a passive acoustic sensor that locates the shooter from the shockwave and muzzle blast of a shot. It is hidden by default on these vehicles.
 
+!!! note "Real system"
+    The real Boomerang is the Raytheon BBN shooter detection system, a mast with a microphone array that uses the muzzle blast and the shockwave of supersonic bullets. Its data sheet gives a bearing error under 2.5°, a range error of ±10 %, detection of bullets that pass within about 30 m of the mast, operation up to 60 mph, and no alert for shots from the own vehicle. The addon uses these figures. The dismounted Boomerang Warrior is less accurate (7.5° and ±20 %), these are not used. The elevation threshold, the 1000 m limit and the 100 m for subsonic bullets are gameplay values, the sources do not give them.
+
 An active Boomerang reports bullets that are fired nearby:
 
 - The **crew** gets a hint with one line per information (shot detected, 3 o'clock, ~300 m, bearing 87°, level). It makes no sound.
 - Everybody **friendly to the vehicle** gets a red map marker at the estimated position of the shooter. It disappears after 30 seconds. The marker is local, the enemy does not see it.
-- Reports are not exact, like the real system: the bearing is off by up to 7.5° and the range by up to 20 %.
+- Reports are not exact, like the real system: the bearing is off by up to 2.5° and the range by up to 10 %.
 - A burst is reported once per second, not bullet by bullet.
 
 ### What it hears
 
-- A **supersonic** bullet is heard if it passes within the detection distance of the vehicle (50 m by default), up to 1000 m from the shooter.
+- A **supersonic** bullet is heard if it passes within the detection distance of the vehicle (30 m by default), up to 1000 m from the shooter.
 - A **slower** bullet is only heard as muzzle blast, within 100 m.
 - Only small arms are heard, no shells or missiles.
 - The shots of friendly units are reported too, like the real system does. A setting turns this off.
@@ -52,7 +55,7 @@ An active Boomerang reports bullets that are fired nearby:
 ### Limitations
 
 - It is **deaf for 5 seconds** after the weapons of its own vehicle were fired. Smoke launchers and flares do not count. The time is a setting.
-- It **does not work above 95 km/h**, the speed the real system is specified for. It listens again when the vehicle is slower.
+- It **does not work above 97 km/h** (60 mph), the speed the real system is specified for. It listens again when the vehicle is slower.
 - It switches off when the engine stops, the antenna is hidden or the vehicle is destroyed.
 
 ## Settings
@@ -66,7 +69,7 @@ An active Boomerang reports bullets that are fired nearby:
 | Jam IEDs | on | DUKE. Set by the server |
 | Require running engine | on | For DUKE and Boomerang. Set by the server |
 | Report friendly fire | on | Boomerang. Set by the server |
-| Detection distance | 50 m | Boomerang, for supersonic bullets. Set by the server |
+| Detection distance | 30 m | Boomerang, for supersonic bullets. Set by the server |
 | Lockout after own fire | 5 s | Boomerang. Set by the server |
 | Marker lifetime | 30 s | Boomerang. 0 turns the markers off. Per player |
 
