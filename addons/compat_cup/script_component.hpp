@@ -33,6 +33,10 @@
 #define BOOMERANG_ELEVATION_LIMIT 10
 // Seconds between two reports of the same vehicle, so a burst is not reported bullet by bullet
 #define BOOMERANG_REPORT_INTERVAL 1
+// A report closer than this (m) to the marker of an earlier shot is merged into it, see fnc_findNearMarker
+#define BOOMERANG_MARKER_MERGE_DISTANCE 50
+// Seconds a marker may outlive its expiry time before it is removed, so a timer that fires a hair early does not reschedule
+#define MARKER_EXPIRY_TOLERANCE 0.1
 
 // Seconds between two checks of an active jammer (antenna, engine, mines in range)
 #define LOOP_INTERVAL 1

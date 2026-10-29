@@ -2,7 +2,8 @@
 /*
  * Author: Andx
  * Shows a shot a Boomerang detected: a hint for the crew of the vehicle and, for everybody friendly to it, a map
- * marker at the estimated position of the shooter for a while. The marker is left out when the setting sends the
+ * marker at the estimated position of the shooter for a while. A shot close to a marker that is still there does not
+ * add one, it only keeps that marker longer. The marker is left out when the setting sends the
  * shots to cTab only (the cTab sub-addon adds the marker there).
  *
  * Arguments:
@@ -44,14 +45,23 @@ private _onMap = isNil QGVAR(ctab_markerTarget) || {GVAR(ctab_markerTarget) != M
 
 // Markers are local, so only the side of the vehicle gets to see where the shot came from
 if (_onMap && {GVAR(markerLifetime) > 0} && {(playerSide getFriend _side) >= 0.6}) then {
-    GVAR(markerCounter) = GVAR(markerCounter) + 1;
+    private _near = [GVAR(shotMarkers), _position, _range] call FUNC(findNearMarker);
 
-    private _marker = format ["%1_%2", QGVAR(shot), GVAR(markerCounter)];
+    if (_near != -1) then {
+        // The shooter is already marked, so the map does not fill up. The marker stays while shots keep coming
+        (GVAR(shotMarkers) select _near) set [2, CBA_missionTime + GVAR(markerLifetime)];
+    } else {
+        GVAR(markerCounter) = GVAR(markerCounter) + 1;
 
-    createMarkerLocal [_marker, _position];
-    _marker setMarkerTypeLocal "hd_warning";
-    _marker setMarkerColorLocal "ColorRed";
-    _marker setMarkerTextLocal LLSTRING(boomerang_markerText);
+        private _marker = format ["%1_%2", QGVAR(shot), GVAR(markerCounter)];
 
-    [{deleteMarkerLocal _this}, _marker, GVAR(markerLifetime)] call CBA_fnc_waitAndExecute;
+        createMarkerLocal [_marker, _position];
+        _marker setMarkerTypeLocal "hd_warning";
+        _marker setMarkerColorLocal "ColorRed";
+        _marker setMarkerTextLocal LLSTRING(boomerang_markerText);
+
+        GVAR(shotMarkers) pushBack [_marker, _position, CBA_missionTime + GVAR(markerLifetime)];
+
+        [LINKFUNC(expireShotMarker), _marker, GVAR(markerLifetime)] call CBA_fnc_waitAndExecute;
+    };
 };
