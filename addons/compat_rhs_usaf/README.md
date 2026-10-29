@@ -35,6 +35,8 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam 
 
 ## Limitations
 
+- An IED that is triggered inside the DUKE range explodes when the DUKE stops or the vehicle leaves the range. `rhs_duke.sqf` only switches the simulation of the IED off and on again, it does not defuse it. This is RHS's own behaviour, as with the Dingo CG13.
+- On vehicles with a smoke launcher in the same countermeasure slot (Bradley, Abrams) the smoke launcher is listed before the DUKE in the config. Cycle the countermeasure with Ctrl+C to select the DUKE, otherwise firing launches smoke. Neither is a fault of this addon.
 - Everybody in range is jammed, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - The full jamming radius is the radius of the DUKE's IED jamming (50 m, hardcoded in RHS, so `DUKE_EFFECTIVE_RADIUS` has to be adjusted if RHS changes it). The falloff radius is 1.5 times that.
 - RHS only starts the jamming script if gunner and vehicle are local on the same machine (not for a gunner in the turret of someone else's vehicle, for example). In that case `RHS_DUKE_OP` does not change and the radio jammer stays off, like the IED jammer.
