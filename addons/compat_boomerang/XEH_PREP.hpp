@@ -13,6 +13,7 @@ PREP(initVehicle);
 PREP(isReady);
 PREP(isShown);
 PREP(loop);
+PREP(onDeafChanged);
 PREP(onFired);
 PREP(onShotDetected);
 PREP(setState);

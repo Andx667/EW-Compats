@@ -50,7 +50,7 @@ An active Boomerang reports a heard bullet:
 
 ## Quirks
 
-- **Deaf for 5 seconds** after the weapons of its own vehicle were fired. Smoke launchers and flares do not count.
+- **Deaf for 5 seconds** after the weapons of its own vehicle were fired. Smoke launchers and flares do not count. The crew gets a silent hint when the Boomerang goes deaf (*Boomerang deaf: own fire*) and when it listens again, once per stretch of fire and not for every burst. A Boomerang that is off says nothing.
 - **Does not work above 97 km/h** (60 mph), the speed the real system is specified for. It listens again when the vehicle is slower.
 - **Up to a second of delay** when an antenna is hidden or the engine stops, because the Boomerang is checked once per second.
 
