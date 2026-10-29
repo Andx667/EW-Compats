@@ -13,7 +13,7 @@ The DUKE builds on the shared addon `compat_cup`, which finds the vehicles with 
 
 The DUKE is switched on with the **scroll wheel**, the **ACE self-interaction** menu, or both. Choose in the CBA settings. The Boomerang has its own switch, see [Compat Boomerang](compat-boomerang.md#controls). Only the **driver, commander and gunners** get the switch, passengers do not. It needs a **shown antenna** and the **engine running**. CUP lets you hide the antennas in the vehicle appearance options, and then the system is not available.
 
-A vehicle can only run the DUKE or the Boomerang. Switching one on switches the other off.
+By default a vehicle can only run the DUKE or the Boomerang. Switching one on switches the other off. The setting *Allow DUKE and Boomerang together* lifts that, and then both run independently.
 
 ## Settings
 
@@ -21,6 +21,7 @@ A vehicle can only run the DUKE or the Boomerang. Switching one on switches the 
 |---|---|---|
 | DUKE switch | Scroll wheel | Scroll wheel, ACE self-interaction or both. Without ACE the scroll wheel is always used. Per player |
 | Require running engine | on | Set by the server |
+| Allow DUKE and Boomerang together | off | Set by the server. Off: switching one system on switches the other off |
 
 The settings of the DUKE are on its page.
 

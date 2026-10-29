@@ -3,9 +3,11 @@
 if (isServer) then {
     [QGVAR(toggle), LINKFUNC(handleToggle)] call CBA_fnc_addEventHandler;
 
-    // The Boomerang and the DUKE exclude each other
+    // The Boomerang and the DUKE exclude each other, unless the setting allows both
     [EVENT_SYSTEM_ON, {
         params ["_vehicle", "_system"];
+
+        if (EGVAR(compat_cup,allowBoth)) exitWith {};
 
         if (_system != SYSTEM_DUKE && {_vehicle getVariable [QGVAR(on), false]}) then {
             [_vehicle, false] call FUNC(setJammer);
