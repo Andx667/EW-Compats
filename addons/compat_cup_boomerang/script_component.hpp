@@ -6,6 +6,8 @@
 
 // Switching one of the two systems on switches the other one off, see compat_cup_duke
 #define SYSTEM_BOOMERANG "boomerang"
+// Shown in the hint when it is switched
+#define SYSTEM_NAME "Boomerang"
 #define EVENT_SYSTEM_ON QEGVAR(compat_cup,systemOn)
 
 // Boomerang works up to this speed (km/h), 60 mph according to the data sheet of Raytheon BBN

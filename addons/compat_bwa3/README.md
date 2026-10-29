@@ -16,7 +16,7 @@ The Dingo 2 CG13 also jams ACRE radios, in addition to the IED jammer. Both are 
 |---|---|---|
 | `fnc_initVehicle` | every machine | Class event handler for vehicles with `BWA3_hasECM`: watches the `Engine` event and, on the server, registers the jammer |
 | `fnc_registerJammer` | server | Registers the Dingo as a disabled radio jammer in Crow's Electronic Warfare |
-| `fnc_handleToggle` | server | Switches that jammer with the CG13 (`ewc_compat_bwa3_ecmToggled`) |
+| `fnc_handleToggle` | server | Switches that jammer with the CG13 (`ewc_compat_bwa3_ecmToggled`, with the reason when the engine switched it off) and shows the hint of `ewc_main_fnc_notifyState` |
 | `fnc_removeCrowsActions` | every machine | Removes Crow's (de)activate actions from the Dingos on every `crowsEW_main_updateJammers` |
 
 ## Settings

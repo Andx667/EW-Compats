@@ -17,3 +17,6 @@
 #define DUKE_SYNC_DELAY 0.5
 
 #define DUKE_STATE_VAR "RHS_DUKE_OP"
+
+// Shown in the hint when it is switched
+#define SYSTEM_NAME "DUKE"

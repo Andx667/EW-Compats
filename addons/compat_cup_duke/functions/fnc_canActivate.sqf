@@ -18,7 +18,4 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-GVAR(enable)
-    && {alive _vehicle}
-    && {(_vehicle call FUNC(getRangeScale)) > 0}
-    && {!EGVAR(compat_cup,requireEngine) || {isEngineOn _vehicle}}
+([_vehicle] call FUNC(getBlockReason)) isEqualTo ""

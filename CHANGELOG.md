@@ -15,6 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
+- Main - Show a silent hint to the people in a vehicle when the DUKE, the CG13 or the Boomerang is switched on or off, with the reason when it switches itself off (engine stopped, antenna hidden, antennas destroyed, disabled in the settings)
 - Compat CUP - Show the shots a CUP Boomerang detects as red enemy markers on cTab, for the side of the vehicle. A sub-addon (folder `ctab`) with its own config, only loaded with cTab
 - Compat CUP - Add the setting *Show shots on* (map, cTab or both) for the shots of the Boomerang, only there when cTab is loaded
 - Compat CUP - A shot of a Boomerang close to the marker of an earlier shot (50 m, or 20 % of the range if more) does not add a marker on the map or on cTab, it keeps that marker longer

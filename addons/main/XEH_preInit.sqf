@@ -12,4 +12,9 @@ if (hasInterface) then {
     [CROWS_EVENT_UPDATE_JAMMERS, LINKFUNC(removeCrowsActions)] call CBA_fnc_addEventHandler;
 };
 
+// A system of a vehicle was switched on or off, see fnc_notifyState
+if (hasInterface) then {
+    [QGVAR(stateChanged), LINKFUNC(onStateChanged)] call CBA_fnc_addEventHandler;
+};
+
 ADDON = true;

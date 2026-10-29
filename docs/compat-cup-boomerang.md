@@ -11,6 +11,8 @@ This addon does **not** need Crow's Electronic Warfare and works in singleplayer
 
 *Activate Boomerang* / *Deactivate Boomerang* with the scroll wheel or the ACE self-interaction, see [Compat CUP](compat-cup.md#controls). The Boomerang switches off when the engine stops, the antenna is hidden or the vehicle is destroyed.
 
+Every change of state shows a silent hint to everybody in the vehicle, for example *Boomerang on* or *Boomerang off: engine stopped*. The reason is *engine stopped*, *antenna hidden* or *disabled in the settings*.
+
 ## Range
 
 | Shot | Heard |

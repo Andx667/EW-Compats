@@ -6,6 +6,8 @@
 
 // Switching one of the two systems on switches the other one off, see compat_cup_boomerang
 #define SYSTEM_DUKE "duke"
+// Shown in the hint when it is switched
+#define SYSTEM_NAME "DUKE"
 #define EVENT_SYSTEM_ON QEGVAR(compat_cup,systemOn)
 
 #define DUKE_FALLOFF_FACTOR 1.5

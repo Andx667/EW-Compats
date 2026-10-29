@@ -18,7 +18,4 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-GVAR(enable)
-    && {alive _vehicle}
-    && {[_vehicle, SYSTEM_BOOMERANG] call EFUNC(compat_cup,isShown)}
-    && {!EGVAR(compat_cup,requireEngine) || {isEngineOn _vehicle}}
+([_vehicle] call FUNC(getBlockReason)) isEqualTo ""

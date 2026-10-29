@@ -7,6 +7,7 @@
  * Arguments:
  * 0: Vehicle <OBJECT>
  * 1: Boomerang on <BOOL>
+ * 2: Why it is switched off by itself, see fnc_getBlockReason <STRING> (default: "")
  *
  * Return Value:
  * None
@@ -17,9 +18,15 @@
  * Public: No
  */
 
-params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]]];
+params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]], ["_reason", "", [""]]];
+
+private _wasOn = _vehicle getVariable [QGVAR(on), false];
 
 _vehicle setVariable [QGVAR(on), _enabled, true];
+
+if (_enabled != _wasOn) then {
+    [_vehicle, SYSTEM_NAME, _enabled, _reason] call EFUNC(main,notifyState);
+};
 
 if (_enabled) then {
     GVAR(vehicles) pushBackUnique _vehicle;
