@@ -16,6 +16,23 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam 
 - Destroyed vehicles are removed by the cleanup loop of Crow's Electronic Warfare. RHS lets its jamming script run on for dead vehicles, which has no effect on the radio jammer.
 - Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `fnc_removeCrowsActions` removes them from DUKE vehicles on every `crowsEW_main_updateJammers`. The DUKE is operated through its weapon, so no actions are lost. On a machine that is server and client at once, Crow's Electronic Warfare adds the actions *after* it broadcasts that update, so `fnc_registerJammer` removes them directly as well.
 
+## Functions
+
+| Function | Runs on | Purpose |
+|---|---|---|
+| `fnc_initVehicle` | every machine | Class event handler for vehicles with `rhs_duke_type`: registers the `Dammaged` handler and, on the server, the jammer |
+| `fnc_registerJammer` | server | Registers the vehicle as a radio jammer in Crow's Electronic Warfare with the radii for the given scale |
+| `fnc_onFired` | machine of the shooter | `fired` handler of the DUKE ammo: after `DUKE_SYNC_DELAY` asks the server to sync |
+| `fnc_onDammaged` | machine where the vehicle is local | Asks the server to sync after antenna damage, merging hits within the delay |
+| `fnc_syncJammer` | server | Matches the jammer to the DUKE: on/off from `RHS_DUKE_OP`, range from the antenna damage |
+| `fnc_removeCrowsActions` | every machine | Removes Crow's (de)activate actions from DUKE vehicles on every `crowsEW_main_updateJammers` |
+
+## Settings
+
+| Setting | Default | |
+|---|---|---|
+| Enable RHS DUKE jamming | on | If off, the DUKEs do not jam radios. Set by the server |
+
 ## Limitations
 
 - Everybody in range is jammed, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.

@@ -5,6 +5,10 @@ The Dingo 2 **CG13** also jams ACRE radios, in addition to the IED jammer. Both 
 !!! note "Gameplay values"
     The real CG13 is reported to offer reactive, active and combined jamming. This addon mimics the **active** mode: the jammer is either on or off and, while on, jams continuously in its whole radius.
 
+## Controls
+
+Switch the CG13 with its own actions, `TurnOnCG13` / `TurnOffCG13`. The radio jammer follows it.
+
 ## Range
 
 | | Radius |
@@ -14,6 +18,12 @@ The Dingo 2 **CG13** also jams ACRE radios, in addition to the IED jammer. Both 
 | Outer edge | **100 m** |
 
 The 40 m is the IED jammer radius hardcoded in BWA3. The falloff band is 1.5 times that.
+
+## Settings
+
+| Setting | Default | |
+|---|---|---|
+| Enable BWA3 CG13 jamming | on | If off, the Dingos do not jam radios. Set by the server |
 
 ## Quirks
 

@@ -82,6 +82,10 @@ An active Boomerang reports bullets that are fired nearby:
 - **Up to a second of delay** when an antenna is hidden or the engine stops, because the systems are checked once per second.
 - **Crow's Electronic Warfare is required** for the addon to load, Boomerang included. Only the DUKE needs multiplayer, as Crow's Electronic Warfare does. The Boomerang does not use it.
 
+## How it works
+
+CUP only models the antennas as animation sources, so this addon provides the whole function. A vehicle counts as equipped if it has one of these sources. The server registers every DUKE vehicle as a disabled radio jammer (`VoiceCommsJammer`) in Crow's Electronic Warfare and switches it with the DUKE; the jamming itself is done by Crow's Electronic Warfare. IEDs are frozen by the addon. The Boomerang does not use Crow's Electronic Warfare. Each machine checks the bullets it fires against the active Boomerangs and sends a report only for a shot that is heard.
+
 ## Dependencies
 
 - [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371)

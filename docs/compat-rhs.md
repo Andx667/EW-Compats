@@ -5,6 +5,10 @@ Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also 
 !!! note "Gameplay values"
     The real DUKE (AN/VLQ-12 CREW Duke) is a vehicle-mounted counter-RCIED jammer. Its frequency bands and jamming range are not publicly documented in detail, so the radii here are gameplay values. The jammer is modelled as simply on or off and jams continuously in its radius while on.
 
+## Controls
+
+Switch the DUKE with its weapon `rhsusf_weap_duke`, as in RHS. The radio jammer follows it.
+
 ## Range
 
 | State | Effective | Falloff band | Outer edge |
@@ -16,6 +20,12 @@ Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also 
 
 The 50 m is the IED jammer radius hardcoded in RHS. The falloff band is 1.5 times the effective radius. The 60 % for one antenna matches `rhs_duke.sqf`.
 
+## Settings
+
+| Setting | Default | |
+|---|---|---|
+| Enable RHS DUKE jamming | on | If off, the DUKEs do not jam radios. Set by the server |
+
 ## Quirks
 
 - **Operated through the weapon.** RHS toggles the DUKE with a pseudo weapon (`rhsusf_weap_duke`). The addon reads the result 0.5 s after the shot, because RHS only sets `RHS_DUKE_OP` in a spawned script.
@@ -25,6 +35,10 @@ The 50 m is the IED jammer radius hardcoded in RHS. The falloff band is 1.5 time
 - **Everybody in range is jammed**, including the own crew and allies.
 - **Multiplayer only.**
 - **CUP vehicles are not covered.** They only have a DUKE model without function, see [Compat CUP](compat-cup.md).
+
+## How it works
+
+RHS offers no event for the DUKE, so the addon adds a second `fired` handler to the DUKE weapon and reads `RHS_DUKE_OP` 0.5 s later. The server registers every vehicle with `rhs_duke_type` as a disabled radio jammer (`VoiceCommsJammer`) and keeps it in line with the DUKE state and the antenna damage. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
 
 ## Dependencies
 

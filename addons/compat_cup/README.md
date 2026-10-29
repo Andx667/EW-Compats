@@ -40,6 +40,35 @@ CUP models two systems on some of its vehicles and gives them no function: the *
 - A report has a random bearing error of up to 2.5° and range error of up to 10 %, the accuracy in the data sheet of the vehicle system, and is limited to one per second and vehicle. It goes to all machines (`ewc_compat_cup_shotDetected`, `fnc_onShotDetected`): a silent hint for the crew and a local map marker for everybody friendly to the vehicle.
 - The Boomerang listens (`fnc_isBoomerangReady`) while it is on, not above 97 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_cup_deafUntil` for the lockout time. Smoke launchers and flares do not count.
 
+## Functions
+
+| Function | Runs on | Purpose |
+|---|---|---|
+| `fnc_initVehicle` | every machine | Class event handler for vehicles with an antenna: adds the actions, and on the server the jammer and the weapon watch |
+| `fnc_getSources` | any | Animation sources of a vehicle that belong to a system |
+| `fnc_isShown` | any | Is at least one antenna of a system shown |
+| `fnc_canActivate` | any | Can a system be switched on (setting, alive, antenna, engine) |
+| `fnc_canToggle` | clients | Condition of the switch actions: crew only, in the chosen interaction style |
+| `fnc_addActions` | clients | Adds the scroll wheel actions |
+| `fnc_addAceActions` | clients | Adds the ACE self-interaction actions |
+| `fnc_handleToggle` | server | Checks a switch request and keeps DUKE and Boomerang exclusive |
+| `fnc_registerJammer` | server | Registers the DUKE as a radio jammer in Crow's Electronic Warfare |
+| `fnc_getRangeScale` | any | Share of the range from the antennas shown |
+| `fnc_getRadius` | any | Full jamming radius: setting times range scale |
+| `fnc_setJammer` | server | Switches the DUKE: state, radio jammer and mine jamming |
+| `fnc_jamLoop` | server | Once per second while a DUKE is on: switches it off when it no longer works, keeps mines jammed |
+| `fnc_updateMines` | server | Disables the IEDs in range and frees those that left |
+| `fnc_releaseMines` | server | Enables mines a DUKE held again |
+| `fnc_clearCrowsActions` | every machine | Removes only Crow's (de)activate actions from a jammer |
+| `fnc_removeCrowsActions` | every machine | Calls `fnc_clearCrowsActions` for the DUKE vehicles on every `crowsEW_main_updateJammers` |
+| `fnc_setBoomerang` | server | Switches the Boomerang and keeps the list of active ones |
+| `fnc_boomerangLoop` | server | Once per second while a Boomerang is on: switches it off when it no longer works |
+| `fnc_updateListening` | every machine | Adds or removes the projectile handler depending on that list |
+| `fnc_handleVehicleFired` | server | Deafens the Boomerang after the vehicle's own fire |
+| `fnc_isBoomerangReady` | any | Is the Boomerang listening (on, not deaf, not too fast) |
+| `fnc_onFired` | machine of the shooter | Checks a projectile against the listening Boomerangs |
+| `fnc_onShotDetected` | clients | Shows the hint and the map marker of a report |
+
 ## Settings
 
 | Setting | Default | |
@@ -51,7 +80,7 @@ CUP models two systems on some of its vehicles and gives them no function: the *
 | Jam IEDs | on | DUKE. Set by the server |
 | Require running engine | on | DUKE and Boomerang. Set by the server |
 | Report friendly fire | on | Boomerang. Set by the server |
-| Detection distance | 50 m | Boomerang, for supersonic bullets. Set by the server |
+| Detection distance | 30 m | Boomerang, for supersonic bullets. Set by the server |
 | Lockout after own fire | 5 s | Boomerang. Set by the server |
 | Marker lifetime | 30 s | Boomerang. 0 turns the markers off. Per client |
 
@@ -61,6 +90,7 @@ A changed radius, or an antenna hidden or shown again on a vehicle with two, rep
 
 - The DUKE jams everybody in range, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - The DUKE only disables IEDs, not every mine.
+- An IED that was triggered inside the range is expected to explode when it is freed, as with the Dingo CG13.
 - Disabled IEDs are shared with the Dingo CG13. If both jam the same IED and one stops first, the IED is free for up to a second, until the other one disables it again.
 - The systems are checked once per second, so a hidden antenna keeps working for up to a second.
 - The Boomerang hears small arms only, no shells or missiles. The 1000 m limit, the 100 m muzzle blast range and the 340 m/s speed of sound are estimates, as the real system's range is not public.

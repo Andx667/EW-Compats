@@ -10,10 +10,26 @@ The Dingo 2 CG13 also jams ACRE radios, in addition to the IED jammer. Both are 
 - `fnc_handleToggle` switches the jammer with `crowsEW_main_toggleJammer`. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
 - Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the CG13 switch. `fnc_removeCrowsActions` removes them from the Dingos on every `crowsEW_main_updateJammers` (`removeAllActions`; the Dingo only uses config user actions). On a machine that is server and client at once, Crow's Electronic Warfare adds the actions *after* it broadcasts that update, so `fnc_registerJammer` removes them directly as well.
 
+## Functions
+
+| Function | Runs on | Purpose |
+|---|---|---|
+| `fnc_initVehicle` | every machine | Class event handler for vehicles with `BWA3_hasECM`: watches the `Engine` event and, on the server, registers the jammer |
+| `fnc_registerJammer` | server | Registers the Dingo as a disabled radio jammer in Crow's Electronic Warfare |
+| `fnc_handleToggle` | server | Switches that jammer with the CG13 (`ewc_compat_bwa3_ecmToggled`) |
+| `fnc_removeCrowsActions` | every machine | Removes Crow's (de)activate actions from the Dingos on every `crowsEW_main_updateJammers` |
+
+## Settings
+
+| Setting | Default | |
+|---|---|---|
+| Enable BWA3 CG13 jamming | on | If off, the Dingos do not jam radios. Set by the server |
+
 ## Limitations
 
 - Everybody in range is jammed, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - The full jamming radius is the radius of the IED jammer (40 m, hardcoded in BWA3, so `ECM_EFFECTIVE_RADIUS` has to be adjusted if BWA3 changes it). The falloff radius is 1.5 times that.
+- A triggered IED explodes when it leaves the jamming range. This is BWA3's own behaviour.
 - Crow's Electronic Warfare only works in multiplayer.
 
 ## Dependencies
