@@ -78,6 +78,7 @@ An active Boomerang reports bullets that are fired nearby:
 - **Crow's own actions are hidden** on DUKE vehicles. Its (de)activate actions would desync from the DUKE, so only the DUKE switch is offered.
 - **Everybody in range is jammed** by the DUKE, including the own crew and allies.
 - **The DUKE only disables IEDs**, not every mine.
+- **A jammed IED is held, not defused.** IEDs in range are frozen (their simulation is switched off) and released when they leave the range or the DUKE stops, the same way as the Dingo CG13 of [Compat BWA3](compat-bwa3.md). An IED that was triggered inside the range is expected to explode on release, as it does with the CG13. Keep the distance until the IED is cleared.
 - **Up to a second of delay** when an antenna is hidden or the engine stops, because the systems are checked once per second.
 - **Crow's Electronic Warfare is required** for the addon to load, Boomerang included. Only the DUKE needs multiplayer, as Crow's Electronic Warfare does. The Boomerang does not use it.
 
