@@ -17,8 +17,10 @@
  */
 
 {
-    if (!([_x] call FUNC(canActivate))) then {
-        [_x, false] call FUNC(setState);
+    private _reason = [_x] call FUNC(getBlockReason);
+
+    if (_reason isNotEqualTo "") then {
+        [_x, false, _reason] call FUNC(setState);
     };
 } forEach +GVAR(vehicles);
 

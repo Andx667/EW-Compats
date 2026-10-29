@@ -28,8 +28,10 @@
             _vehicle setVariable [QGVAR(on), false, true];
         };
     } else {
-        if (!(_vehicle call FUNC(canActivate))) then {
-            [_vehicle, false] call FUNC(setJammer);
+        private _reason = _vehicle call FUNC(getBlockReason);
+
+        if (_reason isNotEqualTo "") then {
+            [_vehicle, false, _reason] call FUNC(setJammer);
         } else {
             // Antennas hidden or shown again change the range, and Crows can only replace the jammer for that
             private _state = _vehicle getVariable [QEGVAR(main,jammerState), []];

@@ -6,6 +6,7 @@
  * Arguments:
  * 0: Vehicle <OBJECT>
  * 1: DUKE on <BOOL>
+ * 2: Why it is switched off by itself, see fnc_getBlockReason <STRING> (default: "")
  *
  * Return Value:
  * None
@@ -16,11 +17,18 @@
  * Public: No
  */
 
-params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]]];
+params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]], ["_reason", "", [""]]];
 
 private _key = netId _vehicle;
 
+private _wasOn = _vehicle getVariable [QGVAR(on), false];
+
 _vehicle setVariable [QGVAR(on), _enabled, true];
+
+// Not for a jammer that only gets another radius
+if (_enabled != _wasOn) then {
+    [_vehicle, SYSTEM_NAME, _enabled, _reason] call EFUNC(main,notifyState);
+};
 
 if (_enabled) then {
     if !(_key in GVAR(active)) then {
