@@ -4,11 +4,6 @@
 #include "\z\ewc\addons\main\script_mod.hpp"
 #include "\z\ewc\addons\main\script_macros.hpp"
 
-#define CROWS_EVENT_ADD_JAMMER "crowsEW_main_addJammer"
-#define CROWS_EVENT_REMOVE_JAMMER "crowsEW_main_removeJammer"
-#define CROWS_EVENT_TOGGLE_JAMMER "crowsEW_main_toggleJammer"
-#define CROWS_EVENT_UPDATE_JAMMERS "crowsEW_main_updateJammers"
-#define CROWS_CAPABILITY_RADIO "VoiceCommsJammer"
 
 // The two systems CUP only models. They exclude each other on a vehicle
 #define SYSTEM_DUKE "duke"
@@ -42,8 +37,6 @@
 // Seconds between two checks of an active jammer (antenna, engine, mines in range)
 #define LOOP_INTERVAL 1
 
-// Crows tags its own (de)activate actions with this colour
-#define CROWS_ACTION_MARKER "#FFFF00"
 
 #define ACTION_MODE_SCROLL 0
 #define ACTION_MODE_ACE 1

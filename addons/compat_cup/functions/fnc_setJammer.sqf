@@ -38,7 +38,7 @@ if (_enabled) then {
 // A dead vehicle's jammer is removed by Crows
 if (!alive _vehicle) exitWith {};
 
-private _state = _vehicle getVariable [QGVAR(jammerState), []];
+private _state = _vehicle getVariable [QEGVAR(main,jammerState), []];
 
 if (_state isEqualTo []) exitWith {};
 
@@ -51,6 +51,6 @@ if (_radius != (_vehicle call FUNC(getRadius))) exitWith {
 };
 
 if (_enabled != _wasEnabled) then {
-    _vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];
+    _vehicle setVariable [QEGVAR(main,jammerState), [_enabled, _radius]];
     [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _enabled]] call CBA_fnc_localEvent;
 };

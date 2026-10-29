@@ -32,7 +32,7 @@
             [_vehicle, false] call FUNC(setJammer);
         } else {
             // Antennas hidden or shown again change the range, and Crows can only replace the jammer for that
-            private _state = _vehicle getVariable [QGVAR(jammerState), []];
+            private _state = _vehicle getVariable [QEGVAR(main,jammerState), []];
 
             if (_state isNotEqualTo [] && {(_state select 1) != (_vehicle call FUNC(getRadius))}) then {
                 [_vehicle, true] call FUNC(setJammer);

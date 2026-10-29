@@ -1,23 +1,25 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Prepares a Dingo with CG13 so the CG13 switch also drives the Crows radio jammer.
+ * Prepares a Dingo with CG13 so the CG13 also stops the Crows radio jammer on engine stop. The jammer itself
+ * is registered by the registry (CfgEWC >> Jammers >> BWA3_CG13).
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
+ * 1: Class name of the registry entry of the vehicle <STRING>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_vehicle] call ewc_compat_bwa3_fnc_initVehicle
+ * [_vehicle, "BWA3_CG13"] call ewc_compat_bwa3_fnc_initVehicle
  *
  * Public: No
  */
 
-params [["_vehicle", objNull, [objNull]]];
+params [["_vehicle", objNull, [objNull]], ["_entry", "", [""]]];
 
-if (!GVAR(enableCG13) || {getNumber (configOf _vehicle >> "BWA3_hasECM") != 1}) exitWith {};
+if (_entry isNotEqualTo "BWA3_CG13") exitWith {};
 
 // The Engine EH only fires where the vehicle is local, so it has to exist on every machine.
 // BWA3 switches the CG13 off on engine stop without any event we could listen to.
@@ -28,8 +30,3 @@ _vehicle addEventHandler ["Engine", {
         [QGVAR(ecmToggled), [_vehicle, false]] call CBA_fnc_serverEvent;
     };
 }];
-
-if (!isServer) exitWith {};
-
-// Editor-placed vehicles initialise before Crows has registered its server event handlers
-[{CBA_missionTime > 0}, LINKFUNC(registerJammer), [_vehicle]] call CBA_fnc_waitUntilAndExecute;

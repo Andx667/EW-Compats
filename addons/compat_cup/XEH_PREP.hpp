@@ -3,7 +3,6 @@ PREP(addActions);
 PREP(boomerangLoop);
 PREP(canActivate);
 PREP(canToggle);
-PREP(clearCrowsActions);
 PREP(getSources);
 PREP(getRadius);
 PREP(getRangeScale);

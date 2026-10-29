@@ -4,11 +4,6 @@
 #include "\z\ewc\addons\main\script_mod.hpp"
 #include "\z\ewc\addons\main\script_macros.hpp"
 
-#define CROWS_EVENT_ADD_JAMMER "crowsEW_main_addJammer"
-#define CROWS_EVENT_REMOVE_JAMMER "crowsEW_main_removeJammer"
-#define CROWS_EVENT_TOGGLE_JAMMER "crowsEW_main_toggleJammer"
-#define CROWS_EVENT_UPDATE_JAMMERS "crowsEW_main_updateJammers"
-#define CROWS_CAPABILITY_RADIO "VoiceCommsJammer"
 
 // RHS hardcodes the mine jammer range in rhs_duke.sqf, keep in sync
 #define DUKE_EFFECTIVE_RADIUS 50
