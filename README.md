@@ -45,11 +45,6 @@ Every feature is its own addon and is skipped when the mod it extends is not loa
 
 Radio jamming needs [ACRE](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892) (the radio effect of Crow's Electronic Warfare is applied to the receiving side). Crow's Electronic Warfare only works in multiplayer.
 
-## Planned
-
-- Jammers of the compat addons (DUKE, CG13) also jamming cTab's Blue Force Tracker
-- Zeus actions for the compat vehicles (force jammer on or off, override radius)
-
 ## Contributing
 
 For new contributors, see the [Contributing Setup & Guidelines](./.github/CONTRIBUTING.md).

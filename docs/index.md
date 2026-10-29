@@ -18,8 +18,3 @@ The project is entirely open-source and any contributions are welcome.
 | [Compat CUP Boomerang](compat-cup-boomerang.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Vehicles with a Boomerang shot finder get shot detection with hints and markers on the map and, with cTab, on the tablets. Does not need Crow's Electronic Warfare |
 | [Compat RHS USAF](compat-rhs-usaf.md) | [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Vehicles with a DUKE also jam radios |
 | [Compat RHS AFRF](compat-rhs-afrf.md) | [RHS AFRF](https://steamcommunity.com/sharedfiles/filedetails/?id=843425103) | The GAZ-66 (R-142N) jams radios and drones with its mast deployed |
-
-## Planned
-
-- Jammers of the compat addons (DUKE, CG13) also jamming cTab's Blue Force Tracker
-- Zeus actions for the compat vehicles (force jammer on or off, override radius)
