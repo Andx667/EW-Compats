@@ -25,16 +25,4 @@ private _radius = _vehicle call FUNC(getRadius);
 
 _vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];
 
-[CROWS_EVENT_ADD_JAMMER, [
-    _vehicle,
-    DUKE_FALLOFF_FACTOR * _radius,
-    _radius,
-    _enabled,
-    [CROWS_CAPABILITY_RADIO]
-]] call CBA_fnc_localEvent;
-
-// On a hosted server Crows adds its actions after it broadcasts the jammer list, so the cleanup on
-// that update (fnc_removeCrowsActions) runs too early. The event above is handled synchronously
-if (hasInterface) then {
-    _vehicle call FUNC(clearCrowsActions);
-};
+[_vehicle, _enabled, _radius, DUKE_FALLOFF_FACTOR] call EFUNC(main,addJammer);

@@ -6,9 +6,9 @@ The Dingo 2 CG13 also jams ACRE radios, in addition to the IED jammer. Both are 
 
 - BWA3 switches the CG13 only through the variable `BWA3_Dingo2_ECM_on` (user actions `TurnOnCG13` / `TurnOffCG13`) and offers no event or callback. The `statement` entries of both user actions are therefore overridden in `CfgVehicles.hpp`: they still set the variable and additionally send the event `ewc_compat_bwa3_ecmToggled` to the server.
 - BWA3 switches the CG13 off when the engine stops (its `POWER_FAILURE` transition) without any event. An `Engine` event handler (`fnc_initVehicle`) therefore sends the same event with `false` when the engine stops. It has to be registered on every client, because `Engine` only fires where the vehicle is local.
-- The server registers every vehicle with `BWA3_hasECM = 1` once (`fnc_registerJammer`) as a disabled radio jammer (`VoiceCommsJammer`) in Crow's Electronic Warfare through `crowsEW_main_addJammer`. The event is sent only once `CBA_missionTime > 0`, because editor-placed vehicles initialise before Crow's Electronic Warfare has registered its handlers.
+- Every vehicle with `BWA3_hasECM = 1` is a jammer of the registry in `ewc_main` (`CfgEWC >> Jammers >> BWA3_CG13`). `ewc_main` registers it once on the server as a disabled radio jammer in Crow's Electronic Warfare, see the main addon.
 - `fnc_handleToggle` switches the jammer with `crowsEW_main_toggleJammer`. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
-- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the CG13 switch. `fnc_removeCrowsActions` removes them from the Dingos on every `crowsEW_main_updateJammers` (`removeAllActions`; the Dingo only uses config user actions). On a machine that is server and client at once, Crow's Electronic Warfare adds the actions *after* it broadcasts that update, so `fnc_registerJammer` removes them directly as well.
+- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the CG13 switch. `ewc_main` removes them from the Dingos, see the main addon.
 
 ## Limitations
 

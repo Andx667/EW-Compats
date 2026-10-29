@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Removes the activate/deactivate actions Crows adds to a jammer, and nothing else. The DUKE switch
- * is an action of the vehicle as well, so removeAllActions would take that away too.
+ * Removes the activate/deactivate actions Crows adds to a jammer, and nothing else. The switch of a
+ * compat addon can be an action of the vehicle as well, so removeAllActions would take that away too.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -11,9 +11,9 @@
  * None
  *
  * Example:
- * [_vehicle] call ewc_compat_cup_fnc_clearCrowsActions
+ * [_vehicle] call ewc_main_fnc_clearCrowsActions
  *
- * Public: No
+ * Public: Yes
  */
 
 params [["_vehicle", objNull, [objNull]]];

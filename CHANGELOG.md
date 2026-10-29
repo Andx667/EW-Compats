@@ -20,6 +20,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Changed
 
+- Main - Add a registry of jammer vehicles (`CfgEWC >> Jammers`) that registers them in Crow's EW without code, with shared `addJammer` and `clearCrowsActions` functions. Compat RHS and BWA3 now only hold their entry and vehicle specific handlers, Compat CUP uses the shared functions
 - Settings - Move CBA settings into an `initSettings.inc.sqf` per addon
 
 ## [0.2.0] - 2026-10-28

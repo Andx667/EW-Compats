@@ -17,4 +17,5 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgEWC.hpp"
 #include "CfgAmmo.hpp"
