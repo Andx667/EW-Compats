@@ -15,6 +15,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
+- Compat CUP - Show the shots a CUP Boomerang detects as red enemy markers on cTab, for the side of the vehicle. A sub-addon (folder `ctab`) with its own config, only loaded with cTab
+- Compat CUP - Add the setting *Show shots on* (map, cTab or both) for the shots of the Boomerang, only there when cTab is loaded
 - Compat RHS - Add setting to disable the DUKE jammer
 - Compat BWA3 - Add setting to disable the CG13 jammer
 

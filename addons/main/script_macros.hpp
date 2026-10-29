@@ -8,6 +8,9 @@
 #undef PREP
 #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 
+// Same for a sub-addon, a folder of the addon with its own config.cpp. Its functions are in the folder "functions" of the sub-addon and named <sub>_<function>
+#define PREP_SUB(sub,fncName) [QPATHTOF(sub\functions\DOUBLES(fnc,fncName).sqf), QFUNC(DOUBLES(sub,fncName))] call CBA_fnc_compileFunction
+
 // Crows Electronic Warfare: events, capability and the colour it gives the title of its own actions
 #define CROWS_EVENT_ADD_JAMMER "crowsEW_main_addJammer"
 #define CROWS_EVENT_REMOVE_JAMMER "crowsEW_main_removeJammer"

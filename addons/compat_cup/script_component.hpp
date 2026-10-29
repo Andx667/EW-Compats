@@ -41,3 +41,8 @@
 #define ACTION_MODE_SCROLL 0
 #define ACTION_MODE_ACE 1
 #define ACTION_MODE_BOTH 2
+
+// Where the Boomerang shows the position of a shooter (the setting is in the cTab sub-addon, folder ctab)
+#define MARKER_TARGET_MAP 0
+#define MARKER_TARGET_CTAB 1
+#define MARKER_TARGET_BOTH 2
