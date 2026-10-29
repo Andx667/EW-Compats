@@ -1,12 +1,12 @@
 # Compat Boomerang
 
-Vehicles with a Boomerang shot finder get a switch for shot detection. A running Boomerang reports shots near the vehicle with a hint for the crew and a map marker for everybody friendly. Mods only model the antenna of the shot finder, so this addon provides the whole function for them. It is the common core of `compat_cup_boomerang` and `compat_rhs_usaf_boomerang`, which only register their vehicles, and does **not** need Crow's Electronic Warfare.
+Vehicles with a Boomerang shot finder get a switch for shot detection. A running Boomerang reports shots near the vehicle with a hint for the crew and a map marker for everybody friendly. Mods only model the antenna of the shot finder, so this addon provides the whole function for them. It is the common core of `compat_cup/boomerang` and `compat_rhs_usaf/boomerang`, which only register their vehicles, and does **not** need Crow's Electronic Warfare.
 
 ## How it works
 
 - A vehicle counts as equipped if its `AnimationSources` contain one of the sources of the registry `CfgEWC >> Boomerangs` (`fnc_getSources`). A compat addon adds a class with `sources[]` (see `CfgEWC.hpp`) and its vehicles get the Boomerang without any code. The names are read once in `preInit`. Classes inherited from a parent are not listed as children, so every class up the inheritance chain is read and the result is cached per class. The antenna is shown at phase 0 and hidden at phase 1, mods hide it by default (`fnc_isShown`), so it has to be shown in the vehicle appearance options.
 - Crew can switch the Boomerang with a scroll wheel action (`fnc_addActions`), an ACE self-interaction (`fnc_addAceActions`) or both (CBA setting `ewc_compat_boomerang_actionMode`). `fnc_canOperate` limits them to driver, commander and gunners, and `fnc_canToggle` adds the state of the system.
-- `fnc_handleToggle` (server) checks a switch request and raises the local CBA event `ewc_compat_boomerang_switchedOn` with the vehicle before it switches, so a compat addon can switch off a system that excludes the Boomerang, like the DUKE of CUP (see `compat_cup_boomerang`).
+- `fnc_handleToggle` (server) checks a switch request and raises the local CBA event `ewc_compat_boomerang_switchedOn` with the vehicle before it switches, so a compat addon can switch off a system that excludes the Boomerang, like the DUKE of CUP (see `compat_cup/boomerang`).
 - `fnc_setState` keeps a list of the vehicles with a Boomerang that is on (`ewc_compat_boomerang_vehicles`) and broadcasts it. A server side loop (`fnc_loop`) switches a Boomerang off when its vehicle is destroyed, its antenna is hidden, its engine stops or it is disabled.
 - Every projectile of the mission would go through a handler, so there is none while no Boomerang is on. `fnc_updateListening` adds a `ProjectileCreated` mission event handler on each machine when the list of Boomerangs that are on gets its first vehicle, and removes it when the list is empty again. The server sends the list with the event `ewc_compat_boomerang_listChanged`. A player who joins late asks for it with `ewc_compat_boomerang_requestList`.
 - The handler (`fnc_onFired`) only looks at local projectiles, so the shot is checked on the machine it comes from and never has to be sent to the server. The cheap checks come first, and the expensive ones only run for a shot that is really heard:
@@ -24,8 +24,8 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 
 | Addon | Mod | Vehicles and animation sources |
 |---|---|---|
-| [`compat_cup_boomerang`](../compat_cup_boomerang/README.md) | CUP Vehicles | HMMWV (M1151, M1240) and RG-31: `hide_antenna_boomerang`, `SYS_boomerang`. Also switches the DUKE off |
-| [`compat_rhs_usaf_boomerang`](../compat_rhs_usaf_boomerang/README.md) | RHS USAF | M1245 SOCOM: `hide_boomerang` |
+| [`compat_cup/boomerang`](../compat_cup/boomerang/README.md) | CUP Vehicles | HMMWV (M1151, M1240) and RG-31: `hide_antenna_boomerang`, `SYS_boomerang`. Also switches the DUKE off |
+| [`compat_rhs_usaf/boomerang`](../compat_rhs_usaf/boomerang/README.md) | RHS USAF | M1245 SOCOM: `hide_boomerang` |
 
 ## Functions
 
@@ -70,7 +70,7 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 
 ## Dependencies
 
-- None besides `ewc_common`. The vehicles come from the compat addons `compat_cup_boomerang` and `compat_rhs_usaf_boomerang`.
+- None besides `ewc_common`. The vehicles come from the compat addons `compat_cup/boomerang` and `compat_rhs_usaf/boomerang`.
 - Optional: [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) for the sub-addon `ctab`
 
 ## Maintainer

@@ -4,8 +4,8 @@ Vehicles with a **Boomerang** shot finder get a Boomerang switch. A running Boom
 
 | Mod | Addon | Vehicles |
 |---|---|---|
-| [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | `compat_cup_boomerang` | HMMWV (M1151, M1240) and RG-31 families. Switching it on switches the DUKE of [Compat CUP DUKE](compat-cup-duke.md) off and the other way round |
-| [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | `compat_rhs_usaf_boomerang` | M1245 SOCOM (`rhsusf_m1245_m2crows_socom_d`, `rhsusf_m1245_mk19crows_socom_d` and their `_deploy` variants) |
+| [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | `compat_cup/boomerang` | HMMWV (M1151, M1240) and RG-31 families. Switching it on switches the DUKE of [Compat CUP DUKE](compat-cup-duke.md) off and the other way round |
+| [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | `compat_rhs_usaf/boomerang` | M1245 SOCOM (`rhsusf_m1245_m2crows_socom_d`, `rhsusf_m1245_mk19crows_socom_d` and their `_deploy` variants) |
 
 This addon does **not** need Crow's Electronic Warfare and works in singleplayer.
 
@@ -105,5 +105,5 @@ Each machine checks the bullets it fires against the active Boomerangs and sends
 
 ## Dependencies
 
-- A mod addon with vehicles: `compat_cup_boomerang` with [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) or `compat_rhs_usaf_boomerang` with [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117)
+- A mod addon with vehicles: `compat_cup/boomerang` with [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) or `compat_rhs_usaf/boomerang` with [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117)
 - Optional: [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) to show the shots on the tablets

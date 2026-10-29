@@ -1,6 +1,6 @@
 # Compat CUP
 
-CUP models two systems on some of its vehicles but gives them no function: the **DUKE** antenna and the **Boomerang** shot finder. This addon makes both work. The DUKE is built on the shared base `compat_cup`, the Boomerang is the common [Compat Boomerang](compat-boomerang.md) with the CUP vehicles registered by `compat_cup_boomerang`:
+CUP models two systems on some of its vehicles but gives them no function: the **DUKE** antenna and the **Boomerang** shot finder. This addon makes both work. The DUKE is built on the shared base `compat_cup`, the Boomerang is the common [Compat Boomerang](compat-boomerang.md) with the CUP vehicles registered by `compat_cup/boomerang`:
 
 | Addon | What it does | Needs Crow's Electronic Warfare |
 |---|---|---|
@@ -51,7 +51,7 @@ The settings of the DUKE are on its page.
 
 ## How it works
 
-CUP only models the antennas as animation sources, so the addons provide the whole function. The shared addon reads the sources of a vehicle class once and keeps the result, adds the switch of the DUKE and checks who may use it. The DUKE reports its state in a public variable (`ewc_compat_cup_duke_on`), handles the switch request on the server, and tells the Boomerang to switch off when it is switched on. `compat_cup_boomerang` passes this on to [Compat Boomerang](compat-boomerang.md) and the other way round.
+CUP only models the antennas as animation sources, so the addons provide the whole function. The shared addon reads the sources of a vehicle class once and keeps the result, adds the switch of the DUKE and checks who may use it. The DUKE reports its state in a public variable (`ewc_compat_cup_duke_on`), handles the switch request on the server, and tells the Boomerang to switch off when it is switched on. `compat_cup/boomerang` passes this on to [Compat Boomerang](compat-boomerang.md) and the other way round.
 
 ## Dependencies
 

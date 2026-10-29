@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Changed
+
+- Compat CUP, Compat RHS USAF - The addons `compat_cup_duke`, `compat_cup_boomerang`, `compat_rhs_usaf_boomerang` and the DUKE of `compat_rhs_usaf` are sub-addons now, folders `duke` and `boomerang` of `compat_cup` and `compat_rhs_usaf` with a `config.cpp` of their own, so a mod has one PBO. The patch names stay (`ewc_compat_cup_duke`...), and a sub-addon is still skipped alone when its dependencies are missing. The functions are named `ewc_compat_cup_fnc_duke_*` and `ewc_compat_rhs_usaf_fnc_duke_*` instead of `ewc_compat_cup_duke_fnc_*`. Settings, variables and events keep their names
+
 ## [1.2.0] - 2026-10-29
 
 ### Fixed
