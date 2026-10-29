@@ -9,6 +9,7 @@
  * 1: Jammer enabled <BOOL> (default: false)
  * 2: Radius in m, negative for the one of the entry <NUMBER> (default: -1)
  * 3: Falloff factor, negative for the one of the entry <NUMBER> (default: -1)
+ * 4: Crows capabilities, empty for the ones of the entry <ARRAY> (default: [])
  *
  * Return Value:
  * None
@@ -19,7 +20,7 @@
  * Public: Yes
  */
 
-params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]], ["_radius", -1, [0]], ["_falloffFactor", -1, [0]]];
+params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]], ["_radius", -1, [0]], ["_falloffFactor", -1, [0]], ["_capabilities", [], [[]]]];
 
 if (isNull _vehicle || {!isServer}) exitWith {};
 
@@ -33,7 +34,9 @@ if (_falloffFactor < 0) then {
     _falloffFactor = [getNumber (_config >> "falloffFactor"), DEFAULT_FALLOFF_FACTOR] select !isNumber (_config >> "falloffFactor");
 };
 
-private _capabilities = [[CROWS_CAPABILITY_RADIO], getArray (_config >> "capabilities")] select isArray (_config >> "capabilities");
+if (_capabilities isEqualTo []) then {
+    _capabilities = [[CROWS_CAPABILITY_RADIO], getArray (_config >> "capabilities")] select isArray (_config >> "capabilities");
+};
 
 // What is registered, so the compat addons can tell whether the radius has to change
 _vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];

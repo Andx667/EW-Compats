@@ -1,4 +1,4 @@
-# Compat RHS
+# Compat RHS USAF
 
 Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
 

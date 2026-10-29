@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ewc">
-    <Package name="compat_rhs">
-        <Key ID="STR_ewc_compat_rhs_category">
+    <Package name="compat_rhs_usaf">
+        <Key ID="STR_ewc_compat_rhs_usaf_category">
             <English>RHS DUKE</English>
             <French>RHS DUKE</French>
             <Spanish>RHS DUKE</Spanish>
@@ -9,7 +9,7 @@
             <Russian>RHS DUKE</Russian>
             <German>RHS DUKE</German>
         </Key>
-        <Key ID="STR_ewc_compat_rhs_setting_enableDuke">
+        <Key ID="STR_ewc_compat_rhs_usaf_setting_enableDuke">
             <English>Enable RHS DUKE jamming</English>
             <French>Activer le brouillage du DUKE RHS</French>
             <Spanish>Activar interferencia del DUKE de RHS</Spanish>
@@ -17,7 +17,7 @@
             <Russian>Включить подавление DUKE из RHS</Russian>
             <German>RHS-DUKE-Störung aktivieren</German>
         </Key>
-        <Key ID="STR_ewc_compat_rhs_setting_enableDuke_tooltip">
+        <Key ID="STR_ewc_compat_rhs_usaf_setting_enableDuke_tooltip">
             <English>If disabled, the DUKE of RHS vehicles no longer drives a Crow's EW radio jammer.</English>
             <French>Si désactivé, le DUKE des véhicules RHS ne pilote plus de brouilleur radio Crow's EW.</French>
             <Spanish>Si está desactivado, el DUKE de los vehículos de RHS ya no controla un inhibidor de radio de Crow's EW.</Spanish>

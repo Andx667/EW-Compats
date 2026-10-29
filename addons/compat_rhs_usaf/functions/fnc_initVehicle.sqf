@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [_vehicle, "RHS_DUKE"] call ewc_compat_rhs_fnc_initVehicle
+ * [_vehicle, "RHS_DUKE"] call ewc_compat_rhs_usaf_fnc_initVehicle
  *
  * Public: No
  */

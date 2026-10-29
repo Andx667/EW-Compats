@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [_vehicle] call ewc_compat_rhs_fnc_onFired
+ * [_vehicle] call ewc_compat_rhs_usaf_fnc_onFired
  *
  * Public: No
  */
