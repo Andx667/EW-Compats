@@ -13,8 +13,8 @@ class CfgPatches {
 
         skipWhenMissingDependencies = 1;
         author = AUTHOR;
-        authors[] = {\"Andx\"};
-        url = \"https://github.com/Andx667/EW-Compats\";
+        authors[] = {"Andx"};
+        url = "https://github.com/Andx667/EW-Compats";
         VERSION_CONFIG;
     };
 };
