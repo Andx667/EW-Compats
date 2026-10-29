@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="common">
+        <Key ID="STR_ewc_common_reason_antenna">
+            <English>antenna hidden</English>
+            <French>antenne masquée</French>
+            <Spanish>antena oculta</Spanish>
+            <Polish>antena ukryta</Polish>
+            <Russian>антенна скрыта</Russian>
+            <German>Antenne ausgeblendet</German>
+        </Key>
+        <Key ID="STR_ewc_common_reason_damage">
+            <English>antennas destroyed</English>
+            <French>antennes détruites</French>
+            <Spanish>antenas destruidas</Spanish>
+            <Polish>anteny zniszczone</Polish>
+            <Russian>антенны уничтожены</Russian>
+            <German>Antennen zerstört</German>
+        </Key>
+        <Key ID="STR_ewc_common_reason_disabled">
+            <English>disabled in the settings</English>
+            <French>désactivé dans les paramètres</French>
+            <Spanish>desactivado en los ajustes</Spanish>
+            <Polish>wyłączony w ustawieniach</Polish>
+            <Russian>отключён в настройках</Russian>
+            <German>in den Einstellungen deaktiviert</German>
+        </Key>
+        <Key ID="STR_ewc_common_reason_engine">
+            <English>engine stopped</English>
+            <French>moteur arrêté</French>
+            <Spanish>motor parado</Spanish>
+            <Polish>silnik zatrzymany</Polish>
+            <Russian>двигатель остановлен</Russian>
+            <German>Motor aus</German>
+        </Key>
+        <Key ID="STR_ewc_common_state_off">
+            <English>%1 off</English>
+            <French>%1 désactivé</French>
+            <Spanish>%1 desactivado</Spanish>
+            <Polish>%1 wyłączony</Polish>
+            <Russian>%1 выключен</Russian>
+            <German>%1 aus</German>
+        </Key>
+        <Key ID="STR_ewc_common_state_offReason">
+            <English>%1 off: %2</English>
+            <French>%1 désactivé : %2</French>
+            <Spanish>%1 desactivado: %2</Spanish>
+            <Polish>%1 wyłączony: %2</Polish>
+            <Russian>%1 выключен: %2</Russian>
+            <German>%1 aus: %2</German>
+        </Key>
+        <Key ID="STR_ewc_common_state_on">
+            <English>%1 on</English>
+            <French>%1 activé</French>
+            <Spanish>%1 activado</Spanish>
+            <Polish>%1 włączony</Polish>
+            <Russian>%1 включён</Russian>
+            <German>%1 an</German>
+        </Key>
+    </Package>
+</Project>

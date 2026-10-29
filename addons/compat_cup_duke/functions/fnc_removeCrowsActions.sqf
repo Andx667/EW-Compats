@@ -26,7 +26,7 @@ params [["_jamMap", createHashMap, [createHashMap]]];
         private _jammer = _y select 0;
 
         if (!isNull _jammer && {([_jammer, SYSTEM_DUKE] call EFUNC(compat_cup,getSources)) isNotEqualTo []}) then {
-            _jammer call EFUNC(main,clearCrowsActions);
+            _jammer call EFUNC(common,clearCrowsActions);
         };
     } forEach _jamMap;
 }, [_jamMap]] call CBA_fnc_execNextFrame;

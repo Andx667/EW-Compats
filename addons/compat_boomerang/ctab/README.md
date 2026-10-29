@@ -9,7 +9,7 @@ The CBA setting **Show shots** of Compat Boomerang (set by the server) decides w
 ## Structure
 
 - The sub-addon is the folder `ctab` of the PBO of Compat Boomerang. A `config.cpp` in a folder of a PBO is an addon of its own for the game, so its patch (`ewc_compat_boomerang_ctab`, `SUBADDON`) lists cTab in `requiredAddons` and has `skipWhenMissingDependencies = 1`. Without cTab only this config is skipped, the rest of Compat Boomerang loads as usual. `addonRootClass` takes author, url and version from the patch of Compat Boomerang.
-- `script_component.hpp` defines `SUBCOMPONENT` and includes the one of Compat Boomerang. Functions are in `ctab\functions`, compiled with `PREP_SUB(ctab,name)` (`ewc_main`'s `script_macros.hpp`) and named `ewc_compat_boomerang_fnc_ctab_<name>`. The strings of the sub-addon are `STR_ewc_compat_boomerang_ctab_*` (`LSUBLSTRING`), in the stringtable of Compat Boomerang.
+- `script_component.hpp` defines `SUBCOMPONENT` and includes the one of Compat Boomerang. Functions are in `ctab\functions`, compiled with `PREP_SUB(ctab,name)` (`ewc_common`'s `script_macros.hpp`) and named `ewc_compat_boomerang_fnc_ctab_<name>`. The strings of the sub-addon are `STR_ewc_compat_boomerang_ctab_*` (`LSUBLSTRING`), in the stringtable of Compat Boomerang.
 
 ## How it works
 

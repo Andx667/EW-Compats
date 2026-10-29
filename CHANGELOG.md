@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Changed
+
+- Common - Move the functions, the registry `CfgEWC >> Jammers`, the event handlers and the state hint strings of `ewc_main` into the new addon `ewc_common`. `ewc_main` keeps the structure (mod entry, macros, version, name). The functions, variables, events and strings are now named `ewc_common_*` instead of `ewc_main_*` (for example `ewc_common_fnc_addJammer`, `ewc_common_jammerState`, `ewc_common_vehicleInit`), and the compat addons require `ewc_common`. Other addons that use them have to be changed
+
 ### Fixed
 
 - Compat RHS USAF - Free the IEDs of a vehicle that is destroyed with the DUKE on, and stop the DUKE script of RHS

@@ -6,7 +6,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) 
 
 - RHS switches the DUKE through a pseudo weapon (`rhsusf_weap_duke` / `rhsusf_weap_duke_on`). The `fired` event handler of the ammo `rhsusf_ammo_duke` starts or stops the jamming script `rhs_fnc_duke_jammer` and sets the public variable `RHS_DUKE_OP`. RHS offers no event or callback, and the script only handles TFAR (`tf_*DistanceMultiplicator`), so nothing happens for ACRE.
 - Next to the RHS handler, `CfgAmmo.hpp` adds a second `fired` handler (`fnc_onFired`). It does not read the variable immediately, because RHS only sets it in a spawned script. After `DUKE_SYNC_DELAY` (0.5 s) it asks the server through the CBA event `ewc_compat_rhs_usaf_syncJammer` to sync the radio jammer.
-- Every land vehicle with `rhs_duke_type` in its config is a jammer of the registry in `ewc_main` (`CfgEWC >> Jammers >> RHS_DUKE`). `ewc_main` registers it once on the server as a disabled radio jammer in Crow's Electronic Warfare, see the main addon. `fnc_initVehicle` only adds the damage handler.
+- Every land vehicle with `rhs_duke_type` in its config is a jammer of the registry in `ewc_common` (`CfgEWC >> Jammers >> RHS_DUKE`). `ewc_common` registers it once on the server as a disabled radio jammer in Crow's Electronic Warfare, see the main addon. `fnc_initVehicle` only adds the damage handler.
 - `fnc_syncJammer` (server) derives the wanted state from RHS and matches Crow's Electronic Warfare to it:
     - on or off from `RHS_DUKE_OP`
     - both antennas destroyed (`HitDuke1` / `HitDuke2` >= 0.99): off
@@ -15,7 +15,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) 
 - When the DUKE goes offline, `fnc_syncJammer` calls `fnc_releaseMines` after `DUKE_RELEASE_DELAY` (1.5 s). RHS frees its IEDs at the end of the script with `enableSimulationGlobal true` on the gunner's machine, and that only works for local objects, so IEDs would stay disabled on a dedicated server.
 - Antenna damage is reported by `fnc_onDammaged` through `Dammaged`. The handler only fires where the vehicle is local and is therefore registered on every client. It does nothing while the DUKE is off and merges hits within the delay into one sync.
 - Destroyed vehicles are removed by the cleanup loop of Crow's Electronic Warfare. RHS lets its jamming script run on for dead vehicles, which has no effect on the radio jammer.
-- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `ewc_main` removes them from DUKE vehicles. The DUKE is operated through its weapon, so no actions are lost.
+- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `ewc_common` removes them from DUKE vehicles. The DUKE is operated through its weapon, so no actions are lost.
 
 ## Functions
 
@@ -25,7 +25,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) 
 | `fnc_onFired` | machine of the shooter | `fired` handler of the DUKE ammo: after `DUKE_SYNC_DELAY` asks the server to sync |
 | `fnc_onDammaged` | machine where the vehicle is local | Asks the server to sync after antenna damage, merging hits within the delay |
 | `fnc_releaseMines` | server | Enables the simulation of the IEDs in 50 m again after the DUKE went offline, except those another running RHS DUKE holds. `rhs_duke.sqf` does this itself with a plain `enableSimulationGlobal`, which does nothing for IEDs that are not local to the gunner |
-| `fnc_syncJammer` | server | Matches the jammer to the DUKE: on/off from `RHS_DUKE_OP`, range from the antenna damage. Shows the hint of `ewc_main_fnc_notifyState` when the state changed |
+| `fnc_syncJammer` | server | Matches the jammer to the DUKE: on/off from `RHS_DUKE_OP`, range from the antenna damage. Shows the hint of `ewc_common_fnc_notifyState` when the state changed |
 
 ## Settings
 

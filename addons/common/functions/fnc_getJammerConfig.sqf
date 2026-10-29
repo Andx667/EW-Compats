@@ -10,7 +10,7 @@
  * Entry, configNull if the vehicle is no registered jammer <CONFIG>
  *
  * Example:
- * [_vehicle] call ewc_main_fnc_getJammerConfig
+ * [_vehicle] call ewc_common_fnc_getJammerConfig
  *
  * Public: Yes
  */

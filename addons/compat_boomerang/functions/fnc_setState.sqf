@@ -25,7 +25,7 @@ private _wasOn = _vehicle getVariable [QGVAR(on), false];
 _vehicle setVariable [QGVAR(on), _enabled, true];
 
 if (_enabled != _wasOn) then {
-    [_vehicle, SYSTEM_NAME, _enabled, _reason] call EFUNC(main,notifyState);
+    [_vehicle, SYSTEM_NAME, _enabled, _reason] call EFUNC(common,notifyState);
 };
 
 if (_enabled) then {

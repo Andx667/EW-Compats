@@ -80,7 +80,7 @@ With both Jam radios and Jam drones off, the R-142N does not jam.
 
 ## How it works
 
-RHS calls the functions in the vehicle variable `rhs_eh_gaz66_deploy` at the end of its mast script, whichever way the mast is deployed. The addon adds a function there that tells the server. The server waits until the mast is up (door phase `mast_source` at 0.99) and switches the jammer, registered by the registry of `ewc_main` with the capabilities radio and drone. A changed radius or choice of signals replaces the Crow's Electronic Warfare jammer, because it cannot change them.
+RHS calls the functions in the vehicle variable `rhs_eh_gaz66_deploy` at the end of its mast script, whichever way the mast is deployed. The addon adds a function there that tells the server. The server waits until the mast is up (door phase `mast_source` at 0.99) and switches the jammer, registered by the registry of `ewc_common` with the capabilities radio and drone. A changed radius or choice of signals replaces the Crow's Electronic Warfare jammer, because it cannot change them.
 
 ## Dependencies
 
