@@ -15,7 +15,7 @@ This addon does **not** need Crow's Electronic Warfare and works in singleplayer
 
 | Shot | Heard |
 |---|---|
-| Supersonic bullet | Within the detection distance of the vehicle (**30 m** by default), up to **1000 m** from the shooter |
+| Supersonic bullet | Within the detection distance of the vehicle (**30 m**), up to **1000 m** from the shooter |
 | Slower bullet | Only as muzzle blast, within **100 m** |
 | Shells, missiles | Not heard, only small arms |
 | Shots from inside the vehicle | Not reported |
@@ -36,8 +36,6 @@ An active Boomerang reports a heard bullet:
 |---|---|---|
 | Enable CUP Boomerang | on | If off, no Boomerang switch and active Boomerangs switch off. Set by the server |
 | Report friendly fire | on | Set by the server |
-| Detection distance | 30 m | For supersonic bullets. Set by the server |
-| Lockout after own fire | 5 s | Set by the server |
 | Marker lifetime | 30 s | 0 turns the markers off. Per player for the map, cTab markers use the value of the server |
 | Show shots on | Map and cTab | Map, cTab or both. Only there when cTab is loaded. Set by the server |
 
@@ -45,7 +43,7 @@ The switch and the engine requirement are shared with the DUKE, see [Compat CUP]
 
 ## Quirks
 
-- **Deaf for 5 seconds** after the weapons of its own vehicle were fired. Smoke launchers and flares do not count. The time is a setting.
+- **Deaf for 5 seconds** after the weapons of its own vehicle were fired. Smoke launchers and flares do not count.
 - **Does not work above 97 km/h** (60 mph), the speed the real system is specified for. It listens again when the vehicle is slower.
 - **Up to a second of delay** when an antenna is hidden or the engine stops, because the Boomerang is checked once per second.
 

@@ -58,7 +58,7 @@ private _supersonic = _speed >= BOOMERANG_SONIC_SPEED;
         private _heard = if (_supersonic) then {
             private _miss = vectorMagnitude (_toVehicle vectorDiff (_direction vectorMultiply _along));
 
-            _miss <= GVAR(missDistance)
+            _miss <= BOOMERANG_MISS_DISTANCE
         } else {
             _distanceSqr <= (BOOMERANG_SUBSONIC_RANGE * BOOMERANG_SUBSONIC_RANGE)
         };

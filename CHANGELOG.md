@@ -23,6 +23,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Changed
 
+- Compat CUP - Remove the settings for the detection distance and the lockout after own fire of the Boomerang, they are fixed values from the data sheet (30 m, 5 s)
 - Main - Add a registry of jammer vehicles (`CfgEWC >> Jammers`) that registers them in Crow's EW without code, with shared `addJammer` and `clearCrowsActions` functions. Compat RHS and BWA3 now only hold their entry and vehicle specific handlers, Compat CUP uses the shared functions
 - Compat CUP - Split into the shared base `compat_cup` and the addons `compat_cup_duke` and `compat_cup_boomerang`. The Boomerang no longer needs Crow's Electronic Warfare. Their CBA settings, public variables and events are renamed with the addon prefix (for example `ewc_compat_cup_duke_enable`, `ewc_compat_cup_boomerang_enable`), so saved values of the old settings are not taken over
 - Settings - Move CBA settings into an `initSettings.inc.sqf` per addon
