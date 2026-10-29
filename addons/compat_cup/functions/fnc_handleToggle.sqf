@@ -25,7 +25,7 @@ if (isNull _vehicle) exitWith {};
 private _isDuke = _system == SYSTEM_DUKE;
 
 // The DUKE is not registered yet, or not a DUKE vehicle
-if (_isDuke && {isNil {_vehicle getVariable QGVAR(jammerState)}}) exitWith {};
+if (_isDuke && {isNil {_vehicle getVariable QEGVAR(main,jammerState)}}) exitWith {};
 
 if (_turnOn isEqualTo (_vehicle getVariable [[QGVAR(boomerangOn), QGVAR(dukeOn)] select _isDuke, false])) exitWith {};
 

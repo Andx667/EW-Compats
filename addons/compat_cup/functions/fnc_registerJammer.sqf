@@ -23,6 +23,4 @@ if (isNull _vehicle || {!isServer}) exitWith {};
 
 private _radius = _vehicle call FUNC(getRadius);
 
-_vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];
-
 [_vehicle, _enabled, _radius, DUKE_FALLOFF_FACTOR] call EFUNC(main,addJammer);

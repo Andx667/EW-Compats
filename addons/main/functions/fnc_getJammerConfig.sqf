@@ -33,7 +33,7 @@ if (isNil "_config") then {
         }
     };
 
-    _config = [configNull, _entries select _index] select (_index != -1);
+    _config = if (_index == -1) then {configNull} else {_entries select _index};
     GVAR(jammerConfigCache) set [_class, _config];
 };
 

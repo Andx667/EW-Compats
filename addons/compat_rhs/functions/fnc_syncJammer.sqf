@@ -30,7 +30,7 @@ private _wantEnabled = GVAR(enableDuke)
     && {_vehicle getVariable [DUKE_STATE_VAR, false]}
     && {!(_damage1 >= DUKE_BOTH_ANTENNAS_DESTROYED && {_damage2 >= DUKE_BOTH_ANTENNAS_DESTROYED})};
 private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
-private _wantRadius = getNumber ([_vehicle] call EFUNC(main,getJammerConfig) >> "radius") * _wantScale;
+private _wantRadius = getNumber (([_vehicle] call EFUNC(main,getJammerConfig)) >> "radius") * _wantScale;
 
 if (_wantRadius != _radius) exitWith {
     // Crows has no way to change the radii of a jammer, so replace it
