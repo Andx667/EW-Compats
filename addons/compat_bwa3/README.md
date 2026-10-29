@@ -30,6 +30,7 @@ The Dingo 2 CG13 also jams ACRE radios, in addition to the IED jammer. Both are 
 - Everybody in range is jammed, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - The full jamming radius is the radius of the IED jammer (40 m, hardcoded in BWA3, so `ECM_EFFECTIVE_RADIUS` has to be adjusted if BWA3 changes it). The falloff radius is 1.5 times that.
 - A triggered IED explodes when it leaves the jamming range. This is BWA3's own behaviour.
+- IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`) are not jammed: BWA3 only jams `PipeBombBase`, and CUP's IEDs derive from `MineBase`. This is BWA3's own behaviour.
 - Crow's Electronic Warfare only works in multiplayer.
 
 ## Dependencies

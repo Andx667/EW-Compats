@@ -24,6 +24,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 - Main - `ewc_main_fnc_addJammer` takes optional Crow's capabilities, to override those of the registry entry
 - Compat BWA3 - Add setting to disable the CG13 jammer
 
+### Fixed
+
+- Compat CUP DUKE - Jam the IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`), which were ignored because they are no `PipeBombBase`
+
 ### Changed
 
 - Compat RHS - Rename `compat_rhs` to `compat_rhs_usaf` (it only extends RHS USAF) and add `compat_rhs_afrf` for RHS AFRF, so each loads with only the RHS mod it needs. The setting `ewc_compat_rhs_enableDuke` is now `ewc_compat_rhs_usaf_enableDuke`, so a saved value is not taken over
