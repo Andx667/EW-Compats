@@ -25,7 +25,7 @@ The **GAZ-66 (R-142N)** radio vehicle of RHS AFRF becomes a broad spectrum jamme
 
 | Setting | Default | |
 |---|---|---|
-| Enable R-142N jamming | on | If off, the R-142N does not jam. Set by the server |
+| Enable R-142N jamming | on | If off, the R-142N does not jam. Set by the server, applied the next time the mast is deployed or folded |
 | R-142N jamming radius (m) | 500 | Radius with full jamming strength, 100 to 2000 m. The falloff band beyond it is 1.5 times the radius. Applied the next time the mast is deployed |
 | Jam radios | on | Applied the next time the mast is deployed |
 | Jam drones | on | Applied the next time the mast is deployed |

@@ -2,12 +2,12 @@
 <Project name="ewc">
     <Package name="main">
         <Key ID="STR_ewc_main_description">
-            <English>Electronic warfare compatibility: BFT jamming for cTab, Dingo CG13, RHS DUKE and CUP DUKE jammers via Crow's Electronic Warfare.</English>
-            <French>Compatibilité de guerre électronique : brouillage BFT pour cTab et brouilleurs du CG13 du Dingo, du DUKE RHS et du DUKE CUP via Crow's Electronic Warfare.</French>
-            <Spanish>Compatibilidad de guerra electrónica: interferencia de BFT para cTab e inhibidores del CG13 del Dingo, del DUKE de RHS y del DUKE de CUP mediante Crow's Electronic Warfare.</Spanish>
-            <Polish>Kompatybilność walki elektronicznej: zagłuszanie BFT dla cTab oraz zagłuszarki CG13 w Dingo, DUKE z RHS i DUKE z CUP przez Crow's Electronic Warfare.</Polish>
-            <Russian>Совместимость радиоэлектронной борьбы: подавление BFT для cTab и станции помех CG13 на Dingo, DUKE из RHS и DUKE из CUP через Crow's Electronic Warfare.</Russian>
-            <German>Kompatibilität für elektronische Kampfführung: BFT-Störung für cTab sowie Dingo-CG13-, RHS-DUKE- und CUP-DUKE-Störsender über Crow's Electronic Warfare.</German>
+            <English>Electronic warfare compatibility: connects the jammers and jamming effects of other mods to Crow's Electronic Warfare.</English>
+            <French>Compatibilité de guerre électronique : relie les brouilleurs et les effets de brouillage d'autres mods à Crow's Electronic Warfare.</French>
+            <Spanish>Compatibilidad de guerra electrónica: conecta los inhibidores y los efectos de interferencia de otros mods con Crow's Electronic Warfare.</Spanish>
+            <Polish>Kompatybilność walki elektronicznej: łączy zagłuszarki i efekty zagłuszania z innych modów z Crow's Electronic Warfare.</Polish>
+            <Russian>Совместимость радиоэлектронной борьбы: подключает станции помех и эффекты подавления из других модов к Crow's Electronic Warfare.</Russian>
+            <German>Kompatibilität für elektronische Kampfführung: bindet die Störsender und Störeffekte anderer Mods an Crow's Electronic Warfare an.</German>
         </Key>
         <Key ID="STR_ewc_main_displayName">
             <English>EW Compats</English>

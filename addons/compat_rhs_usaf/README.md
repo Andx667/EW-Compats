@@ -1,6 +1,6 @@
 # Compat RHS USAF
 
-Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
+Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
 
 ## How it works
 
@@ -20,12 +20,10 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam 
 
 | Function | Runs on | Purpose |
 |---|---|---|
-| `fnc_initVehicle` | every machine | Class event handler for vehicles with `rhs_duke_type`: registers the `Dammaged` handler and, on the server, the jammer |
-| `fnc_registerJammer` | server | Registers the vehicle as a radio jammer in Crow's Electronic Warfare with the radii for the given scale |
+| `fnc_initVehicle` | every machine | Class event handler for vehicles with `rhs_duke_type`: registers the `Dammaged` handler |
 | `fnc_onFired` | machine of the shooter | `fired` handler of the DUKE ammo: after `DUKE_SYNC_DELAY` asks the server to sync |
 | `fnc_onDammaged` | machine where the vehicle is local | Asks the server to sync after antenna damage, merging hits within the delay |
 | `fnc_syncJammer` | server | Matches the jammer to the DUKE: on/off from `RHS_DUKE_OP`, range from the antenna damage. Shows the hint of `ewc_main_fnc_notifyState` when the state changed |
-| `fnc_removeCrowsActions` | every machine | Removes Crow's (de)activate actions from DUKE vehicles on every `crowsEW_main_updateJammers` |
 
 ## Settings
 

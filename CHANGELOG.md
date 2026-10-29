@@ -30,6 +30,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Changed
 
+- Compat CUP - Rename the displayed name of the setting *DUKE switch* to *System switch*, as it switches the Boomerang too. The setting itself (`ewc_compat_cup_actionMode`) is unchanged
+- Main - Use a generic mod description instead of a list of the supported vehicles
 - Compat RHS - Rename `compat_rhs` to `compat_rhs_usaf` (it only extends RHS USAF) and add `compat_rhs_afrf` for RHS AFRF, so each loads with only the RHS mod it needs. The setting `ewc_compat_rhs_enableDuke` is now `ewc_compat_rhs_usaf_enableDuke`, so a saved value is not taken over
 - Compat CUP - Remove the settings for the detection distance and the lockout after own fire of the Boomerang, they are fixed values from the data sheet (30 m, 5 s)
 - Main - Add a registry of jammer vehicles (`CfgEWC >> Jammers`) that registers them in Crow's EW without code, with shared `addJammer` and `clearCrowsActions` functions. Compat RHS and BWA3 now only hold their entry and vehicle specific handlers, Compat CUP uses the shared functions

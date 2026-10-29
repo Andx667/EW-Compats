@@ -1,6 +1,6 @@
 # Compat RHS USAF
 
-Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
+Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
 
 !!! note "Gameplay values"
     The real DUKE (AN/VLQ-12 CREW Duke) is a vehicle-mounted counter-RCIED jammer. Its frequency bands and jamming range are not publicly documented in detail, so the radii here are gameplay values. The jammer is modelled as simply on or off and jams continuously in its radius while on.
@@ -9,7 +9,7 @@ Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also 
 
 Switch the DUKE with its weapon `rhsusf_weap_duke`, as in RHS. The radio jammer follows it.
 
-Every change of state shows a silent hint to everybody in the vehicle, for example *DUKE on* or *DUKE off: engine stopped*. The reason is given when the DUKE switches itself off because both antennas were destroyed or the DUKE was disabled in the settings.
+Every change of state shows a silent hint to everybody in the vehicle, for example *DUKE on* or *DUKE off: antennas destroyed*. The reason is given when the DUKE switches itself off because both antennas were destroyed or the DUKE was disabled in the settings.
 
 ## Range
 

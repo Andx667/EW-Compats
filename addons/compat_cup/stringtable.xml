@@ -34,20 +34,20 @@
             <German>Mausrad</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_actionMode">
-            <English>DUKE switch</English>
-            <French>Commande du DUKE</French>
-            <Spanish>Control del DUKE</Spanish>
-            <Polish>Przełącznik DUKE</Polish>
-            <Russian>Переключатель DUKE</Russian>
-            <German>DUKE-Schalter</German>
+            <English>System switch</English>
+            <French>Commande des systèmes</French>
+            <Spanish>Control de los sistemas</Spanish>
+            <Polish>Przełącznik systemów</Polish>
+            <Russian>Переключатель систем</Russian>
+            <German>Systemschalter</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_actionMode_tooltip">
-            <English>How the DUKE is switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
-            <French>Comment le DUKE est activé et désactivé dans les véhicules. Sans ACE, la molette de la souris est toujours disponible.</French>
-            <Spanish>Cómo se enciende y apaga el DUKE en los vehículos. Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
-            <Polish>Sposób włączania i wyłączania DUKE w pojazdach. Bez ACE zawsze dostępne jest kółko myszy.</Polish>
-            <Russian>Как включается и выключается DUKE в технике. Без ACE колесо мыши доступно всегда.</Russian>
-            <German>Wie der DUKE in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
+            <English>How the DUKE and the Boomerang are switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
+            <French>Comment le DUKE et le Boomerang sont activés et désactivés dans les véhicules. Sans ACE, la molette de la souris est toujours disponible.</French>
+            <Spanish>Cómo se encienden y apagan el DUKE y el Boomerang en los vehículos. Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
+            <Polish>Sposób włączania i wyłączania DUKE i Boomerang w pojazdach. Bez ACE zawsze dostępne jest kółko myszy.</Polish>
+            <Russian>Как включаются и выключаются DUKE и Boomerang в технике. Без ACE колесо мыши доступно всегда.</Russian>
+            <German>Wie der DUKE und der Boomerang in Fahrzeugen ein- und ausgeschaltet werden. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_requireEngine">
             <English>Require running engine</English>
