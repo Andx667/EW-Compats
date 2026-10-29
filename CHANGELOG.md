@@ -13,6 +13,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-29
+
 ### Fixed
 
 - Compat RHS USAF - Free the IEDs around a vehicle from the server when its DUKE goes offline. RHS did it on the machine of the gunner, which does not work for IEDs that are not local there, so they stayed disabled on a dedicated server
