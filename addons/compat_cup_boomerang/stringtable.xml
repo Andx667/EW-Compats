@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="compat_cup_boomerang">
+        <Key ID="STR_ewc_compat_cup_boomerang_activate">
+            <English>Activate Boomerang</English>
+            <French>Activer le Boomerang</French>
+            <Spanish>Activar Boomerang</Spanish>
+            <Polish>Włącz Boomerang</Polish>
+            <Russian>Включить Boomerang</Russian>
+            <German>Boomerang aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_ctab_setting_markerTarget">
+            <English>Show shots on</English>
+            <French>Afficher les tirs sur</French>
+            <Spanish>Mostrar disparos en</Spanish>
+            <Polish>Pokaż strzały na</Polish>
+            <Russian>Показывать выстрелы на</Russian>
+            <German>Schüsse anzeigen auf</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_ctab_setting_markerTarget_tooltip">
+            <English>Where the Boomerang shows the estimated position of a shooter: on the map, on the cTab of the side of the vehicle (as a red enemy marker), or both.</English>
+            <French>Où le Boomerang affiche la position estimée d'un tireur : sur la carte, sur le cTab du camp du véhicule (comme marqueur ennemi rouge) ou les deux.</French>
+            <Spanish>Dónde muestra el Boomerang la posición estimada de un tirador: en el mapa, en el cTab del bando del vehículo (como marcador enemigo rojo) o en ambos.</Spanish>
+            <Polish>Gdzie Boomerang pokazuje szacowaną pozycję strzelca: na mapie, na cTab strony pojazdu (jako czerwony znacznik wroga) lub w obu miejscach.</Polish>
+            <Russian>Где Boomerang показывает предполагаемое положение стрелка: на карте, на cTab стороны машины (как красный маркер противника) или в обоих местах.</Russian>
+            <German>Wo der Boomerang die geschätzte Position eines Schützen zeigt: auf der Karte, auf dem cTab der Seite des Fahrzeugs (als rote Feindmarkierung) oder auf beidem.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_ctab_target_both">
+            <English>Map and cTab</English>
+            <French>Carte et cTab</French>
+            <Spanish>Mapa y cTab</Spanish>
+            <Polish>Mapa i cTab</Polish>
+            <Russian>Карта и cTab</Russian>
+            <German>Karte und cTab</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_ctab_target_ctab">
+            <English>cTab</English>
+            <French>cTab</French>
+            <Spanish>cTab</Spanish>
+            <Polish>cTab</Polish>
+            <Russian>cTab</Russian>
+            <German>cTab</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_ctab_target_map">
+            <English>Map</English>
+            <French>Carte</French>
+            <Spanish>Mapa</Spanish>
+            <Polish>Mapa</Polish>
+            <Russian>Карта</Russian>
+            <German>Karte</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_deactivate">
+            <English>Deactivate Boomerang</English>
+            <French>Désactiver le Boomerang</French>
+            <Spanish>Desactivar Boomerang</Spanish>
+            <Polish>Wyłącz Boomerang</Polish>
+            <Russian>Выключить Boomerang</Russian>
+            <German>Boomerang deaktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_elevation_high">
+            <English>elevated</English>
+            <French>en hauteur</French>
+            <Spanish>elevado</Spanish>
+            <Polish>wyżej</Polish>
+            <Russian>выше</Russian>
+            <German>erhöht</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_elevation_level">
+            <English>level</English>
+            <French>de niveau</French>
+            <Spanish>a nivel</Spanish>
+            <Polish>na tym samym poziomie</Polish>
+            <Russian>на одном уровне</Russian>
+            <German>auf gleicher Höhe</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_elevation_low">
+            <English>below</English>
+            <French>en contrebas</French>
+            <Spanish>por debajo</Spanish>
+            <Polish>niżej</Polish>
+            <Russian>ниже</Russian>
+            <German>tiefer</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_hint">
+            <English>Boomerang: shot detected|%1 o'clock|~%2 m|bearing %3°|%4</English>
+            <French>Boomerang : tir détecté|%1 heures|~%2 m|azimut %3°|%4</French>
+            <Spanish>Boomerang: disparo detectado|a las %1|~%2 m|azimut %3°|%4</Spanish>
+            <Polish>Boomerang: wykryto strzał|godz. %1|~%2 m|azymut %3°|%4</Polish>
+            <Russian>Boomerang: обнаружен выстрел|%1 часов|~%2 м|азимут %3°|%4</Russian>
+            <German>Boomerang: Schuss erkannt|%1 Uhr|ca. %2 m|Peilung %3°|%4</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_markerText">
+            <English>Shot</English>
+            <French>Tir</French>
+            <Spanish>Disparo</Spanish>
+            <Polish>Strzał</Polish>
+            <Russian>Выстрел</Russian>
+            <German>Schuss</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_enable">
+            <English>Enable CUP Boomerang</English>
+            <French>Activer le Boomerang CUP</French>
+            <Spanish>Activar Boomerang de CUP</Spanish>
+            <Polish>Włącz Boomerang z CUP</Polish>
+            <Russian>Включить Boomerang из CUP</Russian>
+            <German>CUP Boomerang aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_enable_tooltip">
+            <English>If disabled, CUP vehicles get no Boomerang switch and active Boomerangs switch off.</English>
+            <French>Si désactivé, les véhicules CUP n'ont plus de commande du Boomerang et les Boomerang actifs s'éteignent.</French>
+            <Spanish>Si está desactivado, los vehículos de CUP no tienen control del Boomerang y los Boomerang activos se apagan.</Spanish>
+            <Polish>Jeśli wyłączone, pojazdy z CUP nie mają przełącznika Boomerang, a aktywne Boomerangi się wyłączają.</Polish>
+            <Russian>Если выключено, у техники из CUP нет переключателя Boomerang, а активные Boomerang выключаются.</Russian>
+            <German>Wenn deaktiviert, erhalten CUP-Fahrzeuge keinen Boomerang-Schalter und aktive Boomerangs schalten sich ab.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_friendlyFire">
+            <English>Report friendly fire</English>
+            <French>Signaler les tirs amis</French>
+            <Spanish>Notificar fuego amigo</Spanish>
+            <Polish>Zgłaszaj ogień własny</Polish>
+            <Russian>Сообщать о дружественном огне</Russian>
+            <German>Eigenen Beschuss melden</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_friendlyFire_tooltip">
+            <English>The Boomerang also reports shots from friendly units, like the real system. If disabled, only shots from units that are not friendly to the vehicle are reported.</English>
+            <French>Le Boomerang signale aussi les tirs des unités amies, comme le vrai système. Si désactivé, seuls les tirs d'unités non amies du véhicule sont signalés.</French>
+            <Spanish>El Boomerang también notifica los disparos de unidades amigas, como el sistema real. Si está desactivado, solo se notifican los disparos de unidades que no son amigas del vehículo.</Spanish>
+            <Polish>Boomerang zgłasza także strzały jednostek sojuszniczych, tak jak prawdziwy system. Jeśli wyłączone, zgłaszane są tylko strzały jednostek niesojuszniczych względem pojazdu.</Polish>
+            <Russian>Boomerang сообщает и о выстрелах дружественных юнитов, как настоящая система. Если выключено, сообщается только о выстрелах юнитов, не дружественных технике.</Russian>
+            <German>Der Boomerang meldet auch Schüsse befreundeter Einheiten, wie das echte System. Wenn deaktiviert, werden nur Schüsse von Einheiten gemeldet, die dem Fahrzeug nicht freundlich gesinnt sind.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_lockout">
+            <English>Lockout after own fire (s)</English>
+            <French>Blocage après tir propre (s)</French>
+            <Spanish>Bloqueo tras fuego propio (s)</Spanish>
+            <Polish>Blokada po własnym ogniu (s)</Polish>
+            <Russian>Блокировка после своего огня (с)</Russian>
+            <German>Sperrzeit nach eigenem Feuer (s)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_lockout_tooltip">
+            <English>The Boomerang is deaf for this many seconds after the weapons of its own vehicle were fired.</English>
+            <French>Le Boomerang est sourd pendant ce nombre de secondes après que les armes de son propre véhicule ont tiré.</French>
+            <Spanish>El Boomerang queda sordo durante estos segundos después de que se disparen las armas de su propio vehículo.</Spanish>
+            <Polish>Boomerang jest głuchy przez tyle sekund po strzale z broni własnego pojazdu.</Polish>
+            <Russian>Boomerang глохнет на столько секунд после выстрелов из оружия своей машины.</Russian>
+            <German>Der Boomerang ist so viele Sekunden taub, nachdem die Waffen des eigenen Fahrzeugs gefeuert haben.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_markerLifetime">
+            <English>Marker lifetime (s)</English>
+            <French>Durée du marqueur (s)</French>
+            <Spanish>Duración del marcador (s)</Spanish>
+            <Polish>Czas trwania znacznika (s)</Polish>
+            <Russian>Время жизни маркера (с)</Russian>
+            <German>Dauer der Markierung (s)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_markerLifetime_tooltip">
+            <English>How long the marker of a detected shooter stays. 0 disables the markers. Set per player for the map, cTab markers use the value of the server.</English>
+            <French>Durée d'affichage du marqueur d'un tireur détecté. 0 désactive les marqueurs. Réglage propre à chaque joueur pour la carte, les marqueurs cTab utilisent la valeur du serveur.</French>
+            <Spanish>Cuánto permanece el marcador de un tirador detectado. 0 desactiva los marcadores. Se ajusta por jugador para el mapa, los marcadores de cTab usan el valor del servidor.</Spanish>
+            <Polish>Jak długo widoczny jest znacznik wykrytego strzelca. 0 wyłącza znaczniki. Dla mapy ustawienie dla każdego gracza, znaczniki cTab używają wartości serwera.</Polish>
+            <Russian>Как долго остаётся маркер обнаруженного стрелка. 0 отключает маркеры. Для карты настраивается для каждого игрока, маркеры cTab используют значение сервера.</Russian>
+            <German>Wie lange die Markierung eines erkannten Schützen bleibt. 0 deaktiviert die Markierungen. Für die Karte pro Spieler einstellbar, cTab-Markierungen nutzen den Wert des Servers.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_missDistance">
+            <English>Detection distance (m)</English>
+            <French>Distance de détection (m)</French>
+            <Spanish>Distancia de detección (m)</Spanish>
+            <Polish>Odległość wykrywania (m)</Polish>
+            <Russian>Дистанция обнаружения (м)</Russian>
+            <German>Erfassungsabstand (m)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_boomerang_setting_missDistance_tooltip">
+            <English>A supersonic shot is detected if it passes within this distance of the Boomerang vehicle. Slower shots are only heard within 100 m.</English>
+            <French>Un tir supersonique est détecté s'il passe à cette distance du véhicule équipé du Boomerang. Les tirs plus lents ne sont entendus que dans un rayon de 100 m.</French>
+            <Spanish>Un disparo supersónico se detecta si pasa a esta distancia del vehículo con Boomerang. Los disparos más lentos solo se oyen a menos de 100 m.</Spanish>
+            <Polish>Strzał naddźwiękowy jest wykrywany, jeśli przeleci w tej odległości od pojazdu z Boomerangiem. Wolniejsze strzały słychać tylko w promieniu 100 m.</Polish>
+            <Russian>Сверхзвуковой выстрел обнаруживается, если проходит в пределах этой дистанции от машины с Boomerang. Более медленные выстрелы слышны только в пределах 100 м.</Russian>
+            <German>Ein Überschallschuss wird erkannt, wenn er in diesem Abstand am Boomerang-Fahrzeug vorbeifliegt. Langsamere Schüsse werden nur innerhalb von 100 m gehört.</German>
+        </Key>
+    </Package>
+</Project>

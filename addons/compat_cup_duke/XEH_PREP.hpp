@@ -1,0 +1,11 @@
+PREP(canActivate);
+PREP(getRadius);
+PREP(getRangeScale);
+PREP(handleToggle);
+PREP(initVehicle);
+PREP(jamLoop);
+PREP(registerJammer);
+PREP(releaseMines);
+PREP(removeCrowsActions);
+PREP(setJammer);
+PREP(updateMines);

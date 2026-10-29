@@ -11,7 +11,11 @@
  * None
  *
  * Example:
+<<<<<<<< HEAD:addons/main/functions/fnc_clearCrowsActions.sqf
  * [_vehicle] call ewc_main_fnc_clearCrowsActions
+========
+ * [_vehicle] call ewc_compat_cup_duke_fnc_clearCrowsActions
+>>>>>>>> 0cf247f (Split Compat CUP into a shared base, a DUKE and a Boomerang addon):addons/compat_cup_duke/functions/fnc_clearCrowsActions.sqf
  *
  * Public: Yes
  */

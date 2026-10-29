@@ -1,0 +1,25 @@
+#include "..\script_component.hpp"
+/*
+ * Author: Andx
+ * Returns how much of its range the DUKE of a vehicle has, from the antennas currently shown. CUP lets
+ * players hide them. Vehicles with a DUKE and a CREW DUKE antenna (M1240 family) lose range with only one shown.
+ *
+ * Arguments:
+ * 0: Vehicle <OBJECT>
+ *
+ * Return Value:
+ * 1 with all antennas shown, 0.6 with some, 0 with none <NUMBER>
+ *
+ * Example:
+ * [_vehicle] call ewc_compat_cup_duke_fnc_getRangeScale
+ *
+ * Public: No
+ */
+
+params [["_vehicle", objNull, [objNull]]];
+
+private _shown = count ([_vehicle, SYSTEM_DUKE] call EFUNC(compat_cup,getShown));
+
+if (_shown == 0) exitWith {0};
+
+[DUKE_SINGLE_ANTENNA_SCALE, 1] select (_shown == count ([_vehicle, SYSTEM_DUKE] call EFUNC(compat_cup,getSources)))
