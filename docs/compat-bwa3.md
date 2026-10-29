@@ -2,6 +2,9 @@
 
 The Dingo 2 **CG13** also jams ACRE radios, in addition to the IED jammer. Both are controlled with the same switch.
 
+!!! note "Active mode only"
+    The real CG13 is reported to offer reactive, active and combined jamming. This addon mimics the **active** mode: the jammer is either on or off and, while on, jams continuously in its whole radius.
+
 ## Range
 
 | | Radius |

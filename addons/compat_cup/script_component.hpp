@@ -23,16 +23,17 @@
 // Range with only some of the antennas shown, like RHS with one antenna destroyed
 #define DUKE_SINGLE_ANTENNA_SCALE 0.6
 
-// Boomerang works up to this speed (km/h), according to the data sheet of the real system
-#define BOOMERANG_MAX_SPEED 95
+// Boomerang works up to this speed (km/h), 60 mph according to the data sheet of Raytheon BBN
+#define BOOMERANG_MAX_SPEED 97
 // Shots are only considered up to this distance (m) between shooter and vehicle
 #define BOOMERANG_MAX_RANGE 1000
 // Bullets at or above this speed (m/s) have a shockwave. Slower ones are only heard as muzzle blast, on short range (m)
 #define BOOMERANG_SONIC_SPEED 340
 #define BOOMERANG_SUBSONIC_RANGE 100
-// Accuracy of a report: bearing in degrees, range as fraction. 2009 figures of the real system
-#define BOOMERANG_BEARING_ERROR 7.5
-#define BOOMERANG_RANGE_ERROR 0.2
+// Accuracy of a report: bearing in degrees, range as fraction. Vehicle system according to the data sheet of Raytheon BBN
+// (the 7.5 degrees and 20 percent are the ones of the dismounted Boomerang Warrior)
+#define BOOMERANG_BEARING_ERROR 2.5
+#define BOOMERANG_RANGE_ERROR 0.1
 // Elevation (degrees) from which a shooter is reported above or below the vehicle
 #define BOOMERANG_ELEVATION_LIMIT 10
 // Seconds between two reports of the same vehicle, so a burst is not reported bullet by bullet

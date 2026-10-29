@@ -21,6 +21,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 ### Changed
 
 - Settings - Move CBA settings into an `initSettings.inc.sqf` per addon
+- Compat CUP - Use the accuracy of the vehicle Boomerang from the manufacturer data sheet (bearing 2.5°, range 10 %, up to 97 km/h) instead of the figures of the dismounted variant, and a default detection distance of 30 m
 
 ## [0.2.0] - 2026-10-28
 

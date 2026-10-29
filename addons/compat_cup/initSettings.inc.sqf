@@ -68,7 +68,7 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     "SLIDER",
     [LLSTRING(setting_missDistance), LLSTRING(setting_missDistance_tooltip)],
     _category,
-    [10, 150, 50, 0],
+    [10, 150, 30, 0],
     true
 ] call CBA_fnc_addSetting;
 
