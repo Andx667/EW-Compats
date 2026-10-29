@@ -4,6 +4,8 @@ PREP(boomerangLoop);
 PREP(canActivate);
 PREP(canToggle);
 PREP(getSources);
+PREP(expireShotMarker);
+PREP(findNearMarker);
 PREP(getRadius);
 PREP(getRangeScale);
 PREP(handleToggle);

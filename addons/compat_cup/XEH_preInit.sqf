@@ -13,6 +13,9 @@ GVAR(boomerangVehicles) = [];
 GVAR(boomerangLoopHandle) = -1;
 GVAR(markerCounter) = 0;
 
+// Map markers of detected shots that are still there, each [name, position, expiry time]. A new shot close to one is merged into it
+GVAR(shotMarkers) = [];
+
 // Handle of the mission event handler that sees the projectiles, while a Boomerang is on
 GVAR(projectileHandler) = -1;
 
