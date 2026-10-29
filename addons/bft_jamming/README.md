@@ -35,6 +35,17 @@ An active BFT jammer shows in the Spectrum Device as signal type `sweep_bft` on 
 
 There are deliberately no CBA settings: without a placed module nothing happens anyway, the frequency is a module attribute, and the drift tuning (`BFT_JAM_MAX_DRIFT_DISTANCE`, `BFT_JAM_DRIFT_UPDATE_INTERVAL` in `script_component.hpp`) is fixed so drift behaves the same on every server.
 
+## Functions
+
+| Function | Runs on | Purpose |
+|---|---|---|
+| `fnc_addBftJammer` | server | Registers the module object as a jammer in Crow's Electronic Warfare, once `CBA_missionTime > 0` |
+| `fnc_onUpdateJammersServer` | server | Keeps the signal in the Spectrum Device in line with the on/off state of the jammers on every `crowsEW_main_updateJammers` |
+| `fnc_onBftListsUpdated` | clients | Handler of `ctab_listsUpdated`: removes or drifts the entries of the cTab lists that are in range of a jammer |
+| `fnc_applyBftJam` | clients | Applies the active jammers to one entry of a cTab list, shared by the three lists |
+| `fnc_calcBftJamStrength` | any | Jamming strength 0 to 1 from the distance, the effective radius and the falloff radius |
+| `fnc_getBftDriftOffset` | clients | Smoothed offset of a drifted entry, re-rolled every few pulses per unit and jammer |
+
 ## Coupling to other mods
 
 The integration uses the public CBA events and global variables of Crow's Electronic Warfare and cTab, not a documented plugin API:
