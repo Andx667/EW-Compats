@@ -40,15 +40,10 @@ Every feature is its own addon and is skipped when the mod it extends is not loa
 | [`compat_cup`](./addons/compat_cup/README.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Shared base of the two CUP addons below: finds the vehicles with a DUKE or Boomerang antenna and provides the switch (scroll wheel or ACE) and its settings |
 | [`compat_cup_duke`](./addons/compat_cup_duke/README.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Vehicles with a shown DUKE antenna get a DUKE switch that jams radios and IEDs |
 | [`compat_cup_boomerang`](./addons/compat_cup_boomerang/README.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Vehicles with a Boomerang shot finder get a switch for shot detection with hints and markers on the map and, with cTab, on the tablets. Does not need Crow's Electronic Warfare |
-| [`compat_rhs`](./addons/compat_rhs/README.md) | [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Vehicles with a DUKE also jam radios while the DUKE is online |
+| [`compat_rhs_usaf`](./addons/compat_rhs_usaf/README.md) | [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Vehicles with a DUKE also jam radios while the DUKE is online |
+| [`compat_rhs_afrf`](./addons/compat_rhs_afrf/README.md) | [RHS AFRF](https://steamcommunity.com/sharedfiles/filedetails/?id=843425103) | The GAZ-66 (R-142N) jams radios and drones while its mast is deployed |
 
 Radio jamming needs [ACRE](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892) (the radio effect of Crow's Electronic Warfare is applied to the receiving side). Crow's Electronic Warfare only works in multiplayer.
-
-## Planned
-
-- RHS AFRF jammer vehicles
-- Jammers of the compat addons (DUKE, CG13) also jamming cTab's Blue Force Tracker
-- Zeus actions for the compat vehicles (force jammer on or off, override radius)
 
 ## Contributing
 

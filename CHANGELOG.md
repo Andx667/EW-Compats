@@ -19,11 +19,14 @@ version, and start a fresh empty [Unreleased] section above it. -->
 - Compat CUP - Show the shots a CUP Boomerang detects as red enemy markers on cTab, for the side of the vehicle. A sub-addon (folder `ctab`) with its own config, only loaded with cTab
 - Compat CUP - Add the setting *Show shots on* (map, cTab or both) for the shots of the Boomerang, only there when cTab is loaded
 - Compat CUP - A shot of a Boomerang close to the marker of an earlier shot (50 m, or 20 % of the range if more) does not add a marker on the map or on cTab, it keeps that marker longer
-- Compat RHS - Add setting to disable the DUKE jammer
+- Compat RHS AFRF - Add the GAZ-66 (R-142N) as a broad spectrum jammer for radios and drones, switched by deploying and folding its mast, with settings for the radius and the jammed signals
+- Compat RHS USAF - Add setting to disable the DUKE jammer
+- Main - `ewc_main_fnc_addJammer` takes optional Crow's capabilities, to override those of the registry entry
 - Compat BWA3 - Add setting to disable the CG13 jammer
 
 ### Changed
 
+- Compat RHS - Rename `compat_rhs` to `compat_rhs_usaf` (it only extends RHS USAF) and add `compat_rhs_afrf` for RHS AFRF, so each loads with only the RHS mod it needs. The setting `ewc_compat_rhs_enableDuke` is now `ewc_compat_rhs_usaf_enableDuke`, so a saved value is not taken over
 - Compat CUP - Remove the settings for the detection distance and the lockout after own fire of the Boomerang, they are fixed values from the data sheet (30 m, 5 s)
 - Main - Add a registry of jammer vehicles (`CfgEWC >> Jammers`) that registers them in Crow's EW without code, with shared `addJammer` and `clearCrowsActions` functions. Compat RHS and BWA3 now only hold their entry and vehicle specific handlers, Compat CUP uses the shared functions
 - Compat CUP - Split into the shared base `compat_cup` and the addons `compat_cup_duke` and `compat_cup_boomerang`. The Boomerang no longer needs Crow's Electronic Warfare. Their CBA settings, public variables and events are renamed with the addon prefix (for example `ewc_compat_cup_duke_enable`, `ewc_compat_cup_boomerang_enable`), so saved values of the old settings are not taken over

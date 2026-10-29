@@ -17,6 +17,7 @@
 #define CROWS_EVENT_TOGGLE_JAMMER "crowsEW_main_toggleJammer"
 #define CROWS_EVENT_UPDATE_JAMMERS "crowsEW_main_updateJammers"
 #define CROWS_CAPABILITY_RADIO "VoiceCommsJammer"
+#define CROWS_CAPABILITY_DRONE "DroneJammer"
 #define CROWS_ACTION_MARKER "#FFFF00"
 
 // Radius where a jammer has faded out, as factor of its full radius, when an entry of CfgEWC has none

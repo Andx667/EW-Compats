@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="compat_rhs_afrf">
+        <Key ID="STR_ewc_compat_rhs_afrf_category">
+            <English>RHS R-142N</English>
+            <French>RHS R-142N</French>
+            <Spanish>RHS R-142N</Spanish>
+            <Polish>RHS R-142N</Polish>
+            <Russian>RHS Р-142Н</Russian>
+            <German>RHS R-142N</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_enable">
+            <English>Enable R-142N jamming</English>
+            <French>Activer le brouillage du R-142N</French>
+            <Spanish>Activar interferencia del R-142N</Spanish>
+            <Polish>Włącz zagłuszanie R-142N</Polish>
+            <Russian>Включить подавление Р-142Н</Russian>
+            <German>R-142N-Störung aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_enable_tooltip">
+            <English>If disabled, the GAZ-66 (R-142N) of RHS no longer drives a Crow's EW jammer with its mast.</English>
+            <French>Si désactivé, le GAZ-66 (R-142N) de RHS ne pilote plus de brouilleur Crow's EW avec son mât.</French>
+            <Spanish>Si está desactivado, el GAZ-66 (R-142N) de RHS ya no controla un inhibidor de Crow's EW con su mástil.</Spanish>
+            <Polish>Jeśli wyłączone, GAZ-66 (R-142N) z RHS nie steruje już zagłuszarką Crow's EW za pomocą masztu.</Polish>
+            <Russian>Если выключено, ГАЗ-66 (Р-142Н) из RHS больше не управляет станцией помех Crow's EW с помощью мачты.</Russian>
+            <German>Wenn deaktiviert, steuert der GAZ-66 (R-142N) von RHS mit seinem Mast keinen Crow's-EW-Störsender mehr.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_jamDrones">
+            <English>Jam drones</English>
+            <French>Brouiller les drones</French>
+            <Spanish>Interferir drones</Spanish>
+            <Polish>Zagłuszaj drony</Polish>
+            <Russian>Подавлять дроны</Russian>
+            <German>Drohnen stören</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_jamDrones_tooltip">
+            <English>The R-142N jams the control link of drones in range. Takes effect the next time the mast is deployed.</English>
+            <French>Le R-142N brouille la liaison de commande des drones à portée. Prend effet au prochain déploiement du mât.</French>
+            <Spanish>El R-142N interfiere el enlace de control de los drones al alcance. Surte efecto la próxima vez que se despliegue el mástil.</Spanish>
+            <Polish>R-142N zagłusza łącze sterowania dronów w zasięgu. Działa od następnego rozłożenia masztu.</Polish>
+            <Russian>Р-142Н подавляет канал управления дронов в зоне действия. Вступает в силу при следующем развёртывании мачты.</Russian>
+            <German>Der R-142N stört die Steuerverbindung von Drohnen in Reichweite. Gilt ab dem nächsten Ausfahren des Masts.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_jamRadio">
+            <English>Jam radios</English>
+            <French>Brouiller les radios</French>
+            <Spanish>Interferir radios</Spanish>
+            <Polish>Zagłuszaj radia</Polish>
+            <Russian>Подавлять радиостанции</Russian>
+            <German>Funkgeräte stören</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_jamRadio_tooltip">
+            <English>The R-142N jams radios in range. Takes effect the next time the mast is deployed.</English>
+            <French>Le R-142N brouille les radios à portée. Prend effet au prochain déploiement du mât.</French>
+            <Spanish>El R-142N interfiere las radios al alcance. Surte efecto la próxima vez que se despliegue el mástil.</Spanish>
+            <Polish>R-142N zagłusza radia w zasięgu. Działa od następnego rozłożenia masztu.</Polish>
+            <Russian>Р-142Н подавляет радиостанции в зоне действия. Вступает в силу при следующем развёртывании мачты.</Russian>
+            <German>Der R-142N stört Funkgeräte in Reichweite. Gilt ab dem nächsten Ausfahren des Masts.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_radius">
+            <English>R-142N jamming radius (m)</English>
+            <French>Rayon de brouillage du R-142N (m)</French>
+            <Spanish>Radio de interferencia del R-142N (m)</Spanish>
+            <Polish>Promień zagłuszania R-142N (m)</Polish>
+            <Russian>Радиус подавления Р-142Н (м)</Russian>
+            <German>Störradius des R-142N (m)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rhs_afrf_setting_radius_tooltip">
+            <English>Radius with full jamming strength. The falloff band beyond it is 1.5 times the radius. Takes effect the next time the mast is deployed.</English>
+            <French>Rayon avec la pleine puissance de brouillage. La bande d'atténuation au-delà vaut 1,5 fois le rayon. Prend effet au prochain déploiement du mât.</French>
+            <Spanish>Radio con plena potencia de interferencia. La franja de atenuación más allá es 1,5 veces el radio. Surte efecto la próxima vez que se despliegue el mástil.</Spanish>
+            <Polish>Promień z pełną mocą zagłuszania. Pas zanikania poza nim jest 1,5 razy większy od promienia. Działa od następnego rozłożenia masztu.</Polish>
+            <Russian>Радиус с полной силой подавления. Полоса затухания за ним равна 1,5 радиуса. Вступает в силу при следующем развёртывании мачты.</Russian>
+            <German>Radius mit voller Störwirkung. Der Abklingbereich dahinter ist 1,5-mal so groß wie der Radius. Gilt ab dem nächsten Ausfahren des Masts.</German>
+        </Key>
+    </Package>
+</Project>

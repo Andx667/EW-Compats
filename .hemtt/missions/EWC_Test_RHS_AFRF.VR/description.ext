@@ -1,0 +1,28 @@
+onLoadName = "EWC Test - RHS R-142N";
+onLoadMission = "Test of the RHS R-142N radio and drone jamming.";
+author = "Andx";
+overviewText = "Test of the RHS R-142N radio and drone jamming.";
+
+enableDebugConsole = 1;
+respawn = "BASE";
+respawnDelay = 5;
+disabledAI = 1;
+joinUnassigned = 0;
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 2;
+};
+
+class CfgFunctions
+{
+	class ewc_test
+	{
+		class Functions
+		{
+			class vehicleState { file = "fn_vehicleState.sqf"; };
+		};
+	};
+};

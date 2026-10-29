@@ -1,11 +1,11 @@
-# Compat RHS
+# Compat RHS USAF
 
 Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2 and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
 
 ## How it works
 
 - RHS switches the DUKE through a pseudo weapon (`rhsusf_weap_duke` / `rhsusf_weap_duke_on`). The `fired` event handler of the ammo `rhsusf_ammo_duke` starts or stops the jamming script `rhs_fnc_duke_jammer` and sets the public variable `RHS_DUKE_OP`. RHS offers no event or callback, and the script only handles TFAR (`tf_*DistanceMultiplicator`), so nothing happens for ACRE.
-- Next to the RHS handler, `CfgAmmo.hpp` adds a second `fired` handler (`fnc_onFired`). It does not read the variable immediately, because RHS only sets it in a spawned script. After `DUKE_SYNC_DELAY` (0.5 s) it asks the server through the CBA event `ewc_compat_rhs_syncJammer` to sync the radio jammer.
+- Next to the RHS handler, `CfgAmmo.hpp` adds a second `fired` handler (`fnc_onFired`). It does not read the variable immediately, because RHS only sets it in a spawned script. After `DUKE_SYNC_DELAY` (0.5 s) it asks the server through the CBA event `ewc_compat_rhs_usaf_syncJammer` to sync the radio jammer.
 - Every land vehicle with `rhs_duke_type` in its config is a jammer of the registry in `ewc_main` (`CfgEWC >> Jammers >> RHS_DUKE`). `ewc_main` registers it once on the server as a disabled radio jammer in Crow's Electronic Warfare, see the main addon. `fnc_initVehicle` only adds the damage handler.
 - `fnc_syncJammer` (server) derives the wanted state from RHS and matches Crow's Electronic Warfare to it:
     - on or off from `RHS_DUKE_OP`

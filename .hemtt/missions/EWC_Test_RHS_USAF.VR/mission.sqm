@@ -19,7 +19,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="EWC_Test_RHS";
+sourceName="EWC_Test_RHS_USAF";
 addons[]={"A3_Characters_F"};
 class AddonsMetaData
 {
