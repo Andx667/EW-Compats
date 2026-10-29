@@ -29,7 +29,7 @@ The 40 m is the IED jammer radius hardcoded in BWA3. The falloff band is 1.5 tim
 - Type: `CHECKBOX`
 - Default: `true`
 - Set by: the server
-- Purpose: if off, the CG13 switch does nothing: the Dingos jam neither radios nor IEDs.
+- Purpose: if off, the Dingos do not jam radios. The CG13 and its IED jamming of BWA3 are not affected.
 
 ### Complete example
 

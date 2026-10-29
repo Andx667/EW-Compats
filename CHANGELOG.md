@@ -16,7 +16,6 @@ version, and start a fresh empty [Unreleased] section above it. -->
 ### Fixed
 
 - Compat RHS USAF - Free the IEDs of a vehicle that is destroyed with the DUKE on, and stop the DUKE script of RHS
-- Compat BWA3 - The CG13 switch does nothing while the CG13 is disabled in the settings. It still switched the IED jammer of BWA3 on
 - Main - Register the jammer vehicles also while their compat addon is disabled in the settings, which keep them off. Switching a setting on during the mission was without effect for those vehicles
 
 ### Changed
