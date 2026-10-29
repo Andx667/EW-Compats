@@ -12,6 +12,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) 
     - both antennas destroyed (`HitDuke1` / `HitDuke2` >= 0.99): off
     - one antenna destroyed (>= 1): 60 % range, as in `rhs_duke.sqf`
 - Crow's Electronic Warfare cannot change the radii of a jammer, so a changed range removes the jammer (`crowsEW_main_removeJammer`) and registers it again.
+- When the DUKE goes offline, `fnc_syncJammer` calls `fnc_releaseMines` after `DUKE_RELEASE_DELAY` (1.5 s). RHS frees its IEDs at the end of the script with `enableSimulationGlobal true` on the gunner's machine, and that only works for local objects, so IEDs would stay disabled on a dedicated server.
 - Antenna damage is reported by `fnc_onDammaged` through `Dammaged`. The handler only fires where the vehicle is local and is therefore registered on every client. It does nothing while the DUKE is off and merges hits within the delay into one sync.
 - Destroyed vehicles are removed by the cleanup loop of Crow's Electronic Warfare. RHS lets its jamming script run on for dead vehicles, which has no effect on the radio jammer.
 - Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `ewc_main` removes them from DUKE vehicles. The DUKE is operated through its weapon, so no actions are lost.
@@ -23,6 +24,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) 
 | `fnc_initVehicle` | every machine | Class event handler for vehicles with `rhs_duke_type`: registers the `Dammaged` handler |
 | `fnc_onFired` | machine of the shooter | `fired` handler of the DUKE ammo: after `DUKE_SYNC_DELAY` asks the server to sync |
 | `fnc_onDammaged` | machine where the vehicle is local | Asks the server to sync after antenna damage, merging hits within the delay |
+| `fnc_releaseMines` | server | Enables the simulation of the IEDs in 50 m again after the DUKE went offline, except those another jammer holds (RHS DUKE, CG13, CUP DUKE). `rhs_duke.sqf` does this itself with a plain `enableSimulationGlobal`, which does nothing for IEDs that are not local to the gunner |
 | `fnc_syncJammer` | server | Matches the jammer to the DUKE: on/off from `RHS_DUKE_OP`, range from the antenna damage. Shows the hint of `ewc_main_fnc_notifyState` when the state changed |
 
 ## Settings

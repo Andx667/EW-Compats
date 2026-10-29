@@ -32,6 +32,11 @@ private _wantEnabled = GVAR(enableDuke)
 private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
 private _wantRadius = getNumber (([_vehicle] call EFUNC(main,getJammerConfig)) >> "radius") * _wantScale;
 
+// rhs_duke.sqf frees its IEDs from the machine of the gunner, which only works for local ones. Free them from here
+if (_enabled && {!_wantEnabled}) then {
+    [FUNC(releaseMines), [_vehicle], DUKE_RELEASE_DELAY] call CBA_fnc_waitAndExecute;
+};
+
 // The DUKE itself was switched, or a hit or a setting switched it off
 if (_wantEnabled != _enabled) then {
     private _reason = ["", ["damage", "disabled"] select !GVAR(enableDuke)] select (_vehicle getVariable [DUKE_STATE_VAR, false]);

@@ -15,6 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Fixed
 
+- Compat RHS USAF - Free the IEDs around a vehicle from the server when its DUKE goes offline. RHS did it on the machine of the gunner, which does not work for IEDs that are not local there, so they stayed disabled on a dedicated server
 - Compat BWA3 - Keep the CG13 on when the driver of the Dingo gets out. It was switched off because the engine stops, while an eject left it on. The engine now keeps running without a driver as long as the CG13 is on
 - Main - Remove the activate and deactivate actions of Crow's EW from the jammer vehicles on every client, not only after the next update. They stayed on DUKE and CG13 vehicles of a client until the next jammer change
 
