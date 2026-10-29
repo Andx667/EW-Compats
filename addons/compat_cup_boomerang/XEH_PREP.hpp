@@ -1,0 +1,12 @@
+PREP(canActivate);
+PREP(expireShotMarker);
+PREP(findNearMarker);
+PREP(handleToggle);
+PREP(handleVehicleFired);
+PREP(initVehicle);
+PREP(isReady);
+PREP(loop);
+PREP(onFired);
+PREP(onShotDetected);
+PREP(setState);
+PREP(updateListening);

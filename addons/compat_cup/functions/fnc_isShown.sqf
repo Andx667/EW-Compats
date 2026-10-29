@@ -18,4 +18,4 @@
 
 params [["_vehicle", objNull, [objNull]], ["_system", SYSTEM_DUKE, [""]]];
 
-([_vehicle, _system] call FUNC(getSources)) findIf {_vehicle animationSourcePhase _x < ANTENNA_SHOWN_BELOW} != -1
+([_vehicle, _system] call FUNC(getShown)) isNotEqualTo []
