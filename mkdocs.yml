@@ -8,6 +8,7 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  variant: classic
   language: en
   logo: icon.png
   favicon: icon.png
