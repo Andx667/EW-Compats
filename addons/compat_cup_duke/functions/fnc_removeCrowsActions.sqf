@@ -17,10 +17,16 @@
 
 params [["_jamMap", createHashMap, [createHashMap]]];
 
-{
-    private _jammer = _y select 0;
+// Crows adds the actions of a new jammer in its own handler of this event, which may run after this one.
+// A frame later they exist
+[{
+    params ["_jamMap"];
 
-    if (!isNull _jammer && {([_jammer, SYSTEM_DUKE] call EFUNC(compat_cup,getSources)) isNotEqualTo []}) then {
-        _jammer call EFUNC(main,clearCrowsActions);
-    };
-} forEach _jamMap;
+    {
+        private _jammer = _y select 0;
+
+        if (!isNull _jammer && {([_jammer, SYSTEM_DUKE] call EFUNC(compat_cup,getSources)) isNotEqualTo []}) then {
+            _jammer call EFUNC(main,clearCrowsActions);
+        };
+    } forEach _jamMap;
+}, [_jamMap]] call CBA_fnc_execNextFrame;
