@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="compat_bwa3">
+        <Key ID="STR_ewc_compat_bwa3_category">
+            <English>BWA3 Dingo CG13</English>
+            <French>BWA3 Dingo CG13</French>
+            <Spanish>BWA3 Dingo CG13</Spanish>
+            <Polish>BWA3 Dingo CG13</Polish>
+            <Russian>BWA3 Dingo CG13</Russian>
+            <German>BWA3 Dingo CG13</German>
+        </Key>
+        <Key ID="STR_ewc_compat_bwa3_setting_enableCG13">
+            <English>Enable BWA3 CG13 jamming</English>
+            <French>Activer le brouillage du CG13 BWA3</French>
+            <Spanish>Activar interferencia del CG13 de BWA3</Spanish>
+            <Polish>Włącz zagłuszanie CG13 z BWA3</Polish>
+            <Russian>Включить подавление CG13 из BWA3</Russian>
+            <German>BWA3-CG13-Störung aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_bwa3_setting_enableCG13_tooltip">
+            <English>If disabled, the CG13 of the Dingo no longer drives a Crow's EW radio jammer.</English>
+            <French>Si désactivé, le CG13 du Dingo ne pilote plus de brouilleur radio Crow's EW.</French>
+            <Spanish>Si está desactivado, el CG13 del Dingo ya no controla un inhibidor de radio de Crow's EW.</Spanish>
+            <Polish>Jeśli wyłączone, CG13 w Dingo nie steruje już zagłuszarką radiową Crow's EW.</Polish>
+            <Russian>Если выключено, CG13 на Dingo больше не управляет радиостанцией помех Crow's EW.</Russian>
+            <German>Wenn deaktiviert, steuert das CG13 des Dingo keinen Crow's-EW-Funkstörsender mehr.</German>
+        </Key>
+    </Package>
+</Project>

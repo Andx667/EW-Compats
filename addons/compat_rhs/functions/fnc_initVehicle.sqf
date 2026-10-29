@@ -17,7 +17,7 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-if (getText (configOf _vehicle >> "rhs_duke_type") isEqualTo "") exitWith {};
+if (!GVAR(enableDuke) || {getText (configOf _vehicle >> "rhs_duke_type") isEqualTo ""}) exitWith {};
 
 // The Dammaged EH only fires where the vehicle is local, so it has to exist on every machine
 _vehicle addEventHandler ["Dammaged", {_this call FUNC(onDammaged)}];

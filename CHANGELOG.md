@@ -13,6 +13,15 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Compat RHS - Add setting to disable the DUKE jammer
+- Compat BWA3 - Add setting to disable the CG13 jammer
+
+### Changed
+
+- Settings - Move CBA settings into an `initSettings.inc.sqf` per addon
+
 ## [0.2.0] - 2026-10-28
 
 ### Added
