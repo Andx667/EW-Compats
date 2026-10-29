@@ -5,13 +5,13 @@
  * them to vehicles with the system. The events and titles are the ones of fnc_addActions.
  *
  * Arguments:
- * 0: System, "duke" or "boomerang" <STRING>
+ * 0: System, "duke" <STRING>
  *
  * Return Value:
  * None
  *
  * Example:
- * ["boomerang"] call ewc_compat_cup_fnc_addAceActions
+ * ["duke"] call ewc_compat_cup_fnc_addAceActions
  *
  * Public: No
  */

@@ -2,12 +2,12 @@
 <Project name="ewc">
     <Package name="compat_cup">
         <Key ID="STR_ewc_compat_cup_category">
-            <English>CUP DUKE and Boomerang</English>
-            <French>CUP DUKE and Boomerang</French>
-            <Spanish>CUP DUKE and Boomerang</Spanish>
-            <Polish>CUP DUKE and Boomerang</Polish>
-            <Russian>CUP DUKE and Boomerang</Russian>
-            <German>CUP DUKE and Boomerang</German>
+            <English>CUP DUKE</English>
+            <French>CUP DUKE</French>
+            <Spanish>CUP DUKE</Spanish>
+            <Polish>CUP DUKE</Polish>
+            <Russian>CUP DUKE</Russian>
+            <German>CUP DUKE</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_mode_ace">
             <English>ACE self-interaction</English>
@@ -34,20 +34,20 @@
             <German>Mausrad</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_actionMode">
-            <English>System switch</English>
-            <French>Commande des systèmes</French>
-            <Spanish>Control de los sistemas</Spanish>
-            <Polish>Przełącznik systemów</Polish>
-            <Russian>Переключатель систем</Russian>
-            <German>Systemschalter</German>
+            <English>DUKE switch</English>
+            <French>Commande du DUKE</French>
+            <Spanish>Control del DUKE</Spanish>
+            <Polish>Przełącznik DUKE</Polish>
+            <Russian>Переключатель DUKE</Russian>
+            <German>DUKE-Schalter</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_actionMode_tooltip">
-            <English>How the DUKE and the Boomerang are switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
-            <French>Comment le DUKE et le Boomerang sont activés et désactivés dans les véhicules. Sans ACE, la molette de la souris est toujours disponible.</French>
-            <Spanish>Cómo se encienden y apagan el DUKE y el Boomerang en los vehículos. Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
-            <Polish>Sposób włączania i wyłączania DUKE i Boomerang w pojazdach. Bez ACE zawsze dostępne jest kółko myszy.</Polish>
-            <Russian>Как включаются и выключаются DUKE и Boomerang в технике. Без ACE колесо мыши доступно всегда.</Russian>
-            <German>Wie der DUKE und der Boomerang in Fahrzeugen ein- und ausgeschaltet werden. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
+            <English>How the DUKE is switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
+            <French>Comment le DUKE est activé et désactivé dans les véhicules. Sans ACE, la molette de la souris est toujours disponible.</French>
+            <Spanish>Cómo se enciende y apaga el DUKE en los vehículos. Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
+            <Polish>Sposób włączania i wyłączania DUKE w pojazdach. Bez ACE zawsze dostępne jest kółko myszy.</Polish>
+            <Russian>Как включается и выключается DUKE в технике. Без ACE колесо мыши доступно всегда.</Russian>
+            <German>Wie der DUKE in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_requireEngine">
             <English>Require running engine</English>
@@ -58,12 +58,12 @@
             <German>Laufenden Motor voraussetzen</German>
         </Key>
         <Key ID="STR_ewc_compat_cup_setting_requireEngine_tooltip">
-            <English>The DUKE and the Boomerang can only be switched on with the engine running and switch off when the engine stops.</English>
-            <French>Le DUKE et le Boomerang ne peuvent être activés que moteur en marche et s'éteignent à l'arrêt du moteur.</French>
-            <Spanish>El DUKE y el Boomerang solo se pueden encender con el motor en marcha y se apagan cuando el motor se detiene.</Spanish>
-            <Polish>DUKE i Boomerang można włączyć tylko przy pracującym silniku i wyłączają się one po zatrzymaniu silnika.</Polish>
-            <Russian>DUKE и Boomerang можно включить только при работающем двигателе, и они выключаются при остановке двигателя.</Russian>
-            <German>DUKE und Boomerang lassen sich nur bei laufendem Motor einschalten und schalten sich ab, wenn der Motor ausgeht.</German>
+            <English>The DUKE can only be switched on with the engine running and switches off when the engine stops.</English>
+            <French>Le DUKE ne peut être activé que moteur en marche et se désactive à l'arrêt du moteur.</French>
+            <Spanish>El DUKE solo se puede encender con el motor en marcha y se apaga cuando el motor se detiene.</Spanish>
+            <Polish>DUKE można włączyć tylko przy pracującym silniku i wyłącza się, gdy silnik zgaśnie.</Polish>
+            <Russian>DUKE можно включить только при работающем двигателе, он выключается при остановке двигателя.</Russian>
+            <German>Der DUKE lässt sich nur bei laufendem Motor einschalten und schaltet sich aus, wenn der Motor stoppt.</German>
         </Key>
     </Package>
 </Project>

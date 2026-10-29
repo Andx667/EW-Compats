@@ -1,21 +1,21 @@
 # Compat CUP
 
-CUP models two systems on some of its vehicles and gives them no function: the **DUKE** antenna and the **Boomerang** shot finder. `compat_cup_duke` and `compat_cup_boomerang` make them work. This addon is the base both build on. It has no function of its own and does not need Crow's Electronic Warfare.
+CUP models two systems on some of its vehicles and gives them no function: the **DUKE** antenna and the **Boomerang** shot finder. `compat_cup_duke` makes the DUKE work and builds on this addon, the Boomerang is the common `compat_boomerang` with the CUP vehicles registered by `compat_cup_boomerang`. This addon has no function of its own and does not need Crow's Electronic Warfare.
 
 ## How it works
 
-- CUP only models both systems. The antennas are animation sources that can be hidden, and there is nothing behind them, so the system addons provide the whole function.
+- CUP only models the DUKE. The antennas are animation sources that can be hidden, and there is nothing behind them, so the DUKE addon provides the whole function.
 - A vehicle counts as equipped if its `AnimationSources` contain one of these (`fnc_getSources`):
 
   | System | Sources |
   |---|---|
   | DUKE | `hide_antenna_duke` (M1151), `hide_Duke_antenna` and `hide_crew_duke` (M1240), `hide_duke_antennas` (Abrams), `SYS_crewduke` (RG-31) |
-  | Boomerang | `hide_antenna_boomerang` (M1151, M1240), `SYS_boomerang` (RG-31) |
 
+  The sources of the Boomerang are in `compat_cup_boomerang`.
   Classes inherited from a parent are not listed as children, so every class up the inheritance chain is read. The result is cached per class, so no class list has to be kept.
 - An antenna is shown at phase 0 and hidden at phase 1 (`animationSourcePhase`), see `fnc_getShown` and `fnc_isShown`.
 - Crew can switch a system with a scroll wheel action (`fnc_addActions`), an ACE self-interaction (`fnc_addAceActions`) or both (CBA setting `ewc_compat_cup_actionMode`). `fnc_canOperate` limits them to driver, commander and gunners, and `fnc_canToggle` adds the state of the system.
-- The system addons plug into these functions by naming convention, `<system>` being `duke` or `boomerang`:
+- The DUKE addon plugs into these functions by naming convention, `<system>` being `duke`:
 
   | Name | Provided by the system addon |
   |---|---|
@@ -24,7 +24,7 @@ CUP models two systems on some of its vehicles and gives them no function: the *
   | `ewc_compat_cup_<system>_toggle` | Server event the actions send, with the vehicle and the wanted state |
   | `STR_ewc_compat_cup_<system>_activate` / `_deactivate` | Titles of the actions |
 
-- The systems exclude each other. A system tells the other one with the local server event `ewc_compat_cup_systemOn` when it is switched on, and the other one switches off if it is loaded.
+- The DUKE and the Boomerang exclude each other. A system tells the other one with the local server event `ewc_compat_cup_systemOn` when it is switched on, and the other one switches off if it is loaded (`compat_cup_boomerang` passes the event to and from `compat_boomerang`).
 
 ## Functions
 
@@ -42,12 +42,12 @@ CUP models two systems on some of its vehicles and gives them no function: the *
 
 | Setting | Default | |
 |---|---|---|
-| System switch | Scroll wheel | For DUKE and Boomerang: scroll wheel, ACE self-interaction or both. Per client. Without ACE the scroll wheel is always used |
-| Require running engine | on | DUKE and Boomerang. Set by the server |
+| DUKE switch | Scroll wheel | Scroll wheel, ACE self-interaction or both. Per client. Without ACE the scroll wheel is always used |
+| Require running engine | on | Set by the server |
 
 ## Limitations
 
-- The antenna lists are the ones of CUP's HMMWV, MATV, RG-31 and Abrams. Other vehicles with other source names are not covered.
+- The antenna list is the one of CUP's HMMWV, MATV, RG-31 and Abrams. Other vehicles with other source names are not covered.
 
 ## Dependencies
 

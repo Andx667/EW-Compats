@@ -4,7 +4,7 @@ ADDON = false;
 
 #include "XEH_PREP.hpp"
 
-// Vehicle class -> animation sources of its DUKE and Boomerang antennas, per system
+// Vehicle class -> animation sources of its DUKE antennas, per system
 GVAR(sourceCache) = createHashMap;
 
 GVAR(aceLoaded) = isClass (configFile >> "CfgPatches" >> "ace_interact_menu");

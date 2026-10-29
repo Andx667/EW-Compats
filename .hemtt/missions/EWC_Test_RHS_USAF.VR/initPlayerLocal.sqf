@@ -13,6 +13,16 @@ if (isClass (configFile >> "CfgWeapons" >> "hgun_esd_01_F")) then {
 };
 player setPos [-20 + (random 2), 10, 0];
 
+// Switch for the shooters of the Boomerang range
+player addAction [
+    "<t color='#ffd966'>Toggle test shooters</t>",
+    {
+        missionNamespace setVariable ["ewc_test_shooting", !(missionNamespace getVariable ["ewc_test_shooting", true]), true];
+        hint format ["Shooters %1", ["off", "on"] select (missionNamespace getVariable ["ewc_test_shooting", true])];
+    },
+    nil, 0, false, true, "", "true", 5
+];
+
 
 
 // Labels over vehicles, IEDs and lane signs
@@ -43,4 +53,4 @@ addMissionEventHandler ["Draw3D", {
     } forEach (missionNamespace getVariable ["ewc_test_mines", []]);
 }];
 
-hint parseText "<t size='1.2'>EWC Test: RHS DUKE</t><br/>Every RHS vehicle with a DUKE stands at the parking area (0,0). Labels show the DUKE state.<br/><br/>1. Get in as gunner/commander, start the engine and switch the DUKE with its weapon (select <t color='#ffd966'>DUKE</t>, fire).<br/>2. Drive onto the <t color='#ffd966'>JAM LANE</t> (150 m north). IEDs within 50 m turn red.<br/>3. Second player with ACRE at the radio signs: effective 50 m, outer edge 125 m.<br/>4. Shoot one DUKE antenna off (60 % range: 30 m) and both (off).<br/>5. Crow's EW needs multiplayer: host this on LAN.";
+hint parseText "<t size='1.2'>EWC Test: RHS USAF DUKE and Boomerang</t><br/>Every RHS USAF vehicle with a DUKE or a Boomerang stands at the parking area (0,0). Labels show both states.<br/><br/><t color='#ffd966'>DUKE</t>: get in as gunner/commander, start the engine and switch the DUKE with its weapon (select DUKE, fire). Drive onto the JAM LANE (150 m north): IEDs within 50 m turn red, a second player with ACRE at the radio signs: effective 50 m, outer edge 125 m. Shoot one DUKE antenna off (60 % range: 30 m) and both (off).<br/><t color='#ffd966'>Boomerang</t> (M1245 SOCOM, antenna shown): park on the BOOMERANG BAIT (320 m north), switch it on with the scroll wheel / ACE self-interaction. A hostile shooter (400 m north) and a friendly one (300 m west) fire past you: hint with bearing/range, red map marker. Fire your own weapon: deaf for 5 s. Drive faster than 95 km/h: no reports.<br/>The scroll wheel action 'Toggle test shooters' stops and starts the shooters.<br/>Crow's EW needs multiplayer: host this on LAN.";
