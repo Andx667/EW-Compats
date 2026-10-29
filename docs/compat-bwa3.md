@@ -28,7 +28,6 @@ The 40 m is the IED jammer radius hardcoded in BWA3. The falloff band is 1.5 tim
 ## Quirks
 
 - **Engine off means jammer off.** BWA3 switches the CG13 off when the engine stops, without any event. The addon watches the `Engine` event and switches the radio jammer off as well. It has to be registered on every client, because the event only fires where the vehicle is local.
-- **Use the CG13 actions, not Crow's.** Crow's own (de)activate actions would switch the jammer without the CG13 and desync the two, so they are removed from the Dingos. Use `TurnOnCG13` / `TurnOffCG13`.
 - **A triggered IED explodes when it leaves the jamming range.** The jammer does not defuse an IED, it only holds it back. If an IED is triggered while it is inside the 40 m, it stays inert, but it explodes as soon as the jammer is out of range, for example when the Dingo drives on or the engine is stopped. This is BWA3's own behaviour, this addon does not change it. Keep the distance until the IED is cleared.
 - **Everybody in range is jammed**, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - **Multiplayer only.** Crow's Electronic Warfare does not work in singleplayer.
