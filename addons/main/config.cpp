@@ -13,9 +13,6 @@ class CfgPatches {
     };
 };
 
-#include "CfgEventHandlers.hpp"
-#include "CfgEWC.hpp"
-
 class CfgMods {
     class PREFIX {
         dir = "@EW_Compats";

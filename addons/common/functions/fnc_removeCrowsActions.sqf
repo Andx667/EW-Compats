@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [_jamMap] call ewc_main_fnc_removeCrowsActions
+ * [_jamMap] call ewc_common_fnc_removeCrowsActions
  *
  * Public: No
  */

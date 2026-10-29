@@ -18,7 +18,7 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-private _state = _vehicle getVariable QEGVAR(main,jammerState);
+private _state = _vehicle getVariable QEGVAR(common,jammerState);
 
 if (isNull _vehicle || {isNil "_state"} || {!alive _vehicle}) exitWith {};
 
@@ -39,7 +39,7 @@ private _wantEnabled = GVAR(enable) && {_capabilities isNotEqualTo []} && {_mast
 
 // A mast folded by the crew needs no reason, a setting that keeps a deployed mast silent does
 if (_wantEnabled != _enabled) then {
-    [_vehicle, SYSTEM_NAME, _wantEnabled, ["", "disabled"] select _mastUp] call EFUNC(main,notifyState);
+    [_vehicle, SYSTEM_NAME, _wantEnabled, ["", "disabled"] select _mastUp] call EFUNC(common,notifyState);
 };
 
 private _registeredCapabilities = _vehicle getVariable [QGVAR(capabilities), JAMMER_CAPABILITIES];
@@ -49,10 +49,10 @@ if (_wantEnabled && {GVAR(radius) != _radius || {_capabilities isNotEqualTo _reg
     _vehicle setVariable [QGVAR(capabilities), _capabilities];
 
     [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
-    [_vehicle, true, GVAR(radius), -1, _capabilities] call EFUNC(main,addJammer);
+    [_vehicle, true, GVAR(radius), -1, _capabilities] call EFUNC(common,addJammer);
 };
 
 if (_wantEnabled != _enabled) then {
-    _vehicle setVariable [QEGVAR(main,jammerState), [_wantEnabled, _radius]];
+    _vehicle setVariable [QEGVAR(common,jammerState), [_wantEnabled, _radius]];
     [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _wantEnabled]] call CBA_fnc_localEvent;
 };

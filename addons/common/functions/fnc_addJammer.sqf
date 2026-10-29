@@ -15,7 +15,7 @@
  * None
  *
  * Example:
- * [_vehicle, false, 25] call ewc_main_fnc_addJammer
+ * [_vehicle, false, 25] call ewc_common_fnc_addJammer
  *
  * Public: Yes
  */

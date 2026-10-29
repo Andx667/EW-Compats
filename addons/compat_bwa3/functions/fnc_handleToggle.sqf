@@ -6,7 +6,7 @@
  * Arguments:
  * 0: Vehicle <OBJECT>
  * 1: CG13 switched on <BOOL>
- * 2: Why it was switched off by itself, the end of the string ewc_main_reason_<reason> <STRING> (default: "")
+ * 2: Why it was switched off by itself, the end of the string ewc_common_reason_<reason> <STRING> (default: "")
  *
  * Return Value:
  * None
@@ -19,7 +19,7 @@
 
 params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]], ["_reason", "", [""]]];
 
-if (isNull _vehicle || {isNil {_vehicle getVariable QEGVAR(main,jammerState)}}) exitWith {};
+if (isNull _vehicle || {isNil {_vehicle getVariable QEGVAR(common,jammerState)}}) exitWith {};
 
 // With the CG13 disabled in the settings, the jammer stays off whatever the switch says
 _enabled = _enabled && GVAR(enableCG13);
@@ -29,6 +29,6 @@ if (_enabled isEqualTo (_vehicle getVariable [QGVAR(ecmEnabled), false])) exitWi
 
 _vehicle setVariable [QGVAR(ecmEnabled), _enabled];
 
-[_vehicle, SYSTEM_NAME, _enabled, _reason] call EFUNC(main,notifyState);
+[_vehicle, SYSTEM_NAME, _enabled, _reason] call EFUNC(common,notifyState);
 
 [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _enabled]] call CBA_fnc_localEvent;

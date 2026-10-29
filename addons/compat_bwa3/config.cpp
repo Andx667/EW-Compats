@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ewc_main", "bwa3_dingo2", "crowsEW_main"};
+        requiredAddons[] = {"ewc_common", "bwa3_dingo2", "crowsEW_main"};
         author = AUTHOR;
         authors[] = {"Andx"};
         url = "https://github.com/Andx667/EW-Compats";
