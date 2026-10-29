@@ -10,7 +10,6 @@
  *               radius = 50;                            // full jamming radius in m
  *               falloffFactor = 1.5;                    // the effect has faded out at this times the radius
  *               capabilities[] = {"VoiceCommsJammer"};  // optional, Crows capabilities, defaults to radio
- *               enableVariable = "my_addon_enable";     // optional, name of a (setting) variable. Vehicles are skipped while it is false
  *           };
  *       };
  *   };

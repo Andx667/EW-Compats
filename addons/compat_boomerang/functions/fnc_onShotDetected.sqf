@@ -3,8 +3,8 @@
  * Author: Andx
  * Shows a shot a Boomerang detected: a hint for the crew of the vehicle and, for everybody friendly to it, a map
  * marker at the estimated position of the shooter for a while. A shot close to a marker that is still there does not
- * add one, it only keeps that marker longer. The marker is left out when the setting sends the
- * shots to cTab only (the cTab sub-addon adds the marker there).
+ * add one, it only keeps that marker longer. The marker is only added when the setting shows the shots on the map
+ * (the cTab sub-addon adds the one on cTab).
  *
  * Arguments:
  * 0: Vehicle that heard the shot <OBJECT>
@@ -40,11 +40,8 @@ if (vehicle player == _vehicle) then {
     ]) splitString "|" joinString "<br/>");
 };
 
-// The setting belongs to the cTab sub-addon. Without cTab it does not exist and the map is the only place for a marker
-private _onMap = isNil QGVAR(ctab_markerTarget) || {GVAR(ctab_markerTarget) != MARKER_TARGET_CTAB};
-
 // Markers are local, so only the side of the vehicle gets to see where the shot came from
-if (_onMap && {GVAR(markerLifetime) > 0} && {(playerSide getFriend _side) >= 0.6}) then {
+if (GVAR(markerTarget) == MARKER_TARGET_MAP && {GVAR(markerLifetime) > 0} && {(playerSide getFriend _side) >= 0.6}) then {
     private _near = [GVAR(shotMarkers), _position, _range] call FUNC(findNearMarker);
 
     if (_near != -1) then {

@@ -20,7 +20,6 @@ By default a vehicle can only run the DUKE or the Boomerang. Switching one on sw
 | Setting | Default | |
 |---|---|---|
 | DUKE switch | Scroll wheel | Scroll wheel, ACE self-interaction or both. Without ACE the scroll wheel is always used. Per player |
-| Require running engine | on | Set by the server |
 | Allow DUKE and Boomerang together | off | Set by the server. Off: switching one system on switches the other off |
 
 The settings of the DUKE are on its page.

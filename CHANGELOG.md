@@ -13,6 +13,22 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Fixed
+
+- Compat RHS USAF - Free the IEDs of a vehicle that is destroyed with the DUKE on, and stop the DUKE script of RHS
+- Compat BWA3 - The CG13 switch does nothing while the CG13 is disabled in the settings. It still switched the IED jammer of BWA3 on
+- Main - Register the jammer vehicles also while their compat addon is disabled in the settings, which keep them off. Switching a setting on during the mission was without effect for those vehicles
+
+### Changed
+
+- Compat Boomerang - The setting *Show shots on* is now *Show shots* (nothing, map or cTab) and is part of Compat Boomerang. cTab is only offered when it is loaded. The option for both is gone, and the saved value of the old setting is not taken over
+- Compat RHS USAF - Leave only the IEDs another running RHS DUKE holds when a DUKE goes offline, as no two of the supported mods run together
+
+### Removed
+
+- Compat CUP, Compat Boomerang - Remove the setting *Require running engine*, the DUKE and the Boomerang always need a running engine
+- Main - Remove `enableVariable` from the entries of `CfgEWC >> Jammers`
+
 ## [1.1.0] - 2026-10-29
 
 ### Fixed

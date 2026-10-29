@@ -9,14 +9,6 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     false
 ] call CBA_fnc_addSetting;
 
-[
-    QGVAR(requireEngine),
-    "CHECKBOX",
-    [LLSTRING(setting_requireEngine), LLSTRING(setting_requireEngine_tooltip)],
-    _category,
-    true,
-    true
-] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowBoth),

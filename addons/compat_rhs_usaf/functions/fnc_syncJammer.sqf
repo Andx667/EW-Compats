@@ -19,14 +19,22 @@ params [["_vehicle", objNull, [objNull]]];
 
 private _state = _vehicle getVariable QEGVAR(main,jammerState);
 
-if (isNull _vehicle || {isNil "_state"} || {!alive _vehicle}) exitWith {};
+if (isNull _vehicle || {isNil "_state"}) exitWith {};
 
 _state params ["_enabled", "_radius"];
+
+// A destroyed vehicle ends the script of RHS at last, and its IEDs are freed like those of a DUKE switched off
+private _alive = alive _vehicle;
+
+if (!_alive) then {
+    _vehicle setVariable [DUKE_STATE_VAR, false, true];
+};
 
 private _damage1 = _vehicle getHitPointDamage "HitDuke1";
 private _damage2 = _vehicle getHitPointDamage "HitDuke2";
 
-private _wantEnabled = GVAR(enableDuke)
+private _wantEnabled = _alive
+    && GVAR(enableDuke)
     && {_vehicle getVariable [DUKE_STATE_VAR, false]}
     && {!(_damage1 >= DUKE_BOTH_ANTENNAS_DESTROYED && {_damage2 >= DUKE_BOTH_ANTENNAS_DESTROYED})};
 private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
@@ -37,14 +45,14 @@ if (_enabled && {!_wantEnabled}) then {
     [FUNC(releaseMines), [_vehicle], DUKE_RELEASE_DELAY] call CBA_fnc_waitAndExecute;
 };
 
-// The DUKE itself was switched, or a hit or a setting switched it off
-if (_wantEnabled != _enabled) then {
+// The DUKE itself was switched, or a hit or a setting switched it off. A destroyed vehicle has nobody to tell
+if (_alive && {_wantEnabled != _enabled}) then {
     private _reason = ["", ["damage", "disabled"] select !GVAR(enableDuke)] select (_vehicle getVariable [DUKE_STATE_VAR, false]);
 
     [_vehicle, SYSTEM_NAME, _wantEnabled, _reason] call EFUNC(main,notifyState);
 };
 
-if (_wantRadius != _radius) exitWith {
+if (_alive && {_wantRadius != _radius}) exitWith {
     // Crows has no way to change the radii of a jammer, so replace it
     [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
     [_vehicle, _wantEnabled, _wantRadius] call EFUNC(main,addJammer);

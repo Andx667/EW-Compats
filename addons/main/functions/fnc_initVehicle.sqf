@@ -22,10 +22,6 @@ private _config = [_vehicle] call FUNC(getJammerConfig);
 
 if (isNull _config) exitWith {};
 
-private _enableVariable = getText (_config >> "enableVariable");
-
-if (_enableVariable isNotEqualTo "" && {!(missionNamespace getVariable [_enableVariable, true])}) exitWith {};
-
 // For the parts that have to exist on every machine, like event handlers of the vehicle
 [QGVAR(vehicleInit), [_vehicle, configName _config]] call CBA_fnc_localEvent;
 

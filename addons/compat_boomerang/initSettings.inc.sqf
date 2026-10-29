@@ -18,6 +18,24 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     true
 ] call CBA_fnc_addSetting;
 
+// cTab is only an option with its sub-addon (folder ctab), which is skipped without cTab
+private _targetValues = [MARKER_TARGET_NONE, MARKER_TARGET_MAP];
+private _targetNames = [LLSTRING(target_none), LLSTRING(target_map)];
+
+if (isClass (configFile >> "CfgPatches" >> "cTab_main")) then {
+    _targetValues pushBack MARKER_TARGET_CTAB;
+    _targetNames pushBack LLSTRING(target_ctab);
+};
+
+[
+    QGVAR(markerTarget),
+    "LIST",
+    [LLSTRING(setting_markerTarget), LLSTRING(setting_markerTarget_tooltip)],
+    _category,
+    [_targetValues, _targetNames, MARKER_TARGET_MAP],
+    true
+] call CBA_fnc_addSetting;
+
 [
     QGVAR(markerLifetime),
     "SLIDER",
@@ -34,13 +52,4 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     _category,
     [[ACTION_MODE_SCROLL, ACTION_MODE_ACE, ACTION_MODE_BOTH], [LLSTRING(mode_scroll), LLSTRING(mode_ace), LLSTRING(mode_both)], ACTION_MODE_SCROLL],
     false
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(requireEngine),
-    "CHECKBOX",
-    [LLSTRING(setting_requireEngine), LLSTRING(setting_requireEngine_tooltip)],
-    _category,
-    true,
-    true
 ] call CBA_fnc_addSetting;

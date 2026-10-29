@@ -21,6 +21,6 @@ params [["_vehicle", objNull, [objNull]]];
 if (!GVAR(enable)) exitWith {"disabled"};
 if (!alive _vehicle) exitWith {"dead"};
 if (!([_vehicle] call FUNC(isShown))) exitWith {"antenna"};
-if (GVAR(requireEngine) && {!isEngineOn _vehicle}) exitWith {"engine"};
+if (!isEngineOn _vehicle) exitWith {"engine"};
 
 ""

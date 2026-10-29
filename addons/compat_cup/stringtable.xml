@@ -65,21 +65,5 @@
             <Russian>Машина с обеими антеннами может использовать DUKE и Boomerang одновременно. Выключено: включение одной системы выключает другую.</Russian>
             <German>Ein Fahrzeug mit beiden Antennen kann DUKE und Boomerang gleichzeitig betreiben. Aus: Das Einschalten des einen schaltet das andere aus.</German>
         </Key>
-        <Key ID="STR_ewc_compat_cup_setting_requireEngine">
-            <English>Require running engine</English>
-            <French>Moteur en marche requis</French>
-            <Spanish>Requerir motor en marcha</Spanish>
-            <Polish>Wymagaj pracującego silnika</Polish>
-            <Russian>Требовать работающий двигатель</Russian>
-            <German>Laufenden Motor voraussetzen</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_setting_requireEngine_tooltip">
-            <English>The DUKE can only be switched on with the engine running and switches off when the engine stops.</English>
-            <French>Le DUKE ne peut être activé que moteur en marche et se désactive à l'arrêt du moteur.</French>
-            <Spanish>El DUKE solo se puede encender con el motor en marcha y se apaga cuando el motor se detiene.</Spanish>
-            <Polish>DUKE można włączyć tylko przy pracującym silniku i wyłącza się, gdy silnik zgaśnie.</Polish>
-            <Russian>DUKE можно включить только при работающем двигателе, он выключается при остановке двигателя.</Russian>
-            <German>Der DUKE lässt sich nur bei laufendem Motor einschalten und schaltet sich aus, wenn der Motor stoppt.</German>
-        </Key>
     </Package>
 </Project>

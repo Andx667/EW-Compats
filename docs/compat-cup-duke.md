@@ -31,7 +31,7 @@ Most vehicles have one DUKE antenna and are either on full range or off. The M12
 | Jamming radius | 50 m | For radios and IEDs. Set by the server |
 | Jam IEDs | on | Set by the server |
 
-The switch and the engine requirement are settings of `compat_cup`, see [Compat CUP](compat-cup.md#settings).
+The switch is a setting of `compat_cup`, see [Compat CUP](compat-cup.md#settings).
 
 ## Quirks
 
