@@ -5,7 +5,7 @@
 # Requirements
 
 - [CBA_A3](https://steamcommunity.com/sharedfiles/filedetails/?id=450814997)
-- [Crow's Electronic Warfare](https://steamcommunity.com/sharedfiles/filedetails/?id=2515887728)
+- [Crow's Electronic Warfare](https://steamcommunity.com/sharedfiles/filedetails/?id=2515887728) (not needed for the Boomerang of CUP and RHS USAF)
 
 Every feature below is skipped when the mod it extends is not loaded.
 

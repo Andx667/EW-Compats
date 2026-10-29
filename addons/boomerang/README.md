@@ -24,8 +24,8 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 
 | Addon | Mod | Vehicles and animation sources |
 |---|---|---|
-| [`compat_cup_boomerang`](../compat_cup_boomerang/README.md) | CUP Vehicles | HMMWV (M1151, M1240) and RG-31: `hide_antenna_boomerang`, `SYS_boomerang`. Also switches the DUKE off |
-| [`compat_rhs_usaf_boomerang`](../compat_rhs_usaf_boomerang/README.md) | RHS USAF | M1245 SOCOM: `hide_boomerang` |
+| [`compat_cup_boomerang`](../compat_cup/compat_cup_boomerang/README.md) | CUP Vehicles | HMMWV (M1151, M1240) and RG-31: `hide_antenna_boomerang`, `SYS_boomerang`. Also switches the DUKE off |
+| [`compat_rhs_usaf_boomerang`](../compat_rhs_usaf/compat_rhs_usaf_boomerang/README.md) | RHS USAF | M1245 SOCOM: `hide_boomerang` |
 
 ## Functions
 
