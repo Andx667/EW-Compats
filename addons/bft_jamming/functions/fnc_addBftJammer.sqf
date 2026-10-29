@@ -29,7 +29,7 @@ params [
     ["_activated", true, [true]]
 ];
 
-if (!_activated || {!GVAR(enable)}) exitWith {true};
+if (!_activated) exitWith {true};
 
 private _unit = objNull;
 if (count _units < 1) then {

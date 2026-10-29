@@ -17,7 +17,6 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 - Compat RHS - Add setting to disable the DUKE jammer
 - Compat BWA3 - Add setting to disable the CG13 jammer
-- BFT Jamming - Add setting to disable BFT jamming
 
 ### Changed
 

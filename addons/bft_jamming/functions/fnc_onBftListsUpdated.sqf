@@ -24,7 +24,7 @@
  * Public: No
  */
 
-if (!GVAR(enable) || {isNil "cTabBFTmembers"} || {isNil "cTabBFTgroups"} || {isNil "cTabBFTvehicles"}) exitWith {};
+if (isNil "cTabBFTmembers" || {isNil "cTabBFTgroups"} || {isNil "cTabBFTvehicles"}) exitWith {};
 
 // a jammer whose object was just deleted stays in the jamMap until CrowsEW's cleanup loop
 // catches it - getPosASL objNull would put it at [0,0,0] and jam around the map origin
