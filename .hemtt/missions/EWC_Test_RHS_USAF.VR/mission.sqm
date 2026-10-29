@@ -13,14 +13,17 @@ class EditorData
 	class Camera
 	{
 		pos[]={0,8,-20};
-		dir[]={0,-0.2,0.98};
-		up[]={0,0.98,0.2};
-		aside[]={1,0,0};
+		dir[]={-0.57008708,-0.32411349,0.75522125};
+		up[]={-0.19527285,0.94622737,0.25868669};
+		aside[]={0.79813862,3.1441232e-08,0.60248399};
 	};
 };
 binarizationWanted=0;
-sourceName="EWC_Test_RHS_USAF";
-addons[]={"A3_Characters_F"};
+sourceName="ewc_test_rhs_usaf";
+addons[]=
+{
+	"A3_Characters_F"
+};
 class AddonsMetaData
 {
 	class List
@@ -53,6 +56,8 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
 		year=2035;
 		month=6;
 		day=15;
@@ -76,7 +81,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={-20,0,10};
+						position[]={-20,5.0014391,10};
 					};
 					side="West";
 					flags=7;
@@ -92,7 +97,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={-22,0,10};
+						position[]={-22,5.0014391,10};
 					};
 					side="West";
 					flags=5;
