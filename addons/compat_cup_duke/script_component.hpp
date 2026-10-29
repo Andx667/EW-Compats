@@ -14,5 +14,9 @@
 // Range with only some of the antennas shown, like RHS with one antenna destroyed
 #define DUKE_SINGLE_ANTENNA_SCALE 0.6
 
+// The IEDs the DUKE jams. Those of CUP (V1 to V4) are no PipeBombBase, they derive from CUP_Mine_Ammo (MineBase).
+// Their anti-tank mines are not included
+#define JAMMED_MINE_CLASSES ["PipeBombBase", "CUP_IED_V1_Ammo"]
+
 // Seconds between two checks of an active jammer (antenna, engine, mines in range)
 #define LOOP_INTERVAL 1

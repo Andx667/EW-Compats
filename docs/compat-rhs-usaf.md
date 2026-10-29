@@ -35,6 +35,7 @@ The 50 m is the IED jammer radius hardcoded in RHS. The falloff band is 1.5 time
 - **Operated through the weapon.** RHS toggles the DUKE with a pseudo weapon (`rhsusf_weap_duke`). The addon reads the result 0.5 s after the shot, because RHS only sets `RHS_DUKE_OP` in a spawned script.
 - **A destroyed antenna changes the range.** Crow's Electronic Warfare cannot change the radii of a jammer, so the jammer is removed and registered again with the new range. Hits within the delay are merged into one sync.
 - **Locality matters.** RHS only starts its jamming script if gunner and vehicle are local on the same machine, for example not for a gunner in the turret of someone else's vehicle. Then `RHS_DUKE_OP` does not change and the radio jammer stays off, like the IED jammer.
+- **IEDs of CUP are not jammed.** `rhs_duke.sqf` only jams `PipeBombBase` IEDs, which are the vanilla and ACE IEDs. The IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`) derive from `MineBase` and explode as normal, also with CUP and RHS loaded together. This is RHS's own behaviour, this addon does not change it. The CUP DUKE of [Compat CUP DUKE](compat-cup-duke.md) does jam them.
 - **Everybody in range is jammed**, including the own crew and allies.
 - **Multiplayer only.**
 

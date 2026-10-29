@@ -2,7 +2,7 @@
 /*
  * Author: Andx
  * Disables the IEDs in range of an active DUKE and frees those that left the range.
- * Only IEDs (PipeBombBase) are jammed, like the Dingo CG13 does.
+ * Only IEDs are jammed (PipeBombBase like the Dingo CG13 does, and the IEDs of CUP), not mines.
  *
  * Arguments:
  * 0: Net ID of the vehicle <STRING>
@@ -24,7 +24,7 @@ private _radius = _vehicle call FUNC(getRadius);
 
 // Let the engine search around the vehicle, instead of going through all mines of the mission every second.
 // The search is flat, like the area check it replaces, and unsorted, as the order is of no use here
-private _inRange = nearestMines [_vehicle, ["PipeBombBase"], _radius, false, true];
+private _inRange = nearestMines [_vehicle, JAMMED_MINE_CLASSES, _radius, false, true];
 
 private _kept = _old arrayIntersect _inRange;
 // Mines that are already disabled belong to another jammer, which frees them itself
