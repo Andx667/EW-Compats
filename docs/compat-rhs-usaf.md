@@ -24,9 +24,20 @@ The 50 m is the IED jammer radius hardcoded in RHS. The falloff band is 1.5 time
 
 ## Settings
 
-| Setting | Default | |
-|---|---|---|
-| Enable RHS DUKE jamming | on | If off, the DUKEs do not jam radios. Set by the server |
+### `ewc_compat_rhs_usaf_enableDuke`
+
+- Name: Enable RHS DUKE jamming
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: if off, the DUKEs do not jam radios.
+
+### Complete example
+
+``` cpp
+// cba_settings.sqf
+force ewc_compat_rhs_usaf_enableDuke = false; // default: true
+```
 
 ## Quirks
 

@@ -32,20 +32,66 @@ The shots of friendly units are reported too, like the real system does. A setti
 An active Boomerang reports a heard bullet:
 
 - The **crew** gets a hint with one line per information (shot detected, 3 o'clock, ~300 m, bearing 87°, level). It makes no sound.
-- Everybody **friendly to the vehicle** gets a red marker at the estimated position of the shooter, on the map or on cTab, or not at all (setting *Show shots*). It disappears after 30 seconds. The map marker is local, the enemy does not see it. On cTab it is a red enemy marker of the side of the vehicle, so everybody with that side's cTab sees it, with the usual cTab notification. This needs [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217), without it the map is used.
+- Everybody **friendly to the vehicle** gets a red marker at the estimated position of the shooter, on the map or on cTab, or not at all (setting *Show shots*). It disappears after 30 seconds. The map marker is local, the enemy does not see it. On cTab it is a red enemy marker of the side of the vehicle, so everybody with that side's cTab sees it, with the usual cTab notification. cTab is only an option when [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) is loaded.
 - Reports are not exact, like the real system: the bearing is off by up to 2.5° and the range by up to 10 %.
 - A burst is reported once per second, not bullet by bullet.
 - A shot close to a marker that is still there does not add another one, on the map and on cTab. "Close" is 50 m, or 20 % of the reported range if that is more, as the position is less exact the further the shooter is. The existing marker stays longer instead, so a fight shows one marker per shooter that goes away one marker lifetime after the last shot.
 
 ## Settings
 
-| Setting | Default | |
-|---|---|---|
-| Enable Boomerang | on | If off, no Boomerang switch and active Boomerangs switch off. Set by the server |
-| Report friendly fire | on | Set by the server |
-| Marker lifetime | 30 s | 0 turns the markers off. Per player for the map, cTab markers use the value of the server |
-| Show shots | Map | Nothing, map or cTab. cTab is only offered when it is loaded. Set by the server |
-| Boomerang switch | Scroll wheel | Scroll wheel, ACE self-interaction or both. Without ACE the scroll wheel is always used. Per player |
+### `ewc_compat_boomerang_enable`
+
+- Name: Enable Boomerang
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: if off, there is no Boomerang switch and active Boomerangs switch off.
+
+### `ewc_compat_boomerang_friendlyFire`
+
+- Name: Report friendly fire
+- Type: `CHECKBOX`
+- Default: `true`
+- Set by: the server
+- Purpose: report the shots of friendly units too.
+
+### `ewc_compat_boomerang_markerLifetime`
+
+- Name: Marker lifetime
+- Type: `SLIDER`
+- Range: `0` to `120` s
+- Default: `30`
+- Set by: each player (client setting), the cTab markers use the value of the server
+- Purpose: seconds a marker of a shot stays. `0` turns the markers off.
+
+### `ewc_compat_boomerang_markerTarget`
+
+- Name: Show shots
+- Type: `LIST`
+- Values: `0` nothing, `1` map, `2` cTab (only offered when cTab is loaded)
+- Default: `1`
+- Set by: the server
+- Purpose: where a detected shot is marked. The hint for the crew is not affected.
+
+### `ewc_compat_boomerang_actionMode`
+
+- Name: Boomerang switch
+- Type: `LIST`
+- Values: `0` scroll wheel, `1` ACE self-interaction, `2` both
+- Default: `0`
+- Set by: each player (client setting)
+- Purpose: how the Boomerang is switched. Without ACE the scroll wheel is always used.
+
+### Complete example
+
+``` cpp
+// cba_settings.sqf
+force ewc_compat_boomerang_enable = false; // default: true
+force ewc_compat_boomerang_friendlyFire = false; // default: true
+ewc_compat_boomerang_markerLifetime = 60; // default: 30
+force ewc_compat_boomerang_markerTarget = 2; // default: 1
+ewc_compat_boomerang_actionMode = 2; // default: 0
+```
 
 ## Quirks
 
