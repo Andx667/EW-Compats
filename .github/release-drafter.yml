@@ -7,6 +7,10 @@ branches:
 name-template: 'Unreleased'
 tag-template: 'unreleased'
 
+# The releases up to now are marked as pre-release on GitHub. Without this, release drafter does not
+# find a previous release, builds the draft without a baseline and lists no changes
+include-pre-releases: true
+
 sort-by: title # sort alphabetically
 sort-direction: ascending
 
