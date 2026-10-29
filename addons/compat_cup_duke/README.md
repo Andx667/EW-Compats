@@ -43,9 +43,9 @@ The switch and the engine requirement are settings of `compat_cup`.
 ## Limitations
 
 - Everybody in range is jammed, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
-- The DUKE only disables IEDs, not every mine.
-- Disabled IEDs are shared with the Dingo CG13. If both jam the same IED and one stops first, the IED is free for up to a second, until the other one disables it again.
-- An IED that was triggered inside the range is expected to explode when it is freed, as with the Dingo CG13.
+- Only IEDs are jammed, not other mines, including the anti-tank mines of CUP.
+- Disabled IEDs are shared with the Dingo CG13 and the RHS DUKE. If both jam the same IED and one stops first, the IED is free for up to a second, until the other one disables it again.
+- An IED that was triggered inside the range is expected to explode when it is freed, as with the Dingo CG13 and the RHS DUKE.
 - The DUKE is checked once per second, so a hidden antenna keeps working for up to a second.
 - Crow's Electronic Warfare only works in multiplayer.
 

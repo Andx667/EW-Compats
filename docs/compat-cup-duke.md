@@ -1,6 +1,6 @@
 # Compat CUP DUKE
 
-Vehicles with a shown **DUKE** antenna (HMMWV, MATV, M1A1/M1A2 Abrams, RG-31 and other vehicles with the same antenna) get a DUKE switch. A running DUKE jams ACRE radios and IEDs around the vehicle. CUP only has the DUKE as a model without function, so unlike the RHS and BWmod addons this one provides the jamming itself.
+Vehicles with a shown **DUKE** antenna (HMMWV, MATV, M1A1/M1A2 Abrams, RG-31 and other vehicles with the same antenna) get a DUKE switch. A running DUKE jams ACRE radios and IEDs around the vehicle. CUP only has the DUKE as a model without function, so this addon provides the jamming itself, unlike the RHS USAF DUKE and the Dingo CG13, which already jam IEDs.
 
 !!! note "Gameplay values"
     The real DUKE (AN/VLQ-12 CREW Duke) is a vehicle-mounted counter-RCIED jammer. Its frequency bands and jamming range are not publicly documented in detail, so the radii here are gameplay values. The DUKE jammer is modelled as simply on or off and jams continuously in its radius while on.
@@ -37,9 +37,9 @@ The switch and the engine requirement are shared with the Boomerang, see [Compat
 
 - **Crow's own actions are hidden** on DUKE vehicles. Its (de)activate actions would desync from the DUKE, so only the DUKE switch is offered.
 - **Everybody in range is jammed**, including the own crew and allies.
-- **The DUKE only disables IEDs**, not every mine.
 - **Which IEDs are jammed.** The vanilla and ACE IEDs and the IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`). Mines, including the anti-tank mines of CUP, are not jammed.
-- **A jammed IED is held, not defused.** IEDs in range are frozen (their simulation is switched off) and released when they leave the range or the DUKE stops, the same way as the Dingo CG13 of [Compat BWA3](compat-bwa3.md). An IED that was triggered inside the range is expected to explode on release, as it does with the CG13. Keep the distance until the IED is cleared.
+- **A jammed IED is held, not defused.** IEDs in range are frozen (their simulation is switched off) and released when they leave the range or the DUKE stops, the same way as the Dingo CG13 of [Compat BWA3](compat-bwa3.md). An IED that was triggered inside the range is expected to explode on release, as it does with the CG13 and the RHS DUKE. Keep the distance until the IED is cleared.
+- **Several jammers can hold the same IED** when the DUKE is loaded together with the Dingo CG13 or the RHS DUKE. If two of them jam the same IED and one stops first, the IED is free for up to a second until the other one disables it again.
 - **Up to a second of delay** when an antenna is hidden or the engine stops, because the DUKE is checked once per second.
 - **Multiplayer only.** Crow's Electronic Warfare does not work in singleplayer.
 

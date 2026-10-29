@@ -27,7 +27,7 @@ The effective radius is the setting *R-142N jamming radius*, the falloff band is
 
 | Setting | Default | |
 |---|---|---|
-| Enable R-142N jamming | on | If off, the R-142N does not jam. Set by the server |
+| Enable R-142N jamming | on | If off, the R-142N does not jam. Set by the server, applied the next time the mast is deployed or folded |
 | R-142N jamming radius (m) | 500 | 100 to 2000 m. Set by the server, applied the next time the mast is deployed |
 | Jam radios | on | Set by the server, applied the next time the mast is deployed |
 | Jam drones | on | Set by the server, applied the next time the mast is deployed |
@@ -37,7 +37,7 @@ With both Jam radios and Jam drones off, the R-142N does not jam.
 ## Quirks
 
 - **Everybody in range is jammed**, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
-- **No jamming of IEDs.** Only the DUKE and CG13 are IED jammers.
+- **No jamming of IEDs.** The R-142N only jams radios and drones.
 - **The mast has no damage of its own.** Only the destruction of the vehicle stops the jammer.
 - **Use the mast, not Crow's actions.** Crow's own (de)activate actions are removed from the R-142N, because they would desync the two.
 - **Multiplayer only.** Crow's Electronic Warfare does not work in singleplayer.
