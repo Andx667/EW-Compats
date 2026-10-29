@@ -32,6 +32,13 @@ private _wantEnabled = GVAR(enableDuke)
 private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
 private _wantRadius = getNumber (([_vehicle] call EFUNC(main,getJammerConfig)) >> "radius") * _wantScale;
 
+// The DUKE itself was switched, or a hit or a setting switched it off
+if (_wantEnabled != _enabled) then {
+    private _reason = ["", ["damage", "disabled"] select !GVAR(enableDuke)] select (_vehicle getVariable [DUKE_STATE_VAR, false]);
+
+    [_vehicle, SYSTEM_NAME, _wantEnabled, _reason] call EFUNC(main,notifyState);
+};
+
 if (_wantRadius != _radius) exitWith {
     // Crows has no way to change the radii of a jammer, so replace it
     [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;

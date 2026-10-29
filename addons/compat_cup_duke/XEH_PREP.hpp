@@ -1,4 +1,5 @@
 PREP(canActivate);
+PREP(getBlockReason);
 PREP(getRadius);
 PREP(getRangeScale);
 PREP(handleToggle);

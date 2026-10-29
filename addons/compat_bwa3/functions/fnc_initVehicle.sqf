@@ -27,6 +27,6 @@ _vehicle addEventHandler ["Engine", {
     params ["_vehicle", "_engineState"];
 
     if (!_engineState) then {
-        [QGVAR(ecmToggled), [_vehicle, false]] call CBA_fnc_serverEvent;
+        [QGVAR(ecmToggled), [_vehicle, false, "engine"]] call CBA_fnc_serverEvent;
     };
 }];

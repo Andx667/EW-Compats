@@ -9,6 +9,8 @@ Vehicles with a shown **DUKE** antenna (HMMWV, MATV, M1A1/M1A2 Abrams, RG-31 and
 
 *Activate DUKE* / *Deactivate DUKE* with the scroll wheel or the ACE self-interaction, see [Compat CUP](compat-cup.md#controls). The DUKE switches off when the engine stops, the antenna is hidden or the vehicle is destroyed.
 
+Every change of state shows a silent hint to everybody in the vehicle, for example *DUKE on* or *DUKE off: engine stopped*. The reason is *engine stopped*, *antenna hidden* or *disabled in the settings*.
+
 ## Range
 
 | State | Radio effective | Radio falloff band | Radio outer edge | IEDs |

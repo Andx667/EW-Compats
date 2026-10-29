@@ -15,6 +15,7 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 - A report close to the map marker of an earlier shot does not create one. `fnc_findNearMarker` looks for it in `ewc_compat_cup_boomerang_shotMarkers` (name, position, expiry time of every marker that is still there): within `BOOMERANG_MARKER_MERGE_DISTANCE` (50 m) or twice the range error of the report (`2 * BOOMERANG_RANGE_ERROR * range`, 20 % of the range), whichever is larger. The expiry time of that marker moves to a full lifetime from now. A marker is removed by `fnc_expireShotMarker` at its expiry time, which schedules itself again for the time that is left when it was moved. Every client decides the same, as every client gets the same reports.
 - With cTab loaded, the sub-addon in the folder `ctab` also shows a detected shot as a red marker on cTab, see its [README](ctab/README.md). It adds the setting *Show shots on* (map, cTab or both), which `fnc_onShotDetected` reads to leave out the map marker when it is set to cTab only.
 - The Boomerang listens (`fnc_isReady`) while it is on, not above 97 km/h, and not deafened. A Fired event handler on a vehicle with a Boomerang (`fnc_initVehicle`) tells the server (`fnc_handleVehicleFired`), which sets `ewc_compat_cup_boomerang_deafUntil` for the lockout time. Smoke launchers and flares do not count.
+- A change of the state shows a hint to the people in the vehicle (`ewc_main_fnc_notifyState` in `fnc_setState`). A Boomerang the loop switches off passes the reason of `fnc_getBlockReason`.
 - The DUKE and the Boomerang exclude each other, see `compat_cup`. The Boomerang listens to `ewc_compat_cup_systemOn` and switches off when the DUKE is switched on.
 
 ## Functions
@@ -23,6 +24,7 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 |---|---|---|
 | `fnc_initVehicle` | every machine | Class event handler for vehicles with a Boomerang antenna: adds the actions and watches the weapons of the vehicle |
 | `fnc_canActivate` | any | Can the Boomerang be switched on (setting, alive, antenna, engine) |
+| `fnc_getBlockReason` | any | Why the Boomerang cannot be on (setting, destroyed, antenna, engine), or an empty text. `fnc_canActivate` is true when there is none |
 | `fnc_handleToggle` | server | Checks a switch request and tells the DUKE to switch off |
 | `fnc_setState` | server | Switches the Boomerang and keeps the list of active ones |
 | `fnc_loop` | server | Once per second while a Boomerang is on: switches it off when it no longer works |

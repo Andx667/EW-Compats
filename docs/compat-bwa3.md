@@ -9,6 +9,8 @@ The Dingo 2 **CG13** also jams ACRE radios, in addition to the IED jammer. Both 
 
 Switch the CG13 with its own actions, `TurnOnCG13` / `TurnOffCG13`. The radio jammer follows it.
 
+Every change of state shows a silent hint to everybody in the vehicle, for example *CG13 on* or *CG13 off: engine stopped*. The reason is only given when the engine stopped.
+
 ## Range
 
 | | Radius |

@@ -1,6 +1,7 @@
 PREP(canActivate);
 PREP(expireShotMarker);
 PREP(findNearMarker);
+PREP(getBlockReason);
 PREP(handleToggle);
 PREP(handleVehicleFired);
 PREP(initVehicle);
