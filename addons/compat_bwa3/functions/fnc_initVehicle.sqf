@@ -17,7 +17,7 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-if (getNumber (configOf _vehicle >> "BWA3_hasECM") != 1) exitWith {};
+if (!GVAR(enableCG13) || {getNumber (configOf _vehicle >> "BWA3_hasECM") != 1}) exitWith {};
 
 // The Engine EH only fires where the vehicle is local, so it has to exist on every machine.
 // BWA3 switches the CG13 off on engine stop without any event we could listen to.

@@ -4,6 +4,8 @@ ADDON = false;
 
 #include "XEH_PREP.hpp"
 
+#include "initSettings.inc.sqf"
+
 /*
  * Registered in preInit, not postInit: the module function may raise CrowsEW's addJammer as early
  * as mission init, and a crowsEW_main_updateJammers broadcast that arrives before our handler

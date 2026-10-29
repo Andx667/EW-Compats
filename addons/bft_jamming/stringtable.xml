@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ewc">
     <Package name="bft_jamming">
+        <Key ID="STR_ewc_bft_jamming_category">
+            <English>BFT Jamming</English>
+            <French>BFT Jamming</French>
+            <Spanish>BFT Jamming</Spanish>
+            <Polish>BFT Jamming</Polish>
+            <Russian>BFT Jamming</Russian>
+            <German>BFT Jamming</German>
+        </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_description">
             <English>Registers the synced object (or a spawned data terminal, if none is synced) as a Crow's EW jammer that jams cTab's Blue Force Tracker instead of radio or drones. Detectable with the Spectrum Device like any other jammer.</English>
             <French>Enregistre l'objet synchronisé (ou un terminal de données créé automatiquement si aucun n'est synchronisé) comme brouilleur Crow's EW qui brouille le Blue Force Tracker de cTab au lieu de la radio ou des drones. Détectable avec l'analyseur de spectre comme tout autre brouilleur.</French>
@@ -120,6 +128,22 @@
             <Polish>Jeśli wyłączone, zagłuszarka startuje wyłączona i można ją włączyć później (np. przez Zeusa).</Polish>
             <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже (например, через Зевса).</Russian>
             <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später aktiviert werden (z. B. über Zeus).</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_setting_enable">
+            <English>Enable BFT jamming</English>
+            <French>Activer le brouillage BFT</French>
+            <Spanish>Activar interferencia de BFT</Spanish>
+            <Polish>Włącz zagłuszanie BFT</Polish>
+            <Russian>Включить подавление BFT</Russian>
+            <German>BFT-Störung aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_setting_enable_tooltip">
+            <English>If disabled, BFT jammer modules do nothing and cTab's Blue Force Tracker is no longer jammed.</English>
+            <French>Si désactivé, les modules de brouilleur BFT ne font rien et le Blue Force Tracker de cTab n'est plus brouillé.</French>
+            <Spanish>Si está desactivado, los módulos de inhibidor de BFT no hacen nada y el Blue Force Tracker de cTab ya no se interfiere.</Spanish>
+            <Polish>Jeśli wyłączone, moduły zagłuszarki BFT nic nie robią, a Blue Force Tracker z cTab nie jest zagłuszany.</Polish>
+            <Russian>Если выключено, модули станции помех BFT ничего не делают, а Blue Force Tracker из cTab больше не подавляется.</Russian>
+            <German>Wenn deaktiviert, tun BFT-Störsender-Module nichts und cTabs Blue Force Tracker wird nicht mehr gestört.</German>
         </Key>
     </Package>
 </Project>

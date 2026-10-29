@@ -20,6 +20,9 @@ params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]]];
 
 if (isNull _vehicle || {!(_vehicle getVariable [QGVAR(ecmRegistered), false])}) exitWith {};
 
+// With the CG13 disabled in the settings, the jammer stays off whatever the switch says
+_enabled = _enabled && GVAR(enableCG13);
+
 // Engine stop reports "off" even when the CG13 already is, avoid re-broadcasting the jammer list
 if (_enabled isEqualTo (_vehicle getVariable [QGVAR(ecmEnabled), false])) exitWith {};
 

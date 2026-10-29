@@ -26,7 +26,8 @@ _state params ["_enabled", "_scale"];
 private _damage1 = _vehicle getHitPointDamage "HitDuke1";
 private _damage2 = _vehicle getHitPointDamage "HitDuke2";
 
-private _wantEnabled = (_vehicle getVariable [DUKE_STATE_VAR, false])
+private _wantEnabled = GVAR(enableDuke)
+    && {_vehicle getVariable [DUKE_STATE_VAR, false]}
     && {!(_damage1 >= DUKE_BOTH_ANTENNAS_DESTROYED && {_damage2 >= DUKE_BOTH_ANTENNAS_DESTROYED})};
 private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
 
