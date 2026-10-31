@@ -1,7 +1,7 @@
 # EW Compats
 
 <p align="center">
-    <img src="https://github.com/Andx667/EW-Compats/blob/main/img/icon_512.png" alt="EW Compats Logo">
+    <img src="https://github.com/Andx667/EW-Compats/blob/main/img/logo.png" alt="EW Compats Logo">
 </p>
 
 <p align="center">
