@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<title>ew-compats</title>
+<rect width="512" height="512" rx="0" fill="#161A1F"/>
+<g transform="translate(56.00 56.00) scale(2.00000)" color="#FFFFFF" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="100" r="92"/>
+<circle cx="100" cy="70" r="6" fill="currentColor" stroke="none"/>
+<path d="M100 78 V146 M86 146 H114"/>
+<path d="M82 54 A24 24 0 0 0 82 86 M118 54 A24 24 0 0 1 118 86"/>
+<path d="M66 42 A42 42 0 0 0 66 98 M134 42 A42 42 0 0 1 134 98"/>
+<path d="M46 128 L66 112 L84 126 L116 100 L134 114 L154 98"/>
+</g>
+</svg>
