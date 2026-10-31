@@ -26,6 +26,7 @@ Radio jamming needs [ACRE](https://steamcommunity.com/sharedfiles/filedetails/?i
 Fully open-source. Bug reports, feature requests, and contributions are all welcome.
 
 [GitHub Repository](https://github.com/Andx667/EW-Compats)
+[Documentation](https://andx667.github.io/EW-Compats/)
 [Report an Issue](https://github.com/Andx667/EW-Compats/issues)
 [Discord](https://discord.gg/ag4v6kxYAa)
 
