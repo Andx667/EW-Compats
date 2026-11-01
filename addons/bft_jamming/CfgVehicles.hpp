@@ -16,7 +16,7 @@ class CfgVehicles {
     class GVAR(moduleAddBftJammer): Module_F {
         scope = 2;
         displayName = CSTRING(moduleAddBftJammer_displayName);
-        icon = "\z\crowsEW\addons\zeus\data\spectrum_signal.paa";
+        icon = BFT_JAM_ICON;
         vehicleClass = "Modules";
         category = "crowsEW_modules";
         function = QFUNC(addBftJammer);
