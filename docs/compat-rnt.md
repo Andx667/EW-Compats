@@ -57,7 +57,7 @@ force ewc_compat_rnt_radius = 800; // default: 500
 
 ## How it works
 
-The Hummel classes carry a marker in their config, so `ewc_common` registers them as disabled radio jammers in Crow's Electronic Warfare. The switch is the one of the DUKE and the Boomerang (`ewc_common`), and the server brings the jammer in line with it, the engine and the settings. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
+The Hummel classes carry a marker in their config, so `ewc_common` registers a Hummel as a radio jammer in Crow's Electronic Warfare when it is first switched on. The switch is the one of the DUKE and the Boomerang (`ewc_common`), and the server brings the jammer in line with it, the engine and the settings. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
 
 ## Dependencies
 

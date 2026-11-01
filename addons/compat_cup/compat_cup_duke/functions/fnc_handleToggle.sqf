@@ -21,8 +21,8 @@ params [["_vehicle", objNull, [objNull]], ["_turnOn", false, [false]]];
 
 if (isNull _vehicle) exitWith {};
 
-// The DUKE is not registered yet, or not a DUKE vehicle
-if (isNil {_vehicle getVariable QEGVAR(common,jammerState)}) exitWith {};
+// Not a DUKE vehicle
+if (([_vehicle, SYSTEM_DUKE] call FUNC(getSources)) isEqualTo []) exitWith {};
 
 if (_turnOn isEqualTo (_vehicle getVariable [QGVAR(duke_on), false])) exitWith {};
 

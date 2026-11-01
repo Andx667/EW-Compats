@@ -14,8 +14,6 @@
 #define MAST_DEPLOYED_PHASE 0.99
 // RHS needs 5 s to deploy the mast, give up waiting for it after this many seconds
 #define MAST_DEPLOY_TIMEOUT 15
-// Seconds a vehicle may take to get its jammer registered (ewc_common) before the wait for it is given up
-#define WAIT_REGISTRATION_TIMEOUT 60
 
 // Variable of RHS with the names of functions that its mast script calls with [vehicle, phase, instant]
 #define RHS_DEPLOY_HOOK_VAR "rhs_eh_gaz66_deploy"

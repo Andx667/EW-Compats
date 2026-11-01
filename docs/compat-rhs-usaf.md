@@ -57,7 +57,7 @@ force ewc_compat_rhs_usaf_enableDuke = false; // default: true
 
 ## How it works
 
-RHS offers no event for the DUKE, so the addon adds a second `fired` handler to the DUKE weapon and reads `RHS_DUKE_OP` 0.5 s later. The server registers every vehicle with `rhs_duke_type` as a disabled radio jammer (`VoiceCommsJammer`) and keeps it in line with the DUKE state and the antenna damage. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
+RHS offers no event for the DUKE, so the addon adds a second `fired` handler to the DUKE weapon and reads `RHS_DUKE_OP` 0.5 s later. The server registers a vehicle with `rhs_duke_type` as a radio jammer (`VoiceCommsJammer`) when its DUKE is first switched on, and keeps it in line with the DUKE state and the antenna damage. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
 
 ## Dependencies
 

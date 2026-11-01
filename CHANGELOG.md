@@ -13,19 +13,21 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
-### Fixed
-
-- BFT Jamming - **Remove BFT Jammer** in Zeus refused a Spoof jammer with the message that the object is no BFT jammer
-- Compat RHS AFRF, Compat CUP - The wait for the registration of a vehicle (R-142N) or for Crow's Electronic Warfare (CUP drones) ends when the vehicle is deleted, and after a timeout. It was checked every frame for the rest of the mission before
-
-### Changed
-
-- Boomerang - The setting `ewc_boomerang_markerLifetime` is a global setting now (set by the server). The map markers used the value of each player and the cTab markers the one of the server, so the two could disagree
-
 ### Added
 
 - BFT Jamming - New jamming type **Spoof**: a viewer inside the effective radius sees ghosts on the BFT, copies of some of the groups and vehicles of their own list on a position 150 to 400 m from the original that move with it, with the callsign of a random existing group or vehicle. The real units drift in the whole range like with Drift, the ghosts are on top of that inside the effective radius. Ghosts are worked out on every client from the net IDs, so nothing is synced, and they only end with the jammer or when the viewer leaves the radius. The jammer shows in the Spectrum Device like the other types. Setting `ewc_bft_jamming_ghostRatio` (default 33 %). The debug overlay draws a line from a ghost to the unit it copies
 - Common - Debug overlay, switched on by the client setting `ewc_common_debug` (default off). It draws the jammer and switch state over every supported vehicle with rings for the radii of an active jammer, the jammed state over IEDs within the full radius of an active jammer, and the jam strength per signal (radio, BFT, drone) over units and drones in range. Addons add lines with the new `ewc_common_fnc_registerDebug`, used by the Boomerang
+
+### Changed
+
+- Common, Compat CUP, Compat BWA3, Compat RHS AFRF, Compat RHS USAF, Compat RnT - A vehicle is registered as a jammer in Crow's Electronic Warfare when its jammer is switched on for the first time, not when the vehicle is created. Every registration makes Crow's send its whole jammer list to every machine and every client walked the actions of all jammers after it, so a mission with many DUKE, CG13, R-142N or Hummel vehicles stalled at the start. `ewc_common_fnc_setJammer` registers the vehicle and the compat addons no longer need a registered vehicle for their checks (`ewc_common_jammerState` is only set once registered). The CG13 uses `fnc_setJammer` instead of `crowsEW_main_toggleJammer`. `ewc_compat_cup_duke_fnc_registerJammer` is gone. A vehicle that was never switched on is not in the jammer list of Crow's Electronic Warfare (Zeus markers, the debug rings)
+- Common, Compat CUP - Removing the (de)activate actions of Crow's Electronic Warfare only looks at the jammers that are new to a machine, instead of walking the actions of all jammers on every update of the jammer list. The jammers of `ewc_common` carry the public variable `ewc_common_isJammer`, so the one handler covers the CUP DUKE vehicles too and `ewc_compat_cup_duke_fnc_removeCrowsActions` is gone
+- Boomerang - The setting `ewc_boomerang_markerLifetime` is a global setting now (set by the server). The map markers used the value of each player and the cTab markers the one of the server, so the two could disagree
+
+### Fixed
+
+- BFT Jamming - **Remove BFT Jammer** in Zeus refused a Spoof jammer with the message that the object is no BFT jammer
+- Compat RHS AFRF, Compat CUP - The wait for the registration of a vehicle (R-142N) or for Crow's Electronic Warfare (CUP drones) ends when the vehicle is deleted, and after a timeout. It was checked every frame for the rest of the mission before
 
 ## [1.4.0] - 2026-11-01
 
