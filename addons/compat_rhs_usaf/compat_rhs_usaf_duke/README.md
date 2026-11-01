@@ -17,7 +17,8 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley, Stryker and
 - Destroyed vehicles are removed by the cleanup loop of Crow's Electronic Warfare. RHS lets its jamming script run on for dead vehicles, which has no effect on the radio jammer.
 - Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `ewc_common` removes them from DUKE vehicles. The DUKE is operated through its weapon, so no actions are lost.
 
-- `CfgVehicles.hpp` gives the Stryker family (`rhsusf_stryker_m1126_base` and below) the DUKE that RHS leaves out: `rhsusf_weap_duke` and `rhsusf_mag_duke` on the driver, `rhs_duke_type` so the registry picks them up, and `rhs_fnc_duke_vg` as `onPhaseChanged` of `Hide_DUKE`. The M1127 and M1134 start with the antenna hidden, so their weapon is only added when it is shown. The Stryker has no `HitDuke*` hitpoints, so `fnc_syncJammer` reads no damage and the antenna cannot be destroyed. `rhs_duke.sqf` checks `Duke_Hide`, which the Stryker lacks, so the weapon is the only gate for a hidden antenna.
+- `CfgVehicles.hpp` gives the Stryker family (`rhsusf_stryker_m1126_base` and below) the DUKE that RHS leaves out: `rhsusf_weap_duke` and `rhsusf_mag_duke` on the driver, `rhs_duke_type` so the registry picks them up, and `rhs_fnc_duke_vg` as `onPhaseChanged` of `Hide_DUKE`. The M1127 and M1134 start with the antenna hidden, so their weapon is only added when it is shown. The Stryker has no `HitDuke*` hitpoints, so `fnc_syncJammer` reads no damage and the antenna cannot be destroyed. The antenna of the Stryker is `Hide_DUKE`, `rhs_duke.sqf` only checks `Duke_Hide` of the other vehicles when the DUKE starts, see the hidden antenna below.
+- Hidden antenna: RHS runs `rhs_fnc_duke_vg` when the antenna is hidden or shown (`onPhaseChanged` of `DUKE_Hide`, `Hide_DUKE` on the Stryker, also the Virtual Garage), and that function only takes the weapon of a DUKE that is off away. A DUKE that was on kept its weapon and its jammer, and when the crew switched it off the weapon of the off state came back, so it could be switched both ways with the antenna hidden. `CfgFunctions.hpp` replaces `rhs_fnc_duke_vg` by `fnc_vg`, which takes both weapons away, switches a running DUKE off through the off handler of `rhs_duke.sqf` and asks the server to sync after `DUKE_SYNC_DELAY`. A shown antenna gives the crew the weapon of the off state again. `fnc_syncJammer` also treats a hidden antenna (`DUKE_HIDE_SOURCES`) as a reason to be off, and the hint then says *antenna hidden*.
 
 ## Functions
 
@@ -28,6 +29,7 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley, Stryker and
 | `fnc_onDammaged` | machine where the vehicle is local | Asks the server to sync after antenna damage, merging hits within the delay |
 | `fnc_releaseMines` | server | Enables the simulation of the IEDs in 50 m again after the DUKE went offline, except those another running RHS DUKE holds. `rhs_duke.sqf` does this itself with a plain `enableSimulationGlobal`, which does nothing for IEDs that are not local to the gunner |
 | `fnc_syncJammer` | server | Matches the jammer to the DUKE: on/off from `RHS_DUKE_OP`, range from the antenna damage. Shows the hint of `ewc_common_fnc_notifyState` when the state changed |
+| `fnc_vg` | where the vehicle is local | Replaces `rhs_fnc_duke_vg`: hiding the antenna takes both DUKE weapons away and switches a running DUKE off, showing it gives the weapon of the off state back. Then asks the server to sync |
 
 ## Settings
 

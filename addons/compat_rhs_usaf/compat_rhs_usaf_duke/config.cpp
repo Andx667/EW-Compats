@@ -21,5 +21,6 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgEWC.hpp"
+#include "CfgFunctions.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgVehicles.hpp"

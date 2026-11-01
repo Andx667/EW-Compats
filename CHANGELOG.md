@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Fixed
+
+- Compat RHS USAF - A DUKE that is on is switched off when its antenna is hidden, and its weapon goes with it. RHS only took the weapon of a switched off DUKE away, so with the antenna hidden the driver could still switch a running DUKE off and on again. The addon replaces `rhs_fnc_duke_vg` (`CfgFunctions`) and `fnc_syncJammer` treats a hidden antenna as a reason to be off, with the hint *antenna hidden*
+
 ### Added
 
 - Compat RHS USAF - Give the Stryker family (M1126, M1127, M1132, M1134) the RHS DUKE weapon, as RHS shows a DUKE antenna on them but no DUKE. They jam IEDs and radios like the other DUKE vehicles. The driver switches it, the M1127 and M1134 get the weapon when the antenna is shown. The antenna has no hitpoints, so it cannot be destroyed

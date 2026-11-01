@@ -17,6 +17,9 @@
 
 #define DUKE_STATE_VAR "RHS_DUKE_OP"
 
+// Animation sources that hide the antenna: DUKE_Hide on the HMMWV family, the tanks and the MRAPs, Hide_DUKE on the Stryker
+#define DUKE_HIDE_SOURCES ["DUKE_Hide", "Hide_DUKE"]
+
 // Seconds after the DUKE went offline until its IEDs are freed, rhs_duke.sqf ends its loop within half a second
 #define DUKE_RELEASE_DELAY 1.5
 

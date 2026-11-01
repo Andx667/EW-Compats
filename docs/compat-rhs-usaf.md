@@ -41,6 +41,8 @@ force ewc_compat_rhs_usaf_enableDuke = false; // default: true
 
 ## Quirks
 
+- **Hiding the antenna switches the DUKE off.** On every vehicle with a DUKE, hiding the antenna (vehicle appearance options, Virtual Garage or Zeus) removes the DUKE switch and switches a running DUKE off, with the hint *DUKE off: antenna hidden*. Showing it gives the switch back, with the DUKE off. RHS alone takes the switch away only from a DUKE that is off, so a running one could still be switched with the antenna hidden. This addon replaces the RHS function that handles the antenna.
+
 - **The Stryker gets its DUKE from this addon.** RHS shows the antenna (`Hide_DUKE`) but gives the M1126, M1127, M1132 and M1134 no DUKE weapon, so the addon adds `rhsusf_weap_duke` to them. Only the driver can switch it. The M1127 and M1134 start with the antenna hidden and get the weapon when it is shown. The antenna has no hitpoints, so it cannot be destroyed and the range stays at 50 m.
 
 - **Select the DUKE first on vehicles with a smoke launcher.** The Bradley and the Abrams have the DUKE next to a smoke launcher in the same countermeasure slot, and the smoke launcher is listed first. Press **Ctrl+C** to cycle the countermeasure to *DUKE offline* / *DUKE online* before firing, otherwise the smoke launcher fires. Vehicles where the DUKE is the only countermeasure, like the M1117, HMMWV and MATV, need no selection.
