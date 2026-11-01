@@ -15,6 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
+- Compat CUP - New sub-addon `compat_cup_drones`: the CUP MQ-9 and Pchela-1T get the spectrum signal Crow's Electronic Warfare gives its own drones, so drone jammers jam them and the spectrum device shows them. Crow's lists only the vanilla drone bases, and the CUP drones derive from the plain `UAV` class. Settings `ewc_compat_cup_drones_enable` and `ewc_compat_cup_drones_range`
 - BFT Jamming - Zeus modules **Set as BFT Jammer** (with a dialog for the type, the radii, the frequency and whether it starts on) and **Remove BFT Jammer**, in the category of Crow's Electronic Warfare. The module of the editor and the one of Zeus register the jammer through the new `fnc_registerBftJammer`. The spectrum frequency of a jammer is a public variable now, as the jammer can come from a Zeus machine
 - Compat RnT Vehicles - New addon `compat_rnt`: the Fuchs 1A4 Hummel (`EWC_RnT_Fuchs_1A4_Hummel_*`), a Jäger variant of the Redd'n'Tank Fuchs that jams ACRE radios while it is switched on, modelled on the Störpanzer Hummel of the Bundeswehr. Switch by scroll wheel or ACE, off with the engine. Settings `ewc_compat_rnt_enable` and `ewc_compat_rnt_radius`
 - Common - `ewc_common_fnc_registerSwitch`, `fnc_addSwitchActions`, `fnc_addAceSwitchActions`, `fnc_canOperate` and `fnc_canToggle`: the switch actions of the DUKE and the Boomerang, now shared. `ewc_common_fnc_setJammer` brings a jammer in line with a wanted state and replaces it for another radius or other capabilities

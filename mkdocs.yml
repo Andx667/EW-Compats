@@ -81,6 +81,7 @@ nav:
   - Compat CUP:
       - Overview: compat-cup.md
       - DUKE: compat-cup-duke.md
+      - Drones: compat-cup-drones.md
   - Boomerang: boomerang.md
   - Compat RnT: compat-rnt.md
   - Compat RHS:
