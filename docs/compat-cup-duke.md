@@ -73,7 +73,7 @@ The switch is a setting of `compat_cup`, see [Compat CUP](compat-cup.md#settings
 
 ## How it works
 
-The server registers every DUKE vehicle as a disabled radio jammer (`VoiceCommsJammer`) in Crow's Electronic Warfare and switches it with the DUKE; the jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare. A changed radius, or an antenna hidden or shown again on a vehicle with two, replaces the jammer, because Crow's Electronic Warfare cannot change the radii of a jammer. IEDs are frozen by the addon, once per second while the DUKE is on.
+The server registers a DUKE vehicle as a radio jammer (`VoiceCommsJammer`) in Crow's Electronic Warfare when its DUKE is first switched on, and switches it with the DUKE afterwards; the jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare. A changed radius, or an antenna hidden or shown again on a vehicle with two, replaces the jammer, because Crow's Electronic Warfare cannot change the radii of a jammer. IEDs are frozen by the addon, once per second while the DUKE is on.
 
 ## Dependencies
 

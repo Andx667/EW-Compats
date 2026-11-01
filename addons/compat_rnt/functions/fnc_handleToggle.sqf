@@ -21,8 +21,8 @@ params [["_vehicle", objNull, [objNull]], ["_turnOn", false, [false]]];
 
 if (isNull _vehicle) exitWith {};
 
-// The jammer is not registered yet, or the vehicle is no Hummel
-if (isNil {_vehicle getVariable QEGVAR(common,jammerState)}) exitWith {};
+// The vehicle is no Hummel
+if (getNumber (configOf _vehicle >> QGVAR(jammer)) != 1) exitWith {};
 
 if (_turnOn isEqualTo (_vehicle getVariable [QGVAR(on), false])) exitWith {};
 

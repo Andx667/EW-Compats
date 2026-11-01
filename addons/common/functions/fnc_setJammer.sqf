@@ -3,7 +3,10 @@
  * Author: Andx
  * Brings the Crows jammer of a vehicle in line with the wanted state. Crows has no way to change the radii or the
  * capabilities of a jammer, so a changed radius or changed capabilities replace it (removed and registered again
- * by fnc_addJammer), otherwise it is only switched on or off. The vehicle has to be registered already (fnc_addJammer).
+ * by fnc_addJammer), otherwise it is only switched on or off. A vehicle is registered (fnc_addJammer) when its
+ * jammer is switched on for the first time: every registration makes Crows send its whole jammer list to every
+ * machine, so a mission with many vehicles would not want that for all of them at the start. Switching an
+ * unregistered vehicle off does nothing.
  * SERVER ONLY.
  *
  * Arguments:
@@ -28,7 +31,16 @@ if (isNull _vehicle || {!isServer}) exitWith {};
 
 private _state = _vehicle getVariable [QGVAR(jammerState), []];
 
-if (_state isEqualTo []) exitWith {};
+if (_state isEqualTo []) exitWith {
+    if (!_enabled) exitWith {};
+
+    // Editor-placed vehicles are switched before Crows has registered its server event handlers
+    if (CBA_missionTime <= 0) exitWith {
+        [{CBA_missionTime > 0}, {_this call FUNC(setJammer)}, [_vehicle, _enabled, _radius, _falloffFactor, _capabilities]] call CBA_fnc_waitUntilAndExecute;
+    };
+
+    [_vehicle, true, _radius, _falloffFactor, _capabilities] call FUNC(addJammer);
+};
 
 _state params ["_wasEnabled", "_registeredRadius"];
 

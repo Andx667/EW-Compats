@@ -19,7 +19,7 @@
 
 params [["_vehicle", objNull, [objNull]], ["_enabled", false, [false]], ["_reason", "", [""]]];
 
-if (isNull _vehicle || {isNil {_vehicle getVariable QEGVAR(common,jammerState)}}) exitWith {};
+if (isNull _vehicle || {getNumber (configOf _vehicle >> "BWA3_hasECM") != 1}) exitWith {};
 
 // With the CG13 disabled in the settings, the jammer stays off whatever the switch says
 _enabled = _enabled && GVAR(enableCG13);
@@ -31,4 +31,4 @@ _vehicle setVariable [QGVAR(ecmEnabled), _enabled];
 
 [_vehicle, SYSTEM_NAME, _enabled, _reason] call EFUNC(common,notifyState);
 
-[CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _enabled]] call CBA_fnc_localEvent;
+[_vehicle, _enabled] call EFUNC(common,setJammer);

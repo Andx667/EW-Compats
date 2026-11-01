@@ -49,7 +49,7 @@ force ewc_compat_bwa3_enableCG13 = false; // default: true
 
 ## How it works
 
-BWA3 switches the CG13 only through the variable `BWA3_Dingo2_ECM_on` and offers no event. The `statement` of both user actions is overridden: they still set the variable and additionally send `ewc_compat_bwa3_ecmToggled` to the server. The server registers every vehicle with `BWA3_hasECM = 1` as a disabled radio jammer (`VoiceCommsJammer`) once `CBA_missionTime > 0` and switches it with `crowsEW_main_toggleJammer`. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
+BWA3 switches the CG13 only through the variable `BWA3_Dingo2_ECM_on` and offers no event. The `statement` of both user actions is overridden: they still set the variable and additionally send `ewc_compat_bwa3_ecmToggled` to the server. The server registers a vehicle with `BWA3_hasECM = 1` as a radio jammer (`VoiceCommsJammer`) when its CG13 is first switched on (once `CBA_missionTime > 0`) and switches it with `ewc_common_fnc_setJammer`. The jamming itself (ACRE interference, Spectrum Device signal, cleanup on destruction) is done by Crow's Electronic Warfare.
 
 ## Dependencies
 

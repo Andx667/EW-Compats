@@ -34,7 +34,7 @@ ewc_common_debug = true; // default: false
 
 ## How it works
 
-`ewc_common` has a registry of jammer vehicles: an addon names the config entry that marks its vehicles, and the vehicle is registered once as a disabled jammer in Crow's Electronic Warfare. It also has the switch actions (scroll wheel and ACE self-interaction, limited to driver, commander and gunners) that the DUKE, the Boomerang and the Hummel share, the hint that tells a crew about the state of a system, and a function that brings a jammer in line with a wanted state, replacing it when the radius changes because Crow's Electronic Warfare cannot change radii.
+`ewc_common` has a registry of jammer vehicles: an addon names the config entry that marks its vehicles, and the vehicle is registered as a jammer in Crow's Electronic Warfare when its jammer is first switched on. It also has the switch actions (scroll wheel and ACE self-interaction, limited to driver, commander and gunners) that the DUKE, the Boomerang and the Hummel share, the hint that tells a crew about the state of a system, and a function that brings a jammer in line with a wanted state, replacing it when the radius changes because Crow's Electronic Warfare cannot change radii.
 
 ## Dependencies
 
