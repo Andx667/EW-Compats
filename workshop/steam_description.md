@@ -15,7 +15,7 @@ Every feature below is skipped when the mod it extends is not loaded.
 - **Dingo CG13** (needs [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537)) — the CG13 also jams radios while its IED jammer is switched on
 - **CUP DUKE** (needs [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371)) — vehicles with a shown DUKE antenna get a DUKE switch (scroll wheel or ACE) that jams radios and IEDs
 - **CUP Boomerang** (needs [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371), not Crow's Electronic Warfare) — vehicles with a Boomerang shot finder get shot detection with a hint and map markers
-- **RHS USAF DUKE** (needs [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117)) — vehicles with a DUKE also jam radios while it is online, including reduced range with damaged antennas
+- **RHS USAF DUKE** (needs [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117)) — vehicles with a DUKE also jam radios while it is online, including reduced range with damaged antennas. The Stryker family gets the DUKE that RHS shows but does not implement
 - **RHS USAF Boomerang** (needs [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117), not Crow's Electronic Warfare) — the M1245 SOCOM vehicles get shot detection with a hint and map markers
 - **RHS AFRF R-142N** (needs [RHS AFRF](https://steamcommunity.com/sharedfiles/filedetails/?id=843425103)) — the GAZ-66 (R-142N) jams radios and drones while its mast is deployed
 

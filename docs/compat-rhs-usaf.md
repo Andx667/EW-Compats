@@ -7,7 +7,7 @@ Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley, Stryker
 
 ## Controls
 
-Switch the DUKE with its weapon `rhsusf_weap_duke`, as in RHS. The radio jammer follows it.
+Switch the DUKE with its weapon `rhsusf_weap_duke`, as in RHS. On the Stryker the driver does it, see [Quirks](#quirks). The radio jammer follows it.
 
 Every change of state shows a silent hint to everybody in the vehicle, for example *DUKE on* or *DUKE off: antennas destroyed*. The reason is given when the DUKE switches itself off because both antennas were destroyed or the DUKE was disabled in the settings.
 
@@ -15,7 +15,7 @@ Every change of state shows a silent hint to everybody in the vehicle, for examp
 
 | State | Effective | Falloff band | Outer edge |
 |---|---|---|---|
-| Both antennas intact | **50 m** | 75 m | **125 m** |
+| Both antennas intact (all Strykers: always) | **50 m** | 75 m | **125 m** |
 | One antenna destroyed | **30 m** (60 %) | 45 m | **75 m** |
 | Both antennas destroyed | off | off | off |
 | DUKE switched off | off | off | off |
