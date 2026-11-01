@@ -33,8 +33,14 @@ if (!_alive) then {
 private _damage1 = _vehicle getHitPointDamage "HitDuke1";
 private _damage2 = _vehicle getHitPointDamage "HitDuke2";
 
+// RHS only looks at a hidden antenna when the DUKE starts, fnc_vg switches a running DUKE off when it is hidden
+private _hidden = DUKE_HIDE_SOURCES findIf {
+    isClass (configOf _vehicle >> "AnimationSources" >> _x) && {_vehicle animationSourcePhase _x > 0.5}
+} > -1;
+
 private _wantEnabled = _alive
     && GVAR(enableDuke)
+    && {!_hidden}
     && {_vehicle getVariable [DUKE_STATE_VAR, false]}
     && {!(_damage1 >= DUKE_BOTH_ANTENNAS_DESTROYED && {_damage2 >= DUKE_BOTH_ANTENNAS_DESTROYED})};
 private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
@@ -47,7 +53,11 @@ if (_enabled && {!_wantEnabled}) then {
 
 // The DUKE itself was switched, or a hit or a setting switched it off. A destroyed vehicle has nobody to tell
 if (_alive && {_wantEnabled != _enabled}) then {
-    private _reason = ["", ["damage", "disabled"] select !GVAR(enableDuke)] select (_vehicle getVariable [DUKE_STATE_VAR, false]);
+    private _reason = if (_hidden) then {
+        "antenna"
+    } else {
+        ["", ["damage", "disabled"] select !GVAR(enableDuke)] select (_vehicle getVariable [DUKE_STATE_VAR, false])
+    };
 
     [_vehicle, SYSTEM_NAME, _wantEnabled, _reason] call EFUNC(common,notifyState);
 };

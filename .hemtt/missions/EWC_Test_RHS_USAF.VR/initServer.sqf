@@ -39,6 +39,10 @@ private _vehicles = [];
     if ((configFile >> "CfgVehicles" >> _x) call _hasBoomerang) then {
         _vehicle animateSource ["hide_boomerang", 0, true];
     };
+    // The Stryker family starts some variants with the DUKE antenna hidden, which also removes the weapon
+    if (isClass (configFile >> "CfgVehicles" >> _x >> "AnimationSources" >> "Hide_DUKE")) then {
+        _vehicle animateSource ["Hide_DUKE", 0, true];
+    };
     _vehicle setVariable ["ewc_test_title", format ["%1 (%2)", getText (configFile >> "CfgVehicles" >> _x >> "displayName"), _x], true];
     _vehicles pushBack _vehicle;
 } forEach _classes;

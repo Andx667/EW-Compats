@@ -1,13 +1,13 @@
 # Compat RHS USAF
 
-Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
+Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley, Stryker and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
 
 !!! note "Gameplay values"
     The real DUKE (AN/VLQ-12 CREW Duke) is a vehicle-mounted counter-RCIED jammer. Its frequency bands and jamming range are not publicly documented in detail, so the radii here are gameplay values. The jammer is modelled as simply on or off and jams continuously in its radius while on.
 
 ## Controls
 
-Switch the DUKE with its weapon `rhsusf_weap_duke`, as in RHS. The radio jammer follows it.
+Switch the DUKE with its weapon `rhsusf_weap_duke`, as in RHS. On the Stryker the driver does it, see [Quirks](#quirks). The radio jammer follows it.
 
 Every change of state shows a silent hint to everybody in the vehicle, for example *DUKE on* or *DUKE off: antennas destroyed*. The reason is given when the DUKE switches itself off because both antennas were destroyed or the DUKE was disabled in the settings.
 
@@ -15,7 +15,7 @@ Every change of state shows a silent hint to everybody in the vehicle, for examp
 
 | State | Effective | Falloff band | Outer edge |
 |---|---|---|---|
-| Both antennas intact | **50 m** | 75 m | **125 m** |
+| Both antennas intact (all Strykers: always) | **50 m** | 75 m | **125 m** |
 | One antenna destroyed | **30 m** (60 %) | 45 m | **75 m** |
 | Both antennas destroyed | off | off | off |
 | DUKE switched off | off | off | off |
@@ -40,6 +40,10 @@ force ewc_compat_rhs_usaf_enableDuke = false; // default: true
 ```
 
 ## Quirks
+
+- **Hiding the antenna switches the DUKE off.** On every vehicle with a DUKE, hiding the antenna (vehicle appearance options, Virtual Garage or Zeus) removes the DUKE switch and switches a running DUKE off, with the hint *DUKE off: antenna hidden*. Showing it gives the switch back, with the DUKE off. RHS alone takes the switch away only from a DUKE that is off, so a running one could still be switched with the antenna hidden. This addon replaces the RHS function that handles the antenna.
+
+- **The Stryker gets its DUKE from this addon.** RHS shows the antenna (`Hide_DUKE`) but gives the M1126, M1127, M1132 and M1134 no DUKE weapon, so the addon adds `rhsusf_weap_duke` to them. Only the driver can switch it. The M1127 and M1134 start with the antenna hidden and get the weapon when it is shown. The antenna has no hitpoints, so it cannot be destroyed and the range stays at 50 m.
 
 - **Select the DUKE first on vehicles with a smoke launcher.** The Bradley and the Abrams have the DUKE next to a smoke launcher in the same countermeasure slot, and the smoke launcher is listed first. Press **Ctrl+C** to cycle the countermeasure to *DUKE offline* / *DUKE online* before firing, otherwise the smoke launcher fires. Vehicles where the DUKE is the only countermeasure, like the M1117, HMMWV and MATV, need no selection.
 - **A triggered IED explodes when it leaves the jamming range.** The DUKE does not defuse an IED, it only holds it back: `rhs_duke.sqf` switches the simulation of the IEDs in range off and on again when they leave the range or the DUKE stops. An IED that is triggered while it is inside the range stays inert, but it explodes as soon as the DUKE is out of range, for example when the vehicle drives on or the DUKE is switched off. This is RHS's own behaviour, this addon does not change it, and it is the same as the Dingo CG13 of [Compat BWA3](compat-bwa3.md). Keep the distance until the IED is cleared.
