@@ -5,7 +5,6 @@ PREP(onBftListsUpdated);
 PREP(applyBftJam);
 PREP(calcBftJamStrength);
 PREP(getBftDriftOffset);
-PREP(ghostCallsign);
 PREP(ghostRandom);
 PREP(moveGhosts);
 PREP(registerBftJammer);

@@ -9,12 +9,3 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     [0, 1, 0.33, 0, true],
     true
 ] call CBA_fnc_addSetting;
-
-[
-    QGVAR(ghostExactCallsign),
-    "CHECKBOX",
-    [LLSTRING(setting_ghostExactCallsign), LLSTRING(setting_ghostExactCallsign_tooltip)],
-    _category,
-    false,
-    true
-] call CBA_fnc_addSetting;

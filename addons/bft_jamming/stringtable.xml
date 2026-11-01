@@ -137,22 +137,6 @@
             <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже (например, через Зевса).</Russian>
             <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später aktiviert werden (z. B. über Zeus).</German>
         </Key>
-        <Key ID="STR_ewc_bft_jamming_setting_ghostExactCallsign">
-            <English>Ghosts keep the exact callsign</English>
-            <French>Les fantômes gardent l'indicatif exact</French>
-            <Spanish>Los fantasmas conservan el indicativo exacto</Spanish>
-            <Polish>Duchy zachowują dokładny znak wywoławczy</Polish>
-            <Russian>Призраки сохраняют точный позывной</Russian>
-            <German>Geisterziele behalten das exakte Rufzeichen</German>
-        </Key>
-        <Key ID="STR_ewc_bft_jamming_setting_ghostExactCallsign_tooltip">
-            <English>Off: a ghost has the callsign of the unit it copies with another last digit. On: the callsign is identical, so the same callsign is on the BFT twice.</English>
-            <French>Désactivé : un fantôme porte l'indicatif de l'unité copiée avec un autre dernier chiffre. Activé : l'indicatif est identique, il apparaît donc deux fois sur le BFT.</French>
-            <Spanish>Desactivado: un fantasma lleva el indicativo de la unidad copiada con otro último dígito. Activado: el indicativo es idéntico, así que aparece dos veces en el BFT.</Spanish>
-            <Polish>Wyłączone: duch ma znak wywoławczy kopiowanej jednostki z inną ostatnią cyfrą. Włączone: znak jest identyczny, więc występuje dwa razy na BFT.</Polish>
-            <Russian>Выключено: у призрака позывной копируемого юнита с другой последней цифрой. Включено: позывной идентичен, поэтому он дважды есть на BFT.</Russian>
-            <German>Aus: Ein Geisterziel hat das Rufzeichen der kopierten Einheit mit anderer letzter Ziffer. An: Das Rufzeichen ist identisch und erscheint zweimal auf dem BFT.</German>
-        </Key>
         <Key ID="STR_ewc_bft_jamming_setting_ghostRatio">
             <English>Spoof ghost share</English>
             <French>Part de fantômes du leurre</French>

@@ -5,7 +5,7 @@
  * CLIENT ONLY. Adds the ghosts of Spoof jammers to the BFT lists of cTab (called by fnc_onBftListsUpdated after the
  * jamming). A viewer inside the effective radius of an active Spoof jammer sees a ghost of some of the groups and
  * vehicles of its own list: a copy of the entry on a position displaced by a fixed offset of 150 to 400 m, that moves
- * with the unit it copies and has a changed callsign. Which units have a ghost and where is worked out from the net IDs
+ * with the unit it copies and has its callsign, so nothing tells it from the real unit. Which units have a ghost and where is worked out from the net IDs
  * (fnc_ghostRandom), so every client gets the same ghosts without anything being synced. The setting
  * ewc_bft_jamming_ghostRatio is the share of units that have one.
  *
@@ -130,7 +130,6 @@ private _vehicleGhosts = [];
 
     private _copy = +_entry;
     _copy set [0, _dummy];
-    _copy set [3, [_entry select 3, _x] call FUNC(ghostCallsign)];
     _copy set [5, (_entry select 5) vectorAdd _offset];
 
     ([_groupGhosts, _vehicleGhosts] select (_tag == "v")) pushBack _copy;
