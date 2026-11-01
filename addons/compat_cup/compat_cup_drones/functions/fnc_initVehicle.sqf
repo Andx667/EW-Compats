@@ -22,7 +22,8 @@ params [["_drone", objNull, [objNull]]];
 if (isNull _drone || {!isServer} || {!GVAR(drones_enable)}) exitWith {};
 
 // Editor-placed drones initialise before Crows has registered its server event handlers
-[{CBA_missionTime > 0 && {!isNil CROWS_VAR_BEACONS} && {!isNil CROWS_VAR_FREQUENCY_RANGE}}, {
+// A drone that is deleted meanwhile ends the wait, and so does Crows not being ready in time
+[{isNull (_this select 0) || {CBA_missionTime > 0 && {!isNil CROWS_VAR_BEACONS} && {!isNil CROWS_VAR_FREQUENCY_RANGE}}}, {
     params ["_drone"];
 
     if (isNull _drone || {!alive _drone}) exitWith {};
@@ -36,4 +37,4 @@ if (isNull _drone || {!isServer} || {!GVAR(drones_enable)}) exitWith {};
     private _frequency = 433 + random abs ((_band#2#0) - (_band#2#1));
 
     [CROWS_EVENT_ADD_BEACON, [_drone, _frequency, GVAR(drones_range), CROWS_BEACON_DRONE]] call CBA_fnc_serverEvent;
-}, [_drone]] call CBA_fnc_waitUntilAndExecute;
+}, [_drone], WAIT_CROWS_TIMEOUT] call CBA_fnc_waitUntilAndExecute;

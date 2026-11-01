@@ -42,5 +42,5 @@ if (isClass (configFile >> "CfgPatches" >> "cTab_main")) then {
     [LLSTRING(setting_markerLifetime), LLSTRING(setting_markerLifetime_tooltip)],
     _category,
     [0, 120, 30, 0],
-    false
+    true
 ] call CBA_fnc_addSetting;

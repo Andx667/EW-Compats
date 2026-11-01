@@ -29,7 +29,10 @@ _vehicle setVariable [RHS_DEPLOY_HOOK_VAR, _hooks];
 
 if (!isServer) exitWith {};
 
-// A mast deployed in the editor is up before the jammer exists. Wait for the registration of ewc_common
-[{!isNil {_this getVariable QEGVAR(common,jammerState)}}, {
+// A mast deployed in the editor is up before the jammer exists. Wait for the registration of ewc_common. A vehicle that
+// is deleted meanwhile, or never gets registered, ends the wait instead of being checked every frame
+[{isNull _this || {!isNil {_this getVariable QEGVAR(common,jammerState)}}}, {
+    if (isNull _this) exitWith {};
+
     [QGVAR(mastToggled), [_this, _this doorPhase MAST_SOURCE > 0.5]] call CBA_fnc_serverEvent;
-}, _vehicle] call CBA_fnc_waitUntilAndExecute;
+}, _vehicle, WAIT_REGISTRATION_TIMEOUT] call CBA_fnc_waitUntilAndExecute;
