@@ -1,0 +1,17 @@
+onLoadName = "EWC Test - BFT Jamming";
+onLoadMission = "Test of the BFT jammers (Blackout, Drift, Mixed, Spoof) with cTab.";
+author = "Andx";
+overviewText = "Test of the BFT jammers (Blackout, Drift, Mixed, Spoof) with cTab.";
+
+enableDebugConsole = 1;
+respawn = "BASE";
+respawnDelay = 5;
+disabledAI = 1;
+joinUnassigned = 0;
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 2;
+};

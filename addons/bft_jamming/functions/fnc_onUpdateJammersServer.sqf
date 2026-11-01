@@ -32,7 +32,7 @@ if (!isServer) exitWith {};
 {
     _y params ["_unit", "_radFalloff", "_radEffective", "_enabled", "_capabilities"];
 
-    private _isBftJammer = (BFT_JAM_CAP_BLACKOUT in _capabilities) || (BFT_JAM_CAP_DRIFT in _capabilities) || (BFT_JAM_CAP_MIXED in _capabilities);
+    private _isBftJammer = (BFT_JAM_CAP_BLACKOUT in _capabilities) || (BFT_JAM_CAP_DRIFT in _capabilities) || (BFT_JAM_CAP_MIXED in _capabilities) || (BFT_JAM_CAP_SPOOF in _capabilities);
     if (_isBftJammer && {!isNull _unit}) then {
         private _hasBeacon = (CROWSEW_BEACONS findIf {(_x select 0) isEqualTo _unit && {(_x select 3) == BFT_JAM_SPECTRUM_TYPE}}) != -1;
 

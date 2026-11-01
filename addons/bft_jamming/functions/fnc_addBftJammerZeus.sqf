@@ -42,8 +42,8 @@ private _onConfirm = {
             "COMBO",
             [LLSTRING(moduleAddBftJammer_jamType_displayName), LLSTRING(moduleAddBftJammer_jamType_tooltip)],
             [
-                [BFT_JAM_TYPE_BLACKOUT, BFT_JAM_TYPE_DRIFT, BFT_JAM_TYPE_MIXED],
-                [LLSTRING(moduleAddBftJammer_jamType_blackout), LLSTRING(moduleAddBftJammer_jamType_drift), LLSTRING(moduleAddBftJammer_jamType_mixed)],
+                [BFT_JAM_TYPE_BLACKOUT, BFT_JAM_TYPE_DRIFT, BFT_JAM_TYPE_MIXED, BFT_JAM_TYPE_SPOOF],
+                [LLSTRING(moduleAddBftJammer_jamType_blackout), LLSTRING(moduleAddBftJammer_jamType_drift), LLSTRING(moduleAddBftJammer_jamType_mixed), LLSTRING(moduleAddBftJammer_jamType_spoof)],
                 BFT_JAM_TYPE_BLACKOUT
             ]
         ],

@@ -49,6 +49,10 @@ class CfgVehicles {
                         name = CSTRING(moduleAddBftJammer_jamType_mixed);
                         value = BFT_JAM_TYPE_MIXED;
                     };
+                    class Spoof {
+                        name = CSTRING(moduleAddBftJammer_jamType_spoof);
+                        value = BFT_JAM_TYPE_SPOOF;
+                    };
                 };
             };
 

@@ -5,6 +5,7 @@
  * - over every vehicle with a Crows jammer or a system of this mod: the state of the jammer (radii, capabilities),
  *   of its switches and the lines of fnc_registerDebug, and rings on the ground for the full radius and the end of the falloff
  * - over IEDs within the full radius of an active jammer: jammed (simulation off) or armed
+ * - over the ghosts of a BFT Spoof jammer: a line to the unit they copy
  * - over units and drones within the radii of an active jammer: the jam strength per signal (radio, BFT, drone)
  * Performance is no concern, this is for testing.
  *
@@ -85,6 +86,16 @@ _vehicles = _vehicles arrayIntersect _vehicles;
                     [[0.8, 0.8, 0.8, 1], [0.3, 1, 0.3, 1]] select _enabled
                 ];
 
+                // Spoof jammer of bft_jamming: is the viewer inside, how many units could be copied, how many ghosts there are
+                if (_enabled && {"BftJammerSpoof" in _capabilities}) then {
+                    (missionNamespace getVariable ["ewc_bft_jamming_ghostStats", [0, 0, 0]]) params ["_inside", "_eligible", "_ghosts"];
+
+                    _lines pushBack [
+                        format ["spoof | viewer inside %1 | copyable groups/vehicles %2 | ghosts %3", ["NO (get closer than the full radius)", "yes"] select (_inside > 0), _eligible, _ghosts],
+                        [[1, 0.6, 0.2, 1], [1, 0.2, 1, 1]] select (_ghosts > 0)
+                    ];
+                };
+
                 if (_enabled) then {
                     private _center = getPosASL _vehicle;
 
@@ -119,6 +130,21 @@ _vehicles = _vehicles arrayIntersect _vehicles;
         };
     };
 } forEach _vehicles;
+
+// Ghosts of a Spoof jammer of bft_jamming (fnc_updateGhosts): a line from the unit they copy to the ghost
+{
+    _y params ["_dummy", "_source"];
+
+    if (!isNull _dummy && {!isNull _source}) then {
+        private _from = ASLToAGL (getPosASL _source);
+        private _to = ASLToAGL (getPosASL _dummy);
+
+        if (_eye distance _to < DEBUG_DISTANCE || {_eye distance _from < DEBUG_DISTANCE}) then {
+            drawLine3D [_from, _to, [1, 0.2, 1, 1]];
+            [_to vectorAdd [0, 0, 2], format ["BFT GHOST of %1", getText (configOf _source >> "displayName")], [1, 0.2, 1, 1]] call _drawText;
+        };
+    };
+} forEach (missionNamespace getVariable ["ewc_bft_jamming_ghosts", createHashMap]);
 
 if (_active isEqualTo []) exitWith {};
 
@@ -165,6 +191,7 @@ private _targets = (allUnits select {alive _x && {isNull objectParent _x}}) + (v
                         private _signal = switch (true) do {
                             case (_x isEqualTo CROWS_CAPABILITY_RADIO): {["", "radio"] select !_isDrone};
                             case (_x isEqualTo CROWS_CAPABILITY_DRONE): {["", "drone"] select _isDrone};
+                            case (_x isEqualTo "BftJammerSpoof"): {["", "BFT spoof"] select !_isDrone};
                             case ((_x select [0, 9]) isEqualTo "BftJammer"): {["", "BFT"] select !_isDrone};
                             default {""};
                         };
