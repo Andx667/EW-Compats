@@ -1,21 +1,14 @@
 // EWC Test - BWA3 Dingo CG13
-// Spawns every vehicle of the mod that the compat covers, a jam lane with IEDs and distance signs.
+// Spawns one vehicle of the mod that the compat covers, a jam lane with IEDs and distance signs.
 // Vehicles are found in the loaded configs, so the mission follows the mod version.
 #include "common.hpp"
 
-// Every Dingo 2 with a CG13, one per model so camouflage variants are not repeated
-private _classes = [];
-private _models = [];
-{
-    private _model = toLower getText (_x >> "model");
-    if !(_model in _models) then {
-        _models pushBack _model;
-        _classes pushBack configName _x;
-    };
-} forEach ("getNumber (_x >> 'scope') == 2 && {getNumber (_x >> 'BWA3_hasECM') == 1}" configClasses (configFile >> "CfgVehicles"));
+// One Dingo 2 with a CG13, the models only differ in camouflage
+private _classes = ("getNumber (_x >> 'scope') == 2 && {getNumber (_x >> 'BWA3_hasECM') == 1}" configClasses (configFile >> "CfgVehicles")) apply {configName _x};
+_classes = _classes select [0, 1];
 
 
-// Parking grid: one vehicle per model, rows run south
+// Parking grid: rows run south
 private _vehicles = [];
 {
     private _row = floor (_forEachIndex / PARK_COLUMNS);
