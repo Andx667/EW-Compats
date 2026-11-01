@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Common, Compat CUP, Compat BWA3, Compat RHS AFRF, Compat RHS USAF, Compat RnT - A vehicle is registered as a jammer in Crow's Electronic Warfare when its jammer is switched on for the first time, not when the vehicle is created. Every registration makes Crow's send its whole jammer list to every machine and every client walked the actions of all jammers after it, so a mission with many DUKE, CG13, R-142N or Hummel vehicles stalled at the start. `ewc_common_fnc_setJammer` registers the vehicle and the compat addons no longer need a registered vehicle for their checks (`ewc_common_jammerState` is only set once registered). The CG13 uses `fnc_setJammer` instead of `crowsEW_main_toggleJammer`. `ewc_compat_cup_duke_fnc_registerJammer` is gone. A vehicle that was never switched on is not in the jammer list of Crow's Electronic Warfare (Zeus markers, the debug rings)
 - Common, Compat CUP - Removing the (de)activate actions of Crow's Electronic Warfare only looks at the jammers that are new to a machine, instead of walking the actions of all jammers on every update of the jammer list. The jammers of `ewc_common` carry the public variable `ewc_common_isJammer`, so the one handler covers the CUP DUKE vehicles too and `ewc_compat_cup_duke_fnc_removeCrowsActions` is gone
 
 ### Fixed

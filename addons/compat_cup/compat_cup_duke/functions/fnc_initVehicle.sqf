@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Prepares a vehicle with a CUP DUKE antenna: scroll wheel actions on every machine with an interface and, on the server,
- * a disabled Crows radio jammer.
+ * Prepares a vehicle with a CUP DUKE antenna: scroll wheel actions on every machine with an interface. The Crows radio
+ * jammer is registered when the DUKE is first switched on (ewc_common_fnc_setJammer).
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -23,8 +23,3 @@ if (([_vehicle, SYSTEM_DUKE] call FUNC(getSources)) isEqualTo []) exitWith {};
 if (hasInterface) then {
     [_vehicle, SYSTEM_DUKE] call EFUNC(common,addSwitchActions);
 };
-
-if (!isServer) exitWith {};
-
-// Editor-placed vehicles initialise before Crows has registered its server event handlers
-[{CBA_missionTime > 0}, LINKFUNC(duke_registerJammer), [_vehicle]] call CBA_fnc_waitUntilAndExecute;
