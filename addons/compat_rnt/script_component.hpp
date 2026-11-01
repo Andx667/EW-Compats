@@ -1,5 +1,5 @@
-#define COMPONENT compat_redd
-#define COMPONENT_BEAUTIFIED Compat Redd Vehicles
+#define COMPONENT compat_rnt
+#define COMPONENT_BEAUTIFIED Compat RnT Vehicles
 
 #include "\z\ewc\addons\main\script_mod.hpp"
 #include "\z\ewc\addons\main\script_macros.hpp"

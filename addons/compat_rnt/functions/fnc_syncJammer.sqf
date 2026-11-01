@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [_vehicle] call ewc_compat_redd_fnc_syncJammer
+ * [_vehicle] call ewc_compat_rnt_fnc_syncJammer
  *
  * Public: No
  */

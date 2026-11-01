@@ -1,12 +1,12 @@
-# Compat Redd Vehicles
+# Compat RnT Vehicles
 
 Adds the **Fuchs 1A4 Hummel** to the Redd'n'Tank Vehicles: a jammer vehicle that jams ACRE radios while it is switched on. It is modelled on the Störpanzer Hummel of the Bundeswehr, a Fuchs variant that jams communications in VHF and UHF. It jams radios only, no drones.
 
 ## How it works
 
-- Redd'n'Tank has no EloKa variant of its Fuchs 1A4 and no jammer antenna, so the Hummel is the Jäger variant with a new name (`CfgVehicles.hpp`): `EWC_Redd_Tank_Fuchs_1A4_Hummel_Flecktarn`, `_Tropentarn` and `_Wintertarn`. They have the model, textures and crew of the Jäger and look the same. They carry `ewc_compat_redd_jammer = 1` and so are jammers of the registry in `ewc_common` (`CfgEWC >> Jammers >> REDD_HUMMEL`, radio only), which registers them once on the server as disabled jammers in Crow's Electronic Warfare.
+- Redd'n'Tank has no EloKa variant of its Fuchs 1A4 and no jammer antenna, so the Hummel is the Jäger variant with a new name (`CfgVehicles.hpp`): `EWC_RnT_Fuchs_1A4_Hummel_Flecktarn`, `_Tropentarn` and `_Wintertarn`. They have the model, textures and crew of the Jäger and look the same. They carry `ewc_compat_rnt_jammer = 1` and so are jammers of the registry in `ewc_common` (`CfgEWC >> Jammers >> RNT_HUMMEL`, radio only), which registers them once on the server as disabled jammers in Crow's Electronic Warfare.
 - The crew switches the Hummel with the switch actions of `ewc_common` (scroll wheel or ACE self-interaction, driver, commander and gunners), see `ewc_common_actionMode`. The addon registers its switch with `ewc_common_fnc_registerSwitch` (id `hummel`).
-- `fnc_handleToggle` (server) checks the request (`fnc_canActivate`: enabled in the settings, vehicle alive, engine running) and stores the state in the public variable `ewc_compat_redd_on`. `fnc_syncJammer` (server) then brings the Crow's Electronic Warfare jammer in line with it through `ewc_common_fnc_setJammer`, with the radius of the settings, and tells the crew with the hint of `ewc_common_fnc_notifyState`.
+- `fnc_handleToggle` (server) checks the request (`fnc_canActivate`: enabled in the settings, vehicle alive, engine running) and stores the state in the public variable `ewc_compat_rnt_on`. `fnc_syncJammer` (server) then brings the Crow's Electronic Warfare jammer in line with it through `ewc_common_fnc_setJammer`, with the radius of the settings, and tells the crew with the hint of `ewc_common_fnc_notifyState`.
 - The Hummel switches itself off when the engine stops, the vehicle is destroyed or the setting turns it off. A switch that was blocked stays off when the engine starts again. The `Engine` and `Killed` event handlers (`fnc_initVehicle`, on every machine because they fire where the vehicle is local) raise the sync on the server.
 - Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the switch. `ewc_common` removes them from the vehicles of the registry.
 

@@ -3,7 +3,7 @@
  * Author: Andx
  * Prepares a Hummel: the switch actions of ewc_common on every machine with an interface and the event handlers that
  * switch the jammer off when the engine stops or the vehicle is destroyed. The jammer itself is registered by the
- * registry (CfgEWC >> Jammers >> REDD_HUMMEL).
+ * registry (CfgEWC >> Jammers >> RNT_HUMMEL).
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -13,14 +13,14 @@
  * None
  *
  * Example:
- * [_vehicle, "REDD_HUMMEL"] call ewc_compat_redd_fnc_initVehicle
+ * [_vehicle, "RNT_HUMMEL"] call ewc_compat_rnt_fnc_initVehicle
  *
  * Public: No
  */
 
 params [["_vehicle", objNull, [objNull]], ["_entry", "", [""]]];
 
-if (_entry isNotEqualTo "REDD_HUMMEL") exitWith {};
+if (_entry isNotEqualTo "RNT_HUMMEL") exitWith {};
 
 if (hasInterface) then {
     [_vehicle, SYSTEM_ID] call EFUNC(common,addSwitchActions);

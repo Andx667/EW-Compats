@@ -4,9 +4,9 @@ class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
         units[] = {
-            "EWC_Redd_Tank_Fuchs_1A4_Hummel_Flecktarn",
-            "EWC_Redd_Tank_Fuchs_1A4_Hummel_Tropentarn",
-            "EWC_Redd_Tank_Fuchs_1A4_Hummel_Wintertarn"
+            "EWC_RnT_Fuchs_1A4_Hummel_Flecktarn",
+            "EWC_RnT_Fuchs_1A4_Hummel_Tropentarn",
+            "EWC_RnT_Fuchs_1A4_Hummel_Wintertarn"
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

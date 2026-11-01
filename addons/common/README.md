@@ -30,7 +30,7 @@ class CfgEWC {
 
 ## Switch actions
 
-A system that the crew switches on and off (the CUP DUKE, the Boomerang, the Hummel of `compat_redd`) shares the actions of `ewc_common`:
+A system that the crew switches on and off (the CUP DUKE, the Boomerang, the Hummel of `compat_rnt`) shares the actions of `ewc_common`:
 
 - `fnc_registerSwitch` (in preInit, on every machine) registers the system under an id: the server event the actions raise with `[vehicle, switch on]`, the public variable that holds its state, the code that says whether it can be switched on, the stringtable keys of the two titles and, for ACE, the code that says whether a vehicle has the system.
 - `fnc_addSwitchActions` adds the scroll wheel actions to a vehicle (call it where the vehicle initialises). `fnc_addAceSwitchActions` adds the ACE self-interactions to all land vehicles once, and the registered code limits them to the vehicles with the system.

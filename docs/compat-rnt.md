@@ -1,4 +1,4 @@
-# Compat Redd Vehicles
+# Compat RnT Vehicles
 
 The **Fuchs 1A4 Hummel** of this addon is a jammer vehicle for the [Redd'n'Tank Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=1128145626). While it is switched on it jams ACRE radios around the vehicle. It is modelled on the Störpanzer Hummel of the Bundeswehr, a Fuchs variant that jams communications in VHF and UHF, so it jams radios only and no drones.
 
@@ -24,7 +24,7 @@ The radius is a setting, the values above use the default. The falloff band is 1
 
 ## Settings
 
-### `ewc_compat_redd_enable`
+### `ewc_compat_rnt_enable`
 
 - Name: Enable Hummel jamming
 - Type: `CHECKBOX`
@@ -32,7 +32,7 @@ The radius is a setting, the values above use the default. The falloff band is 1
 - Set by: the server
 - Purpose: if off, the Hummel does not jam. A running Hummel switches off the next time the engine stops or it is switched.
 
-### `ewc_compat_redd_radius`
+### `ewc_compat_rnt_radius`
 
 - Name: Hummel jamming radius
 - Type: `SLIDER`
@@ -45,8 +45,8 @@ The radius is a setting, the values above use the default. The falloff band is 1
 
 ``` cpp
 // cba_settings.sqf
-force ewc_compat_redd_enable = false; // default: true
-force ewc_compat_redd_radius = 800; // default: 500
+force ewc_compat_rnt_enable = false; // default: true
+force ewc_compat_rnt_radius = 800; // default: 500
 ```
 
 ## Quirks

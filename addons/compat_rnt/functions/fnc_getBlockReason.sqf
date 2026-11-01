@@ -11,7 +11,7 @@
  * Reason, the end of the string ewc_common_reason_<reason>, "dead" without a text of its own, or "" if the Hummel can be on <STRING>
  *
  * Example:
- * [_vehicle] call ewc_compat_redd_fnc_getBlockReason
+ * [_vehicle] call ewc_compat_rnt_fnc_getBlockReason
  *
  * Public: No
  */

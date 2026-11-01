@@ -1,6 +1,6 @@
 class CfgEWC {
     class Jammers {
-        class REDD_HUMMEL {
+        class RNT_HUMMEL {
             property = QGVAR(jammer);
             value = 1;
             radius = JAMMER_DEFAULT_RADIUS;

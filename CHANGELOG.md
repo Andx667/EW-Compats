@@ -15,7 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
-- Compat Redd Vehicles - New addon `compat_redd`: the Fuchs 1A4 Hummel (`EWC_Redd_Tank_Fuchs_1A4_Hummel_*`), a Jäger variant of the Redd'n'Tank Fuchs that jams ACRE radios while it is switched on, modelled on the Störpanzer Hummel of the Bundeswehr. Switch by scroll wheel or ACE, off with the engine. Settings `ewc_compat_redd_enable` and `ewc_compat_redd_radius`
+- Compat RnT Vehicles - New addon `compat_rnt`: the Fuchs 1A4 Hummel (`EWC_RnT_Fuchs_1A4_Hummel_*`), a Jäger variant of the Redd'n'Tank Fuchs that jams ACRE radios while it is switched on, modelled on the Störpanzer Hummel of the Bundeswehr. Switch by scroll wheel or ACE, off with the engine. Settings `ewc_compat_rnt_enable` and `ewc_compat_rnt_radius`
 - Common - `ewc_common_fnc_registerSwitch`, `fnc_addSwitchActions`, `fnc_addAceSwitchActions`, `fnc_canOperate` and `fnc_canToggle`: the switch actions of the DUKE and the Boomerang, now shared. `ewc_common_fnc_setJammer` brings a jammer in line with a wanted state and replaces it for another radius or other capabilities
 
 ### Changed

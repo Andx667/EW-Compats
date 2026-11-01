@@ -10,8 +10,8 @@ ADDON = false;
     QGVAR(toggle),
     QGVAR(on),
     LINKFUNC(canActivate),
-    QUOTE(STR_ewc_compat_redd_activate),
-    QUOTE(STR_ewc_compat_redd_deactivate),
+    QUOTE(STR_ewc_compat_rnt_activate),
+    QUOTE(STR_ewc_compat_rnt_deactivate),
     {getNumber (configOf (_this select 0) >> QGVAR(jammer)) == 1}
 ] call EFUNC(common,registerSwitch);
 

@@ -10,7 +10,7 @@
  * Can be switched on <BOOL>
  *
  * Example:
- * [_vehicle] call ewc_compat_redd_fnc_canActivate
+ * [_vehicle] call ewc_compat_rnt_fnc_canActivate
  *
  * Public: No
  */

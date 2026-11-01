@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [_vehicle, true] call ewc_compat_redd_fnc_handleToggle
+ * [_vehicle, true] call ewc_compat_rnt_fnc_handleToggle
  *
  * Public: No
  */
