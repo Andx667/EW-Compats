@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Compat CUP - New sub-addon `compat_cup_drones`: the CUP MQ-9 and Pchela-1T get the spectrum signal Crow's Electronic Warfare gives its own drones, so drone jammers jam them and the spectrum device shows them. Crow's lists only the vanilla drone bases, and the CUP drones derive from the plain `UAV` class. Settings `ewc_compat_cup_drones_enable` and `ewc_compat_cup_drones_range`
+
 ## [1.3.0] - 2026-11-01
 
 ### Changed

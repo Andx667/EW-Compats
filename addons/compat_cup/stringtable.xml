@@ -9,6 +9,46 @@
             <Russian>CUP DUKE</Russian>
             <German>CUP DUKE</German>
         </Key>
+        <Key ID="STR_ewc_compat_cup_drones_category">
+            <English>CUP Drones</English>
+            <French>Drones CUP</French>
+            <Spanish>Drones de CUP</Spanish>
+            <Polish>Drony CUP</Polish>
+            <Russian>Дроны CUP</Russian>
+            <German>CUP-Drohnen</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_drones_setting_enable">
+            <English>Enable CUP drone signals</English>
+            <French>Activer les signaux des drones CUP</French>
+            <Spanish>Activar señales de los drones de CUP</Spanish>
+            <Polish>Włącz sygnały dronów z CUP</Polish>
+            <Russian>Включить сигналы дронов CUP</Russian>
+            <German>Signale der CUP-Drohnen aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_drones_setting_enable_tooltip">
+            <English>Gives the MQ-9 and the Pchela-1T the spectrum signal of Crow's Electronic Warfare, so drone jammers can jam them and the spectrum device shows them. Applied to drones when they are created.</English>
+            <French>Donne au MQ-9 et au Pchela-1T le signal de spectre de Crow's Electronic Warfare : les brouilleurs de drones peuvent les brouiller et l'analyseur de spectre les affiche. Appliqué aux drones à leur création.</French>
+            <Spanish>Da al MQ-9 y al Pchela-1T la señal de espectro de Crow's Electronic Warfare, de modo que los inhibidores de drones puedan interferirlos y el analizador de espectro los muestre. Se aplica a los drones al crearlos.</Spanish>
+            <Polish>Nadaje MQ-9 i Pchela-1T sygnał widma z Crow's Electronic Warfare, dzięki czemu zagłuszarki dronów mogą je zagłuszać, a analizator widma je pokazuje. Stosowane do dronów w chwili ich utworzenia.</Polish>
+            <Russian>Даёт MQ-9 и «Пчела-1Т» спектральный сигнал Crow's Electronic Warfare: постановщики помех для дронов могут их глушить, а анализатор спектра их показывает. Применяется к дронам при их создании.</Russian>
+            <German>Gibt der MQ-9 und der Pchela-1T das Spektrumsignal von Crow's Electronic Warfare, damit Drohnenstörer sie stören können und das Spektrumgerät sie anzeigt. Wird beim Erstellen der Drohnen angewendet.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_drones_setting_range">
+            <English>Drone signal range (m)</English>
+            <French>Portée du signal des drones (m)</French>
+            <Spanish>Alcance de la señal de los drones (m)</Spanish>
+            <Polish>Zasięg sygnału dronów (m)</Polish>
+            <Russian>Дальность сигнала дронов (м)</Russian>
+            <German>Signalreichweite der Drohnen (m)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_cup_drones_setting_range_tooltip">
+            <English>Range of the spectrum signal of a CUP drone. The Crow's Electronic Warfare default for its own drones is 3000 m. Applied to drones when they are created.</English>
+            <French>Portée du signal de spectre d'un drone CUP. La valeur par défaut de Crow's Electronic Warfare pour ses propres drones est de 3000 m. Appliqué aux drones à leur création.</French>
+            <Spanish>Alcance de la señal de espectro de un dron de CUP. El valor predeterminado de Crow's Electronic Warfare para sus propios drones es 3000 m. Se aplica a los drones al crearlos.</Spanish>
+            <Polish>Zasięg sygnału widma drona z CUP. Domyślna wartość Crow's Electronic Warfare dla jego własnych dronów to 3000 m. Stosowane do dronów w chwili ich utworzenia.</Polish>
+            <Russian>Дальность спектрального сигнала дрона CUP. Значение по умолчанию в Crow's Electronic Warfare для его собственных дронов — 3000 м. Применяется к дронам при их создании.</Russian>
+            <German>Reichweite des Spektrumsignals einer CUP-Drohne. Der Standard von Crow's Electronic Warfare für die eigenen Drohnen ist 3000 m. Wird beim Erstellen der Drohnen angewendet.</German>
+        </Key>
         <Key ID="STR_ewc_compat_cup_duke_activate">
             <English>Activate DUKE</English>
             <French>Activer le DUKE</French>
