@@ -5,7 +5,7 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 ## How it works
 
 - A vehicle counts as equipped if its `AnimationSources` contain one of the sources of the registry `CfgEWC >> Boomerangs` (`fnc_getSources`). A compat addon adds a class with `sources[]` (see `CfgEWC.hpp`) and its vehicles get the Boomerang without any code. The names are read once in `preInit`. Classes inherited from a parent are not listed as children, so every class up the inheritance chain is read and the result is cached per class. The antenna is shown at phase 0 and hidden at phase 1, mods hide it by default (`fnc_isShown`), so it has to be shown in the vehicle appearance options.
-- Crew can switch the Boomerang with a scroll wheel action (`fnc_addActions`), an ACE self-interaction (`fnc_addAceActions`) or both (CBA setting `ewc_boomerang_actionMode`). `fnc_canOperate` limits them to driver, commander and gunners, and `fnc_canToggle` adds the state of the system.
+- Crew can switch the Boomerang with a scroll wheel action, an ACE self-interaction or both (CBA setting `ewc_common_actionMode`). The actions are the switch actions of `ewc_common`: `XEH_preInit` registers the Boomerang with `ewc_common_fnc_registerSwitch` (id `boomerang`), `fnc_initVehicle` calls `ewc_common_fnc_addSwitchActions` and `XEH_postInit` calls `ewc_common_fnc_addAceSwitchActions`. Only driver, commander and gunners get them.
 - `fnc_handleToggle` (server) checks a switch request and raises the local CBA event `ewc_boomerang_switchedOn` with the vehicle before it switches, so a compat addon can switch off a system that excludes the Boomerang, like the DUKE of CUP (see `compat_cup_boomerang`).
 - `fnc_setState` keeps a list of the vehicles with a Boomerang that is on (`ewc_boomerang_vehicles`) and broadcasts it. A server side loop (`fnc_loop`) switches a Boomerang off when its vehicle is destroyed, its antenna is hidden, its engine stops or it is disabled.
 - Every projectile of the mission would go through a handler, so there is none while no Boomerang is on. `fnc_updateListening` adds a `ProjectileCreated` mission event handler on each machine when the list of Boomerangs that are on gets its first vehicle, and removes it when the list is empty again. The server sends the list with the event `ewc_boomerang_listChanged`. A player who joins late asks for it with `ewc_boomerang_requestList`.
@@ -34,10 +34,6 @@ Vehicles with a Boomerang shot finder get a switch for shot detection. A running
 | `fnc_initVehicle` | every machine | Class event handler for vehicles with a Boomerang antenna: adds the actions and watches the weapons of the vehicle |
 | `fnc_getSources` | any | Animation sources of a vehicle that belong to the shot finder |
 | `fnc_isShown` | any | Is at least one antenna shown |
-| `fnc_canOperate` | clients | May a unit operate the Boomerang: crew only, in the chosen interaction style |
-| `fnc_canToggle` | clients | Condition of the switch actions: `fnc_canOperate` and the state of the system |
-| `fnc_addActions` | clients | Adds the scroll wheel actions to a vehicle |
-| `fnc_addAceActions` | clients | Adds the ACE self-interaction actions to land vehicles |
 | `fnc_canActivate` | any | Can the Boomerang be switched on (setting, alive, antenna, engine) |
 | `fnc_getBlockReason` | any | Why the Boomerang cannot be on (setting, destroyed, antenna, engine), or an empty text. `fnc_canActivate` is true when there is none |
 | `fnc_handleToggle` | server | Checks a switch request and raises `ewc_boomerang_switchedOn` |

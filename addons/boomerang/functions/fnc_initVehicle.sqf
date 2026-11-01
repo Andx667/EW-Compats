@@ -21,7 +21,7 @@ params [["_vehicle", objNull, [objNull]]];
 if (([_vehicle] call FUNC(getSources)) isEqualTo []) exitWith {};
 
 if (hasInterface) then {
-    [_vehicle] call FUNC(addActions);
+    [_vehicle, "boomerang"] call EFUNC(common,addSwitchActions);
 };
 
 // The Fired EH only fires where the weapon is local, so it has to exist on every machine

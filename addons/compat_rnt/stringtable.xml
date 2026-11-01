@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="compat_rnt">
+        <Key ID="STR_ewc_compat_rnt_activate">
+            <English>Activate Hummel</English>
+            <French>Activer le Hummel</French>
+            <Spanish>Activar Hummel</Spanish>
+            <Polish>Włącz Hummel</Polish>
+            <Russian>Включить Hummel</Russian>
+            <German>Hummel aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_category">
+            <English>Redd'n'Tank Fuchs Hummel</English>
+            <French>Fuchs Hummel de Redd'n'Tank</French>
+            <Spanish>Fuchs Hummel de Redd'n'Tank</Spanish>
+            <Polish>Fuchs Hummel z Redd'n'Tank</Polish>
+            <Russian>Fuchs Hummel из Redd'n'Tank</Russian>
+            <German>Redd'n'Tank Fuchs Hummel</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_deactivate">
+            <English>Deactivate Hummel</English>
+            <French>Désactiver le Hummel</French>
+            <Spanish>Desactivar Hummel</Spanish>
+            <Polish>Wyłącz Hummel</Polish>
+            <Russian>Выключить Hummel</Russian>
+            <German>Hummel deaktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_hummel_flecktarn">
+            <English>Fuchs 1A4 Hummel (Flecktarn)</English>
+            <French>Fuchs 1A4 Hummel (Flecktarn)</French>
+            <Spanish>Fuchs 1A4 Hummel (Flecktarn)</Spanish>
+            <Polish>Fuchs 1A4 Hummel (Flecktarn)</Polish>
+            <Russian>Fuchs 1A4 Hummel (Flecktarn)</Russian>
+            <German>Fuchs 1A4 Hummel (Flecktarn)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_hummel_tropentarn">
+            <English>Fuchs 1A4 Hummel (Tropentarn)</English>
+            <French>Fuchs 1A4 Hummel (Tropentarn)</French>
+            <Spanish>Fuchs 1A4 Hummel (Tropentarn)</Spanish>
+            <Polish>Fuchs 1A4 Hummel (Tropentarn)</Polish>
+            <Russian>Fuchs 1A4 Hummel (Tropentarn)</Russian>
+            <German>Fuchs 1A4 Hummel (Tropentarn)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_hummel_wintertarn">
+            <English>Fuchs 1A4 Hummel (Wintertarn)</English>
+            <French>Fuchs 1A4 Hummel (Wintertarn)</French>
+            <Spanish>Fuchs 1A4 Hummel (Wintertarn)</Spanish>
+            <Polish>Fuchs 1A4 Hummel (Wintertarn)</Polish>
+            <Russian>Fuchs 1A4 Hummel (Wintertarn)</Russian>
+            <German>Fuchs 1A4 Hummel (Wintertarn)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_setting_enable">
+            <English>Enable Hummel jamming</English>
+            <French>Activer le brouillage du Hummel</French>
+            <Spanish>Activar la interferencia del Hummel</Spanish>
+            <Polish>Włącz zagłuszanie Hummel</Polish>
+            <Russian>Включить подавление Hummel</Russian>
+            <German>Hummel-Störung aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_setting_enable_tooltip">
+            <English>If disabled, the Hummel does not jam radios and a running Hummel switches off the next time the engine stops or it is switched.</English>
+            <French>Si désactivé, le Hummel ne brouille pas les radios et un Hummel en marche s'éteint à l'arrêt suivant du moteur ou à la prochaine commande.</French>
+            <Spanish>Si está desactivado, el Hummel no interfiere las radios y un Hummel en marcha se apaga la próxima vez que se pare el motor o se accione.</Spanish>
+            <Polish>Jeśli wyłączone, Hummel nie zagłusza radiostacji, a działający Hummel wyłączy się przy następnym zatrzymaniu silnika lub przełączeniu.</Polish>
+            <Russian>Если выключено, Hummel не глушит радиостанции, а работающий Hummel выключится при следующей остановке двигателя или переключении.</Russian>
+            <German>Wenn deaktiviert, stört der Hummel keine Funkgeräte, und ein laufender Hummel schaltet sich beim nächsten Motorstopp oder Schalten aus.</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_setting_radius">
+            <English>Hummel jamming radius (m)</English>
+            <French>Rayon de brouillage du Hummel (m)</French>
+            <Spanish>Radio de interferencia del Hummel (m)</Spanish>
+            <Polish>Promień zagłuszania Hummel (m)</Polish>
+            <Russian>Радиус подавления Hummel (м)</Russian>
+            <German>Störradius des Hummel (m)</German>
+        </Key>
+        <Key ID="STR_ewc_compat_rnt_setting_radius_tooltip">
+            <English>Radius with full jamming strength. The falloff band beyond it is 1.5 times the radius. Applied the next time the Hummel is switched on or off.</English>
+            <French>Rayon avec pleine force de brouillage. La zone d'atténuation au-delà vaut 1,5 fois le rayon. Appliqué à la prochaine activation ou désactivation du Hummel.</French>
+            <Spanish>Radio con plena intensidad de interferencia. La banda de atenuación más allá es 1,5 veces el radio. Se aplica la próxima vez que se encienda o apague el Hummel.</Spanish>
+            <Polish>Promień z pełną siłą zagłuszania. Pasmo zanikania poza nim to 1,5 promienia. Stosowane przy następnym włączeniu lub wyłączeniu Hummel.</Polish>
+            <Russian>Радиус с полной силой подавления. Полоса затухания за ним равна 1,5 радиуса. Применяется при следующем включении или выключении Hummel.</Russian>
+            <German>Radius mit voller Störstärke. Das Abklingband dahinter ist das 1,5-Fache des Radius. Wird beim nächsten Ein- oder Ausschalten des Hummel angewendet.</German>
+        </Key>
+    </Package>
+</Project>

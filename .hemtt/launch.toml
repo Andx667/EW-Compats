@@ -1,4 +1,4 @@
-# Launched with `hemtt launch`, or `hemtt launch bft/bwa3/cup/rhs_usaf/rhs_afrf` to also load the mod a feature extends
+# Launched with `hemtt launch`, or `hemtt launch bft/bwa3/cup/rnt/rhs_usaf/rhs_afrf` to also load the mod a feature extends
 # (bwa3/cup/rhs_usaf/rhs_afrf start in their test mission from .hemtt/missions)
 [default]
 workshop = [
@@ -45,5 +45,12 @@ extends = "default"
 mission = "EWC_Test_RHS_AFRF.VR"
 workshop = [
     "843425103",  # RHS AFRF
+    "751965892",  # ACRE
+]
+
+[rnt]
+extends = "default"
+workshop = [
+    "1128145626", # Redd'n'Tank Vehicles
     "751965892",  # ACRE
 ]

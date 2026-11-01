@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ewc">
     <Package name="common">
+        <Key ID="STR_ewc_common_category">
+            <English>Controls</English>
+            <French>Commandes</French>
+            <Spanish>Controles</Spanish>
+            <Polish>Sterowanie</Polish>
+            <Russian>Управление</Russian>
+            <German>Bedienung</German>
+        </Key>
+        <Key ID="STR_ewc_common_mode_ace">
+            <English>ACE self-interaction</English>
+            <French>Auto-interaction ACE</French>
+            <Spanish>Autointeracción de ACE</Spanish>
+            <Polish>Samointerakcja ACE</Polish>
+            <Russian>Самовзаимодействие ACE</Russian>
+            <German>ACE-Selbstinteraktion</German>
+        </Key>
+        <Key ID="STR_ewc_common_mode_both">
+            <English>Both</English>
+            <French>Les deux</French>
+            <Spanish>Ambos</Spanish>
+            <Polish>Oba</Polish>
+            <Russian>Оба</Russian>
+            <German>Beides</German>
+        </Key>
+        <Key ID="STR_ewc_common_mode_scroll">
+            <English>Scroll wheel</English>
+            <French>Molette de la souris</French>
+            <Spanish>Rueda del ratón</Spanish>
+            <Polish>Kółko myszy</Polish>
+            <Russian>Колесо мыши</Russian>
+            <German>Mausrad</German>
+        </Key>
         <Key ID="STR_ewc_common_reason_antenna">
             <English>antenna hidden</English>
             <French>antenne masquée</French>
@@ -32,6 +64,22 @@
             <Polish>silnik zatrzymany</Polish>
             <Russian>двигатель остановлен</Russian>
             <German>Motor aus</German>
+        </Key>
+        <Key ID="STR_ewc_common_setting_actionMode">
+            <English>System switch</English>
+            <French>Commande des systèmes</French>
+            <Spanish>Control de los sistemas</Spanish>
+            <Polish>Przełącznik systemów</Polish>
+            <Russian>Переключатель систем</Russian>
+            <German>Systemschalter</German>
+        </Key>
+        <Key ID="STR_ewc_common_setting_actionMode_tooltip">
+            <English>How the crew switches systems of a vehicle (DUKE, Boomerang, Hummel) on and off. Without ACE the scroll wheel is always available.</English>
+            <French>Comment l'équipage active et désactive les systèmes d'un véhicule (DUKE, Boomerang, Hummel). Sans ACE, la molette de la souris est toujours disponible.</French>
+            <Spanish>Cómo la tripulación enciende y apaga los sistemas de un vehículo (DUKE, Boomerang, Hummel). Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
+            <Polish>Sposób włączania i wyłączania systemów pojazdu przez załogę (DUKE, Boomerang, Hummel). Bez ACE zawsze dostępne jest kółko myszy.</Polish>
+            <Russian>Как экипаж включает и выключает системы машины (DUKE, Boomerang, Hummel). Без ACE колесо мыши доступно всегда.</Russian>
+            <German>Wie die Besatzung Systeme eines Fahrzeugs (DUKE, Boomerang, Hummel) ein- und ausschaltet. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
         </Key>
         <Key ID="STR_ewc_common_state_off">
             <English>%1 off</English>
