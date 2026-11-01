@@ -15,7 +15,7 @@ player setPos [-20 + (random 2), 10, 0];
 
 
 
-// Labels over vehicles, IEDs and lane signs
+// Labels over IEDs and lane signs. Vehicle, jammer and jammed states come from the debug overlay (ewc_common_debug)
 addMissionEventHandler ["Draw3D", {
     private _eye = positionCameraToWorld [0, 0, 0];
 
@@ -27,20 +27,10 @@ addMissionEventHandler ["Draw3D", {
     } forEach (missionNamespace getVariable ["ewc_test_labels", []]);
 
     {
-        if (!isNull _x && {_eye distance _x < 60}) then {
-            private _state = [_x] call ewc_test_fnc_vehicleState;
-            private _pos = (_x modelToWorld [0, 0, 0]) vectorAdd [0, 0, 3.5];
-            drawIcon3D ["", [1, 1, 1, 1], _pos vectorAdd [0, 0, 0.5], 0, 0, 0, _x getVariable ["ewc_test_title", typeOf _x], 2, 0.03, "PuristaMedium", "center"];
-            drawIcon3D ["", [[0.8, 0.8, 0.8, 1], [0.3, 1, 0.3, 1]] select (_state select 1), _pos, 0, 0, 0, _state select 0, 2, 0.03, "PuristaMedium", "center"];
-        };
-    } forEach (missionNamespace getVariable ["ewc_test_vehicles", []]);
-
-    {
         if (!isNull _x && {_eye distance _x < 250}) then {
-            private _enabled = simulationEnabled _x;
-            drawIcon3D ["", [[1, 0.2, 0.2, 1], [1, 0.8, 0.2, 1]] select _enabled, (getPosATL _x) vectorAdd [0, 0, 1.2], 0, 0, 0, format ["%1: %2", _x getVariable ["ewc_test_title", "IED"], ["JAMMED (simulation off)", "armed (simulation on)"] select _enabled], 2, 0.03, "PuristaMedium", "center"];
+            drawIcon3D ["", [1, 1, 1, 1], (getPosATL _x) vectorAdd [0, 0, 0.4], 0, 0, 0, _x getVariable ["ewc_test_title", "IED"], 2, 0.03, "PuristaMedium", "center"];
         };
     } forEach (missionNamespace getVariable ["ewc_test_mines", []]);
 }];
 
-hint parseText "<t size='1.2'>EWC Test: BWA3 Dingo 2 CG13</t><br/>Every Dingo 2 with a CG13 stands at the parking area (0,0). Labels show the CG13 state.<br/><br/>1. Get in a Dingo, start the engine, use <t color='#ffd966'>TurnOnCG13</t> (scroll wheel).<br/>2. Drive it onto the <t color='#ffd966'>JAM LANE</t> (150 m north). IEDs within 40 m turn red (jammed).<br/>3. Second player with ACRE stands at the radio signs west of the lane: effective jamming up to 40 m, falloff to 100 m.<br/>4. Switch the engine off: CG13 and radio jamming must stop.<br/>5. Crow's EW needs multiplayer: host this on LAN.";
+hint parseText "<t size='1.2'>EWC Test: BWA3 Dingo 2 CG13</t><br/>Every Dingo 2 with a CG13 stands at the parking area (0,0). The debug overlay (setting <t color='#ffd966'>ewc_common_debug</t>, forced on in this mission) shows the states.<br/><br/>1. Get in a Dingo, start the engine, use <t color='#ffd966'>TurnOnCG13</t> (scroll wheel).<br/>2. Drive it onto the <t color='#ffd966'>JAM LANE</t> (150 m north). IEDs within 40 m turn red (jammed).<br/>3. Second player with ACRE stands at the radio signs west of the lane: effective jamming up to 40 m, falloff to 100 m.<br/>4. Switch the engine off: CG13 and radio jamming must stop.<br/>5. Crow's EW needs multiplayer: host this on LAN.";

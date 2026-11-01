@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Common - Debug overlay, switched on by the client setting `ewc_common_debug` (default off). It draws the jammer and switch state over every supported vehicle with rings for the radii of an active jammer, the jammed state over IEDs within the full radius of an active jammer, and the jam strength per signal (radio, BFT, drone) over units and drones in range. Addons add lines with the new `ewc_common_fnc_registerDebug`, used by the Boomerang
+
 ## [1.4.0] - 2026-11-01
 
 ### Fixed

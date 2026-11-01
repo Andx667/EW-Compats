@@ -13,11 +13,20 @@ Shared code of the compat addons. Most of it is code for the other addons, the o
 - Set by: each player (client setting)
 - Purpose: how the crew switches the systems of a vehicle: the CUP DUKE, the Boomerang and the Redd'n'Tank Fuchs Hummel. Without ACE the scroll wheel is always used.
 
+### `ewc_common_debug`
+
+- Name: Debug overlay
+- Type: `CHECKBOX`
+- Default: `false`
+- Set by: each player (client setting)
+- Purpose: draws information in the world, for testing. Over every vehicle with a Crow's Electronic Warfare jammer or a system of this mod (up to 600 m): the jammer state (on/off, full radius, end of the falloff, capabilities), the switches of the DUKE, Boomerang and Hummel and, for the Boomerang, what blocks it, the lockout and the speed. An active jammer also gets rings on the ground, green for the full radius and yellow for the end of the falloff. Over IEDs within the full radius of an active jammer (up to 600 m) it shows `JAMMED (simulation off)` or `in range, armed`. Over units on foot and drones within the radii of an active jammer (up to 250 m) it shows the jam strength per signal (`radio`, `BFT`, `drone`): `JAMMED` within the full radius, a percentage in the falloff.
+
 ### Complete example
 
 ``` cpp
 // cba_settings.sqf
 ewc_common_actionMode = 2; // default: 0
+ewc_common_debug = true; // default: false
 ```
 
 !!! note "Renamed"

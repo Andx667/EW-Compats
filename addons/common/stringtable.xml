@@ -81,6 +81,22 @@
             <Russian>Как экипаж включает и выключает системы машины (DUKE, Boomerang, Hummel). Без ACE колесо мыши доступно всегда.</Russian>
             <German>Wie die Besatzung Systeme eines Fahrzeugs (DUKE, Boomerang, Hummel) ein- und ausschaltet. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
         </Key>
+        <Key ID="STR_ewc_common_setting_debug">
+            <English>Debug overlay</English>
+            <French>Affichage de débogage</French>
+            <Spanish>Superposición de depuración</Spanish>
+            <Polish>Nakładka debugowania</Polish>
+            <Russian>Отладочный оверлей</Russian>
+            <German>Debug-Anzeige</German>
+        </Key>
+        <Key ID="STR_ewc_common_setting_debug_tooltip">
+            <English>Draws the state of the jammers and systems over supported vehicles, and the jammed state over IEDs, units and drones in range of an active jammer. For testing.</English>
+            <French>Affiche l'état des brouilleurs et des systèmes au-dessus des véhicules pris en charge, et l'état de brouillage au-dessus des IED, unités et drones à portée d'un brouilleur actif. Pour les tests.</French>
+            <Spanish>Muestra el estado de los inhibidores y sistemas sobre los vehículos compatibles, y el estado de interferencia sobre IED, unidades y drones al alcance de un inhibidor activo. Para pruebas.</Spanish>
+            <Polish>Wyświetla stan zagłuszarek i systemów nad obsługiwanymi pojazdami oraz stan zagłuszenia nad IED, jednostkami i dronami w zasięgu aktywnej zagłuszarki. Do testów.</Polish>
+            <Russian>Показывает состояние станций помех и систем над поддерживаемой техникой, а также состояние подавления над СВУ, бойцами и дронами в зоне действия включённой станции. Для тестирования.</Russian>
+            <German>Zeigt den Zustand der Störsender und Systeme über unterstützten Fahrzeugen und den Störzustand über IEDs, Einheiten und Drohnen in Reichweite eines aktiven Störsenders. Zum Testen.</German>
+        </Key>
         <Key ID="STR_ewc_common_state_off">
             <English>%1 off</English>
             <French>%1 désactivé</French>

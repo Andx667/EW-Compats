@@ -1,4 +1,5 @@
 PREP(canActivate);
+PREP(debugLines);
 PREP(expireShotMarker);
 PREP(findNearMarker);
 PREP(getBlockReason);
