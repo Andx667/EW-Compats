@@ -5,7 +5,8 @@
  * CLIENT ONLY. Adds the ghosts of Spoof jammers to the BFT lists of cTab (called by fnc_onBftListsUpdated after the
  * jamming). A viewer inside the effective radius of an active Spoof jammer sees a ghost of some of the groups and
  * vehicles of its own list: a copy of the entry on a position displaced by a fixed offset of 150 to 400 m, that moves
- * with the unit it copies and has its callsign, so nothing tells it from the real unit. Which units have a ghost and where is worked out from the net IDs
+ * with the unit it copies and has the callsign of some existing group or vehicle (picked from the net IDs), so a callsign
+ * that is not on the map gives no ghost away. Which units have a ghost and where is worked out from the net IDs
  * (fnc_ghostRandom), so every client gets the same ghosts without anything being synced. The setting
  * ewc_bft_jamming_ghostRatio is the share of units that have one.
  *
@@ -41,6 +42,16 @@ private _viewerPos = getPosASL _viewerVehicle;
 private _spoofers = _jammers select {
     (BFT_JAM_CAP_SPOOF in (_x select 4)) && {_viewerPos distance (getPosASL (_x select 0)) <= (_x select 2)}
 };
+
+// Callsigns that exist on the BFT of the viewer, sorted so the pick does not depend on the order of the lists
+private _callsigns = [];
+
+{
+    _callsigns pushBackUnique (_x select 3);
+} forEach (cTabBFTgroups + cTabBFTvehicles);
+
+_callsigns = (_callsigns - [""]);
+_callsigns sort true;
 
 // Key -> [list tag, entry, unit it copies]
 private _wanted = createHashMap;
@@ -131,6 +142,10 @@ private _vehicleGhosts = [];
     private _copy = +_entry;
     _copy set [0, _dummy];
     _copy set [5, (_entry select 5) vectorAdd _offset];
+
+    if (_callsigns isNotEqualTo []) then {
+        _copy set [3, _callsigns select floor (([_x, "callsign"] call FUNC(ghostRandom)) * count _callsigns)];
+    };
 
     ([_groupGhosts, _vehicleGhosts] select (_tag == "v")) pushBack _copy;
 } forEach _wanted;
