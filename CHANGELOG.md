@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Compat RHS USAF - Give the Stryker family (M1126, M1127, M1132, M1134) the RHS DUKE weapon, as RHS shows a DUKE antenna on them but no DUKE. They jam IEDs and radios like the other DUKE vehicles. The driver switches it, the M1127 and M1134 get the weapon when the antenna is shown. The antenna has no hitpoints, so it cannot be destroyed
+
 ## [1.3.0] - 2026-11-01
 
 ### Changed

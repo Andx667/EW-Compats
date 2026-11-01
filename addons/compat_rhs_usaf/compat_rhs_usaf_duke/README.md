@@ -17,6 +17,8 @@ Vehicles with a DUKE (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) 
 - Destroyed vehicles are removed by the cleanup loop of Crow's Electronic Warfare. RHS lets its jamming script run on for dead vehicles, which has no effect on the radio jammer.
 - Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `ewc_common` removes them from DUKE vehicles. The DUKE is operated through its weapon, so no actions are lost.
 
+- `CfgVehicles.hpp` gives the Stryker family (`rhsusf_stryker_m1126_base` and below) the DUKE that RHS leaves out: `rhsusf_weap_duke` and `rhsusf_mag_duke` on the driver, `rhs_duke_type` so the registry picks them up, and `rhs_fnc_duke_vg` as `onPhaseChanged` of `Hide_DUKE`. The M1127 and M1134 start with the antenna hidden, so their weapon is only added when it is shown. The Stryker has no `HitDuke*` hitpoints, so `fnc_syncJammer` always reads 0 damage and the antenna cannot be destroyed.
+
 ## Functions
 
 | Function | Runs on | Purpose |

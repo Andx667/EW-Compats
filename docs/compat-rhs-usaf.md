@@ -1,6 +1,6 @@
 # Compat RHS USAF
 
-Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
+Vehicles with a **DUKE** (M1117, HMMWV family, MATV, M1A1/M1A2, Bradley, Stryker and others) also jam ACRE radios, in addition to IEDs. The radio jammer follows the DUKE switch of RHS.
 
 !!! note "Gameplay values"
     The real DUKE (AN/VLQ-12 CREW Duke) is a vehicle-mounted counter-RCIED jammer. Its frequency bands and jamming range are not publicly documented in detail, so the radii here are gameplay values. The jammer is modelled as simply on or off and jams continuously in its radius while on.
@@ -40,6 +40,8 @@ force ewc_compat_rhs_usaf_enableDuke = false; // default: true
 ```
 
 ## Quirks
+
+- **The Stryker gets its DUKE from this addon.** RHS shows the antenna (`Hide_DUKE`) but gives the M1126, M1127, M1132 and M1134 no DUKE weapon, so the addon adds `rhsusf_weap_duke` to them. Only the driver can switch it. The M1127 and M1134 start with the antenna hidden and get the weapon when it is shown. The antenna has no hitpoints, so it cannot be destroyed and the range stays at 50 m.
 
 - **Select the DUKE first on vehicles with a smoke launcher.** The Bradley and the Abrams have the DUKE next to a smoke launcher in the same countermeasure slot, and the smoke launcher is listed first. Press **Ctrl+C** to cycle the countermeasure to *DUKE offline* / *DUKE online* before firing, otherwise the smoke launcher fires. Vehicles where the DUKE is the only countermeasure, like the M1117, HMMWV and MATV, need no selection.
 - **A triggered IED explodes when it leaves the jamming range.** The DUKE does not defuse an IED, it only holds it back: `rhs_duke.sqf` switches the simulation of the IEDs in range off and on again when they leave the range or the DUKE stops. An IED that is triggered while it is inside the range stays inert, but it explodes as soon as the DUKE is out of range, for example when the vehicle drives on or the DUKE is switched off. This is RHS's own behaviour, this addon does not change it, and it is the same as the Dingo CG13 of [Compat BWA3](compat-bwa3.md). Keep the distance until the IED is cleared.

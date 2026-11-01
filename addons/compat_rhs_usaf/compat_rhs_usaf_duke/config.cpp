@@ -9,7 +9,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {QUOTE(ADDON), "rhsusf_c_heavyweapons", "crowsEW_main"};
+        requiredAddons[] = {QUOTE(ADDON), "rhsusf_c_heavyweapons", "rhsusf_c_stryker", "crowsEW_main"};
 
         skipWhenMissingDependencies = 1;
         author = AUTHOR;
@@ -22,3 +22,4 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgEWC.hpp"
 #include "CfgAmmo.hpp"
+#include "CfgVehicles.hpp"
