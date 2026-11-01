@@ -75,9 +75,9 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Common: common.md
   - BFT Jamming: bft-jamming.md
   - Compat BWA3: compat-bwa3.md
-  - Common: common.md
   - Compat CUP:
       - Overview: compat-cup.md
       - DUKE: compat-cup-duke.md
