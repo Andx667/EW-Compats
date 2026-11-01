@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<title>ew-compats</title>
+<style>.g{color:#161A1F;stroke:#161A1F}@media (prefers-color-scheme:dark){.g{color:#FFFFFF;stroke:#FFFFFF}}</style><g class="g" transform="translate(-112.00 -112.00) scale(3.68000)" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="100" cy="70" r="6" fill="currentColor" stroke="none"/>
+<path d="M100 78 V146 M86 146 H114"/>
+<path d="M82 54 A24 24 0 0 0 82 86 M118 54 A24 24 0 0 1 118 86"/>
+<path d="M66 42 A42 42 0 0 0 66 98 M134 42 A42 42 0 0 1 134 98"/>
+<path d="M46 128 L66 112 L84 126 L116 100 L134 114 L154 98"/>
+</g>
+</svg>
