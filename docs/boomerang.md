@@ -61,7 +61,7 @@ An active Boomerang reports a heard bullet:
 - Type: `SLIDER`
 - Range: `0` to `120` s
 - Default: `30`
-- Set by: each player (client setting), the cTab markers use the value of the server
+- Set by: the server (global setting), the map markers and the cTab markers use the same value
 - Purpose: seconds a marker of a shot stays. `0` turns the markers off.
 
 ### `ewc_boomerang_markerTarget`
@@ -79,7 +79,7 @@ An active Boomerang reports a heard bullet:
 // cba_settings.sqf
 force ewc_boomerang_enable = false; // default: true
 force ewc_boomerang_friendlyFire = false; // default: true
-ewc_boomerang_markerLifetime = 60; // default: 30
+force ewc_boomerang_markerLifetime = 60; // default: 30
 force ewc_boomerang_markerTarget = 2; // default: 1
 ```
 

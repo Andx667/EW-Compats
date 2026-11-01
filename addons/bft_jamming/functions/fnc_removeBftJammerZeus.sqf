@@ -24,7 +24,7 @@ params [["_pos", [0, 0, 0], [[]], 3], ["_unit", objNull, [objNull]]];
 private _entry = [[], CROWSEW_JAM_MAP getOrDefault [netId _unit, []]] select !isNull _unit;
 private _capabilities = _entry param [4, []];
 
-private _isBftJammer = (BFT_JAM_CAP_BLACKOUT in _capabilities) || {BFT_JAM_CAP_DRIFT in _capabilities} || {BFT_JAM_CAP_MIXED in _capabilities};
+private _isBftJammer = (BFT_JAM_CAP_BLACKOUT in _capabilities) || {BFT_JAM_CAP_DRIFT in _capabilities} || {BFT_JAM_CAP_MIXED in _capabilities} || {BFT_JAM_CAP_SPOOF in _capabilities};
 
 if (!_isBftJammer) exitWith {
     hint LLSTRING(zeus_remove_error);
