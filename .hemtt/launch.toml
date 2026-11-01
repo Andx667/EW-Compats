@@ -1,5 +1,5 @@
 # Launched with `hemtt launch`, or `hemtt launch bft/bwa3/cup/rnt/rhs_usaf/rhs_afrf` to also load the mod a feature extends
-# (bwa3/cup/rhs_usaf/rhs_afrf start in their test mission from .hemtt/missions)
+# (bft/bwa3/cup/rhs_usaf/rhs_afrf start in their test mission from .hemtt/missions)
 [default]
 workshop = [
     "450814997",  # CBA_A3
@@ -10,6 +10,7 @@ workshop = [
 
 [bft]
 extends = "default"
+mission = "EWC_Test_BFT.VR"
 workshop = [
     "3438246217", # cTab
 ]

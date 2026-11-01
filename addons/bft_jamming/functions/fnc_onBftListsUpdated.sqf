@@ -8,6 +8,10 @@
  * pos(ASL), dir]. cTab_fnc_drawBftMarkers reads those globals fresh on every map draw, so
  * mutating them here (before the next draw) is enough to apply jamming - no cTab code touched.
  *
+ * Spoof drifts the real units like Drift does and adds ghosts for the viewers inside the effective radius (see
+ * fnc_updateGhosts). Ghosts work in both BFT modes, as every ghost has an object of its own that cTab reads the
+ * position of.
+ *
  * Note: Drift/Mixed's position offset only visibly affects cTabBFTgroups/cTabBFTvehicles, and
  * only when ctab_core_bft_mode = 2 ("atSync") - in mode 1 ("realTime") cTab_fnc_drawBftMarkers
  * re-samples getPosASL live and ignores index 5. cTabBFTmembers (dismounted group members) is
@@ -32,7 +36,8 @@ private _jammers = (values CROWSEW_JAM_MAP) select {
     (_x select 3) && {!isNull (_x select 0)} && {
         (BFT_JAM_CAP_BLACKOUT in (_x select 4)) ||
         (BFT_JAM_CAP_DRIFT in (_x select 4)) ||
-        (BFT_JAM_CAP_MIXED in (_x select 4))
+        (BFT_JAM_CAP_MIXED in (_x select 4)) ||
+        (BFT_JAM_CAP_SPOOF in (_x select 4))
     }
 };
 
@@ -40,6 +45,7 @@ if (_jammers isEqualTo []) exitWith {
     // no active BFT jammer left at all - drop any drift smoothing state so it doesn't leak
     // across jammer lifecycles (disable/remove) instead of only pruning per touched key below
     GVAR(driftState) = createHashMap;
+    [[]] call FUNC(updateGhosts);
 };
 
 // offsets computed this pulse, keyed like GVAR(driftState) - a unit can sit in two lists (e.g. the
@@ -55,6 +61,9 @@ cTabBFTgroups = cTabBFTgroups - _removeGroups;
 
 private _removeVehicles = cTabBFTvehicles select {[_x, _jammers, _pulseOffsets] call FUNC(applyBftJam)};
 cTabBFTvehicles = cTabBFTvehicles - _removeVehicles;
+
+// ghosts of Spoof jammers go on top of the jammed lists, so they are neither drifted nor blacked out
+[_jammers] call FUNC(updateGhosts);
 
 // drop drift smoothing state for pairs that weren't relevant this pulse (unit/jammer out of
 // range, jammer removed, unit no longer tracked, ...) so GVAR(driftState) doesn't grow forever

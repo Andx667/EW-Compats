@@ -4,6 +4,13 @@ ADDON = false;
 
 #include "XEH_PREP.hpp"
 
+#include "initSettings.inc.sqf"
+
+// Ghosts of Spoof jammers on this machine, key -> [stand-in object, unit it copies, offset], see fnc_updateGhosts
+GVAR(ghosts) = createHashMap;
+GVAR(ghostHandle) = -1;
+GVAR(ghostStats) = [0, 0, 0];
+
 /*
  * Registered in preInit, not postInit: the module function may raise CrowsEW's addJammer as early
  * as mission init, and a crowsEW_main_updateJammers broadcast that arrives before our handler

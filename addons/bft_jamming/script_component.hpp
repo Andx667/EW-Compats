@@ -13,11 +13,14 @@
 // Mixed: Blackout inside the effective radius, Drift (tapering to 0) in the falloff band - the
 // same two radii the module already has, just both effects zoned onto one device.
 #define BFT_JAM_CAP_MIXED "BftJammerMixed"
+// Spoof: Drift of the real units in the whole range, plus ghosts on the BFT of everyone inside the effective radius (fnc_updateGhosts)
+#define BFT_JAM_CAP_SPOOF "BftJammerSpoof"
 
 // Values of the module's "JamType" dropdown (CfgVehicles.hpp).
 #define BFT_JAM_TYPE_BLACKOUT 0
 #define BFT_JAM_TYPE_DRIFT 1
 #define BFT_JAM_TYPE_MIXED 2
+#define BFT_JAM_TYPE_SPOOF 3
 
 // Module attribute defaults (CfgVehicles.hpp) and fallbacks when reading them back.
 #define BFT_JAM_DEFAULT_EFFECTIVE_RADIUS 200
@@ -35,6 +38,13 @@
 
 // The Zeus modules are listed in the category of Crows, next to its own jammer modules
 #define ZEUS_CATEGORY "Crows Electronic Warfare"
+
+// Ghosts of a Spoof jammer: how far (m) from the unit they copy, the object that stands in for them in the BFT lists
+// and the seconds between two moves of that object
+#define BFT_JAM_GHOST_MIN_OFFSET 150
+#define BFT_JAM_GHOST_MAX_OFFSET 400
+#define BFT_JAM_GHOST_CLASS "Sign_Sphere10cm_F"
+#define BFT_JAM_GHOST_MOVE_INTERVAL 0.5
 
 // Fixed Drift tuning - deliberately not CBA settings, so behavior is the same on every server.
 #define BFT_JAM_MAX_DRIFT_DISTANCE 250

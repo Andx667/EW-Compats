@@ -45,7 +45,7 @@ private _driftJammer = objNull;
         if ((BFT_JAM_CAP_BLACKOUT in _capabilities) || (_isMixed && (_dist <= _radEffective))) then {
             _blackedOut = true;
         } else {
-            if ((BFT_JAM_CAP_DRIFT in _capabilities) || _isMixed) then {
+            if ((BFT_JAM_CAP_DRIFT in _capabilities) || (BFT_JAM_CAP_SPOOF in _capabilities) || _isMixed) then {
                 private _strength = [_dist, _radEffective, _radFalloff] call FUNC(calcBftJamStrength);
                 if (_strength > _driftStrength) then {
                     _driftStrength = _strength;
