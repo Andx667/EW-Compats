@@ -14,7 +14,8 @@ changelog = "CHANGELOG.md"
 [files]
 include = [
     "mod.cpp",
-    "img/*.paa",
+    "img/logo_ca.paa",
+    "img/icon_ca.paa",
     "meta.cpp",
     "LICENSE",
     "README.md",
