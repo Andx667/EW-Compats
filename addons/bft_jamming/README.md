@@ -1,6 +1,6 @@
 # BFT Jamming
 
-Adds the editor module **Set as BFT Jammer**, which jams cTab's Blue Force Tracker (BFT). It works like Crow's Electronic Warfare's radio and drone jammers: a device, a radius, and it can be located with the Spectrum Device.
+Adds the editor module and the Zeus module **Set as BFT Jammer**, which jams cTab's Blue Force Tracker (BFT). It works like Crow's Electronic Warfare's radio and drone jammers: a device, a radius, and it can be located with the Spectrum Device.
 
 ## Usage
 
@@ -16,7 +16,11 @@ Module attributes:
 - **Frequency**: frequency in MHz under which the active jammer shows in the Spectrum Device. Must be inside the range of the experimental antenna (520 to 1090 MHz).
 - **Active at Mission Start**: whether the jammer starts on, or is switched on later (for example by Zeus).
 
-Zeus can switch the jammer on and off like any Crow's Electronic Warfare jammer and sees it on the map. The module can only be placed in the editor, not in Zeus. Unlike Crow's Electronic Warfare's own jammers it makes no sound.
+Zeus can switch the jammer on and off like any Crow's Electronic Warfare jammer and sees it on the map. Unlike Crow's Electronic Warfare's own jammers it makes no sound.
+
+### Zeus
+
+Zeus Enhanced has two modules in the same **Crows Electronic Warfare** category: **Set as BFT Jammer** and **Remove BFT Jammer**. Place **Set as BFT Jammer** on an object, or on the ground for a data terminal that is spawned there. The dialog has the attributes above, with *Active when placed* instead of *Active at Mission Start* and the frequency as a slider between 520 and 1090 MHz. **Remove BFT Jammer** removes the jammer from the object it is placed on, the Spectrum signal goes with it and the object stays. It only removes BFT jammers, the radio and drone jammers are removed with the module of Crow's Electronic Warfare.
 
 > **Drift and Mixed need a mission setting.** Drift only has a visible effect when cTab updates BFT positions at fixed intervals instead of live: the mission has to set and force `ctab_core_bft_mode` to `2` ("atSync"). In mode `1` ("realTime", cTab's default) cTab reads the live position and ignores the value this addon changes. Blackout works in every mode.
 > Even then, Drift only moves group and vehicle icons. cTab always draws dismounted members of the player's own group at their real position.
@@ -39,7 +43,11 @@ There are deliberately no CBA settings: without a placed module nothing happens 
 
 | Function | Runs on | Purpose |
 |---|---|---|
-| `fnc_addBftJammer` | server | Registers the module object as a jammer in Crow's Electronic Warfare, once `CBA_missionTime > 0` |
+| `fnc_addBftJammer` | server | Handler of the editor module: takes the attributes of the module and the synced object (or a spawned data terminal) and registers it |
+| `fnc_registerBftJammer` | any | Registers an object as a jammer in Crow's Electronic Warfare with the BFT capability of its type, once `CBA_missionTime > 0`. Shared by both modules |
+| `fnc_addBftJammerZeus` | Zeus client | Zeus module: ZEN dialog with the attributes, then registers the selected object (or a spawned data terminal) |
+| `fnc_removeBftJammerZeus` | Zeus client | Zeus module: removes the jammer from the selected object, only a BFT jammer |
+| `fnc_zeusRegister` | clients | Registers the two Zeus modules with Zeus Enhanced in the category of Crow's Electronic Warfare |
 | `fnc_onUpdateJammersServer` | server | Keeps the signal in the Spectrum Device in line with the on/off state of the jammers on every `crowsEW_main_updateJammers` |
 | `fnc_onBftListsUpdated` | clients | Handler of `ctab_listsUpdated`: removes or drifts the entries of the cTab lists that are in range of a jammer |
 | `fnc_applyBftJam` | clients | Applies the active jammers to one entry of a cTab list, shared by the three lists |

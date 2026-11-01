@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- BFT Jamming - Zeus modules **Set as BFT Jammer** (with a dialog for the type, the radii, the frequency and whether it starts on) and **Remove BFT Jammer**, in the category of Crow's Electronic Warfare. The module of the editor and the one of Zeus register the jammer through the new `fnc_registerBftJammer`. The spectrum frequency of a jammer is a public variable now, as the jammer can come from a Zeus machine
+
 ## [1.3.0] - 2026-11-01
 
 ### Changed

@@ -23,6 +23,18 @@
 #define BFT_JAM_DEFAULT_EFFECTIVE_RADIUS 200
 #define BFT_JAM_DEFAULT_FALLOFF_RADIUS 400
 #define BFT_JAM_DEFAULT_FREQUENCY 805
+// Range of the experimental antenna of the Spectrum Device, the slider of the Zeus module is limited to it
+#define BFT_JAM_MIN_FREQUENCY 520
+#define BFT_JAM_MAX_FREQUENCY 1090
+// Radius sliders of the Zeus module, in m
+#define BFT_JAM_MIN_RADIUS 10
+#define BFT_JAM_MAX_RADIUS 5000
+
+// Icon of the modules, the one of the signal source module of Crows
+#define BFT_JAM_ICON "\z\crowsEW\addons\zeus\data\spectrum_signal.paa"
+
+// The Zeus modules are listed in the category of Crows, next to its own jammer modules
+#define ZEUS_CATEGORY "Crows Electronic Warfare"
 
 // Fixed Drift tuning - deliberately not CBA settings, so behavior is the same on every server.
 #define BFT_JAM_MAX_DRIFT_DISTANCE 250
@@ -41,6 +53,7 @@
 
 // CrowsEW's own public CBA event/global names we integrate with (see readme.md for details).
 #define CROWSEW_ADD_JAMMER_EVENT "crowsEW_main_addJammer"
+#define CROWSEW_REMOVE_JAMMER_EVENT "crowsEW_main_removeJammer"
 #define CROWSEW_UPDATE_JAMMERS_EVENT "crowsEW_main_updateJammers"
 #define CROWSEW_ADD_BEACON_EVENT "crowsEW_spectrum_addBeacon"
 #define CROWSEW_REMOVE_BEACON_EVENT "crowsEW_spectrum_removeBeacon"
