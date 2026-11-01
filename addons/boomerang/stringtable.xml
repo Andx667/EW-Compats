@@ -81,46 +81,6 @@
             <Russian>Выстрел</Russian>
             <German>Schuss</German>
         </Key>
-        <Key ID="STR_ewc_boomerang_mode_ace">
-            <English>ACE self-interaction</English>
-            <French>Auto-interaction ACE</French>
-            <Spanish>Autointeracción de ACE</Spanish>
-            <Polish>Samointerakcja ACE</Polish>
-            <Russian>Самовзаимодействие ACE</Russian>
-            <German>ACE-Selbstinteraktion</German>
-        </Key>
-        <Key ID="STR_ewc_boomerang_mode_both">
-            <English>Both</English>
-            <French>Les deux</French>
-            <Spanish>Ambos</Spanish>
-            <Polish>Oba</Polish>
-            <Russian>Оба</Russian>
-            <German>Beides</German>
-        </Key>
-        <Key ID="STR_ewc_boomerang_mode_scroll">
-            <English>Scroll wheel</English>
-            <French>Molette de la souris</French>
-            <Spanish>Rueda del ratón</Spanish>
-            <Polish>Kółko myszy</Polish>
-            <Russian>Колесо мыши</Russian>
-            <German>Mausrad</German>
-        </Key>
-        <Key ID="STR_ewc_boomerang_setting_actionMode">
-            <English>Boomerang switch</English>
-            <French>Commande du Boomerang</French>
-            <Spanish>Control del Boomerang</Spanish>
-            <Polish>Przełącznik Boomerang</Polish>
-            <Russian>Переключатель Boomerang</Russian>
-            <German>Boomerang-Schalter</German>
-        </Key>
-        <Key ID="STR_ewc_boomerang_setting_actionMode_tooltip">
-            <English>How the Boomerang is switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
-            <French>Comment le Boomerang est activé et désactivé dans les véhicules. Sans ACE, la molette de la souris est toujours disponible.</French>
-            <Spanish>Cómo se enciende y apaga el Boomerang en los vehículos. Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
-            <Polish>Sposób włączania i wyłączania Boomerang w pojazdach. Bez ACE zawsze dostępne jest kółko myszy.</Polish>
-            <Russian>Как включается и выключается Boomerang в технике. Без ACE колесо мыши доступно всегда.</Russian>
-            <German>Wie der Boomerang in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
-        </Key>
         <Key ID="STR_ewc_boomerang_setting_enable">
             <English>Enable Boomerang</English>
             <French>Activer le Boomerang</French>

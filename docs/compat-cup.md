@@ -11,20 +11,11 @@ The DUKE builds on the shared addon `compat_cup`, which finds the vehicles with 
 
 ## Controls
 
-The DUKE is switched on with the **scroll wheel**, the **ACE self-interaction** menu, or both. Choose in the CBA settings. The Boomerang has its own switch, see [Boomerang](boomerang.md#controls). Only the **driver, commander and gunners** get the switch, passengers do not. It needs a **shown antenna** and the **engine running**. CUP lets you hide the antennas in the vehicle appearance options, and then the system is not available.
+The DUKE is switched on with the **scroll wheel**, the **ACE self-interaction** menu, or both. Choose in the CBA settings, see [Common](common.md). The Boomerang has its own switch, see [Boomerang](boomerang.md#controls). Only the **driver, commander and gunners** get the switch, passengers do not. It needs a **shown antenna** and the **engine running**. CUP lets you hide the antennas in the vehicle appearance options, and then the system is not available.
 
 By default a vehicle can only run the DUKE or the Boomerang. Switching one on switches the other off. The setting *Allow DUKE and Boomerang together* lifts that, and then both run independently.
 
 ## Settings
-
-### `ewc_compat_cup_actionMode`
-
-- Name: DUKE switch
-- Type: `LIST`
-- Values: `0` scroll wheel, `1` ACE self-interaction, `2` both
-- Default: `0`
-- Set by: each player (client setting)
-- Purpose: how the DUKE is switched. Without ACE the scroll wheel is always used.
 
 ### `ewc_compat_cup_allowBoth`
 
@@ -38,7 +29,6 @@ By default a vehicle can only run the DUKE or the Boomerang. Switching one on sw
 
 ``` cpp
 // cba_settings.sqf
-ewc_compat_cup_actionMode = 2; // default: 0
 force ewc_compat_cup_allowBoth = true; // default: false
 ```
 

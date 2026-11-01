@@ -38,8 +38,9 @@ if (_capabilities isEqualTo []) then {
     _capabilities = [[CROWS_CAPABILITY_RADIO], getArray (_config >> "capabilities")] select isArray (_config >> "capabilities");
 };
 
-// What is registered, so the compat addons can tell whether the radius has to change
+// What is registered, so fnc_setJammer can tell whether the radius or the capabilities have to change
 _vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];
+_vehicle setVariable [QGVAR(jammerCapabilities), _capabilities];
 
 [CROWS_EVENT_ADD_JAMMER, [
     _vehicle,

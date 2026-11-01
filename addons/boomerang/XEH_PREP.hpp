@@ -1,8 +1,4 @@
-PREP(addAceActions);
-PREP(addActions);
 PREP(canActivate);
-PREP(canOperate);
-PREP(canToggle);
 PREP(expireShotMarker);
 PREP(findNearMarker);
 PREP(getBlockReason);

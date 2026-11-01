@@ -21,7 +21,7 @@ params [["_vehicle", objNull, [objNull]]];
 if (([_vehicle, SYSTEM_DUKE] call FUNC(getSources)) isEqualTo []) exitWith {};
 
 if (hasInterface) then {
-    [_vehicle, SYSTEM_DUKE] call FUNC(addActions);
+    [_vehicle, SYSTEM_DUKE] call EFUNC(common,addSwitchActions);
 };
 
 if (!isServer) exitWith {};
