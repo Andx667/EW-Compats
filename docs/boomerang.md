@@ -73,15 +73,6 @@ An active Boomerang reports a heard bullet:
 - Set by: the server
 - Purpose: where a detected shot is marked. The hint for the crew is not affected.
 
-### `ewc_boomerang_actionMode`
-
-- Name: Boomerang switch
-- Type: `LIST`
-- Values: `0` scroll wheel, `1` ACE self-interaction, `2` both
-- Default: `0`
-- Set by: each player (client setting)
-- Purpose: how the Boomerang is switched. Without ACE the scroll wheel is always used.
-
 ### Complete example
 
 ``` cpp
@@ -90,7 +81,6 @@ force ewc_boomerang_enable = false; // default: true
 force ewc_boomerang_friendlyFire = false; // default: true
 ewc_boomerang_markerLifetime = 60; // default: 30
 force ewc_boomerang_markerTarget = 2; // default: 1
-ewc_boomerang_actionMode = 2; // default: 0
 ```
 
 ## Quirks

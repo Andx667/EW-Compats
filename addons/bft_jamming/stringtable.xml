@@ -121,5 +121,45 @@
             <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже (например, через Зевса).</Russian>
             <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später aktiviert werden (z. B. über Zeus).</German>
         </Key>
+        <Key ID="STR_ewc_bft_jamming_zeus_active_displayName">
+            <English>Active when placed</English>
+            <French>Actif à la mise en place</French>
+            <Spanish>Activo al colocarlo</Spanish>
+            <Polish>Aktywna po umieszczeniu</Polish>
+            <Russian>Активна при размещении</Russian>
+            <German>Beim Platzieren aktiv</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_zeus_active_tooltip">
+            <English>If disabled, the jammer starts turned off and can be activated later with the jammer action of Crow's EW.</English>
+            <French>Si désactivé, le brouilleur démarre éteint et peut être activé plus tard avec l'action de brouilleur de Crow's EW.</French>
+            <Spanish>Si está desactivado, el inhibidor empieza apagado y puede activarse más tarde con la acción de inhibidor de Crow's EW.</Spanish>
+            <Polish>Jeśli wyłączone, zagłuszarka startuje wyłączona i można ją włączyć później akcją zagłuszarki z Crow's EW.</Polish>
+            <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже действием станции помех из Crow's EW.</Russian>
+            <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später mit der Störsender-Aktion von Crow's EW aktiviert werden.</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_zeus_frequency_tooltip">
+            <English>Frequency (MHz) at which this jammer's signal appears on the Crow's EW Spectrum Device, whenever it is active. The range is the one of the experimental antenna (520 to 1090 MHz).</English>
+            <French>Fréquence (en MHz) à laquelle le signal de ce brouilleur apparaît sur l'analyseur de spectre de Crow's EW lorsqu'il est actif. La plage est celle de l'antenne expérimentale (520 à 1090 MHz).</French>
+            <Spanish>Frecuencia (en MHz) a la que aparece la señal de este inhibidor en el dispositivo de espectro de Crow's EW mientras esté activo. El rango es el de la antena experimental (520 a 1090 MHz).</Spanish>
+            <Polish>Częstotliwość (w MHz), na której sygnał tej zagłuszarki pojawia się w analizatorze widma Crow's EW, gdy jest aktywna. Zakres to zakres anteny eksperymentalnej (520 do 1090 MHz).</Polish>
+            <Russian>Частота (в МГц), на которой сигнал этой станции помех отображается на анализаторе спектра Crow's EW, пока она активна. Диапазон соответствует экспериментальной антенне (520–1090 МГц).</Russian>
+            <German>Frequenz (MHz), auf der das Signal dieses Störsenders auf dem Crow's-EW-Spektrumgerät erscheint, solange er aktiv ist. Der Bereich ist der der experimentellen Antenne (520 bis 1090 MHz).</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_zeus_remove_displayName">
+            <English>Remove BFT Jammer</English>
+            <French>Retirer le brouilleur BFT</French>
+            <Spanish>Quitar inhibidor de BFT</Spanish>
+            <Polish>Usuń zagłuszarkę BFT</Polish>
+            <Russian>Удалить станцию помех BFT</Russian>
+            <German>BFT-Störsender entfernen</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_zeus_remove_error">
+            <English>Place the module on a BFT jammer. The radio and drone jammers of Crow's EW are removed with its own module.</English>
+            <French>Placez le module sur un brouilleur BFT. Les brouilleurs radio et drone de Crow's EW se retirent avec son propre module.</French>
+            <Spanish>Coloque el módulo sobre un inhibidor de BFT. Los inhibidores de radio y de drones de Crow's EW se quitan con su propio módulo.</Spanish>
+            <Polish>Umieść moduł na zagłuszarce BFT. Zagłuszarki radia i dronów z Crow's EW usuwa się jego własnym modułem.</Polish>
+            <Russian>Разместите модуль на станции помех BFT. Станции помех для радио и дронов из Crow's EW удаляются его собственным модулем.</Russian>
+            <German>Platziere das Modul auf einem BFT-Störsender. Die Funk- und Drohnenstörsender von Crow's EW werden mit dessen eigenem Modul entfernt.</German>
+        </Key>
     </Package>
 </Project>

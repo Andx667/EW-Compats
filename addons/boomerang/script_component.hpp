@@ -10,10 +10,6 @@
 // An antenna is shown at phase 0 and hidden at phase 1 of its animation source
 #define ANTENNA_SHOWN_BELOW 0.5
 
-#define ACTION_MODE_SCROLL 0
-#define ACTION_MODE_ACE 1
-#define ACTION_MODE_BOTH 2
-
 // Boomerang works up to this speed (km/h), 60 mph according to the data sheet of Raytheon BBN
 #define BOOMERANG_MAX_SPEED 97
 // Shots are only considered up to this distance (m) between shooter and vehicle

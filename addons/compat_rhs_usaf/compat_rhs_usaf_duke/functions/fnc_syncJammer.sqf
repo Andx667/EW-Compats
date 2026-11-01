@@ -52,13 +52,5 @@ if (_alive && {_wantEnabled != _enabled}) then {
     [_vehicle, SYSTEM_NAME, _wantEnabled, _reason] call EFUNC(common,notifyState);
 };
 
-if (_alive && {_wantRadius != _radius}) exitWith {
-    // Crows has no way to change the radii of a jammer, so replace it
-    [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
-    [_vehicle, _wantEnabled, _wantRadius] call EFUNC(common,addJammer);
-};
-
-if (_wantEnabled != _enabled) then {
-    _vehicle setVariable [QEGVAR(common,jammerState), [_wantEnabled, _radius]];
-    [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _wantEnabled]] call CBA_fnc_localEvent;
-};
+// Switches the jammer, or replaces it if the antennas changed the radius. A destroyed vehicle keeps its radius
+[_vehicle, _wantEnabled, [-1, _wantRadius] select _alive] call EFUNC(common,setJammer);

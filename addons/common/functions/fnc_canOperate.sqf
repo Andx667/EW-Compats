@@ -7,15 +7,15 @@
  * Arguments:
  * 0: Vehicle <OBJECT>
  * 1: Unit <OBJECT>
- * 2: Called by the scroll wheel action, not by ACE <BOOL>
+ * 2: Called by the scroll wheel action, not by ACE <BOOL> (default: true)
  *
  * Return Value:
  * Unit may operate <BOOL>
  *
  * Example:
- * [_vehicle, player, true] call ewc_compat_cup_fnc_canOperate
+ * [_vehicle, player, true] call ewc_common_fnc_canOperate
  *
- * Public: No
+ * Public: Yes
  */
 
 params [["_vehicle", objNull, [objNull]], ["_unit", objNull, [objNull]], ["_scroll", true, [true]]];
