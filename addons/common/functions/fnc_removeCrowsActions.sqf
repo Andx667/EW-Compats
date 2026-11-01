@@ -1,7 +1,9 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Removes the activate/deactivate actions Crows adds to the jammers that are in CfgEWC >> Jammers.
+ * Removes the activate/deactivate actions Crows adds to our jammers (the ones registered by fnc_addJammer). Crows only
+ * adds them to a jammer that is new to a machine, so only the jammers that were not cleaned before are looked at. That
+ * keeps a switch of one jammer from walking the actions of all of them.
  *
  * Arguments:
  * 0: Jammer map <HASHMAP>
@@ -22,11 +24,21 @@ params [["_jamMap", createHashMap, [createHashMap]]];
 [{
     params ["_jamMap"];
 
+    private _cleaned = GVAR(cleanedJammers);
+
+    // A jammer that is gone is cleaned again when it comes back, for example with another radius
+    {
+        if !(_x in _jamMap) then {
+            _cleaned deleteAt _x;
+        };
+    } forEach (keys _cleaned);
+
     {
         private _jammer = _y select 0;
 
-        if (!isNull _jammer && {!isNull ([_jammer] call FUNC(getJammerConfig))}) then {
+        if (!(_x in _cleaned) && {!isNull _jammer} && {_jammer getVariable [QGVAR(isJammer), false]}) then {
             _jammer call FUNC(clearCrowsActions);
+            _cleaned set [_x, true];
         };
     } forEach _jamMap;
 }, [_jamMap]] call CBA_fnc_execNextFrame;

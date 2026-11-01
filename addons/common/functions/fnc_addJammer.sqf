@@ -42,6 +42,9 @@ if (_capabilities isEqualTo []) then {
 _vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];
 _vehicle setVariable [QGVAR(jammerCapabilities), _capabilities];
 
+// Public, so every machine knows the jammer is one of ours when it removes the Crows actions (fnc_removeCrowsActions)
+_vehicle setVariable [QGVAR(isJammer), true, true];
+
 [CROWS_EVENT_ADD_JAMMER, [
     _vehicle,
     _falloffFactor * _radius,

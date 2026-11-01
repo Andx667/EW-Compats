@@ -8,7 +8,7 @@ Vehicles with a shown DUKE antenna get a DUKE switch. A running DUKE jams ACRE r
 - Every DUKE vehicle (`fnc_initVehicle`) is registered once by the server as a disabled radio jammer (`VoiceCommsJammer`) in Crow's Electronic Warfare (`ewc_common_fnc_addJammer`, called by `fnc_registerJammer`), only once `CBA_missionTime > 0`, because editor-placed vehicles initialise before Crow's Electronic Warfare has registered its handlers. Switching the DUKE toggles that jammer (`fnc_handleToggle`, `fnc_setJammer`).
 - While at least one DUKE is on, a server side loop (`fnc_jamLoop`, once per second) switches a DUKE off when its vehicle is destroyed, its antennas are hidden or its engine stops. It also keeps the IEDs in range disabled.
 - IED jamming is the approach of the Dingo CG13: IEDs (`PipeBombBase` and the IEDs of CUP, `CUP_IED_V1_Ammo` to `V4`, which derive from `MineBase` instead) in range, found with `nearestMines` so the engine searches around the vehicle instead of going through every mine of the mission, get `enableSimulationGlobal false` and are enabled again when they leave the range or the DUKE stops (`fnc_updateMines`, `fnc_releaseMines`). The addon only frees mines it disabled itself.
-- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `ewc_common_fnc_clearCrowsActions` removes only those, recognised by their coloured title, on every `crowsEW_main_updateJammers` (`fnc_removeCrowsActions` picks the vehicles with a DUKE).
+- Crow's Electronic Warfare adds its own (de)activate actions to every jammer. They would change its state without the DUKE. `ewc_common_fnc_clearCrowsActions` removes only those, recognised by their coloured title, from each new jammer of `ewc_common` (including the DUKE vehicles, `ewc_common_fnc_removeCrowsActions`).
 - A changed radius, or an antenna hidden or shown again on a vehicle with two, replaces the Crow's Electronic Warfare jammer, because it cannot change the radii of a jammer (`ewc_common_fnc_setJammer`).
 - A change of the state shows a hint to the people in the vehicle (`ewc_common_fnc_notifyState` in `fnc_setJammer`). A DUKE the loop switches off passes the reason of `fnc_getBlockReason`.
 - The DUKE and the Boomerang exclude each other, see `compat_cup_boomerang`, unless `ewc_compat_cup_allowBoth` of `compat_cup` is on. The DUKE listens to `ewc_compat_cup_systemOn` and switches off when the Boomerang is switched on.
@@ -28,7 +28,6 @@ Vehicles with a shown DUKE antenna get a DUKE switch. A running DUKE jams ACRE r
 | `fnc_jamLoop` | server | Once per second while a DUKE is on: switches it off when it no longer works, keeps mines jammed |
 | `fnc_updateMines` | server | Disables the IEDs in range and frees those that left |
 | `fnc_releaseMines` | server | Enables mines a DUKE held again |
-| `fnc_removeCrowsActions` | every machine | Calls `ewc_common_fnc_clearCrowsActions` for the DUKE vehicles on every `crowsEW_main_updateJammers` |
 
 ## Settings
 

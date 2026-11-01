@@ -7,6 +7,5 @@ PREP_SUB(duke,initVehicle);
 PREP_SUB(duke,jamLoop);
 PREP_SUB(duke,registerJammer);
 PREP_SUB(duke,releaseMines);
-PREP_SUB(duke,removeCrowsActions);
 PREP_SUB(duke,setJammer);
 PREP_SUB(duke,updateMines);
