@@ -1,31 +1,62 @@
 // EWC Test - CUP DUKE and Boomerang
-// Spawns every vehicle of the mod that the compat covers, a jam lane with IEDs and distance signs.
+// Spawns one vehicle per category of the mod that the compat covers (cars, APCs, tanks...), a jam lane with IEDs and distance signs.
 // Vehicles are found in the loaded configs, so the mission follows the mod version.
 #include "common.hpp"
 
-// Every vehicle with a CUP DUKE or Boomerang antenna, one per model.
+// Systems of a vehicle: a DUKE antenna and a Boomerang antenna, each one of several animation sources.
 // The sources are in the base class of a family, so the whole inheritance chain is read (like compat_cup does)
-private _sources = ["hide_antenna_duke", "hide_duke_antenna", "hide_crew_duke", "hide_duke_antennas", "sys_crewduke", "hide_antenna_boomerang", "sys_boomerang"];
-private _classes = [];
-private _models = [];
-{
-    private _config = _x;
-    private _found = false;
+private _dukeSources = ["hide_antenna_duke", "hide_duke_antenna", "hide_crew_duke", "hide_duke_antennas", "sys_crewduke"];
+private _boomerangSources = ["hide_antenna_boomerang", "sys_boomerang"];
 
-    while {!_found && {isClass _config}} do {
-        _found = ("isClass _x" configClasses (_config >> "AnimationSources")) findIf {toLower configName _x in _sources} != -1;
+private _systemsOf = {
+    private _config = _this;
+    private _sources = [];
+
+    while {isClass _config} do {
+        _sources append (("isClass _x" configClasses (_config >> "AnimationSources")) apply {toLower configName _x});
         _config = inheritsFrom _config;
     };
 
-    private _model = toLower getText (_x >> "model");
-    if (_found && {!(_model in _models)}) then {
-        _models pushBack _model;
-        _classes pushBack configName _x;
+    private _systems = [];
+
+    if (_sources findIf {_x in _dukeSources} != -1) then {
+        _systems pushBack "duke";
+    };
+
+    if (_sources findIf {_x in _boomerangSources} != -1) then {
+        _systems pushBack "boomerang";
+    };
+
+    _systems
+};
+
+// One vehicle per category, the editor subcategory (cars, MRAPs, APCs, tanks...). A vehicle with both systems comes first,
+// then a vehicle is only added if its category has no vehicle with one of its systems yet
+private _candidates = [];
+{
+    private _systems = _x call _systemsOf;
+
+    if (_systems isNotEqualTo []) then {
+        _candidates pushBack [getText (_x >> "editorSubcategory"), _systems, configName _x];
     };
 } forEach ("getNumber (_x >> 'scope') == 2 && {configName _x isKindOf 'LandVehicle'} && {configName _x select [0, 4] == 'CUP_'}" configClasses (configFile >> "CfgVehicles"));
+_candidates = (_candidates select {count (_x select 1) > 1}) + (_candidates select {count (_x select 1) <= 1});
+
+private _covered = createHashMap;
+private _classes = [];
+{
+    _x params ["_category", "_systems", "_class"];
+
+    private _done = _covered getOrDefault [_category, []];
+
+    if (_systems findIf {!(_x in _done)} != -1) then {
+        _classes pushBack _class;
+        _covered set [_category, _done + _systems];
+    };
+} forEach _candidates;
 
 
-// Parking grid: one vehicle per model, rows run south
+// Parking grid: rows run south
 private _vehicles = [];
 {
     private _row = floor (_forEachIndex / PARK_COLUMNS);

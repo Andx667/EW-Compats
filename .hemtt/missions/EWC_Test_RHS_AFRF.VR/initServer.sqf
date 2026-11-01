@@ -1,21 +1,14 @@
 // EWC Test - RHS R-142N
-// Spawns every vehicle of the mod that the compat covers, a jam lane with radio signs and drones.
+// Spawns one vehicle of the mod that the compat covers, a jam lane with radio signs and drones.
 // Vehicles are found in the loaded configs, so the mission follows the mod version.
 #include "common.hpp"
 
-// Every GAZ-66 (R-142N), one per model so camouflage variants are not repeated
-private _classes = [];
-private _models = [];
-{
-    private _model = toLower getText (_x >> "model");
-    if !(_model in _models) then {
-        _models pushBack _model;
-        _classes pushBack configName _x;
-    };
-} forEach ("getNumber (_x >> 'scope') == 2 && {getNumber (_x >> 'ewc_compat_rhs_afrf_jammer') == 1} && {configName _x isKindOf 'LandVehicle'}" configClasses (configFile >> "CfgVehicles"));
+// One GAZ-66 (R-142N), the models only differ in camouflage
+private _classes = ("getNumber (_x >> 'scope') == 2 && {getNumber (_x >> 'ewc_compat_rhs_afrf_jammer') == 1} && {configName _x isKindOf 'LandVehicle'}" configClasses (configFile >> "CfgVehicles")) apply {configName _x};
+_classes = _classes select [0, 1];
 
 
-// Parking grid: one vehicle per model, rows run south
+// Parking grid: rows run south
 private _vehicles = [];
 {
     private _row = floor (_forEachIndex / PARK_COLUMNS);
