@@ -8,7 +8,7 @@ Place the module in the editor and optionally synchronise it with the object tha
 
 | Attribute | Default | Purpose |
 |---|---|---|
-| Jamming Type | Blackout | `Blackout`, `Drift` or `Mixed`. One jammer has exactly one type. |
+| Jamming Type | Blackout | `Blackout`, `Drift`, `Mixed` or `Spoof`. One jammer has exactly one type. |
 | Effective Radius | 200 m | Full-strength zone around the jammer. |
 | Falloff Radius | 400 m | Extra band *beyond* the effective radius in which the effect fades out. |
 | Frequency | 805 MHz | Shown in the Spectrum Device. Must be inside the experimental antenna's range (520 to 1090 MHz). |
@@ -25,6 +25,7 @@ Zeus Enhanced has two modules in the same **Crows Electronic Warfare** category:
 - **Blackout**: units in the whole range (effective plus falloff radius) disappear from the BFT.
 - **Drift**: units stay visible but at a wrong position. The error is largest inside the effective radius (up to 250 m) and falls linearly to zero at the outer edge of the falloff band. The wrong position moves slowly instead of jumping.
 - **Mixed**: Blackout inside the effective radius, Drift in the falloff band around it.
+- **Spoof**: Drift for the real units in the whole range (like Drift), and ghosts on top of it inside the effective radius. Anyone whose own position is inside the effective radius sees ghosts on the BFT: copies of some of the groups and vehicles on their BFT, on a wrong position 150 to 400 m from the original, that move with it and have a changed last digit in the callsign. In the falloff band there is only the drift. Nothing is spawned and nothing removes a ghost except the end of the jammer (switched off, destroyed, removed) or leaving the radius, a player has to go to the position to find out. Ghosts are made of groups and vehicles, never of the members of the player's own group.
 
 ## Who is jammed
 
@@ -50,7 +51,7 @@ Zeus Enhanced has two modules in the same **Crows Electronic Warfare** category:
 
 ## How it works
 
-The module registers the object as an ordinary jammer in Crow's Electronic Warfare through its public CBA event `crowsEW_main_addJammer`. Crow's Electronic Warfare passes our capability tags (`BftJammerBlackout`, `BftJammerDrift`, `BftJammerMixed`) along unchanged. That gives Zeus markers, switching on and off and JIP sync for free, without touching its code.
+The module registers the object as an ordinary jammer in Crow's Electronic Warfare through its public CBA event `crowsEW_main_addJammer`. Crow's Electronic Warfare passes our capability tags (`BftJammerBlackout`, `BftJammerDrift`, `BftJammerMixed`, `BftJammerSpoof`) along unchanged. That gives Zeus markers, switching on and off and JIP sync for free, without touching its code.
 
 The jamming itself runs on each client. cTab rebuilds `cTabBFTmembers`, `cTabBFTgroups` and `cTabBFTvehicles` locally and fires the local event `ctab_listsUpdated`. The addon hooks that event and changes the same arrays before cTab draws them.
 

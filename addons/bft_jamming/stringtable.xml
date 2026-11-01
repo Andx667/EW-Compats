@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ewc">
     <Package name="bft_jamming">
+        <Key ID="STR_ewc_bft_jamming_category">
+            <English>BFT Jamming</English>
+            <French>BFT Jamming</French>
+            <Spanish>BFT Jamming</Spanish>
+            <Polish>BFT Jamming</Polish>
+            <Russian>BFT Jamming</Russian>
+            <German>BFT Jamming</German>
+        </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_description">
             <English>Registers the synced object (or a spawned data terminal, if none is synced) as a Crow's EW jammer that jams cTab's Blue Force Tracker instead of radio or drones. Detectable with the Spectrum Device like any other jammer.</English>
             <French>Enregistre l'objet synchronisé (ou un terminal de données créé automatiquement si aucun n'est synchronisé) comme brouilleur Crow's EW qui brouille le Blue Force Tracker de cTab au lieu de la radio ou des drones. Détectable avec l'analyseur de spectre comme tout autre brouilleur.</French>
@@ -97,13 +105,21 @@
             <Russian>Смешанный (блэкаут в центре, дрейф снаружи)</Russian>
             <German>Gemischt (Blackout innen, Abweichung außen)</German>
         </Key>
+        <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_jamType_spoof">
+            <English>Spoof (drift, ghosts inside)</English>
+            <French>Leurre (dérive, fantômes au centre)</French>
+            <Spanish>Engaño (deriva, fantasmas en el centro)</Spanish>
+            <Polish>Fałszowanie (dryf, duchy w środku)</Polish>
+            <Russian>Подмена (дрейф, призраки в центре)</Russian>
+            <German>Täuschung (Abweichung, Geisterziele innen)</German>
+        </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_jamType_tooltip">
-            <English>Blackout: units inside the jammer's range disappear from BFT entirely. Drift: units stay visible but their displayed position gets progressively less accurate the closer they are to the jammer's center. Mixed: Blackout inside the Effective Radius, Drift (tapering off) in the Falloff Radius band around it.</English>
-            <French>Blackout : les unités dans la portée du brouilleur disparaissent entièrement du BFT. Dérive : les unités restent visibles, mais leur position affichée devient de moins en moins précise à mesure qu'elles s'approchent du centre du brouilleur. Mixte : blackout dans le rayon effectif, dérive (décroissante) dans la bande du rayon d'atténuation qui l'entoure.</French>
-            <Spanish>Apagón: las unidades dentro del alcance del inhibidor desaparecen por completo del BFT. Deriva: las unidades siguen visibles, pero su posición mostrada es cada vez menos precisa cuanto más cerca están del centro del inhibidor. Mixto: apagón dentro del radio efectivo y deriva (decreciente) en la franja del radio de atenuación que lo rodea.</Spanish>
-            <Polish>Blackout: jednostki w zasięgu zagłuszarki całkowicie znikają z BFT. Dryf: jednostki pozostają widoczne, ale ich wyświetlana pozycja jest tym mniej dokładna, im bliżej środka zagłuszarki się znajdują. Mieszany: blackout w zasięgu efektywnym, dryf (zanikający) w otaczającym go pasie zasięgu zanikania.</Polish>
-            <Russian>Блэкаут: юниты в зоне действия станции помех полностью исчезают из BFT. Дрейф: юниты остаются видимыми, но их позиция отображается тем менее точно, чем ближе они к центру станции помех. Смешанный: блэкаут в эффективном радиусе, дрейф (затухающий) в окружающей его полосе радиуса затухания.</Russian>
-            <German>Blackout: Einheiten innerhalb der Reichweite des Störsenders verschwinden vollständig vom BFT. Abweichung: Einheiten bleiben sichtbar, aber ihre angezeigte Position wird zunehmend ungenauer, je näher sie sich am Zentrum des Störsenders befinden. Gemischt: Blackout innerhalb des effektiven Radius, Abweichung (abnehmend) im Abklingradius darum herum.</German>
+            <English>Blackout: units inside the jammer's range disappear from BFT entirely. Drift: units stay visible but their displayed position gets progressively less accurate the closer they are to the jammer's center. Mixed: Blackout inside the Effective Radius, Drift (tapering off) in the Falloff Radius band around it. Spoof: Drift like above, and inside the Effective Radius ghosts of other units appear on the BFT.</English>
+            <French>Blackout : les unités dans la portée du brouilleur disparaissent entièrement du BFT. Dérive : les unités restent visibles, mais leur position affichée devient de moins en moins précise à mesure qu'elles s'approchent du centre du brouilleur. Mixte : blackout dans le rayon effectif, dérive (décroissante) dans la bande du rayon d'atténuation qui l'entoure. Leurre : dérive comme ci-dessus et, dans le rayon effectif, des fantômes d'autres unités apparaissent sur le BFT.</French>
+            <Spanish>Apagón: las unidades dentro del alcance del inhibidor desaparecen por completo del BFT. Deriva: las unidades siguen visibles, pero su posición mostrada es cada vez menos precisa cuanto más cerca están del centro del inhibidor. Mixto: apagón dentro del radio efectivo y deriva (decreciente) en la franja del radio de atenuación que lo rodea. Engaño: deriva como arriba y, dentro del radio efectivo, aparecen fantasmas de otras unidades en el BFT.</Spanish>
+            <Polish>Blackout: jednostki w zasięgu zagłuszarki całkowicie znikają z BFT. Dryf: jednostki pozostają widoczne, ale ich wyświetlana pozycja jest tym mniej dokładna, im bliżej środka zagłuszarki się znajdują. Mieszany: blackout w zasięgu efektywnym, dryf (zanikający) w otaczającym go pasie zasięgu zanikania. Fałszowanie: dryf jak wyżej, a w zasięgu efektywnym na BFT pojawiają się dodatkowo duchy innych jednostek.</Polish>
+            <Russian>Блэкаут: юниты в зоне действия станции помех полностью исчезают из BFT. Дрейф: юниты остаются видимыми, но их позиция отображается тем менее точно, чем ближе они к центру станции помех. Смешанный: блэкаут в эффективном радиусе, дрейф (затухающий) в окружающей его полосе радиуса затухания. Подмена: дрейф как выше, а в эффективном радиусе на BFT дополнительно появляются призраки других юнитов.</Russian>
+            <German>Blackout: Einheiten innerhalb der Reichweite des Störsenders verschwinden vollständig vom BFT. Abweichung: Einheiten bleiben sichtbar, aber ihre angezeigte Position wird zunehmend ungenauer, je näher sie sich am Zentrum des Störsenders befinden. Gemischt: Blackout innerhalb des effektiven Radius, Abweichung (abnehmend) im Abklingradius darum herum. Täuschung: Abweichung wie oben, und im effektiven Radius erscheinen zusätzlich Geisterziele anderer Einheiten auf dem BFT.</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_moduleAddBftJammer_missionStart_displayName">
             <English>Active at Mission Start</English>
@@ -120,6 +136,38 @@
             <Polish>Jeśli wyłączone, zagłuszarka startuje wyłączona i można ją włączyć później (np. przez Zeusa).</Polish>
             <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже (например, через Зевса).</Russian>
             <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später aktiviert werden (z. B. über Zeus).</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_setting_ghostExactCallsign">
+            <English>Ghosts keep the exact callsign</English>
+            <French>Les fantômes gardent l'indicatif exact</French>
+            <Spanish>Los fantasmas conservan el indicativo exacto</Spanish>
+            <Polish>Duchy zachowują dokładny znak wywoławczy</Polish>
+            <Russian>Призраки сохраняют точный позывной</Russian>
+            <German>Geisterziele behalten das exakte Rufzeichen</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_setting_ghostExactCallsign_tooltip">
+            <English>Off: a ghost has the callsign of the unit it copies with another last digit. On: the callsign is identical, so the same callsign is on the BFT twice.</English>
+            <French>Désactivé : un fantôme porte l'indicatif de l'unité copiée avec un autre dernier chiffre. Activé : l'indicatif est identique, il apparaît donc deux fois sur le BFT.</French>
+            <Spanish>Desactivado: un fantasma lleva el indicativo de la unidad copiada con otro último dígito. Activado: el indicativo es idéntico, así que aparece dos veces en el BFT.</Spanish>
+            <Polish>Wyłączone: duch ma znak wywoławczy kopiowanej jednostki z inną ostatnią cyfrą. Włączone: znak jest identyczny, więc występuje dwa razy na BFT.</Polish>
+            <Russian>Выключено: у призрака позывной копируемого юнита с другой последней цифрой. Включено: позывной идентичен, поэтому он дважды есть на BFT.</Russian>
+            <German>Aus: Ein Geisterziel hat das Rufzeichen der kopierten Einheit mit anderer letzter Ziffer. An: Das Rufzeichen ist identisch und erscheint zweimal auf dem BFT.</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_setting_ghostRatio">
+            <English>Spoof ghost share</English>
+            <French>Part de fantômes du leurre</French>
+            <Spanish>Proporción de fantasmas del engaño</Spanish>
+            <Polish>Udział duchów fałszowania</Polish>
+            <Russian>Доля призраков подмены</Russian>
+            <German>Anteil der Geisterziele</German>
+        </Key>
+        <Key ID="STR_ewc_bft_jamming_setting_ghostRatio_tooltip">
+            <English>Share of the groups and vehicles on the BFT of a unit inside a Spoof jammer that also appear as a ghost on a wrong position. Must be the same on all machines.</English>
+            <French>Part des groupes et véhicules du BFT d'une unité dans un brouilleur à leurre qui apparaissent aussi comme fantôme à une mauvaise position. Doit être identique sur toutes les machines.</French>
+            <Spanish>Proporción de los grupos y vehículos del BFT de una unidad dentro de un inhibidor de engaño que también aparecen como fantasma en una posición falsa. Debe ser igual en todas las máquinas.</Spanish>
+            <Polish>Udział grup i pojazdów na BFT jednostki w zasięgu zagłuszarki fałszującej, które pojawiają się też jako duch w złym miejscu. Musi być taki sam na wszystkich maszynach.</Polish>
+            <Russian>Доля групп и техники на BFT юнита в зоне станции подмены, которые также появляются как призрак в неверной позиции. Должна быть одинаковой на всех машинах.</Russian>
+            <German>Anteil der Gruppen und Fahrzeuge auf dem BFT einer Einheit in einem Täuschungs-Störsender, die zusätzlich als Geisterziel an einer falschen Position erscheinen. Muss auf allen Rechnern gleich sein.</German>
         </Key>
         <Key ID="STR_ewc_bft_jamming_zeus_active_displayName">
             <English>Active when placed</English>

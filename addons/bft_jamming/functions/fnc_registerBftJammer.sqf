@@ -8,7 +8,7 @@
  *
  * Arguments:
  * 0: Jammer object <OBJECT>
- * 1: Jamming type, BFT_JAM_TYPE_BLACKOUT, _DRIFT or _MIXED <NUMBER> (default: BFT_JAM_TYPE_BLACKOUT)
+ * 1: Jamming type, BFT_JAM_TYPE_BLACKOUT, _DRIFT, _MIXED or _SPOOF <NUMBER> (default: BFT_JAM_TYPE_BLACKOUT)
  * 2: Effective radius in m <NUMBER> (default: BFT_JAM_DEFAULT_EFFECTIVE_RADIUS)
  * 3: Falloff radius in m <NUMBER> (default: BFT_JAM_DEFAULT_FALLOFF_RADIUS)
  * 4: Spectrum frequency in MHz <NUMBER> (default: BFT_JAM_DEFAULT_FREQUENCY)
@@ -34,7 +34,7 @@ params [
 
 if (isNull _unit) exitWith {};
 
-private _capabilities = [[BFT_JAM_CAP_BLACKOUT, BFT_JAM_CAP_DRIFT, BFT_JAM_CAP_MIXED] select _jamType];
+private _capabilities = [[BFT_JAM_CAP_BLACKOUT, BFT_JAM_CAP_DRIFT, BFT_JAM_CAP_MIXED, BFT_JAM_CAP_SPOOF] select _jamType];
 
 // Public, because the server reads it when it adds the Spectrum signal and the jammer can come from a Zeus machine
 _unit setVariable [QGVAR(frequency), _frequency, true];
