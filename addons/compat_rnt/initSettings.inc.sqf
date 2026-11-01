@@ -6,7 +6,8 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     [LLSTRING(setting_enable), LLSTRING(setting_enable_tooltip)],
     _category,
     true,
-    true
+    true,
+    LINKFUNC(onSettingChanged)
 ] call CBA_fnc_addSetting;
 
 [
@@ -15,5 +16,6 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     [LLSTRING(setting_radius), LLSTRING(setting_radius_tooltip)],
     _category,
     [100, 2000, JAMMER_DEFAULT_RADIUS, 0],
-    true
+    true,
+    LINKFUNC(onSettingChanged)
 ] call CBA_fnc_addSetting;

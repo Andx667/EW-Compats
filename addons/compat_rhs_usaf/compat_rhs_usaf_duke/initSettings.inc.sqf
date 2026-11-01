@@ -6,5 +6,6 @@ private _category = [LELSTRING(main,displayName), LLSTRING(category)];
     [LLSTRING(setting_enableDuke), LLSTRING(setting_enableDuke_tooltip)],
     _category,
     true,
-    true
+    true,
+    LINKFUNC(duke_onSettingChanged)
 ] call CBA_fnc_addSetting;
