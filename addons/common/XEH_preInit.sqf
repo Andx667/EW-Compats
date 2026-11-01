@@ -10,6 +10,12 @@ GVAR(jammerConfigCache) = createHashMap;
 // Systems the crew switches on and off, id -> [event, variable of the state, can be switched on, titles, has the system], see fnc_registerSwitch
 GVAR(switches) = createHashMap;
 
+// Extra lines of the debug overlay for a system, id -> [has the system, lines], see fnc_registerDebug
+GVAR(debugProviders) = createHashMap;
+
+// Handle of the Draw3D handler of the debug overlay, while it is on
+GVAR(debugHandle) = -1;
+
 GVAR(aceLoaded) = isClass (configFile >> "CfgPatches" >> "ace_interact_menu");
 
 #include "initSettings.inc.sqf"

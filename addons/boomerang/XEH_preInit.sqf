@@ -25,6 +25,13 @@ GVAR(sourceCache) = createHashMap;
     {([_this select 0] call FUNC(getSources)) isNotEqualTo []}
 ] call EFUNC(common,registerSwitch);
 
+// Extra lines for the debug overlay of ewc_common
+[
+    "boomerang",
+    {([_this select 0] call FUNC(getSources)) isNotEqualTo []},
+    {_this call FUNC(debugLines)}
+] call EFUNC(common,registerDebug);
+
 // Vehicles with a Boomerang that is on. The server keeps the list and broadcasts it, so the machine of a
 // shooter can check its shots without asking the server
 GVAR(vehicles) = [];
