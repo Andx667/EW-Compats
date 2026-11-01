@@ -13,6 +13,16 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Compat Redd Vehicles - New addon `compat_redd`: the Fuchs 1A4 Hummel (`EWC_Redd_Tank_Fuchs_1A4_Hummel_*`), a Jäger variant of the Redd'n'Tank Fuchs that jams ACRE radios while it is switched on, modelled on the Störpanzer Hummel of the Bundeswehr. Switch by scroll wheel or ACE, off with the engine. Settings `ewc_compat_redd_enable` and `ewc_compat_redd_radius`
+- Common - `ewc_common_fnc_registerSwitch`, `fnc_addSwitchActions`, `fnc_addAceSwitchActions`, `fnc_canOperate` and `fnc_canToggle`: the switch actions of the DUKE and the Boomerang, now shared. `ewc_common_fnc_setJammer` brings a jammer in line with a wanted state and replaces it for another radius or other capabilities
+
+### Changed
+
+- Common, Boomerang, Compat CUP - The setting how the crew switches a system is `ewc_common_actionMode` now, instead of `ewc_boomerang_actionMode` and `ewc_compat_cup_actionMode`. The saved values of the old settings are not taken over. The functions `fnc_addActions`, `fnc_addAceActions`, `fnc_canOperate` and `fnc_canToggle` of `boomerang` and `compat_cup` are gone, they are in `ewc_common`
+- Compat CUP, Compat RHS USAF, Compat RHS AFRF - The DUKEs and the R-142N replace or switch their Crow's Electronic Warfare jammer with `ewc_common_fnc_setJammer` instead of a copy of the code each
+
 ## [1.3.0] - 2026-11-01
 
 ### Changed

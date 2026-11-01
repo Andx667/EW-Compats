@@ -46,19 +46,5 @@ if (_enabled) then {
 // A dead vehicle's jammer is removed by Crows
 if (!alive _vehicle) exitWith {};
 
-private _state = _vehicle getVariable [QEGVAR(common,jammerState), []];
-
-if (_state isEqualTo []) exitWith {};
-
-_state params ["_wasEnabled", "_radius"];
-
-if (_radius != (_vehicle call FUNC(duke_getRadius))) exitWith {
-    // Crows has no way to change the radii of a jammer, so replace it
-    [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
-    [_vehicle, _enabled] call FUNC(duke_registerJammer);
-};
-
-if (_enabled != _wasEnabled) then {
-    _vehicle setVariable [QEGVAR(common,jammerState), [_enabled, _radius]];
-    [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _enabled]] call CBA_fnc_localEvent;
-};
+// Switches the jammer, or replaces it if the antennas changed the radius
+[_vehicle, _enabled, _vehicle call FUNC(duke_getRadius), DUKE_FALLOFF_FACTOR] call EFUNC(common,setJammer);

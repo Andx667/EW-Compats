@@ -9,9 +9,6 @@
 #define JAMMER_DEFAULT_RADIUS 500
 #define JAMMER_FALLOFF_FACTOR 1.5
 
-// Capabilities in Crows of the jammer, as in the registry. Both together make it a broad spectrum jammer
-#define JAMMER_CAPABILITIES [CROWS_CAPABILITY_RADIO, CROWS_CAPABILITY_DRONE]
-
 // Animation source (door) of the R-142N mast and the phase where it counts as deployed
 #define MAST_SOURCE "mast_source"
 #define MAST_DEPLOYED_PHASE 0.99

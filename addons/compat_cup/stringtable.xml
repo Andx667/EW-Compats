@@ -73,46 +73,6 @@
             <Russian>Радиус с полной силой подавления, для радио и СВУ. Полоса затухания радиопомех добавляет 50 процентов. В RHS — 50 м, в BWmod — 40 м.</Russian>
             <German>Radius mit voller Störwirkung, für Funk und IEDs. Der Abklingbereich des Funks kommt mit 50 Prozent obendrauf. RHS nutzt 50 m, BWmod 40 m.</German>
         </Key>
-        <Key ID="STR_ewc_compat_cup_mode_ace">
-            <English>ACE self-interaction</English>
-            <French>Auto-interaction ACE</French>
-            <Spanish>Autointeracción de ACE</Spanish>
-            <Polish>Samointerakcja ACE</Polish>
-            <Russian>Самовзаимодействие ACE</Russian>
-            <German>ACE-Selbstinteraktion</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_mode_both">
-            <English>Both</English>
-            <French>Les deux</French>
-            <Spanish>Ambos</Spanish>
-            <Polish>Oba</Polish>
-            <Russian>Оба</Russian>
-            <German>Beides</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_mode_scroll">
-            <English>Scroll wheel</English>
-            <French>Molette de la souris</French>
-            <Spanish>Rueda del ratón</Spanish>
-            <Polish>Kółko myszy</Polish>
-            <Russian>Колесо мыши</Russian>
-            <German>Mausrad</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_setting_actionMode">
-            <English>DUKE switch</English>
-            <French>Commande du DUKE</French>
-            <Spanish>Control del DUKE</Spanish>
-            <Polish>Przełącznik DUKE</Polish>
-            <Russian>Переключатель DUKE</Russian>
-            <German>DUKE-Schalter</German>
-        </Key>
-        <Key ID="STR_ewc_compat_cup_setting_actionMode_tooltip">
-            <English>How the DUKE is switched on and off in vehicles. Without ACE the scroll wheel is always available.</English>
-            <French>Comment le DUKE est activé et désactivé dans les véhicules. Sans ACE, la molette de la souris est toujours disponible.</French>
-            <Spanish>Cómo se enciende y apaga el DUKE en los vehículos. Sin ACE, la rueda del ratón siempre está disponible.</Spanish>
-            <Polish>Sposób włączania i wyłączania DUKE w pojazdach. Bez ACE zawsze dostępne jest kółko myszy.</Polish>
-            <Russian>Как включается и выключается DUKE в технике. Без ACE колесо мыши доступно всегда.</Russian>
-            <German>Wie der DUKE in Fahrzeugen ein- und ausgeschaltet wird. Ohne ACE steht immer das Mausrad zur Verfügung.</German>
-        </Key>
         <Key ID="STR_ewc_compat_cup_setting_allowBoth">
             <English>Allow DUKE and Boomerang together</English>
             <French>Autoriser DUKE et Boomerang ensemble</French>

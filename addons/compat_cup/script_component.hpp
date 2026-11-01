@@ -13,7 +13,3 @@
 // Animation sources CUP uses for the antennas, lowercase. An antenna is shown at phase 0 and hidden at phase 1
 #define DUKE_SOURCES ["hide_antenna_duke", "hide_duke_antenna", "hide_crew_duke", "hide_duke_antennas", "sys_crewduke"]
 #define ANTENNA_SHOWN_BELOW 0.5
-
-#define ACTION_MODE_SCROLL 0
-#define ACTION_MODE_ACE 1
-#define ACTION_MODE_BOTH 2

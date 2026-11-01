@@ -42,17 +42,5 @@ if (_wantEnabled != _enabled) then {
     [_vehicle, SYSTEM_NAME, _wantEnabled, ["", "disabled"] select _mastUp] call EFUNC(common,notifyState);
 };
 
-private _registeredCapabilities = _vehicle getVariable [QGVAR(capabilities), JAMMER_CAPABILITIES];
-
-// Crows has no way to change the radii or capabilities of a jammer, so replace it. Only needed once it is switched on
-if (_wantEnabled && {GVAR(radius) != _radius || {_capabilities isNotEqualTo _registeredCapabilities}}) exitWith {
-    _vehicle setVariable [QGVAR(capabilities), _capabilities];
-
-    [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
-    [_vehicle, true, GVAR(radius), -1, _capabilities] call EFUNC(common,addJammer);
-};
-
-if (_wantEnabled != _enabled) then {
-    _vehicle setVariable [QEGVAR(common,jammerState), [_wantEnabled, _radius]];
-    [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _wantEnabled]] call CBA_fnc_localEvent;
-};
+// Switches the jammer, or replaces it for another radius or other jammed signals. That is only needed once it is on
+[_vehicle, _wantEnabled, [-1, GVAR(radius)] select _wantEnabled, -1, [[], _capabilities] select _wantEnabled] call EFUNC(common,setJammer);

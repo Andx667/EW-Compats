@@ -14,7 +14,16 @@ GVAR(sourceNames) = [];
 // Vehicle class -> animation sources of its shot finder
 GVAR(sourceCache) = createHashMap;
 
-GVAR(aceLoaded) = isClass (configFile >> "CfgPatches" >> "ace_interact_menu");
+// The crew switches the Boomerang with the actions of ewc_common
+[
+    "boomerang",
+    QGVAR(toggle),
+    QGVAR(on),
+    LINKFUNC(canActivate),
+    "STR_ewc_boomerang_activate",
+    "STR_ewc_boomerang_deactivate",
+    {([_this select 0] call FUNC(getSources)) isNotEqualTo []}
+] call EFUNC(common,registerSwitch);
 
 // Vehicles with a Boomerang that is on. The server keeps the list and broadcasts it, so the machine of a
 // shooter can check its shots without asking the server

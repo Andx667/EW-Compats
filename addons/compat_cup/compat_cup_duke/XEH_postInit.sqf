@@ -19,7 +19,5 @@ if (hasInterface) then {
     // Crows adds its own (de)activate actions to every jammer. They'd toggle Crows without the DUKE and desync the two
     [CROWS_EVENT_UPDATE_JAMMERS, LINKFUNC(duke_removeCrowsActions)] call CBA_fnc_addEventHandler;
 
-    if (GVAR(aceLoaded)) then {
-        [SYSTEM_DUKE] call FUNC(addAceActions);
-    };
+    [SYSTEM_DUKE] call EFUNC(common,addAceSwitchActions);
 };
