@@ -185,7 +185,11 @@ ewc_bench_fnc_frame = {
             private _frames = count ewc_bench_frames;
 
             if (_frames % (_cfg get "toggleEvery") == 0 && {ewc_bench_toggled < ((_cfg get "toggles") min (count ewc_bench_vehicles))}) then {
-                [ewc_bench_vehicles select ewc_bench_toggled, true, 50] call ewc_common_fnc_setJammer;
+                // A vehicle of the registry keeps its radius, so this is a plain switch. Only one without an entry (the CUP DUKE) needs one
+                private _vehicle = ewc_bench_vehicles select ewc_bench_toggled;
+                private _radius = [-1, 50] select (isNull ([_vehicle] call ewc_common_fnc_getJammerConfig));
+
+                [_vehicle, true, _radius] call ewc_common_fnc_setJammer;
                 ewc_bench_toggled = ewc_bench_toggled + 1;
             };
 
