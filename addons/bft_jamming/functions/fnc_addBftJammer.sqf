@@ -46,15 +46,6 @@ private _radFalloff = _logic getVariable [QGVAR(addBftJammer_falloffRadius), BFT
 private _frequency = _logic getVariable [QGVAR(addBftJammer_frequency), BFT_JAM_DEFAULT_FREQUENCY];
 private _isActiveAtMissionStart = _logic getVariable [QGVAR(addBftJammer_isActiveAtMissionStart), true];
 
-private _capabilities = [[BFT_JAM_CAP_BLACKOUT, BFT_JAM_CAP_DRIFT, BFT_JAM_CAP_MIXED] select _jamType];
-
-_unit setVariable [QGVAR(frequency), _frequency];
-
-// CrowsEW only registers its addJammer handler in its postInit, and module functions can run
-// before that - a server event without a handler is dropped silently. CBA_missionTime only
-// advances once every postInit has run (CrowsEW's own module works around this with a sleep).
-[{CBA_missionTime > 0}, {
-    [CROWSEW_ADD_JAMMER_EVENT, _this] call CBA_fnc_serverEvent;
-}, [_unit, _radFalloff, _radEffective, _isActiveAtMissionStart, _capabilities]] call CBA_fnc_waitUntilAndExecute;
+[_unit, _jamType, _radEffective, _radFalloff, _frequency, _isActiveAtMissionStart] call FUNC(registerBftJammer);
 
 true

@@ -1,7 +1,13 @@
+PREP(addAceSwitchActions);
 PREP(addJammer);
+PREP(addSwitchActions);
+PREP(canOperate);
+PREP(canToggle);
 PREP(clearCrowsActions);
 PREP(getJammerConfig);
 PREP(initVehicle);
 PREP(notifyState);
 PREP(onStateChanged);
+PREP(registerSwitch);
 PREP(removeCrowsActions);
+PREP(setJammer);

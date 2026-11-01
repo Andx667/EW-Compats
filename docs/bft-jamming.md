@@ -1,6 +1,6 @@
 # BFT Jamming
 
-Adds the editor module **Set as BFT Jammer**, which jams cTab's Blue Force Tracker (BFT). It works like Crow's Electronic Warfare's radio and drone jammers: a device, a radius, and it can be located with the Spectrum Device.
+Adds the editor module and the Zeus module **Set as BFT Jammer**, which jams cTab's Blue Force Tracker (BFT). It works like Crow's Electronic Warfare's radio and drone jammers: a device, a radius, and it can be located with the Spectrum Device.
 
 ## Usage
 
@@ -14,7 +14,11 @@ Place the module in the editor and optionally synchronise it with the object tha
 | Frequency | 805 MHz | Shown in the Spectrum Device. Must be inside the experimental antenna's range (520 to 1090 MHz). |
 | Active at Mission Start | true | Starts on, or is switched on later (for example by Zeus). |
 
-Zeus can switch the jammer on and off like any Crow's Electronic Warfare jammer and sees it on the map. The module can only be placed in the editor, not in Zeus. Unlike Crow's Electronic Warfare's own jammers it makes no sound.
+Zeus can switch the jammer on and off like any Crow's Electronic Warfare jammer and sees it on the map. Unlike Crow's Electronic Warfare's own jammers it makes no sound.
+
+### Zeus
+
+Zeus Enhanced has two modules in the same **Crows Electronic Warfare** category: **Set as BFT Jammer** and **Remove BFT Jammer**. Place **Set as BFT Jammer** on an object, or on the ground for a data terminal that is spawned there. The dialog has the attributes above, with *Active when placed* instead of *Active at Mission Start* and the frequency as a slider between 520 and 1090 MHz. **Remove BFT Jammer** removes the jammer from the object it is placed on, the Spectrum signal goes with it and the object stays. It only removes BFT jammers, the radio and drone jammers are removed with the module of Crow's Electronic Warfare.
 
 ## Jamming types
 

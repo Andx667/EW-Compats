@@ -1,6 +1,10 @@
 PREP(addBftJammer);
+PREP(addBftJammerZeus);
 PREP(onUpdateJammersServer);
 PREP(onBftListsUpdated);
 PREP(applyBftJam);
 PREP(calcBftJamStrength);
 PREP(getBftDriftOffset);
+PREP(registerBftJammer);
+PREP(removeBftJammerZeus);
+PREP(zeusRegister);
