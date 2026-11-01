@@ -13,6 +13,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-11-01
+
 ### Fixed
 
 - Compat RHS USAF - A DUKE that is on is switched off when its antenna is hidden, and its weapon goes with it. RHS only took the weapon of a switched off DUKE away, so with the antenna hidden the driver could still switch a running DUKE off and on again. The addon replaces `rhs_fnc_duke_vg` (`CfgFunctions`) and `fnc_syncJammer` treats a hidden antenna as a reason to be off, with the hint *antenna hidden*
