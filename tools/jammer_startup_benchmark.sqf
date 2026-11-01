@@ -6,9 +6,9 @@
  * before the change and once on the build after it, then compare the numbers.
  *
  * How to run:
- *   1. Host a LAN mission with Crow's Electronic Warfare and the compat addon of the vehicles (any of the test missions of
+ *   1. Host a LAN mission with Crows Electronic Warfare and the compat addon of the vehicles (any of the test missions of
  *      .hemtt/missions will do). The machine has to be server and client at once, like the host of a LAN game.
- *   2. Wait until the mission runs, then open the debug console (Esc), choose "Local exec" and run this file's content.
+ *   2. Wait until the mission runs, then open the debug console (Esc), choose "Local exec" and run the content of this file.
  *      Do not move or look around while it runs (about 8 seconds): the frame times are only comparable when the scene is.
  *   3. The result is in the chat and in the RPT (search for "[EWC benchmark]"). Run it three times and take the middle one.
  *
@@ -16,7 +16,7 @@
  *   baseline   60 frames without vehicles.
  *   start-up   spawns COUNT vehicles in one frame (class from CfgEWC >> Jammers, or the CLASS below) and watches 240 frames.
  *              The first sample contains the spawn itself, which costs the same on both builds. Before the change the
- *              vehicles register with Crow's now, after it they do not, so "registered" tells which build you run.
+ *              vehicles register with Crows now, after it they do not, so "registered" tells which build you run.
  *   toggle     switches the jammer of TOGGLES vehicles on, one every 15 frames, with ewc_common_fnc_setJammer. This is the
  *              steady-state cost of one change of the jammer list. After the change the first switch registers a vehicle.
  *
@@ -24,9 +24,9 @@
  *   avg / max   frame time in ms
  *   over 33 ms  frames slower than 30 fps
  *   excess      ms spent above 16.7 ms in total: the hitch you would feel
- *   events      crowsEW_main_updateJammers received here (Crow's sends the whole jammer list with each)
+ *   events      crowsEW_main_updateJammers received here (Crows sends the whole jammer list with each)
  *   entries     jammers in those lists in total: what was sent to every client
- *   registered  vehicles that Crow's knows as a jammer
+ *   registered  vehicles that Crows knows as a jammer
  */
 
 // ---- settings
@@ -68,7 +68,9 @@ if (_class isEqualTo "") then {
         } != -1}) then {
             _class = configName _vehicleConfig;
         };
-    } forEach ("getNumber (_x >> 'scope') == 2 && {configName _x isKindOf 'LandVehicle'}" configClasses (configFile >> "CfgVehicles"));
+    } forEach (("true" configClasses (configFile >> "CfgVehicles")) select {
+        getNumber (_x >> "scope") == 2 && {configName _x isKindOf "LandVehicle"}
+    });
 };
 
 if (_class isEqualTo "") exitWith {
