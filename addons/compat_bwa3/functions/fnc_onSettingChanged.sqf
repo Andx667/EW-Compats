@@ -18,7 +18,7 @@
  * Public: No
  */
 
-if (!isServer || {CBA_missionTime <= 0}) exitWith {};
+if (!isServer || CBA_missionTime <= 0) exitWith {};
 
 {
     // The switch of BWA3 is what the crew wants, handleToggle applies the setting to it

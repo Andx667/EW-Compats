@@ -43,8 +43,8 @@ private _wantEnabled = _alive
     && GVAR(enableDuke)
     && {!_hidden}
     && {_vehicle getVariable [DUKE_STATE_VAR, false]}
-    && {!(_damage1 >= DUKE_BOTH_ANTENNAS_DESTROYED && {_damage2 >= DUKE_BOTH_ANTENNAS_DESTROYED})};
-private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || {_damage2 >= DUKE_ANTENNA_DESTROYED});
+    && {!(_damage1 >= DUKE_BOTH_ANTENNAS_DESTROYED && _damage2 >= DUKE_BOTH_ANTENNAS_DESTROYED)};
+private _wantScale = [1, DUKE_SINGLE_ANTENNA_SCALE] select (_damage1 >= DUKE_ANTENNA_DESTROYED || _damage2 >= DUKE_ANTENNA_DESTROYED);
 private _wantRadius = getNumber (([_vehicle] call EFUNC(common,getJammerConfig)) >> "radius") * _wantScale;
 
 // rhs_duke.sqf frees its IEDs from the machine of the gunner, which only works for local ones. Free them from here
@@ -53,7 +53,7 @@ if (_enabled && {!_wantEnabled}) then {
 };
 
 // The DUKE itself was switched, or a hit or a setting switched it off. A destroyed vehicle has nobody to tell
-if (_alive && {_wantEnabled != _enabled}) then {
+if (_alive && _wantEnabled != _enabled) then {
     private _reason = if (_hidden) then {
         "antenna"
     } else {
