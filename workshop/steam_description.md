@@ -12,6 +12,7 @@ Every feature below is skipped when the mod it extends is not loaded.
 ## Features
 
 - **BFT Jamming** (needs [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217)) — editor module that turns an object into a jammer for the Blue Force Tracker: blackout, position drift or both, detectable with the Spectrum Device
+- **RF Exposure** (needs [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057), off by default) — staying close to an active jammer on foot gives a mild headache and then fatigue, somebody in a vehicle is safe
 - **Dingo CG13** (needs [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537)) — the CG13 also jams radios while its IED jammer is switched on
 - **CUP DUKE** (needs [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371)) — vehicles with a shown DUKE antenna get a DUKE switch (scroll wheel or ACE) that jams radios and IEDs
 - **CUP Boomerang** (needs [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371), not Crow's Electronic Warfare) — vehicles with a Boomerang shot finder get shot detection with a hint and map markers
