@@ -20,6 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Compat RHS AFRF, Compat RnT, Compat BWA3, Compat RHS USAF - Changing a setting in the game (enabled, radius, jammed signals) now brings the jammers of the vehicles in line with it. Before, the jammers kept the old value until the next switch of the vehicle
+- Boomerang - The setting `ewc_boomerang_markerLifetime` is a global setting now (set by the server). The map markers used the value of each player and the cTab markers the one of the server, so the two could disagree
+- BFT Jamming - **Remove BFT Jammer** in Zeus refused a Spoof jammer with the message that the object is no BFT jammer
+- Compat RHS AFRF, Compat CUP - The wait for the registration of a vehicle (R-142N) or for Crow's Electronic Warfare (CUP drones) ends when the vehicle is deleted, and after a timeout. It was checked every frame for the rest of the mission before
 
 ## [1.4.0] - 2026-11-01
 
