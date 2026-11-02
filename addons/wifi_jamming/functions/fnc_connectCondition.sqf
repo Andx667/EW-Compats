@@ -14,6 +14,10 @@
  * Registered on every machine, the answer of the server is the one that counts. Routers cascaded to another router are
  * left alone, like AE3 does.
  *
+ * Raises the event ewc_wifi_jamming_connectionJammed on the server for a connected laptop that is refused: AE3 drops it in
+ * the same call of its wireless sweep, so one frame later the laptop is no longer a child of the router. A refusal that
+ * does not end a connection (a laptop that tries to connect) raises nothing.
+ *
  * Arguments:
  * 0: Device that joins or stays <OBJECT>
  * 1: Router <OBJECT>
@@ -51,5 +55,20 @@ if (_strength <= 0) exitWith {[true, ""]};
 private _range = [_router, _device] call AE3_network_fnc_getWirelessRange;
 
 if (_strength < 1 && {(_device distance _router) <= (_range * (1 - _strength))}) exitWith {[true, ""]};
+
+if (isServer && {(_device getVariable [AE3_VAR_PARENT, objNull]) isEqualTo _router} && {!(_device getVariable [QGVAR(jamPending), false])}) then {
+    _device setVariable [QGVAR(jamPending), true];
+
+    [{
+        params ["_device", "_router", "_strength"];
+
+        _device setVariable [QGVAR(jamPending), nil];
+
+        if !(isNull _device || {(_device getVariable [AE3_VAR_PARENT, objNull]) isEqualTo _router}) then {
+            // For missions and mods that follow the connections: [laptop, router, strength 0 to 1], on the server
+            [QGVAR(connectionJammed), [_device, _router, _strength]] call CBA_fnc_localEvent;
+        };
+    }, [_device, _router, _strength]] call CBA_fnc_execNextFrame;
+};
 
 [false, LLSTRING(connection_jammed)]

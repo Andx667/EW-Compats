@@ -49,6 +49,17 @@ On every machine `XEH_postInit` registers `fnc_connectCondition` with `AE3_netwo
 
 There are deliberately no CBA settings: without a placed module nothing happens anyway, and the frequency is a module attribute.
 
+## Events
+
+- `ewc_wifi_jamming_connectionJammed`: raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised one frame after the sweep of AE3 dropped the laptop, once per dropped connection. A refused attempt to connect raises nothing.
+
+```sqf
+["ewc_wifi_jamming_connectionJammed", {
+    params ["_laptop", "_router", "_strength"];
+    systemChat format ["%1 lost %2 (%3 %% jamming)", _laptop, _router, round (_strength * 100)];
+}] call CBA_fnc_addEventHandler;
+```
+
 ## Functions
 
 | Function | Runs on | Purpose |
@@ -65,11 +76,11 @@ There are deliberately no CBA settings: without a placed module nothing happens 
 
 ## Coupling to other mods
 
-The integration uses public CBA events and global variables of Crow's Electronic Warfare, and the public API of AE3 (`AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`), which needs **AE3 2.1.0.5 or later**. The only variable of AE3 outside that API is `AE3_cap_isRouter`. A future update of either mod could change them and silently break the addon. Test after version bumps of both.
+The integration uses public CBA events and global variables of Crow's Electronic Warfare, and the public API of AE3 (`AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`), which needs **AE3 2.1.0.5 or later**. The only variables of AE3 outside that API are `AE3_cap_isRouter` and `AE3_network_parent`. A future update of either mod could change them and silently break the addon. Test after version bumps of both.
 
 - `crowsEW_main_addJammer`, `crowsEW_main_removeJammer`, `crowsEW_main_updateJammers`, `crowsEW_main_jamMap`
 - `crowsEW_spectrum_addBeacon`, `crowsEW_spectrum_removeBeacon`, `crowsEW_spectrum_beacons`
-- `AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`, `AE3_cap_isRouter`
+- `AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`, `AE3_cap_isRouter`, `AE3_network_parent`
 
 ## Dependencies
 
