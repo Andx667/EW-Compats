@@ -1,11 +1,17 @@
-# Launched with `hemtt launch`, or `hemtt launch bft/bwa3/cup/rnt/rhs_usaf/rhs_afrf` to also load the mod a feature extends
-# (bft/bwa3/cup/rhs_usaf/rhs_afrf start in their test mission from .hemtt/missions)
+# Launched with `hemtt launch`, or `hemtt launch ae3/bft/bwa3/cup/rnt/rhs_usaf/rhs_afrf` to also load the mod a feature extends
+# (bft/bwa3/cup/rhs_usaf/rhs_afrf start in their test mission from .hemtt/missions, ae3 has none yet)
 [default]
 workshop = [
     "450814997",  # CBA_A3
     "463939057",  # ACE3
     "1779063631", # ZEN
     "2515887728", # Crow's Electronic Warfare
+]
+
+[ae3]
+extends = "default"
+workshop = [
+    "2888888564", # Advanced Equipment
 ]
 
 [bft]
