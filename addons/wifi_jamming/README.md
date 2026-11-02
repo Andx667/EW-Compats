@@ -49,6 +49,17 @@ The same handler starts the server loop `fnc_jamLoop` when a Wi-Fi jammer is on.
 
 There are deliberately no CBA settings: without a placed module nothing happens anyway, and the frequency is a module attribute.
 
+## Events
+
+- `ewc_wifi_jamming_connectionJammed`: raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised again for a laptop that connects again inside the jamming and is dropped again.
+
+```sqf
+["ewc_wifi_jamming_connectionJammed", {
+    params ["_laptop", "_router", "_strength"];
+    systemChat format ["%1 lost %2 (%3 %% jamming)", _laptop, _router, round (_strength * 100)];
+}] call CBA_fnc_addEventHandler;
+```
+
 ## Functions
 
 | Function | Runs on | Purpose |

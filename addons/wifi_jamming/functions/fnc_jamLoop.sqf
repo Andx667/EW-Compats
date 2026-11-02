@@ -13,6 +13,8 @@
  * Network app or the ACE menu without a look at the jamming, so a new connection of a jammed laptop lasts up to one
  * interval before it is dropped again. Cascaded routers are left alone, like AE3 does.
  *
+ * Raises the event ewc_wifi_jamming_connectionJammed on the server for every connection it ends.
+ *
  * Arguments:
  * None
  *
@@ -66,6 +68,9 @@ if (_jammers isEqualTo []) exitWith {
             };
 
             [_client] call AE3_network_fnc_removeNetworkConnection;
+
+            // For missions and mods that follow the connections: [laptop, router, strength 0 to 1], on the server
+            [QGVAR(connectionJammed), [_client, _router, _strength]] call CBA_fnc_localEvent;
         };
     } forEach (+_clients);
 } forEach (missionNamespace getVariable [AE3_ROUTERS, []]);

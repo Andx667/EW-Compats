@@ -43,6 +43,17 @@ The strength of a link is the stronger of the strengths at the laptop and at the
 - **Nothing is restored when the jammer stops.** The laptops connect again by hand.
 - **Up to a second of delay** for a switch of the jammer or a moving laptop or router, because the connections are checked once per second.
 
+## Events
+
+`ewc_wifi_jamming_connectionJammed` is raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised again for a laptop that connects again inside the jamming and is dropped again.
+
+``` cpp
+["ewc_wifi_jamming_connectionJammed", {
+    params ["_laptop", "_router", "_strength"];
+    systemChat format ["%1 lost %2 (%3 %% jamming)", _laptop, _router, round (_strength * 100)];
+}] call CBA_fnc_addEventHandler;
+```
+
 ## How it works
 
 The module registers the object as an ordinary jammer in Crow's Electronic Warfare through its public CBA event `crowsEW_main_addJammer`, tagged with the capability `WifiJammer`. Crow's Electronic Warfare passes the tag along unchanged, which gives Zeus markers, switching on and off by action and JIP sync for free, without touching its code. It is the same way the [BFT Jamming](bft-jamming.md) addon works.
