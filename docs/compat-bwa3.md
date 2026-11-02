@@ -44,6 +44,7 @@ force ewc_compat_bwa3_enableCG13 = false; // default: true
 - **Engine off means jammer off.** BWA3 switches the CG13 off when the engine stops, without any event. The addon watches the `Engine` event and switches the radio jammer off as well. It has to be registered on every client, because the event only fires where the vehicle is local.
 - **A triggered IED explodes when it leaves the jamming range.** The jammer does not defuse an IED, it only holds it back. If an IED is triggered while it is inside the 40 m, it stays inert, but it explodes as soon as the jammer is out of range, for example when the Dingo drives on or the engine is stopped. This is BWA3's own behaviour, this addon does not change it. Keep the distance until the IED is cleared.
 - **IEDs of CUP are not jammed.** BWA3 only jams `PipeBombBase` IEDs, which are the vanilla and ACE IEDs. The IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`) derive from `MineBase` and explode as normal, also with CUP and BWmod loaded together. This is BWA3's own behaviour, this addon does not change it. The CUP DUKE of [Compat CUP DUKE](compat-cup-duke.md) does jam them.
+- **IEDD is not jammed.** The IEDs of [IEDD](https://github.com/prisonerMO/iedd) are ordinary objects triggered by IEDD's own scripts, so neither the Dingo CG13 nor this addon can stop them. They do not conflict with the radio jamming.
 - **Everybody in range is jammed**, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - **Multiplayer only.** Crow's Electronic Warfare does not work in singleplayer.
 

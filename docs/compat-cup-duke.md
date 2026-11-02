@@ -66,6 +66,7 @@ The switch is a setting of `compat_cup`, see [Compat CUP](compat-cup.md#settings
 - **Crow's own actions are hidden** on DUKE vehicles. Its (de)activate actions would desync from the DUKE, so only the DUKE switch is offered.
 - **Everybody in range is jammed**, including the own crew and allies.
 - **Which IEDs are jammed.** The vanilla and ACE IEDs and the IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`). Mines, including the anti-tank mines of CUP, are not jammed.
+- **IEDD is not jammed.** The IEDs of [IEDD](https://github.com/prisonerMO/iedd) are ordinary objects, not mines, and IEDD triggers them with its own scripts (proximity, timer, suicide bomber). The DUKE has no way to stop them, and they explode as normal. The two mods do not conflict, and the radio jamming works with IEDD loaded.
 - **A jammed IED is held, not defused.** IEDs in range are frozen (their simulation is switched off) and released when they leave the range or the DUKE stops, the same way as the Dingo CG13 of [Compat BWA3](compat-bwa3.md). An IED that was triggered inside the range is expected to explode on release, as it does with the CG13 and the RHS DUKE. Keep the distance until the IED is cleared.
 - **Several jammers can hold the same IED** when the DUKE is loaded together with the Dingo CG13 or the RHS DUKE. If two of them jam the same IED and one stops first, the IED is free for up to a second until the other one disables it again.
 - **Up to a second of delay** when an antenna is hidden or the engine stops, because the DUKE is checked once per second.

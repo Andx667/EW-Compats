@@ -52,6 +52,7 @@ force ewc_compat_rhs_usaf_enableDuke = false; // default: true
 - **IEDs are freed from the server.** `rhs_duke.sqf` frees the IEDs at the end of its script on the machine of the gunner, which does nothing for IEDs that are not local there. The addon therefore enables the IEDs within 50 m again from the server 1.5 seconds after the DUKE went offline, except those another running DUKE still holds. A vehicle destroyed with the DUKE on frees its IEDs the same way.
 - **Locality matters.** RHS only starts its jamming script if gunner and vehicle are local on the same machine, for example not for a gunner in the turret of someone else's vehicle. Then `RHS_DUKE_OP` does not change and the radio jammer stays off, like the IED jammer.
 - **IEDs of CUP are not jammed.** `rhs_duke.sqf` only jams `PipeBombBase` IEDs, which are the vanilla and ACE IEDs. The IEDs of CUP (`CUP_IED_V1_Ammo` to `V4`) derive from `MineBase` and explode as normal, also with CUP and RHS loaded together. This is RHS's own behaviour, this addon does not change it. The CUP DUKE of [Compat CUP DUKE](compat-cup-duke.md) does jam them.
+- **IEDD is not jammed.** The IEDs of [IEDD](https://github.com/prisonerMO/iedd) are ordinary objects triggered by IEDD's own scripts, so neither the DUKE nor this addon can stop them. They do not conflict with the radio jamming.
 - **Everybody in range is jammed**, including the own crew and allies.
 - **Multiplayer only.**
 
