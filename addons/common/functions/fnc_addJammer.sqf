@@ -14,6 +14,8 @@
  * Return Value:
  * None
  *
+ * Raises the event ewc_common_jammerChanged on the server, see docs/events.md.
+ *
  * Example:
  * [_vehicle, false, 25] call ewc_common_fnc_addJammer
  *
@@ -52,6 +54,9 @@ _vehicle setVariable [QGVAR(isJammer), true, true];
     _enabled,
     _capabilities
 ]] call CBA_fnc_localEvent;
+
+// For missions and addons that follow the jammers of the vehicles: [vehicle, jammer is on, full radius in m]
+[QGVAR(jammerChanged), [_vehicle, _enabled, _radius]] call CBA_fnc_localEvent;
 
 // On a hosted server Crows adds its actions after it broadcasts the jammer list, so the cleanup on
 // that update (fnc_removeCrowsActions) runs too early. The event above is handled synchronously

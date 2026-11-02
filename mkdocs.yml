@@ -76,6 +76,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Common: common.md
+  - Events: events.md
   - BFT Jamming: bft-jamming.md
   - Compat BWA3: compat-bwa3.md
   - Compat CUP:

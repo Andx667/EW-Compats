@@ -25,8 +25,13 @@ if (isNil "_mines") then {
     GVAR(duke_active) set [_key, []];
 };
 
+private _vehicle = objectFromNetId _key;
+
 {
     if (!isNull _x && {!simulationEnabled _x}) then {
         _x enableSimulationGlobal true;
+
+        // For missions that follow the IEDs: [IED, vehicle of the DUKE, null if it is gone], on the server
+        [QEGVAR(common,iedReleased), [_x, _vehicle]] call CBA_fnc_localEvent;
     };
 } forEach _mines;

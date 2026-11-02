@@ -19,6 +19,9 @@
  * Return Value:
  * None
  *
+ * Raises the event ewc_common_jammerChanged on the server when the jammer is registered, replaced or switched,
+ * see docs/events.md.
+ *
  * Example:
  * [_vehicle, true, 250] call ewc_common_fnc_setJammer
  *
@@ -58,4 +61,5 @@ if (_radius != _registeredRadius || {_capabilities isNotEqualTo [] && (_capabili
 if (_enabled != _wasEnabled) then {
     _vehicle setVariable [QGVAR(jammerState), [_enabled, _registeredRadius]];
     [CROWS_EVENT_TOGGLE_JAMMER, [netId _vehicle, _enabled]] call CBA_fnc_localEvent;
+    [QGVAR(jammerChanged), [_vehicle, _enabled, _registeredRadius]] call CBA_fnc_localEvent;
 };
