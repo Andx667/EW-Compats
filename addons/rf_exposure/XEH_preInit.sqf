@@ -11,6 +11,9 @@ if (hasInterface) then {
     GVAR(loopHandle) = -1;
     GVAR(lastTime) = 0;
 
+    // 0 none, 1 headache, 2 fatigue, see the event ewc_rf_exposure_stageChanged
+    GVAR(stage) = 0;
+
     // Factor handed to ACE advanced fatigue, 1 while there is none
     GVAR(dutyFactor) = 1;
 

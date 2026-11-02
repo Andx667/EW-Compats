@@ -34,6 +34,17 @@ Each client works out the exposure of its own player, a number from 0 to 1. Noth
 
 The exposure is readable in the debug console as `ewc_rf_exposure_exposure`.
 
+## Events
+
+- `ewc_rf_exposure_stageChanged`: raised on the client of the player (local event) when the stage of the exposure changes, with `[unit, stage]`. The stage is `0` none, `1` headache (from an exposure of 0.25, until it is nearly gone) and `2` fatigue. A mission can use it for extra effects, a medic task or a log. Reset by a respawn or a new unit (stage `0`).
+
+```sqf
+["ewc_rf_exposure_stageChanged", {
+    params ["_unit", "_stage"];
+    systemChat format ["RF exposure stage: %1", _stage];
+}] call CBA_fnc_addEventHandler;
+```
+
 ## Functions
 
 | Function | Runs on | Purpose |

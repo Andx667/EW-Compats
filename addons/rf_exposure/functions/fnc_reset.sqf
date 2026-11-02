@@ -11,6 +11,8 @@
  * Return Value:
  * None
  *
+ * Raises the event ewc_rf_exposure_stageChanged if there was a stage.
+ *
  * Example:
  * call ewc_rf_exposure_fnc_reset
  *
@@ -22,6 +24,12 @@ if (!hasInterface) exitWith {};
 GVAR(exposure) = 0;
 GVAR(hintedHeadache) = false;
 GVAR(hintedFatigue) = false;
+
+if (GVAR(stage) != 0) then {
+    GVAR(stage) = 0;
+
+    [QGVAR(stageChanged), [ACE_player, 0]] call CBA_fnc_localEvent;
+};
 
 if (GVAR(dutyFactor) != 1) then {
     if (!isNil "ace_advanced_fatigue_fnc_removeDutyFactor") then {

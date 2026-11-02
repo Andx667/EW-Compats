@@ -34,6 +34,17 @@ Each client works out the exposure of its own player, a number from 0 to 1. The 
 
 The maximum pain is limited to half of `ace_medical_painUnconsciousThreshold`, so the jammer never brings anybody near the pain at which ACE can make a unit unconscious.
 
+## Events
+
+`ewc_rf_exposure_stageChanged` is raised on the client of the player (local event) when the stage of the exposure changes, with `[unit, stage]`. The stage is `0` none, `1` headache (from an exposure of 0.25, until it is nearly gone) and `2` fatigue. A mission can use it for extra effects, a medic task or a log. A respawn or a new unit sets it back to `0`.
+
+``` cpp
+["ewc_rf_exposure_stageChanged", {
+    params ["_unit", "_stage"];
+    systemChat format ["RF exposure stage: %1", _stage];
+}] call CBA_fnc_addEventHandler;
+```
+
 ## Which jammers
 
 The jammers are read from the jammer map of Crow's Electronic Warfare, so every jammer counts that is registered there: the vehicles of the compat addons (DUKE, CG13, R-142N, Hummel), the [BFT](bft-jamming.md) jammer, and Crow's own radio and drone jammers. With *Vehicle-mounted only* the static ones are left out.

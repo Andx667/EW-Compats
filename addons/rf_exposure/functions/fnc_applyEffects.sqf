@@ -12,6 +12,8 @@
  * The fatigue starts when the pain of the jammer has reached the fatigue threshold, and grows with it from there. It is a
  * factor on the effort of every movement in ACE advanced fatigue, or a small rise of the vanilla fatigue without it.
  *
+ * Raises the event ewc_rf_exposure_stageChanged when the stage of the exposure changes.
+ *
  * Arguments:
  * 0: Unit, the local player <OBJECT>
  * 1: Seconds since the last update <NUMBER>
@@ -75,6 +77,23 @@ if (GVAR(fatigueFactor) > 0 && _painMax >= _threshold && _jammerPain >= _thresho
         GVAR(hintedFatigue) = true;
         hintSilent LLSTRING(hint_fatigue);
     };
+};
+
+// The stage, for missions and mods: 0 none, 1 headache from HINT_HEADACHE_EXPOSURE (until the exposure is nearly gone), 2 fatigue
+private _stage = 0;
+
+if (_factor > 1) then {
+    _stage = 2;
+} else {
+    if (_exposure >= HINT_HEADACHE_EXPOSURE || {GVAR(stage) >= 1 && _exposure >= HINT_RESET_EXPOSURE}) then {
+        _stage = 1;
+    };
+};
+
+if (_stage != GVAR(stage)) then {
+    GVAR(stage) = _stage;
+
+    [QGVAR(stageChanged), [_unit, _stage]] call CBA_fnc_localEvent;
 };
 
 if (!isNil "ace_advanced_fatigue_fnc_addDutyFactor" && {missionNamespace getVariable ["ace_advanced_fatigue_enabled", false]}) then {
