@@ -21,10 +21,6 @@
 #define WIFI_JAM_MIN_RADIUS 10
 #define WIFI_JAM_MAX_RADIUS 5000
 
-// Seconds between two checks of the connections, while a Wi-Fi jammer is on. AE3 checks the range of its own
-// connections every 5 s (AE3_network_fnc_wirelessSweep), a jammed connection is meant to end sooner
-#define WIFI_JAM_LOOP_INTERVAL 1
-
 // Icon of the modules, the one of the signal source module of Crows
 #define WIFI_JAM_ICON "\z\crowsEW\addons\zeus\data\spectrum_signal.paa"
 
@@ -41,14 +37,11 @@
 #define CROWSEW_ADD_BEACON_EVENT "crowsEW_spectrum_addBeacon"
 #define CROWSEW_REMOVE_BEACON_EVENT "crowsEW_spectrum_removeBeacon"
 #define CROWSEW_JAM_MAP crowsEW_main_jamMap
+#define CROWSEW_JAM_MAP_NAME "crowsEW_main_jamMap"
 #define CROWSEW_BEACONS crowsEW_spectrum_beacons
 
-// Variables and function of Advanced Equipment (AE3) we integrate with. Its network is no radio: a router has a wireless
-// range, a client is a child of the router it joined, and AE3 itself drops a client that left that range
-#define AE3_ROUTERS "AE3_network_routers"
-#define AE3_VAR_CHILDREN "AE3_network_children"
-#define AE3_VAR_RANGE "AE3_network_wirelessRange"
+// Advanced Equipment (AE3) we integrate with, through its connect condition API (AE3 2.1.0.5 and later). Its network is no
+// radio: a router has a wireless range, and AE3 itself drops a client that no longer passes AE3_network_fnc_canConnect
+#define AE3_CONNECT_CONDITION_ID "ewc_wifi_jamming"
+// Variable AE3 marks a router with (a cascaded router is no laptop and left alone)
 #define AE3_VAR_IS_ROUTER "AE3_cap_isRouter"
-#define AE3_DEFAULT_RANGE 100
-// Event AE3 uses to show the result of a (re)connect in the Network app of the laptop, [success, message]
-#define AE3_NET_RESULT_EVENT "ae3_desktop_netResult"

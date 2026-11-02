@@ -37,22 +37,11 @@ The strength of a link is the stronger of the strengths at the laptop and at the
 ## Quirks
 
 - **Connected laptops are dropped.** A laptop whose link is cut loses its address, as if it had left the range of its router. The Network app shows *Jammed*, and the laptop has to connect again.
-- **New connections are cut again.** AE3 lets a laptop connect from the Network app or the ACE menu without a look at the jamming, so a jammed laptop that connects is dropped again at the next check, within one second. Nothing is blocked beforehand, it just does not last.
+- **New connections are refused.** The Network app and the ACE menu ask AE3 before they connect, and the jammer is part of that check. A jammed laptop gets the reason *Jammed*.
 - **Cascaded routers are left alone**, like AE3 does for its own range check.
 - **Everybody in range is jammed**, including the own side.
 - **Nothing is restored when the jammer stops.** The laptops connect again by hand.
-- **Up to a second of delay** for a switch of the jammer or a moving laptop or router, because the connections are checked once per second.
-
-## Events
-
-`ewc_wifi_jamming_connectionJammed` is raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised again for a laptop that connects again inside the jamming and is dropped again.
-
-``` cpp
-["ewc_wifi_jamming_connectionJammed", {
-    params ["_laptop", "_router", "_strength"];
-    systemChat format ["%1 lost %2 (%3 %% jamming)", _laptop, _router, round (_strength * 100)];
-}] call CBA_fnc_addEventHandler;
-```
+- **Up to 5 seconds of delay** for a switch of the jammer or a moving laptop or router, because AE3 checks its connections every 5 seconds.
 
 ## How it works
 
@@ -60,12 +49,12 @@ The module registers the object as an ordinary jammer in Crow's Electronic Warfa
 
 An active Wi-Fi jammer shows in the Spectrum Device as signal type `sweep_wifi` on the module's frequency.
 
-While a Wi-Fi jammer is on, a server loop goes through the routers of AE3 and the laptops connected to them once per second, works out the strength and ends the cut connections. It ends itself when no Wi-Fi jammer is left, so there is no cost without one.
+The addon registers a connect condition with AE3. AE3 asks it before a laptop joins a router and in its own wireless sweep (every 5 seconds), which drops the laptops that no longer pass. Without a jammer that is on the condition answers at once, so there is no cost without one.
 
 There are deliberately no CBA settings: without a placed module nothing happens anyway, and the frequency is a module attribute.
 
 !!! note "Coupling to other mods"
-    The integration uses public CBA events and global variables of Crow's Electronic Warfare, and variables of AE3 that are not part of its documented script API (`AE3_network_routers`, `AE3_network_children`, `AE3_network_wirelessRange`, `AE3_cap_isRouter`, the event `ae3_desktop_netResult`). An update of either mod could change them. Test after version bumps of both.
+    The integration uses public CBA events and global variables of Crow's Electronic Warfare, and the public API of AE3 (`AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`). It needs **AE3 2.1.0.5 or later**. An update of either mod could change them. Test after version bumps of both.
 
 ## Dependencies
 
