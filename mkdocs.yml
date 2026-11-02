@@ -11,7 +11,7 @@ theme:
   custom_dir: overrides
   variant: classic
   language: en
-  logo: icon.png
+  logo: assets/icon.png
   favicon: assets/favicon.svg
   icon:
     repo: fontawesome/brands/github
@@ -87,3 +87,5 @@ nav:
   - Compat RHS:
       - USAF DUKE: compat-rhs-usaf.md
       - AFRF: compat-rhs-afrf.md
+  - Contributing: contributing.md
+  - License: license.md

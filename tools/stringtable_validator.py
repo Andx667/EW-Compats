@@ -13,20 +13,18 @@ import xml.etree.ElementTree as ET
 #   - English as first translation.
 #   - no Original translation.
 #   - duplicated entries and languages.
+#   - package names that match the addon folder and PACKAGE_NAME_STYLE.
 #
-# TEMPLATE NOTE: Package name attributes are expected to be lowercase,
-# matching the addon folder name and the lowercase `#define COMPONENT`
-# macro that CBA's LSTRING/CSTRING family compose their runtime string
-# keys from (e.g. LLSTRING(...) in an addon with `#define COMPONENT foo`
-# resolves to STR_<PREFIX>_foo_..., lowercase). If you titlecase a
-# Package name here without also changing COMPONENT (which is also your
-# addon's PBO/namespace prefix -- a much bigger rename), those keys will
-# stop matching what's requested at runtime and the string will fail to
-# resolve in-game.
+# Keys are named STR_<PROJECT_NAME>_<Package name>_<name>. CBA's LSTRING/CSTRING macros build them from the
+# `#define COMPONENT` of an addon, so the Package name has to be written like COMPONENT. Changing one
+# without the other breaks the runtime lookup of the string.
 
 
 ######## GLOBALS #########
 PROJECT_NAME = "ewc"
+
+# "lower": Package names are lowercase (the addon folder name), "title": Package names are titlecase
+PACKAGE_NAME_STYLE = "lower"
 
 # Languages every key is expected to be translated into, besides English. Missing translations are only
 # reported (see report_coverage), they do not fail the validation, as untranslated keys fall back to English
@@ -66,6 +64,13 @@ def check_stringtable(filepath):
         component_folder = os.path.basename(os.path.dirname(filepath))
         if package_name.lower() != component_folder:
             print("  ERROR: Package name attribute '{}' does not match the component folder name.".format(package_name))
+            errors += 1
+
+        if PACKAGE_NAME_STYLE == "lower" and package_name != package_name.lower():
+            print("  ERROR: Package name attribute '{}' should be all lowercase.".format(package_name))
+            errors += 1
+        elif PACKAGE_NAME_STYLE == "title" and package_name.islower():
+            print("  ERROR: Package name attribute '{}' is all lowercase, should be in titlecase.".format(package_name))
             errors += 1
 
         # Get all keys contained in the stringtable

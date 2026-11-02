@@ -2,14 +2,14 @@
 
 **EW Compats** (EWC) connects other mods to Crow's Electronic Warfare, so their jammers and jamming effects work with its radio and spectrum systems.
 
-# Requirements
+## Requirements
 
 - [CBA_A3](https://steamcommunity.com/sharedfiles/filedetails/?id=450814997)
 - [Crow's Electronic Warfare](https://steamcommunity.com/sharedfiles/filedetails/?id=2515887728) (not needed for the Boomerang of CUP and RHS USAF)
 
 Every feature below is skipped when the mod it extends is not loaded.
 
-# Features
+## Features
 
 - **BFT Jamming** (needs [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217)) — editor module that turns an object into a jammer for the Blue Force Tracker: blackout, position drift or both, detectable with the Spectrum Device
 - **Dingo CG13** (needs [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537)) — the CG13 also jams radios while its IED jammer is switched on
@@ -21,7 +21,7 @@ Every feature below is skipped when the mod it extends is not loaded.
 
 Radio jamming needs [ACRE](https://steamcommunity.com/sharedfiles/filedetails/?id=751965892). Crow's Electronic Warfare only works in multiplayer.
 
-# Source & Issues
+## Source & Issues
 
 Fully open-source. Bug reports, feature requests, and contributions are all welcome.
 
