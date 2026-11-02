@@ -1,4 +1,4 @@
-"""Generate the EW Compats logo and icon (white on black) as PNG, and the black icon and favicon of the docs.
+"""Generate the EW Compats logo and icon (white on black) as PNG, and the black icon of the docs.
 
 Usage: python tools/generate_logo.py
 Then convert with: hemtt utils paa convert img/<name>.png img/<name>.paa
@@ -10,7 +10,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 OUT = Path(__file__).resolve().parent.parent / "img"
 DOCS = Path(__file__).resolve().parent.parent / "docs"
-YELLOW = (255, 214, 77)  # Zitronengelb, the brand color of the docs header
 INK = (0, 0, 0)
 FONT = "C:/Windows/Fonts/bahnschrift.ttf"
 SS = 4  # supersampling factor
@@ -83,16 +82,9 @@ def logo(w, h):
 
 
 def docs_assets():
-    """Docs header is yellow, so the mark is black there. The favicon sits on a yellow disc to be seen on any tab color."""
+    """Docs header is yellow, so the mark is black there."""
     m = mark(256)
-    Image.merge("RGBA", tuple(Image.new("L", m.size, c) for c in INK) + (m,)).save(DOCS / "icon.png")
-
-    size = 256 * SS
-    disc = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    ImageDraw.Draw(disc).ellipse([0, 0, size - 1, size - 1], fill=YELLOW + (255,))
-    disc = disc.resize((256, 256), Image.LANCZOS)
-    disc.alpha_composite(Image.open(DOCS / "icon.png"))
-    disc.save(DOCS / "favicon.png")
+    Image.merge("RGBA", tuple(Image.new("L", m.size, c) for c in INK) + (m,)).save(DOCS / "assets" / "icon.png")
 
 
 if __name__ == "__main__":

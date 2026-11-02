@@ -16,6 +16,15 @@ winget install hemtt
 
 This mod follows the same coding guidelines as the ACE3 mod, which can be found [here](https://ace3.acemod.org/wiki/development/coding-guidelines).
 
+## Keeping Documentation in Sync
+
+A code change isn't done until its supporting files are updated in the same PR. Before requesting review (contributor or LLM), check:
+
+- **[CHANGELOG.md](../CHANGELOG.md)** — add an entry under `[Unreleased]` (Keep a Changelog format).
+- **[docs/](../docs)** — update the relevant page if the change affects installation, settings, or usage.
+- **PR label** — apply the matching `changelog/*` label so release-drafter groups it correctly.
+- **Translations** — new or changed user-facing strings go into the addon's `stringtable.xml` (see [Translations](#translations)); untranslated ones fall back to English in the game.
+
 ## Translations
 
 Every text the player sees lives in the `stringtable.xml` of its addon. English comes first and is the fallback, German, French, Spanish, Polish and Russian are translated. The names of the language tags are the ones Arma 3 uses (`German`, `French`, `Spanish`, `Polish`, `Russian`, `Italian`, `Czech`, ...).

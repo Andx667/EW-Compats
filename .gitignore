@@ -1,7 +1,22 @@
-*.pbo
-.hemttout
+# HEMTT
+.hemttout/
+.hemtt/missions/~*
+.hemttprivatekey
+*.hemttprivatekey
+*.biprivatekey
 hemtt
 hemtt.exe
-*.biprivatekey
-*.hemttprivatekey
-releases
+releases/
+
+# Build output
+*.pbo
+*.sqfc
+*.zip
+
+# Docs
+site/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
