@@ -37,6 +37,11 @@ private _added = (_inRange - _old) select {simulationEnabled _x};
     };
 } forEach (_kept + _added);
 
+// For missions that follow the IEDs: [IED, vehicle of the DUKE], on the server
+{
+    [QEGVAR(common,iedJammed), [_x, _vehicle]] call CBA_fnc_localEvent;
+} forEach _added;
+
 [_key, _old - _inRange] call FUNC(duke_releaseMines);
 
 GVAR(duke_active) set [_key, _kept + _added];

@@ -43,5 +43,8 @@ private _others = (_vehicle nearEntities [["LandVehicle"], DUKE_EFFECTIVE_RADIUS
         } == -1}
     ) then {
         _mine enableSimulationGlobal true;
+
+        // For missions that follow the IEDs: [IED, vehicle of the DUKE], on the server
+        [QEGVAR(common,iedReleased), [_mine, _vehicle]] call CBA_fnc_localEvent;
     };
 } forEach (allMines inAreaArray [getPosWorld _vehicle, DUKE_EFFECTIVE_RADIUS, DUKE_EFFECTIVE_RADIUS]);
