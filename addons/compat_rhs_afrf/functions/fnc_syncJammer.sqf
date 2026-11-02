@@ -18,9 +18,10 @@
 
 params [["_vehicle", objNull, [objNull]]];
 
-private _state = _vehicle getVariable QEGVAR(common,jammerState);
+if (isNull _vehicle || {!alive _vehicle}) exitWith {};
 
-if (isNull _vehicle || {isNil "_state"} || {!alive _vehicle}) exitWith {};
+// The jammer is registered when it is first switched on, see ewc_common_fnc_setJammer
+private _state = _vehicle getVariable [QEGVAR(common,jammerState), [false, -1]];
 
 _state params ["_enabled", "_radius"];
 

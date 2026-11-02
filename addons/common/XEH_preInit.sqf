@@ -7,6 +7,9 @@ ADDON = false;
 // Vehicle class -> entry of CfgEWC >> Jammers that describes it. The registry is only searched once per class
 GVAR(jammerConfigCache) = createHashMap;
 
+// Jammers (net ID) whose Crows actions this machine has removed already, see fnc_removeCrowsActions
+GVAR(cleanedJammers) = createHashMap;
+
 // Systems the crew switches on and off, id -> [event, variable of the state, can be switched on, titles, has the system], see fnc_registerSwitch
 GVAR(switches) = createHashMap;
 

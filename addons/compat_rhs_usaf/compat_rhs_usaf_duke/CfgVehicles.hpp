@@ -14,7 +14,7 @@ class CfgVehicles {
         class AnimationSources: AnimationSources {
             // Adds or removes the weapon with the antenna, RHS does the same for its other vehicles
             class Hide_DUKE {
-                onPhaseChanged = "_this call rhs_fnc_duke_vg;";
+                onPhaseChanged = "call rhs_fnc_duke_vg;";
             };
         };
     };
