@@ -30,8 +30,8 @@ An AE3 wireless link works while the laptop is within the wireless range of its 
 
 The strength of a link is the stronger of the strengths at the laptop and at the router, and the strongest of all active jammers counts. A laptop in the falloff band of a jammer therefore keeps a connection to a router close by and loses one to a router far away. Inside the effective radius no link survives.
 
-- **Connected laptops are dropped.** A laptop whose link is cut loses its address, as if it had left the range of its router (AE3 shows *Jammed* in the Network app), and has to connect again.
-- **New connections are cut again.** AE3 lets a laptop connect from the Network app or the ACE menu without a look at the jamming, so a jammed laptop that connects is dropped again at the next check, within one second (`WIFI_JAM_LOOP_INTERVAL`). Nothing is blocked beforehand, it just does not last.
+- **Connected laptops are dropped.** A laptop whose link is cut loses its address, as if it had left the range of its router (AE3 shows *Jammed* in the Network app), and has to connect again. AE3 checks its connections every 5 s, so that can take up to 5 s after the jammer is switched on or a laptop is carried into the jamming.
+- **New connections are refused.** The Network app and the ACE menu ask AE3 first, which asks the jammer: a jammed laptop cannot connect, the reason shows as *Jammed*.
 - **Routers cascaded to another router are left alone**, like AE3 does for its own range check: they manage their own subnets and a mission may link routers that stand far apart.
 - **Everybody in range is jammed**, including the own side.
 - **A router or laptop that is carried works the same**: positions are read on every check.
@@ -45,20 +45,9 @@ Crow's Electronic Warfare registers its `addJammer` handler only in its own `pos
 
 An active Wi-Fi jammer shows in the Spectrum Device as signal type `sweep_wifi` on the module's frequency. `fnc_onUpdateJammersServer` compares the signal with the on/off state on every `crowsEW_main_updateJammers`, reading the actual state from `crowsEW_spectrum_beacons`, because Crows' own toggle only re-adds the signals of its radio and drone jammers.
 
-The same handler starts the server loop `fnc_jamLoop` when a Wi-Fi jammer is on. Every second it goes through the routers of AE3 and the laptops connected to them, works out the strength and ends the cut connections with `AE3_network_fnc_removeNetworkConnection`, after telling the laptop through `ae3_desktop_netResult`. The loop ends itself when no Wi-Fi jammer is left, so there is no cost without one.
+On every machine `XEH_postInit` registers `fnc_connectCondition` with `AE3_network_fnc_addConnectCondition`. AE3 asks its connect conditions before a laptop joins a router (Network app, ACE menu) and in its own wireless sweep (server, every 5 s), which drops the laptops that no longer pass and tells the Network app the reason. The condition works out the strength from `crowsEW_main_jamMap` and refuses the link when the laptop is farther from the router than the range that is left. Without a jammer that is on it answers at once, so there is no cost without one.
 
 There are deliberately no CBA settings: without a placed module nothing happens anyway, and the frequency is a module attribute.
-
-## Events
-
-- `ewc_wifi_jamming_connectionJammed`: raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised again for a laptop that connects again inside the jamming and is dropped again.
-
-```sqf
-["ewc_wifi_jamming_connectionJammed", {
-    params ["_laptop", "_router", "_strength"];
-    systemChat format ["%1 lost %2 (%3 %% jamming)", _laptop, _router, round (_strength * 100)];
-}] call CBA_fnc_addEventHandler;
-```
 
 ## Functions
 
@@ -69,18 +58,18 @@ There are deliberately no CBA settings: without a placed module nothing happens 
 | `fnc_addWifiJammerZeus` | Zeus client | Zeus module: ZEN dialog with the attributes, then registers the selected object (or a spawned data terminal) |
 | `fnc_removeWifiJammerZeus` | Zeus client | Zeus module: removes the jammer from the selected object, only a Wi-Fi jammer |
 | `fnc_zeusRegister` | clients | Registers the two Zeus modules with Zeus Enhanced in the category of Crow's Electronic Warfare |
-| `fnc_onUpdateJammersServer` | server | Keeps the Spectrum signal in line with the on/off state of the jammers and starts the loop |
-| `fnc_jamLoop` | server | Per frame handler while a jammer is on: ends every connection the jamming cuts |
+| `fnc_onUpdateJammersServer` | server | Keeps the Spectrum signal in line with the on/off state of the jammers |
+| `fnc_connectCondition` | any | Connect condition of AE3: refuses a link whose range the jamming has cut |
 | `fnc_getJamStrength` | server | Strongest jamming at an object from all jammers that are on |
 | `fnc_calcJamStrength` | any | Jamming strength 0 to 1 from the distance, the effective radius and the falloff radius |
 
 ## Coupling to other mods
 
-The integration uses public CBA events and global variables of Crow's Electronic Warfare, and variables of AE3 that are not part of its documented script API (`AE3_network_routers`, `AE3_network_children`, `AE3_network_wirelessRange`, `AE3_cap_isRouter`, the event `ae3_desktop_netResult`) next to its public function `AE3_network_fnc_removeNetworkConnection`. A future update of either mod could change them and silently break the addon. Test after version bumps of both.
+The integration uses public CBA events and global variables of Crow's Electronic Warfare, and the public API of AE3 (`AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`), which needs **AE3 2.1.0.5 or later**. The only variable of AE3 outside that API is `AE3_cap_isRouter`. A future update of either mod could change them and silently break the addon. Test after version bumps of both.
 
 - `crowsEW_main_addJammer`, `crowsEW_main_removeJammer`, `crowsEW_main_updateJammers`, `crowsEW_main_jamMap`
 - `crowsEW_spectrum_addBeacon`, `crowsEW_spectrum_removeBeacon`, `crowsEW_spectrum_beacons`
-- `AE3_network_routers`, `AE3_network_children`, `AE3_network_wirelessRange`, `AE3_cap_isRouter`, `AE3_network_fnc_removeNetworkConnection`, `ae3_desktop_netResult`
+- `AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`, `AE3_cap_isRouter`
 
 ## Dependencies
 
