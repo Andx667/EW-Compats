@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="wifi_jamming">
+        <Key ID="STR_ewc_wifi_jamming_connection_jammed">
+            <English>Jammed</English>
+            <French>Brouillé</French>
+            <Spanish>Interferido</Spanish>
+            <Polish>Zagłuszone</Polish>
+            <Russian>Подавлено помехами</Russian>
+            <German>Gestört</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_description">
+            <English>Registers the synced object (or a spawned data terminal, if none is synced) as a Crow's EW jammer that cuts the wireless connections of Advanced Equipment (AE3) laptops to AE3 routers. Detectable with the Spectrum Device like any other jammer.</English>
+            <French>Enregistre l'objet synchronisé (ou un terminal de données créé automatiquement si aucun n'est synchronisé) comme brouilleur Crow's EW qui coupe les connexions sans fil des ordinateurs portables d'Advanced Equipment (AE3) aux routeurs AE3. Détectable avec l'analyseur de spectre comme tout autre brouilleur.</French>
+            <Spanish>Registra el objeto sincronizado (o un terminal de datos generado, si no hay ninguno sincronizado) como inhibidor de Crow's EW que corta las conexiones inalámbricas de los portátiles de Advanced Equipment (AE3) a los routers AE3. Detectable con el dispositivo de espectro como cualquier otro inhibidor.</Spanish>
+            <Polish>Rejestruje zsynchronizowany obiekt (lub utworzony terminal danych, jeśli żaden nie jest zsynchronizowany) jako zagłuszarkę Crow's EW, która przerywa bezprzewodowe połączenia laptopów Advanced Equipment (AE3) z routerami AE3. Wykrywalna za pomocą analizatora widma jak każda inna zagłuszarka.</Polish>
+            <Russian>Регистрирует синхронизированный объект (или созданный терминал данных, если ничего не синхронизировано) как станцию помех Crow's EW, которая обрывает беспроводные соединения ноутбуков Advanced Equipment (AE3) с маршрутизаторами AE3. Как и любая другая станция помех, обнаруживается с помощью анализатора спектра.</Russian>
+            <German>Registriert das synchronisierte Objekt (oder ein erzeugtes Datenterminal, falls keines synchronisiert ist) als Crow's-EW-Störsender, der die drahtlosen Verbindungen von Laptops aus Advanced Equipment (AE3) zu AE3-Routern unterbricht. Wie jeder andere Störsender mit dem Spektrumgerät erkennbar.</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_displayName">
+            <English>Set as Wi-Fi Jammer</English>
+            <French>Définir comme brouilleur Wi-Fi</French>
+            <Spanish>Definir como inhibidor de Wi-Fi</Spanish>
+            <Polish>Ustaw jako zagłuszarkę Wi-Fi</Polish>
+            <Russian>Назначить станцией помех Wi-Fi</Russian>
+            <German>Als WLAN-Störsender festlegen</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_effectiveRadius_displayName">
+            <English>Effective Radius</English>
+            <French>Rayon effectif</French>
+            <Spanish>Radio efectivo</Spanish>
+            <Polish>Zasięg efektywny</Polish>
+            <Russian>Эффективный радиус</Russian>
+            <German>Effektiver Radius</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_effectiveRadius_tooltip">
+            <English>Inner radius (meters) with full jamming strength. Every laptop and router inside it has no wireless range left: connections end and new ones are cut again.</English>
+            <French>Rayon intérieur (en mètres) avec la pleine puissance de brouillage. Tout ordinateur portable et tout routeur à l'intérieur n'a plus de portée sans fil : les connexions se terminent et les nouvelles sont de nouveau coupées.</French>
+            <Spanish>Radio interior (en metros) con plena potencia de interferencia. Cualquier portátil o router dentro de él se queda sin alcance inalámbrico: las conexiones terminan y las nuevas se cortan de nuevo.</Spanish>
+            <Polish>Wewnętrzny promień (w metrach) z pełną mocą zagłuszania. Każdy laptop i router w jego wnętrzu traci cały zasięg bezprzewodowy: połączenia się kończą, a nowe są ponownie przerywane.</Polish>
+            <Russian>Внутренний радиус (в метрах) с полной силой подавления. У каждого ноутбука и маршрутизатора внутри него не остаётся беспроводной дальности: соединения обрываются, а новые снова прерываются.</Russian>
+            <German>Innerer Radius (Meter) mit voller Störstärke. Jeder Laptop und jeder Router darin hat keine Funkreichweite mehr: Verbindungen enden und neue werden sofort wieder getrennt.</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_falloffRadius_displayName">
+            <English>Falloff Radius</English>
+            <French>Rayon d'atténuation</French>
+            <Spanish>Radio de atenuación</Spanish>
+            <Polish>Zasięg zanikania</Polish>
+            <Russian>Радиус затухания</Russian>
+            <German>Abklingradius</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_falloffRadius_tooltip">
+            <English>Extra radius (meters) beyond the effective radius. The jamming strength falls linearly from full at the effective radius to zero at the outer edge of this band, and shortens the wireless range of a router by that share.</English>
+            <French>Rayon supplémentaire (en mètres) au-delà du rayon effectif. La puissance de brouillage diminue linéairement, de son maximum au rayon effectif jusqu'à zéro au bord extérieur de cette bande, et raccourcit d'autant la portée sans fil d'un routeur.</French>
+            <Spanish>Radio adicional (en metros) más allá del radio efectivo. La potencia de interferencia disminuye linealmente desde su máximo en el radio efectivo hasta cero en el borde exterior de esta franja, y acorta en esa proporción el alcance inalámbrico de un router.</Spanish>
+            <Polish>Dodatkowy promień (w metrach) poza zasięgiem efektywnym. Siła zagłuszania maleje liniowo od maksimum na granicy zasięgu efektywnego do zera na zewnętrznej krawędzi tego pasa i o tyle skraca zasięg bezprzewodowy routera.</Polish>
+            <Russian>Дополнительный радиус (в метрах) за пределами эффективного. Сила подавления линейно убывает от максимума на границе эффективного радиуса до нуля на внешнем краю этой полосы и на эту долю сокращает беспроводную дальность маршрутизатора.</Russian>
+            <German>Zusätzlicher Radius (Meter) über den effektiven Radius hinaus. Die Störstärke nimmt linear von voll am effektiven Radius bis auf null am äußeren Rand dieses Bereichs ab und verkürzt die Funkreichweite eines Routers um diesen Anteil.</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_frequency_displayName">
+            <English>Spectrum Frequency</English>
+            <French>Fréquence du spectre</French>
+            <Spanish>Frecuencia del espectro</Spanish>
+            <Polish>Częstotliwość widma</Polish>
+            <Russian>Частота спектра</Russian>
+            <German>Spektrum-Frequenz</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_frequency_tooltip">
+            <English>Frequency (MHz) at which this jammer's signal appears on the Crow's EW Spectrum Device, whenever it is active. Any value within the Spectrum Device's range works.</English>
+            <French>Fréquence (en MHz) à laquelle le signal de ce brouilleur apparaît sur l'analyseur de spectre de Crow's EW lorsqu'il est actif. Toute valeur dans la plage de l'analyseur convient.</French>
+            <Spanish>Frecuencia (en MHz) a la que aparece la señal de este inhibidor en el dispositivo de espectro de Crow's EW mientras esté activo. Sirve cualquier valor dentro del rango del dispositivo.</Spanish>
+            <Polish>Częstotliwość (w MHz), na której sygnał tej zagłuszarki pojawia się w analizatorze widma Crow's EW, gdy jest aktywna. Działa każda wartość z zakresu analizatora.</Polish>
+            <Russian>Частота (в МГц), на которой сигнал этой станции помех отображается на анализаторе спектра Crow's EW, пока она активна. Подойдёт любое значение в диапазоне анализатора.</Russian>
+            <German>Frequenz (MHz), auf der das Signal dieses Störsenders auf dem Crow's-EW-Spektrumgerät erscheint, solange er aktiv ist. Jeder Wert innerhalb des Bereichs des Spektrumgeräts funktioniert.</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_missionStart_displayName">
+            <English>Active at Mission Start</English>
+            <French>Actif au début de la mission</French>
+            <Spanish>Activo al inicio de la misión</Spanish>
+            <Polish>Aktywna na początku misji</Polish>
+            <Russian>Активна в начале миссии</Russian>
+            <German>Aktiv bei Missionsbeginn</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_moduleAddWifiJammer_missionStart_tooltip">
+            <English>If disabled, the jammer starts turned off and can be activated later (e.g. via Zeus).</English>
+            <French>Si désactivé, le brouilleur démarre éteint et peut être activé plus tard (par ex. via Zeus).</French>
+            <Spanish>Si está desactivado, el inhibidor empieza apagado y puede activarse más tarde (p. ej., mediante Zeus).</Spanish>
+            <Polish>Jeśli wyłączone, zagłuszarka startuje wyłączona i można ją włączyć później (np. przez Zeusa).</Polish>
+            <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже (например, через Зевса).</Russian>
+            <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später aktiviert werden (z. B. über Zeus).</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_zeus_active_displayName">
+            <English>Active when placed</English>
+            <French>Actif à la mise en place</French>
+            <Spanish>Activo al colocarlo</Spanish>
+            <Polish>Aktywna po umieszczeniu</Polish>
+            <Russian>Активна при размещении</Russian>
+            <German>Beim Platzieren aktiv</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_zeus_active_tooltip">
+            <English>If disabled, the jammer starts turned off and can be activated later with the jammer action of Crow's EW.</English>
+            <French>Si désactivé, le brouilleur démarre éteint et peut être activé plus tard avec l'action de brouilleur de Crow's EW.</French>
+            <Spanish>Si está desactivado, el inhibidor empieza apagado y puede activarse más tarde con la acción de inhibidor de Crow's EW.</Spanish>
+            <Polish>Jeśli wyłączone, zagłuszarka startuje wyłączona i można ją włączyć później akcją zagłuszarki z Crow's EW.</Polish>
+            <Russian>Если выключено, станция помех запускается выключенной и может быть включена позже действием станции помех из Crow's EW.</Russian>
+            <German>Wenn deaktiviert, startet der Störsender ausgeschaltet und kann später mit der Störsender-Aktion von Crow's EW aktiviert werden.</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_zeus_frequency_tooltip">
+            <English>Frequency (MHz) at which this jammer's signal appears on the Crow's EW Spectrum Device, whenever it is active. The range is the one of the experimental antenna (520 to 1090 MHz).</English>
+            <French>Fréquence (en MHz) à laquelle le signal de ce brouilleur apparaît sur l'analyseur de spectre de Crow's EW lorsqu'il est actif. La plage est celle de l'antenne expérimentale (520 à 1090 MHz).</French>
+            <Spanish>Frecuencia (en MHz) a la que aparece la señal de este inhibidor en el dispositivo de espectro de Crow's EW mientras esté activo. El rango es el de la antena experimental (520 a 1090 MHz).</Spanish>
+            <Polish>Częstotliwość (w MHz), na której sygnał tej zagłuszarki pojawia się w analizatorze widma Crow's EW, gdy jest aktywna. Zakres to zakres anteny eksperymentalnej (520 do 1090 MHz).</Polish>
+            <Russian>Частота (в МГц), на которой сигнал этой станции помех отображается на анализаторе спектра Crow's EW, пока она активна. Диапазон соответствует экспериментальной антенне (520–1090 МГц).</Russian>
+            <German>Frequenz (MHz), auf der das Signal dieses Störsenders auf dem Crow's-EW-Spektrumgerät erscheint, solange er aktiv ist. Der Bereich ist der der experimentellen Antenne (520 bis 1090 MHz).</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_zeus_remove_displayName">
+            <English>Remove Wi-Fi Jammer</English>
+            <French>Retirer le brouilleur Wi-Fi</French>
+            <Spanish>Quitar inhibidor de Wi-Fi</Spanish>
+            <Polish>Usuń zagłuszarkę Wi-Fi</Polish>
+            <Russian>Удалить станцию помех Wi-Fi</Russian>
+            <German>WLAN-Störsender entfernen</German>
+        </Key>
+        <Key ID="STR_ewc_wifi_jamming_zeus_remove_error">
+            <English>Place the module on a Wi-Fi jammer. The other jammers of Crow's EW are removed with its own module.</English>
+            <French>Placez le module sur un brouilleur Wi-Fi. Les autres brouilleurs de Crow's EW se retirent avec son propre module.</French>
+            <Spanish>Coloque el módulo sobre un inhibidor de Wi-Fi. Los demás inhibidores de Crow's EW se quitan con su propio módulo.</Spanish>
+            <Polish>Umieść moduł na zagłuszarce Wi-Fi. Pozostałe zagłuszarki z Crow's EW usuwa się jego własnym modułem.</Polish>
+            <Russian>Разместите модуль на станции помех Wi-Fi. Остальные станции помех из Crow's EW удаляются его собственным модулем.</Russian>
+            <German>Platziere das Modul auf einem WLAN-Störsender. Die übrigen Störsender von Crow's EW werden mit dessen eigenem Modul entfernt.</German>
+        </Key>
+    </Package>
+</Project>

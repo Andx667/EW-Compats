@@ -1,0 +1,9 @@
+PREP(addWifiJammer);
+PREP(addWifiJammerZeus);
+PREP(calcJamStrength);
+PREP(getJamStrength);
+PREP(jamLoop);
+PREP(onUpdateJammersServer);
+PREP(registerWifiJammer);
+PREP(removeWifiJammerZeus);
+PREP(zeusRegister);
