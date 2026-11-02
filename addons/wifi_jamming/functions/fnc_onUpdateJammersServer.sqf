@@ -28,12 +28,21 @@ if (!isServer) exitWith {};
     _y params ["_unit", "_radFalloff", "_radEffective", "_enabled", "_capabilities"];
 
     if (WIFI_JAM_CAP in _capabilities && {!isNull _unit}) then {
-        private _hasBeacon = (CROWSEW_BEACONS findIf {(_x select 0) isEqualTo _unit && {(_x select 3) == WIFI_JAM_SPECTRUM_TYPE}}) != -1;
+        private _frequency = _unit getVariable [QGVAR(frequency), WIFI_JAM_DEFAULT_FREQUENCY];
+        private _range = _radFalloff + _radEffective;
+
+        // Beacon layout of Crows: [object, frequency, range, type]
+        private _beaconIndex = CROWSEW_BEACONS findIf {(_x select 0) isEqualTo _unit && {(_x select 3) == WIFI_JAM_SPECTRUM_TYPE}};
+        private _hasBeacon = _beaconIndex != -1;
+
+        // Adding the module again to the same object replaces the jammer, so the signal can be there with old values
+        if (_hasBeacon && {_enabled} && {(CROWSEW_BEACONS select _beaconIndex) params ["", "_oldFrequency", "_oldRange"]; _oldFrequency != _frequency || {_oldRange != _range}}) then {
+            [CROWSEW_REMOVE_BEACON_EVENT, [_unit, WIFI_JAM_SPECTRUM_TYPE]] call CBA_fnc_localEvent;
+            _hasBeacon = false;
+        };
 
         if (_enabled && !_hasBeacon) then {
-            private _frequency = _unit getVariable [QGVAR(frequency), WIFI_JAM_DEFAULT_FREQUENCY];
-
-            [CROWSEW_ADD_BEACON_EVENT, [_unit, _frequency, _radFalloff + _radEffective, WIFI_JAM_SPECTRUM_TYPE]] call CBA_fnc_localEvent;
+            [CROWSEW_ADD_BEACON_EVENT, [_unit, _frequency, _range, WIFI_JAM_SPECTRUM_TYPE]] call CBA_fnc_localEvent;
         };
 
         if (!_enabled && _hasBeacon) then {

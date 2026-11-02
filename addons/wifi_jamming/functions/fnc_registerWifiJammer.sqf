@@ -32,6 +32,11 @@ params [
 
 if (isNull _unit) exitWith {};
 
+// The Zeus dialog clamps these with sliders, the Edit fields of the editor module do not
+_radEffective = WIFI_JAM_MIN_RADIUS max _radEffective min WIFI_JAM_MAX_RADIUS;
+_radFalloff = WIFI_JAM_MIN_RADIUS max _radFalloff min WIFI_JAM_MAX_RADIUS;
+_frequency = WIFI_JAM_MIN_FREQUENCY max _frequency min WIFI_JAM_MAX_FREQUENCY;
+
 // Public, because the server reads it when it adds the Spectrum signal and the jammer can come from a Zeus machine
 _unit setVariable [QGVAR(frequency), _frequency, true];
 
