@@ -18,7 +18,7 @@
  * Public: No
  */
 
-if (!isServer || {CBA_missionTime <= 0}) exitWith {};
+if (!isServer || CBA_missionTime <= 0) exitWith {};
 
 {
     [_x] call FUNC(syncJammer);

@@ -18,11 +18,11 @@
 
 private _listen = GVAR(vehicles) isNotEqualTo [];
 
-if (_listen && {GVAR(projectileHandler) < 0}) exitWith {
+if (_listen && GVAR(projectileHandler) < 0) exitWith {
     GVAR(projectileHandler) = addMissionEventHandler ["ProjectileCreated", LINKFUNC(onFired)];
 };
 
-if (!_listen && {GVAR(projectileHandler) >= 0}) then {
+if (!_listen && GVAR(projectileHandler) >= 0) then {
     removeMissionEventHandler ["ProjectileCreated", GVAR(projectileHandler)];
     GVAR(projectileHandler) = -1;
 };

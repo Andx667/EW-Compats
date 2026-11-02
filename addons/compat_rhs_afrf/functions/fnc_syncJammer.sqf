@@ -36,7 +36,7 @@ if (GVAR(jamDrones)) then {
 };
 
 private _mastUp = (_vehicle getVariable [QGVAR(mastWanted), false]) && {_vehicle doorPhase MAST_SOURCE >= MAST_DEPLOYED_PHASE};
-private _wantEnabled = GVAR(enable) && {_capabilities isNotEqualTo []} && {_mastUp};
+private _wantEnabled = GVAR(enable) && {_capabilities isNotEqualTo []} && _mastUp;
 
 // A mast folded by the crew needs no reason, a setting that keeps a deployed mast silent does
 if (_wantEnabled != _enabled) then {

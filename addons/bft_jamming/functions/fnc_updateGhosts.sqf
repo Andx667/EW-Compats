@@ -57,7 +57,7 @@ _callsigns sort true;
 private _wanted = createHashMap;
 private _eligibleCount = 0;
 
-if (_spoofers isNotEqualTo [] && {GVAR(ghostRatio) > 0}) then {
+if (_spoofers isNotEqualTo [] && GVAR(ghostRatio) > 0) then {
     private _sources = (cTabBFTgroups apply {["g", _x]}) + (cTabBFTvehicles apply {["v", _x]});
 
     {
@@ -74,8 +74,8 @@ if (_spoofers isNotEqualTo [] && {GVAR(ghostRatio) > 0}) then {
 
             if (
                 !isNull _source
-                && {_source isNotEqualTo _spoofer}
-                && {_source isNotEqualTo _viewerVehicle}
+                && (_source isNotEqualTo _spoofer)
+                && (_source isNotEqualTo _viewerVehicle)
                 && {group _source isNotEqualTo group _viewer}
                 && {_tag == "v" || {vehicle _source isEqualTo _source}}
             ) then {
@@ -157,11 +157,11 @@ cTabBFTgroups = cTabBFTgroups + _groupGhosts;
 cTabBFTvehicles = cTabBFTvehicles + _vehicleGhosts;
 
 // The stand-ins follow their units while there are any
-if (count GVAR(ghosts) > 0 && {GVAR(ghostHandle) < 0}) then {
+if (count GVAR(ghosts) > 0 && GVAR(ghostHandle) < 0) then {
     GVAR(ghostHandle) = [LINKFUNC(moveGhosts), BFT_JAM_GHOST_MOVE_INTERVAL] call CBA_fnc_addPerFrameHandler;
 };
 
-if (count GVAR(ghosts) == 0 && {GVAR(ghostHandle) >= 0}) then {
+if (count GVAR(ghosts) == 0 && GVAR(ghostHandle) >= 0) then {
     [GVAR(ghostHandle)] call CBA_fnc_removePerFrameHandler;
     GVAR(ghostHandle) = -1;
 };

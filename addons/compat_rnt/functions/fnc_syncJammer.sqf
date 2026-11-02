@@ -30,7 +30,7 @@ private _alive = alive _vehicle;
 
 private _reason = [_vehicle] call FUNC(getBlockReason);
 private _switchOn = _vehicle getVariable [QGVAR(on), false];
-private _wantEnabled = _switchOn && {_reason isEqualTo ""};
+private _wantEnabled = _switchOn && (_reason isEqualTo "");
 
 // A switch that is on but blocked goes off, so it does not come back by itself when the engine starts again
 if (_switchOn && {!_wantEnabled}) then {
@@ -38,7 +38,7 @@ if (_switchOn && {!_wantEnabled}) then {
 };
 
 // A destroyed vehicle has nobody to tell
-if (_alive && {_wantEnabled != _enabled}) then {
+if (_alive && _wantEnabled != _enabled) then {
     // A crew that switches the Hummel off needs no reason, a blocked switch does
     [_vehicle, SYSTEM_NAME, _wantEnabled, ["", _reason] select _switchOn] call EFUNC(common,notifyState);
 };

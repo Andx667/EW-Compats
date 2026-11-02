@@ -52,7 +52,7 @@ private _supersonic = _speed >= BOOMERANG_SONIC_SPEED;
     // Too far away, going away from the vehicle, or the vehicle just reported a shot of the same burst
     if (
         _distanceSqr <= (BOOMERANG_MAX_RANGE * BOOMERANG_MAX_RANGE)
-        && {_along > 0}
+        && _along > 0
         && {CBA_missionTime - (_vehicle getVariable [QGVAR(lastReport), -1]) >= BOOMERANG_REPORT_INTERVAL}
     ) then {
         private _heard = if (_supersonic) then {
@@ -74,7 +74,7 @@ private _supersonic = _speed >= BOOMERANG_SONIC_SPEED;
 
             // Vehicles without crew have nobody to report to. The shots of the own vehicle and its crew are not reported,
             // and neither are shots that start at the vehicle when the shooter is not known
-            private _own = (vehicle _shooter == _vehicle) || {isNull _shooter && {_distanceSqr < 25}};
+            private _own = (vehicle _shooter == _vehicle) || {isNull _shooter && _distanceSqr < 25};
             private _friendly = !isNull _shooter && {((side group _shooter) getFriend _side) >= 0.6};
 
             if (!isNull _commander && {!_own} && {GVAR(friendlyFire) || {!_friendly}}) then {

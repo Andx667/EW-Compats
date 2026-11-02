@@ -50,7 +50,7 @@ if (_radius < 0) then {
     _radius = _registeredRadius;
 };
 
-if (_radius != _registeredRadius || {_capabilities isNotEqualTo [] && {_capabilities isNotEqualTo _registeredCapabilities}}) exitWith {
+if (_radius != _registeredRadius || {_capabilities isNotEqualTo [] && (_capabilities isNotEqualTo _registeredCapabilities)}) exitWith {
     [CROWS_EVENT_REMOVE_JAMMER, [netId _vehicle, true]] call CBA_fnc_localEvent;
     [_vehicle, _enabled, _radius, _falloffFactor, _capabilities] call FUNC(addJammer);
 };
