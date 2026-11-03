@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="acoustic">
+        <Key ID="STR_ewc_acoustic_category">
+            <English>Acoustic Drone Detection</English>
+            <French>Détection acoustique de drones</French>
+            <Spanish>Detección acústica de drones</Spanish>
+            <Polish>Akustyczne wykrywanie dronów</Polish>
+            <Russian>Акустическое обнаружение дронов</Russian>
+            <German>Akustische Drohnenerkennung</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_markerText">
+            <English>Drone %1 m, %2°, %3 km/h</English>
+            <French>Drone %1 m, %2°, %3 km/h</French>
+            <Spanish>Dron %1 m, %2°, %3 km/h</Spanish>
+            <Polish>Dron %1 m, %2°, %3 km/h</Polish>
+            <Russian>Дрон %1 м, %2°, %3 км/ч</Russian>
+            <German>Drohne %1 m, %2°, %3 km/h</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_markerText_hover">
+            <English>Drone %1 m, hovering</English>
+            <French>Drone %1 m, stationnaire</French>
+            <Spanish>Dron %1 m, en estacionario</Spanish>
+            <Polish>Dron %1 m, zawis</Polish>
+            <Russian>Дрон %1 м, зависание</Russian>
+            <German>Drohne %1 m, schwebt</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_moduleAddSensor_description">
+            <English>Makes the synced objects acoustic drone sensors of the chosen side. Without a synced object a data terminal is placed. The drones they hear are marked on the map or cTab of that side and followed along their path. Several sensors that hear a drone from different directions locate it much more exactly than one.</English>
+            <French>Transforme les objets synchronisés en capteurs acoustiques de drones du camp choisi. Sans objet synchronisé, un terminal de données est placé. Les drones qu'ils entendent sont marqués sur la carte ou le cTab de ce camp et suivis le long de leur trajet. Plusieurs capteurs qui entendent un drone depuis des directions différentes le localisent bien plus précisément qu'un seul.</French>
+            <Spanish>Convierte los objetos sincronizados en sensores acústicos de drones del bando elegido. Sin objeto sincronizado se coloca una terminal de datos. Los drones que oyen se marcan en el mapa o el cTab de ese bando y se siguen a lo largo de su trayectoria. Varios sensores que oyen un dron desde direcciones distintas lo localizan con mucha más precisión que uno solo.</Spanish>
+            <Polish>Zmienia zsynchronizowane obiekty w akustyczne czujniki dronów wybranej strony. Bez zsynchronizowanego obiektu stawiany jest terminal danych. Drony, które słyszą, są oznaczane na mapie lub cTabie tej strony i śledzone wzdłuż ich trasy. Kilka czujników, które słyszą drona z różnych kierunków, lokalizuje go znacznie dokładniej niż jeden.</Polish>
+            <Russian>Делает синхронизированные объекты акустическими датчиками дронов выбранной стороны. Без синхронизированного объекта ставится терминал данных. Услышанные дроны отмечаются на карте или в cTab этой стороны, и их путь отслеживается. Несколько датчиков, слышащих дрон с разных направлений, определяют его положение гораздо точнее, чем один.</Russian>
+            <German>Macht die synchronisierten Objekte zu akustischen Drohnensensoren der gewählten Seite. Ohne synchronisiertes Objekt wird ein Datenterminal platziert. Die Drohnen, die sie hören, werden auf der Karte oder im cTab dieser Seite markiert und entlang ihres Weges verfolgt. Mehrere Sensoren, die eine Drohne aus verschiedenen Richtungen hören, orten sie viel genauer als einer.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_moduleAddSensor_displayName">
+            <English>Acoustic Drone Sensor</English>
+            <French>Capteur acoustique de drones</French>
+            <Spanish>Sensor acústico de drones</Spanish>
+            <Polish>Akustyczny czujnik dronów</Polish>
+            <Russian>Акустический датчик дронов</Russian>
+            <German>Akustischer Drohnensensor</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_module_side_displayName">
+            <English>Side</English>
+            <French>Camp</French>
+            <Spanish>Bando</Spanish>
+            <Polish>Strona</Polish>
+            <Russian>Сторона</Russian>
+            <German>Seite</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_module_side_tooltip">
+            <English>Side the sensor reports the drones it hears to.</English>
+            <French>Camp auquel le capteur signale les drones qu'il entend.</French>
+            <Spanish>Bando al que el sensor informa de los drones que oye.</Spanish>
+            <Polish>Strona, której czujnik zgłasza słyszane drony.</Polish>
+            <Russian>Сторона, которой датчик сообщает об услышанных дронах.</Russian>
+            <German>Seite, der der Sensor die gehörten Drohnen meldet.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_ambientNoise">
+            <English>Ambient noise</English>
+            <French>Bruit ambiant</French>
+            <Spanish>Ruido ambiental</Spanish>
+            <Polish>Hałas otoczenia</Polish>
+            <Russian>Фоновый шум</Russian>
+            <German>Umgebungslärm</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_ambientNoise_tooltip">
+            <English>Background noise at the sensors in dB, without wind, rain and vehicles. About 30 in quiet countryside, 45 in a village, 60 in a city or on a battlefield. The louder, the shorter the detection range.</English>
+            <French>Bruit de fond aux capteurs en dB, sans vent, pluie ni véhicules. Environ 30 en campagne calme, 45 dans un village, 60 en ville ou sur un champ de bataille. Plus il est fort, plus la portée de détection est courte.</French>
+            <Spanish>Ruido de fondo en los sensores en dB, sin viento, lluvia ni vehículos. Unos 30 en el campo tranquilo, 45 en un pueblo, 60 en una ciudad o en un campo de batalla. Cuanto más alto, menor es el alcance de detección.</Spanish>
+            <Polish>Hałas tła przy czujnikach w dB, bez wiatru, deszczu i pojazdów. Około 30 na cichej wsi, 45 w miasteczku, 60 w mieście lub na polu bitwy. Im głośniej, tym krótszy zasięg wykrywania.</Polish>
+            <Russian>Фоновый шум у датчиков в дБ без ветра, дождя и техники. Около 30 в тихой сельской местности, 45 в деревне, 60 в городе или на поле боя. Чем громче, тем меньше дальность обнаружения.</Russian>
+            <German>Hintergrundlärm an den Sensoren in dB, ohne Wind, Regen und Fahrzeuge. Etwa 30 auf dem ruhigen Land, 45 im Dorf, 60 in der Stadt oder auf dem Gefechtsfeld. Je lauter, desto kürzer die Erkennungsreichweite.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_enable">
+            <English>Enable acoustic drone detection</English>
+            <French>Activer la détection acoustique de drones</French>
+            <Spanish>Activar la detección acústica de drones</Spanish>
+            <Polish>Włącz akustyczne wykrywanie dronów</Polish>
+            <Russian>Включить акустическое обнаружение дронов</Russian>
+            <German>Akustische Drohnenerkennung aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_enable_tooltip">
+            <English>If off, the sensors hear nothing and all tracks end.</English>
+            <French>Si désactivé, les capteurs n'entendent rien et toutes les pistes prennent fin.</French>
+            <Spanish>Si está desactivado, los sensores no oyen nada y todas las trazas terminan.</Spanish>
+            <Polish>Gdy wyłączone, czujniki nic nie słyszą i wszystkie ślady się kończą.</Polish>
+            <Russian>Если выключено, датчики ничего не слышат и все треки завершаются.</Russian>
+            <German>Wenn aus, hören die Sensoren nichts und alle Spuren enden.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_markerTarget">
+            <English>Show drones</English>
+            <French>Afficher les drones</French>
+            <Spanish>Mostrar drones</Spanish>
+            <Polish>Pokazuj drony</Polish>
+            <Russian>Показывать дроны</Russian>
+            <German>Drohnen anzeigen</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_markerTarget_tooltip">
+            <English>Where the drones the sensors hear are marked: nothing, the map or cTab.</English>
+            <French>Où les drones entendus par les capteurs sont marqués : rien, la carte ou le cTab.</French>
+            <Spanish>Dónde se marcan los drones que oyen los sensores: nada, el mapa o el cTab.</Spanish>
+            <Polish>Gdzie oznaczane są drony słyszane przez czujniki: nigdzie, na mapie lub w cTabie.</Polish>
+            <Russian>Где отмечаются услышанные датчиками дроны: нигде, на карте или в cTab.</Russian>
+            <German>Wo die von den Sensoren gehörten Drohnen markiert werden: nirgends, auf der Karte oder im cTab.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_maxRange">
+            <English>Maximum range</English>
+            <French>Portée maximale</French>
+            <Spanish>Alcance máximo</Spanish>
+            <Polish>Maksymalny zasięg</Polish>
+            <Russian>Максимальная дальность</Russian>
+            <German>Maximale Reichweite</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_maxRange_tooltip">
+            <English>Drones further than this (m) from a sensor are not checked, however loud they are. Limits the work of the server.</English>
+            <French>Les drones plus éloignés que cette distance (m) d'un capteur ne sont pas vérifiés, quel que soit leur bruit. Limite la charge du serveur.</French>
+            <Spanish>Los drones más lejos que esto (m) de un sensor no se comprueban, por ruidosos que sean. Limita el trabajo del servidor.</Spanish>
+            <Polish>Drony dalej niż ta odległość (m) od czujnika nie są sprawdzane, niezależnie od tego, jak są głośne. Ogranicza obciążenie serwera.</Polish>
+            <Russian>Дроны дальше этого расстояния (м) от датчика не проверяются, как бы громко они ни звучали. Снижает нагрузку на сервер.</Russian>
+            <German>Drohnen, die weiter als dies (m) von einem Sensor entfernt sind, werden nicht geprüft, egal wie laut sie sind. Begrenzt die Arbeit des Servers.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_reportFriendly">
+            <English>Track friendly drones</English>
+            <French>Suivre les drones amis</French>
+            <Spanish>Seguir drones aliados</Spanish>
+            <Polish>Śledź przyjazne drony</Polish>
+            <Russian>Отслеживать дружественные дроны</Russian>
+            <German>Eigene Drohnen verfolgen</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_reportFriendly_tooltip">
+            <English>Also track the drones of the own and friendly sides. A real sensor cannot tell friend from foe.</English>
+            <French>Suivre aussi les drones de son camp et des camps amis. Un vrai capteur ne distingue pas ami et ennemi.</French>
+            <Spanish>Seguir también los drones del propio bando y de los aliados. Un sensor real no distingue amigo de enemigo.</Spanish>
+            <Polish>Śledź także drony własnej i sojuszniczych stron. Prawdziwy czujnik nie odróżnia swoich od wrogów.</Polish>
+            <Russian>Отслеживать также дроны своей и дружественных сторон. Настоящий датчик не отличает своих от чужих.</Russian>
+            <German>Auch die Drohnen der eigenen und befreundeten Seiten verfolgen. Ein echter Sensor kann Freund und Feind nicht unterscheiden.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_trackTimeout">
+            <English>Track timeout</English>
+            <French>Délai de piste</French>
+            <Spanish>Tiempo de traza</Spanish>
+            <Polish>Czas śladu</Polish>
+            <Russian>Время трека</Russian>
+            <German>Spur-Zeitlimit</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_setting_trackTimeout_tooltip">
+            <English>Seconds a drone that is no longer heard stays marked.</English>
+            <French>Secondes pendant lesquelles un drone qui n'est plus entendu reste marqué.</French>
+            <Spanish>Segundos que un dron que ya no se oye sigue marcado.</Spanish>
+            <Polish>Liczba sekund, przez które dron, którego już nie słychać, pozostaje oznaczony.</Polish>
+            <Russian>Сколько секунд дрон, которого больше не слышно, остаётся отмеченным.</Russian>
+            <German>Sekunden, die eine nicht mehr gehörte Drohne markiert bleibt.</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_side_east">
+            <English>OPFOR</English>
+            <French>OPFOR</French>
+            <Spanish>OPFOR</Spanish>
+            <Polish>OPFOR</Polish>
+            <Russian>OPFOR</Russian>
+            <German>OPFOR</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_side_independent">
+            <English>Independent</English>
+            <French>Indépendant</French>
+            <Spanish>Independiente</Spanish>
+            <Polish>Niezależni</Polish>
+            <Russian>Независимые</Russian>
+            <German>Unabhängige</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_side_west">
+            <English>BLUFOR</English>
+            <French>BLUFOR</French>
+            <Spanish>BLUFOR</Spanish>
+            <Polish>BLUFOR</Polish>
+            <Russian>BLUFOR</Russian>
+            <German>BLUFOR</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_target_ctab">
+            <English>cTab</English>
+            <French>cTab</French>
+            <Spanish>cTab</Spanish>
+            <Polish>cTab</Polish>
+            <Russian>cTab</Russian>
+            <German>cTab</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_target_map">
+            <English>Map</English>
+            <French>Carte</French>
+            <Spanish>Mapa</Spanish>
+            <Polish>Mapa</Polish>
+            <Russian>Карта</Russian>
+            <German>Karte</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_target_none">
+            <English>Nothing</English>
+            <French>Rien</French>
+            <Spanish>Nada</Spanish>
+            <Polish>Nic</Polish>
+            <Russian>Нигде</Russian>
+            <German>Nichts</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_zeus_noSensor">
+            <English>Place the module on an acoustic sensor</English>
+            <French>Placez le module sur un capteur acoustique</French>
+            <Spanish>Coloca el módulo sobre un sensor acústico</Spanish>
+            <Polish>Umieść moduł na czujniku akustycznym</Polish>
+            <Russian>Поместите модуль на акустический датчик</Russian>
+            <German>Modul auf einen akustischen Sensor setzen</German>
+        </Key>
+        <Key ID="STR_ewc_acoustic_zeus_remove_displayName">
+            <English>Remove Acoustic Sensor</English>
+            <French>Retirer le capteur acoustique</French>
+            <Spanish>Quitar sensor acústico</Spanish>
+            <Polish>Usuń czujnik akustyczny</Polish>
+            <Russian>Убрать акустический датчик</Russian>
+            <German>Akustischen Sensor entfernen</German>
+        </Key>
+    </Package>
+</Project>
