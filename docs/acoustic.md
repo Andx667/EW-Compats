@@ -51,7 +51,7 @@ Things that make a sensor hear **less**:
 - **Hills.** A drone behind a hill is much harder to hear. A drone high up is heard better than one skimming the ground.
 - **Temperature and humidity** change how much of the sound the air swallows on the way. This matters most for small drones, whose sound is higher, and over long distances.
 
-Only drones in the air with their engine running make a sound. Friendly drones are not tracked unless the setting *Track friendly drones* is on.
+Only drones in the air with their engine running make a sound. Friendly drones are not tracked unless the setting *Track friendly drones* is on. A drone without crew (its AI was removed) cannot be told apart and is always tracked.
 
 ## Reading the markers
 

@@ -61,11 +61,19 @@ if (_drones isNotEqualTo []) then {
         {
             private _drone = _x;
 
-            // A UAV used as a sensor would hear its own engine, getNoiseLevel skips UAVs so nothing masks it
+            // A UAV used as a sensor would hear its own engine, getNoiseLevel skips UAVs so nothing masks it.
+            // A drone without crew has no group, side grpNull is not its faction (civilian, friendly to most sides):
+            // nobody can tell whose it is, so it counts as hostile and is always reported
+            private _droneGroup = group _drone;
+
             if (
                 _drone isNotEqualTo _sensor
                 && {(_mic vectorDistanceSqr getPosASL _drone) <= _maxRangeSqr}
-                && {GVAR(reportFriendly) || {(_side getFriend side group _drone) < 0.6}}
+                && {
+                    GVAR(reportFriendly)
+                    || {isNull _droneGroup}
+                    || {(_side getFriend side _droneGroup) < 0.6}
+                }
             ) then {
                 if (isNil "_noise") then {
                     _noise = [_mic, _weather] call FUNC(getNoiseLevel);
