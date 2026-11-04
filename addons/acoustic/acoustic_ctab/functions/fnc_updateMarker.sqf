@@ -43,7 +43,7 @@ params [
 
 if (!isServer || {GVAR(markerTarget) != MARKER_TARGET_CTAB}) exitWith {};
 
-private _key = [_side] call FUNC(ctab_getEncryptionKey);
+private _key = [_side] call EFUNC(common,getCtabEncryptionKey);
 private _point = _position select [0, 2];
 private _old = GVAR(ctab_markers) get _id;
 

@@ -6,6 +6,7 @@ PREP(canToggle);
 PREP(clearCrowsActions);
 PREP(debugDraw);
 PREP(debugToggle);
+PREP(getCtabEncryptionKey);
 PREP(getJammerConfig);
 PREP(initVehicle);
 PREP(notifyState);

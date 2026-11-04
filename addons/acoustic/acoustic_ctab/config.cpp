@@ -9,7 +9,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {QUOTE(ADDON), "cTab_core", "cTab_main"};
+        requiredAddons[] = {QUOTE(ADDON), "ewc_common", "cTab_core", "cTab_main"};
 
         skipWhenMissingDependencies = 1;
         author = AUTHOR;
