@@ -43,3 +43,7 @@ A system that the crew switches on and off (the CUP DUKE, the Boomerang, the Hum
 ## State hint
 
 `fnc_notifyState` tells the people in a vehicle that one of its systems was switched on or off. A compat addon calls it on the server where the state changes, with the name of the system and, for a system that switched itself off, a reason. It raises the CBA event `ewc_common_stateChanged`, and `fnc_onStateChanged` shows a `hintSilent` on the machines of the vehicle's occupants, for example `DUKE off: engine stopped`. The reasons are the strings `ewc_common_reason_<reason>`, a reason without one is left out.
+
+## cTab encryption key
+
+`fnc_getCtabEncryptionKey` returns the key cTab uses for the user markers of a side, for the cTab sub-addons of the Boomerang and the acoustic drone detection. cTab sets `cTab_encryptionKey_WEST` and the others on the clients only, so a server without them gets cTab's defaults: `b`, `o`, `c`, and for independent the key of the side it is friendly to, else `i`. It only reads cTab's variables, so `ewc_common` does not need cTab.

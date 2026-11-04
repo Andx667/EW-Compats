@@ -3,6 +3,8 @@
  * Author: Andx
  * Returns the encryption key cTab uses for the user markers of a side. cTab sets the keys on the clients only, so a
  * server that has none of its own gets the same defaults cTab would give the clients (cTab XEH_postInitClient).
+ * Shared by the cTab sub-addons of the Boomerang and the acoustic drone detection. It only reads cTab's variables, so
+ * this addon does not need cTab.
  *
  * Arguments:
  * 0: Side <SIDE>
@@ -11,7 +13,7 @@
  * Encryption key <STRING>
  *
  * Example:
- * [west] call ewc_boomerang_fnc_ctab_getEncryptionKey
+ * [west] call ewc_common_fnc_getCtabEncryptionKey
  *
  * Public: No
  */
