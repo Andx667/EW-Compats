@@ -13,6 +13,7 @@
  * Return Value:
  * 0: Estimated position, ASL <ARRAY>
  * 1: Triangulated <BOOL>
+ * 2: Measurement with the best signal to noise ratio <ARRAY>
  *
  * Example:
  * [[_measurementA, _measurementB]] call ewc_acoustic_fnc_estimatePosition
@@ -21,6 +22,10 @@
  */
 
 params [["_measurements", [], [[]]]];
+
+// The sensor that hears the drone best: gives the single sensor fix, and the scan names the cTab creator after it
+private _snrs = _measurements apply {_x select 5};
+private _best = _measurements select (_snrs find selectMax _snrs);
 
 private _crossing = false;
 
@@ -108,15 +113,6 @@ if (_crossing) then {
 private _triangulated = _position isNotEqualTo [];
 
 if (!_triangulated) then {
-    // The sensor that hears the drone best
-    private _best = _measurements select 0;
-
-    {
-        if ((_x select 5) > (_best select 5)) then {
-            _best = _x;
-        };
-    } forEach _measurements;
-
     _best params ["_mic", "_azimuth", "_elevation", "", "_range"];
 
     private _horizontal = _range * cos _elevation;
@@ -127,4 +123,4 @@ if (!_triangulated) then {
 // Not below the ground
 _position set [2, (_position select 2) max (getTerrainHeightASL _position)];
 
-[_position, _triangulated]
+[_position, _triangulated, _best]

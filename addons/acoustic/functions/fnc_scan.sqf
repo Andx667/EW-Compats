@@ -91,17 +91,10 @@ if (_drones isNotEqualTo []) then {
     {
         _y params ["_side", "_drone", "_measurements"];
 
-        ([_measurements] call FUNC(estimatePosition)) params ["_fix", "_triangulated"];
+        ([_measurements] call FUNC(estimatePosition)) params ["_fix", "_triangulated", "_best"];
 
         // The fix is as old as the sound the closest sensor heard, the best sensor names the creator on cTab
         private _delay = selectMin (_measurements apply {_x select 6});
-        private _best = _measurements select 0;
-
-        {
-            if ((_x select 5) > (_best select 5)) then {
-                _best = _x;
-            };
-        } forEach _measurements;
 
         [_x, _side, _drone, _fix, _triangulated, CBA_missionTime - _delay, _best select 7] call FUNC(updateTrack);
     } forEach _heard;
