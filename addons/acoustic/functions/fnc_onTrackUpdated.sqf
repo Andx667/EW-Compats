@@ -38,8 +38,13 @@ params [
     ["_triangulated", false, [false]]
 ];
 
-// Markers are local, so only the side of the sensors sees the drones
-if (isNull player || {GVAR(markerTarget) != MARKER_TARGET_MAP} || {(playerSide getFriend _side) < 0.6}) exitWith {};
+// Markers are local, so only the side of the sensors sees the drones. When this machine should not show the track
+// (any more: the setting changed, or the player changed side), remove the markers it already made for it
+if (isNull player || {GVAR(markerTarget) != MARKER_TARGET_MAP} || {(playerSide getFriend _side) < 0.6}) exitWith {
+    if (_id in GVAR(trackMarkers)) then {
+        [_id] call FUNC(onTrackLost);
+    };
+};
 
 private _markers = GVAR(trackMarkers) get _id;
 

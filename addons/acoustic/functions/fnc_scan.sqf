@@ -61,8 +61,10 @@ if (_drones isNotEqualTo []) then {
         {
             private _drone = _x;
 
+            // A UAV used as a sensor would hear its own engine, getNoiseLevel skips UAVs so nothing masks it
             if (
-                (_mic vectorDistanceSqr getPosASL _drone) <= _maxRangeSqr
+                _drone isNotEqualTo _sensor
+                && {(_mic vectorDistanceSqr getPosASL _drone) <= _maxRangeSqr}
                 && {GVAR(reportFriendly) || {(_side getFriend side group _drone) < 0.6}}
             ) then {
                 if (isNil "_noise") then {

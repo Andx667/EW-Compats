@@ -20,7 +20,7 @@
  * 0: Position of the microphone, ASL <ARRAY>
  * 1: Measured azimuth in degrees <NUMBER>
  * 2: Measured elevation in degrees <NUMBER>
- * 3: Bearing error (one standard deviation) in degrees <NUMBER>
+ * 3: Bearing error scale in degrees, the azimuth noise is random [-2x, 0, 2x] of it (one sigma about 0.58x) <NUMBER>
  * 4: Estimated range in m <NUMBER>
  * 5: Signal to noise ratio after processing in dB <NUMBER>
  * 6: Travel time of the sound in s <NUMBER>
@@ -78,18 +78,38 @@ private _horizontal = vectorMagnitude [_toDrone select 0, _toDrone select 1, 0];
 private _azimuth = (_toDrone select 0) atan2 (_toDrone select 1);
 private _elevation = (_toDrone select 2) atan2 _horizontal;
 
+// random [min, mid, max] is a rescaled Bates distribution (n = 4): one sigma is about 0.58 times _error, never more
+// than 2 times _error. The triangulation only uses _error as a relative weight, so the scale does not matter there
 _azimuth = (_azimuth + random [-2 * _error, 0, 2 * _error] + 360) % 360;
 _elevation = ((_elevation + random [-2 * _elevationError, 0, 2 * _elevationError]) max -90) min 90;
 
 // Range from the measured level: invert spreading and absorption for the nominal source level. The ground, terrain
 // and wind are unknown to the sensor, they make the drone sound further away
 private _measured = _received + random [-LEVEL_UNCERTAINTY, 0, LEVEL_UNCERTAINTY];
-private _range = 10 ^ ((_level - _measured) / 20);
 
-for "_i" from 1 to 3 do {
-    _range = 10 ^ ((_level - _measured - _absorption * _range) / 20);
+// Solve 20 log10 r + a r = L - Lm with Newton's method on s = ln r. In s the left side is k s + a e^s with
+// k = 20 / ln 10, increasing and convex, so Newton from the right of the root converges monotonically and never
+// overshoots. Both bounds are right of the root: the start without absorption, as the absorption term is never
+// negative, and r = loss / a, as the spreading term is not negative for r >= 1 (and below that, s = 0 is right of
+// it). The smaller bound keeps the steps few when the absorption is strong. A plain fixed point on r oscillates once
+// a r is above k (about 8.7 dB)
+private _k = 20 / ln 10;
+private _loss = _level - _measured;
+private _s = _loss / _k;
+
+if (_absorption > 0 && {_loss > 0}) then {
+    _s = (_s min ln (_loss / _absorption)) max 0;
 };
 
-_range = (_range max MIN_DISTANCE) min (2 * GVAR(maxRange));
+for "_i" from 1 to 20 do {
+    private _absorbed = _absorption * exp _s;
+    private _step = (_k * _s + _absorbed - _loss) / (_k + _absorbed);
+
+    _s = _s - _step;
+
+    if (abs _step < 1e-4) exitWith {};
+};
+
+private _range = ((exp _s) max MIN_DISTANCE) min (2 * GVAR(maxRange));
 
 [_mic, _azimuth, _elevation, _error, _range, _snr, _delay]

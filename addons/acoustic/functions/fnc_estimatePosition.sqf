@@ -95,8 +95,10 @@ if (_crossing) then {
 
         private _weight = 1 / (_error * _error);
 
-        // Straight above the sensor the tangent grows without bound, the elevation is not that exact anyway
-        _heightSum = _heightSum + _weight * ((_mic select 2) + ([_x0, _y0] distance2D _mic) * tan (_elevation min MAX_ELEVATION));
+        // Straight above or below the sensor the tangent grows without bound, the elevation is not that exact anyway
+        private _clamped = (_elevation max -MAX_ELEVATION) min MAX_ELEVATION;
+
+        _heightSum = _heightSum + _weight * ((_mic select 2) + ([_x0, _y0] distance2D _mic) * tan _clamped);
         _weightSum = _weightSum + _weight;
     } forEach _measurements;
 

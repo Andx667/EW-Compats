@@ -17,9 +17,10 @@
 #define PROCESSING_GAIN 25
 #define DETECTION_THRESHOLD 10
 
-// Bearing error (degrees, one standard deviation) at the detection threshold. It falls with the signal to noise ratio
-// as 1 / sqrt(SNR) (Cramér-Rao bound of a direction estimate), down to the minimum. The elevation is less exact than
-// the azimuth, an array on a mast is wider than it is high
+// Bearing error scale (degrees) at the detection threshold. The noise is random [-2x, 0, 2x] of it, a rescaled Bates
+// distribution: one standard deviation is about 0.58 times the scale (3.5° at 6), never more than 2 times (12° at 6).
+// It falls with the signal to noise ratio as 1 / sqrt(SNR) (Cramér-Rao bound of a direction estimate), down to the
+// minimum. The elevation is less exact than the azimuth, an array on a mast is wider than it is high
 #define BEARING_ERROR_MAX 6
 #define BEARING_ERROR_MIN 1
 #define ELEVATION_ERROR_FACTOR 1.5
