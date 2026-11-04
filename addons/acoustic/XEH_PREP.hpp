@@ -6,6 +6,7 @@ PREP(getAbsorption);
 PREP(getNoiseLevel);
 PREP(getReceivedLevel);
 PREP(getSignature);
+PREP(getTrackRecipients);
 PREP(getWeather);
 PREP(hearDrone);
 PREP(moduleAddSensor);

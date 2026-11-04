@@ -64,7 +64,7 @@ Raised by the DUKEs, which hold the IEDs around the vehicle while they are on. T
 
 ### `ewc_acoustic_trackUpdated`
 
-- Raised on: every machine (global)
+- Raised on: the server always. Also on the machines of the players friendly to `side` (by the side of their group), but only while the setting shows the tracks on the map. To use the tracks in a script, handle the event on the server.
 - Payload: `[id, side, position, heading, speed, height, path, triangulated, kind, sensor]`
     - `id`: number of the track, the same for all updates of one drone and side
     - `side`: side of the sensors that hear the drone
@@ -80,9 +80,9 @@ Raised by the DUKEs, which hold the IEDs around the vehicle while they are on. T
 
 ### `ewc_acoustic_trackLost`
 
-- Raised on: every machine (global)
+- Raised on: the server always, and on the machines that got the last `ewc_acoustic_trackUpdated` of the track.
 - Payload: `[id, side]`
-- When: no sensor of the side has heard the drone for the track timeout, or the detection was switched off.
+- When: no sensor of the side has heard the drone for the track timeout, or the detection was switched off. A client also gets it on its own when it stops getting a track that goes on, because its player changed side or the setting stopped showing the tracks on the map. On the server that means the track still runs.
 
 ## For addon authors
 

@@ -40,7 +40,8 @@ params [
 
 // Markers are local, so only the side of the sensors sees the drones. When this machine should not show the track
 // (any more: the setting changed, or the player changed side), remove the markers it already made for it
-if (isNull player || {GVAR(markerTarget) != MARKER_TARGET_MAP} || {(playerSide getFriend _side) < 0.6}) exitWith {
+// Same check as the server in fnc_getTrackRecipients, which matters for a player on the server itself
+if (isNull player || {GVAR(markerTarget) != MARKER_TARGET_MAP} || {((side group player) getFriend _side) < 0.6}) exitWith {
     if (_id in GVAR(trackMarkers)) then {
         [_id] call FUNC(onTrackLost);
     };

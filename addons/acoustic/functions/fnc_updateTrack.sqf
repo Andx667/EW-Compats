@@ -1,7 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Takes a new position fix of a drone into its track for a side and sends the track to every machine. The fixes are
+ * SERVER ONLY. Takes a new position fix of a drone into its track for a side and raises ewc_acoustic_trackUpdated on
+ * the server and on the machines of the players who see it (see fnc_getTrackRecipients). The fixes are
  * noisy, so the track smooths them with an alpha-beta filter (a fixed gain Kalman filter): the predicted position
  * moves part of the way to the fix, and the difference corrects the velocity, which gives heading and speed. A single
  * sensor fix is trusted less than a triangulated one. The path keeps a point every PATH_MIN_STEP m.
@@ -39,8 +40,9 @@ private _track = GVAR(tracks) get _key;
 if (isNil "_track") then {
     GVAR(trackCounter) = GVAR(trackCounter) + 1;
 
-    // ID, side, position ASL, velocity, time of the position, path [[x, y], ...], kind, last time the drone was heard
-    _track = [GVAR(trackCounter), _side, _fix, [0, 0, 0], _time, [], ([_drone] call FUNC(getSignature)) select 2, CBA_missionTime];
+    // ID, side, position ASL, velocity, time of the position, path [[x, y], ...], kind, last time the drone was heard,
+    // owner IDs of the machines the track was last sent to
+    _track = [GVAR(trackCounter), _side, _fix, [0, 0, 0], _time, [], ([_drone] call FUNC(getSignature)) select 2, CBA_missionTime, []];
     GVAR(tracks) set [_key, _track];
 } else {
     _track params ["", "", "_position", "_velocity", "_lastTime"];
@@ -73,7 +75,7 @@ private _speed = vectorMagnitude [_velocity select 0, _velocity select 1, 0];
 private _heading = (((_velocity select 0) atan2 (_velocity select 1)) + 360) % 360;
 private _altitude = (_position select 2) - (getTerrainHeightASL _position);
 
-[QGVAR(trackUpdated), [
+private _payload = [
     _id,
     _side,
     _position,
@@ -84,4 +86,21 @@ private _altitude = (_position select 2) - (getTerrainHeightASL _position);
     _triangulated,
     _kind,
     _sensor
-]] call CBA_fnc_globalEvent;
+];
+
+// The server always gets it (cTab, scripts), other machines only when their player shows the track on the map. The
+// full path goes along, so a late joiner or a player who just changed side has it with the next update
+[QGVAR(trackUpdated), _payload] call CBA_fnc_localEvent;
+
+private _recipients = [_side] call FUNC(getTrackRecipients);
+
+{
+    [QGVAR(trackUpdated), _payload, _x] call CBA_fnc_ownerEvent;
+} forEach _recipients;
+
+// A machine that got the track before and no longer does (side changed, setting changed) removes its markers
+{
+    [QGVAR(trackLost), [_id, _side], _x] call CBA_fnc_ownerEvent;
+} forEach ((_track select 8) - _recipients);
+
+_track set [8, _recipients];

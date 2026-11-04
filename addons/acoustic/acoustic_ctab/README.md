@@ -13,7 +13,7 @@ The CBA setting **Show drones** (set by the server) decides where a track is sho
 
 ## How it works
 
-- `ewc_acoustic_trackUpdated` and `ewc_acoustic_trackLost` reach every machine. The handlers are registered in `preInit` and only the server acts on them, so a track is one marker.
+- `ewc_acoustic_trackUpdated` and `ewc_acoustic_trackLost` are always raised on the server (on clients only for map markers). The handlers are registered in `preInit` and only the server acts on them, so a track is one marker.
 - `fnc_ctab_updateMarker` adds the marker with `cTab_fnc_addUserMarker` for the encryption key of the side of the sensors (`fnc_ctab_getEncryptionKey`, a copy of the one of `boomerang_ctab`, which this addon cannot require). The marker data is `[2D position, icon, size, octant, time, creator]`: icon 4 (red NATO rotary wing) or 5 (fixed wing) from the kind of the signature, no size, the octant of the heading (1 north to 8 north-west, 0 below 2 m/s, so no arrow), `cTab_fnc_currentTime` and the sensor that heard the drone best as creator.
 - cTab cannot move a marker, and every new one makes it notify the side. The marker is only replaced (`cTab_fnc_deleteUserMarker`, then a new one) once the drone moved `CTAB_MOVE_DISTANCE` (150 m) **and** the marker is `CTAB_UPDATE_INTERVAL` (10 s) old. A marker a player deleted (not in `cTab_userMarkerLists` any more) is replaced with the next update, the drone is still heard. The ID of a marker is `cTab_userMarkerTransactionId` right after adding it.
 - `fnc_ctab_removeMarker` deletes the marker when the track ends. The path of the track is not shown, cTab has no lines.
