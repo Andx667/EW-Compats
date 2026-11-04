@@ -33,8 +33,9 @@ if (!GVAR(enable)) exitWith {
     [true] call FUNC(dropTracks);
 };
 
-// Drones in the air make the sound, a drone on the ground with its engine off does not
-private _drones = allUnitsUAV select {alive _x && {_x isKindOf "Air"} && {isEngineOn _x}};
+// Drones in the air make the sound, a drone on the ground with its engine off does not. A drone without crew (no
+// group) cannot fly or be controlled, it is left out
+private _drones = allUnitsUAV select {alive _x && {_x isKindOf "Air"} && {isEngineOn _x} && {!isNull group _x}};
 
 // A number per drone names its tracks, only the server needs it
 {
@@ -52,28 +53,35 @@ if (_drones isNotEqualTo []) then {
     // "<side>:<drone ID>" -> [side, drone, measurements]
     private _heard = createHashMap;
 
+    // Side of the sensors -> the drones they track, filtered once per side instead of once per sensor and drone.
+    // side group, not side: a drone whose crew is captive is still of its faction
+    private _dronesBySide = createHashMap;
+
     {
         private _sensor = _x;
         private _side = _sensor getVariable [QGVAR(side), sideUnknown];
+        private _sideDrones = _dronesBySide get _side;
+
+        if (isNil "_sideDrones") then {
+            _sideDrones = if (GVAR(reportFriendly)) then {
+                _drones
+            } else {
+                _drones select {(_side getFriend side group _x) < 0.6}
+            };
+
+            _dronesBySide set [_side, _sideDrones];
+        };
+
         private _mic = (getPosASL _sensor) vectorAdd [0, 0, MIC_HEIGHT];
         private _noise = nil;
 
         {
             private _drone = _x;
 
-            // A UAV used as a sensor would hear its own engine, getNoiseLevel skips UAVs so nothing masks it.
-            // A drone without crew has no group, side grpNull is not its faction (civilian, friendly to most sides):
-            // nobody can tell whose it is, so it counts as hostile and is always reported
-            private _droneGroup = group _drone;
-
+            // A UAV used as a sensor would hear its own engine, getNoiseLevel skips UAVs so nothing masks it
             if (
                 _drone isNotEqualTo _sensor
                 && {(_mic vectorDistanceSqr getPosASL _drone) <= _maxRangeSqr}
-                && {
-                    GVAR(reportFriendly)
-                    || {isNull _droneGroup}
-                    || {(_side getFriend side _droneGroup) < 0.6}
-                }
             ) then {
                 if (isNil "_noise") then {
                     _noise = [_mic, _weather] call FUNC(getNoiseLevel);
@@ -93,7 +101,7 @@ if (_drones isNotEqualTo []) then {
                     };
                 };
             };
-        } forEach _drones;
+        } forEach _sideDrones;
     } forEach GVAR(sensors);
 
     {
