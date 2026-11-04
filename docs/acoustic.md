@@ -1,6 +1,6 @@
 # Acoustic Drone Detection
 
-**Acoustic drone sensors** listen for the buzz of rotors and propellers. A drone a sensor hears is marked for its side, on the map or on cTab, and followed: the marker moves with the drone and a line shows the path it took. The marker gives the estimated height above the ground, the heading and the speed.
+**Acoustic drone sensors** listen for the buzz of rotors and propellers. A drone a sensor hears is marked for its side, on the map or on cTab, and followed: the marker moves with the drone and a line shows the path it took.
 
 Whether a sensor hears a drone depends on what a real microphone would hear: how loud the drone is, how far away it is, the hills in between, the weather and the noise around the sensor. One sensor gives a rough position. **Two or more sensors** that hear the same drone from different directions locate it much more exactly.
 
@@ -55,12 +55,12 @@ Only drones in the air with their engine running make a sound. Friendly drones a
 
 ## Reading the markers
 
-- A **red drone marker** shows the estimated position, with height, heading and speed, for example *Drone 120 m, 45°, 60 km/h*, or *hovering* for a drone that stands still.
-- A **red line** shows the path the drone took, up to the last 40 points.
+- A **red drone marker** shows the estimated position.
+- A **red line** shows the path the drone took, up to the last 40 points. A small flag labelled *Drone path* marks where the line starts.
 - A **faint marker** means only one sensor hears the drone. Its distance is a guess from how loud it sounds and can be off by half or double. A drone behind a hill or upwind sounds further away than it is.
 - A **solid marker** means two or more sensors from different directions hear it. The position is much more exact.
 - The marker **lags behind** fast drones: sound needs about 3 seconds per kilometre, so the sensor hears where the drone was.
-- A drone that nobody hears any more stays marked for the *Track timeout* (20 s), then the marker and line disappear.
+- A drone that nobody hears any more stays marked for the *Track timeout* (30 s), then the marker, the line and the flag disappear. Heard again within that time, it carries on with the same marker and line.
 
 Only the side of the sensor and its friends see the markers. On **cTab** (setting *Show drones*), the drone is a red air marker of that side, with an arrow for its heading and the usual cTab notification. cTab cannot move a marker, so it is replaced when the drone has moved at least 150 m, at most every 10 seconds. cTab shows no path line.
 
@@ -88,9 +88,9 @@ Only the side of the sensor and its friends see the markers. On **cTab** (settin
 - Name: Track timeout
 - Type: `SLIDER`
 - Range: `5` to `120` s
-- Default: `20`
+- Default: `30`
 - Set by: the server
-- Purpose: seconds a drone that is no longer heard stays marked.
+- Purpose: seconds a drone that is no longer heard stays marked, on the map and on cTab.
 
 ### `ewc_acoustic_maxRange`
 
@@ -124,7 +124,7 @@ Only the side of the sensor and its friends see the markers. On **cTab** (settin
 // cba_settings.sqf
 force ewc_acoustic_enable = true; // default: true
 force ewc_acoustic_markerTarget = 2; // default: 1
-force ewc_acoustic_trackTimeout = 30; // default: 20
+force ewc_acoustic_trackTimeout = 45; // default: 30
 force ewc_acoustic_maxRange = 3000; // default: 4000
 force ewc_acoustic_ambientNoise = 45; // default: 35
 force ewc_acoustic_reportFriendly = false; // default: false

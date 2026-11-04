@@ -82,7 +82,7 @@
 #define TRACK_ALPHA_TRIANGULATED 0.6
 #define TRACK_ALPHA_SINGLE 0.3
 #define TRACK_BETA 0.2
-// Speeds (m/s) below this are shown as hovering
+// Speeds (m/s) below this are hovering, the cTab marker has no heading arrow
 #define TRACK_HOVER_SPEED 2
 // Path of a track: a point every PATH_MIN_STEP m, at most PATH_MAX_POINTS
 #define PATH_MIN_STEP 25
@@ -110,7 +110,10 @@
 #define ZEUS_CATEGORY "EW Compats"
 #define SENSOR_ICON "\a3\ui_f\data\igui\cfg\simpletasks\types\listen_ca.paa"
 
-// Map markers of a track: icon at the estimated position and the line of its path. A single sensor fix is fainter
+// Map markers of a track: icon at the estimated position, the line of its path and a labelled marker at the start of
+// the line. A single sensor fix is fainter
 #define MARKER_TYPE "o_uav"
+#define MARKER_TYPE_PATH_START "mil_start"
+#define MARKER_SIZE_PATH_START 0.6
 #define MARKER_COLOR "ColorRed"
 #define MARKER_ALPHA_SINGLE 0.6

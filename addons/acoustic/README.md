@@ -45,7 +45,7 @@ Not modelled: buildings and vegetation, temperature inversions, the Doppler shif
 
 ### Display
 
-- `fnc_onTrackUpdated` (clients) shows the track to players friendly to the side of the sensors when `ewc_acoustic_markerTarget` is map: a local `o_uav` marker with height, heading and speed (or *hovering* below 2 m/s), fainter for a single sensor fix, and a local `POLYLINE` marker along the path to the drone. `fnc_onTrackLost` removes both.
+- `fnc_onTrackUpdated` (clients) shows the track to players friendly to the side of the sensors when `ewc_acoustic_markerTarget` is map: a local `o_uav` marker without text, fainter for a single sensor fix, a local `POLYLINE` marker along the path to the drone and a `mil_start` marker labelled *Drone path* at the start of the line (it moves along when the path drops its oldest points). `fnc_onTrackLost` removes all three.
 - The sub-addon in `acoustic_ctab` shows the track on cTab instead, see its [README](acoustic_ctab/README.md).
 
 ### Signatures
@@ -79,7 +79,7 @@ Not modelled: buildings and vegetation, temperature inversions, the Doppler shif
 |---|---|---|
 | Enable acoustic drone detection | on | Set by the server |
 | Show drones | Map | Nothing, map or cTab (only when cTab is loaded). Set by the server |
-| Track timeout | 20 s | Set by the server |
+| Track timeout | 30 s | Set by the server |
 | Maximum range | 4000 m | Set by the server |
 | Ambient noise | 35 dB | Set by the server |
 | Track friendly drones | off | Set by the server |

@@ -9,21 +9,13 @@
             <Russian>Акустическое обнаружение дронов</Russian>
             <German>Akustische Drohnenerkennung</German>
         </Key>
-        <Key ID="STR_ewc_acoustic_markerText">
-            <English>Drone %1 m, %2°, %3 km/h</English>
-            <French>Drone %1 m, %2°, %3 km/h</French>
-            <Spanish>Dron %1 m, %2°, %3 km/h</Spanish>
-            <Polish>Dron %1 m, %2°, %3 km/h</Polish>
-            <Russian>Дрон %1 м, %2°, %3 км/ч</Russian>
-            <German>Drohne %1 m, %2°, %3 km/h</German>
-        </Key>
-        <Key ID="STR_ewc_acoustic_markerText_hover">
-            <English>Drone %1 m, hovering</English>
-            <French>Drone %1 m, stationnaire</French>
-            <Spanish>Dron %1 m, en estacionario</Spanish>
-            <Polish>Dron %1 m, zawis</Polish>
-            <Russian>Дрон %1 м, зависание</Russian>
-            <German>Drohne %1 m, schwebt</German>
+        <Key ID="STR_ewc_acoustic_markerText_pathStart">
+            <English>Drone path</English>
+            <French>Trajet du drone</French>
+            <Spanish>Ruta del dron</Spanish>
+            <Polish>Trasa drona</Polish>
+            <Russian>Маршрут дрона</Russian>
+            <German>Drohnenflugweg</German>
         </Key>
         <Key ID="STR_ewc_acoustic_moduleAddSensor_description">
             <English>Makes the synced objects acoustic drone sensors of the chosen side. Without a synced object a data terminal is placed. The drones they hear are marked on the map or cTab of that side and followed along their path. Several sensors that hear a drone from different directions locate it much more exactly than one.</English>

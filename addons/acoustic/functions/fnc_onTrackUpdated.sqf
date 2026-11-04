@@ -2,8 +2,8 @@
 /*
  * Author: Andx
  * Shows the track of a drone on the map of everybody friendly to the side of the sensors: a drone marker at the
- * estimated position with height, heading and speed, and a line along the path it took. A track from a single
- * sensor is fainter, its position is much less exact. Only when the setting shows the tracks on the map (the cTab
+ * estimated position, a line along the path it took and a "Drone path" marker at the start of the line. A track
+ * from a single sensor is fainter, its position is much less exact. Only when the setting shows the tracks on the map (the cTab
  * sub-addon adds the one on cTab).
  *
  * Arguments:
@@ -31,9 +31,9 @@ params [
     ["_id", -1, [0]],
     ["_side", sideUnknown, [sideUnknown]],
     ["_position", [0, 0, 0], [[]], 3],
-    ["_heading", 0, [0]],
-    ["_speed", 0, [0]],
-    ["_altitude", 0, [0]],
+    "",
+    "",
+    "",
     ["_path", [], [[]]],
     ["_triangulated", false, [false]]
 ];
@@ -50,8 +50,12 @@ if (isNull player || {GVAR(markerTarget) != MARKER_TARGET_MAP} || {((side group 
 private _markers = GVAR(trackMarkers) get _id;
 
 if (isNil "_markers") then {
-    _markers = [format ["%1_%2", QGVAR(track), _id], format ["%1_%2", QGVAR(path), _id]];
-    _markers params ["_icon", "_line"];
+    _markers = [
+        format ["%1_%2", QGVAR(track), _id],
+        format ["%1_%2", QGVAR(path), _id],
+        format ["%1_%2", QGVAR(pathStart), _id]
+    ];
+    _markers params ["_icon", "_line", "_start"];
 
     createMarkerLocal [_icon, _position];
     _icon setMarkerTypeLocal MARKER_TYPE;
@@ -61,20 +65,25 @@ if (isNil "_markers") then {
     _line setMarkerShapeLocal "POLYLINE";
     _line setMarkerColorLocal MARKER_COLOR;
 
+    createMarkerLocal [_start, _position];
+    _start setMarkerTypeLocal MARKER_TYPE_PATH_START;
+    _start setMarkerSizeLocal [MARKER_SIZE_PATH_START, MARKER_SIZE_PATH_START];
+    _start setMarkerColorLocal MARKER_COLOR;
+    _start setMarkerTextLocal LLSTRING(markerText_pathStart);
+
     GVAR(trackMarkers) set [_id, _markers];
 };
 
-_markers params ["_icon", "_line"];
+_markers params ["_icon", "_line", "_start"];
 
-private _text = if (_speed < TRACK_HOVER_SPEED * 3.6) then {
-    format [LLSTRING(markerText_hover), _altitude]
-} else {
-    format [LLSTRING(markerText), _altitude, _heading, _speed]
-};
+private _alpha = [MARKER_ALPHA_SINGLE, 1] select _triangulated;
 
 _icon setMarkerPosLocal _position;
-_icon setMarkerTextLocal _text;
-_icon setMarkerAlphaLocal ([MARKER_ALPHA_SINGLE, 1] select _triangulated);
+_icon setMarkerAlphaLocal _alpha;
+
+// The path drops its oldest points, so the start marker follows the start of the line
+_start setMarkerPosLocal (if (_path isEqualTo []) then {_position} else {_path select 0});
+_start setMarkerAlphaLocal _alpha;
 
 // The line ends at the drone. A polyline needs two points
 private _points = _path + [_position select [0, 2]];

@@ -32,7 +32,7 @@ if (isClass (configFile >> "CfgPatches" >> "cTab_main")) then {
     "SLIDER",
     [LLSTRING(setting_trackTimeout), LLSTRING(setting_trackTimeout_tooltip)],
     _category,
-    [5, 120, 20, 0],
+    [5, 120, 30, 0],
     true
 ] call CBA_fnc_addSetting;
 
