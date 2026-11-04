@@ -78,6 +78,7 @@ nav:
   - Common: common.md
   - Events: events.md
   - BFT Jamming: bft-jamming.md
+  - RF Exposure: rf-exposure.md
   - Compat BWA3: compat-bwa3.md
   - Compat CUP:
       - Overview: compat-cup.md
