@@ -60,6 +60,30 @@ Raised by the DUKEs, which hold the IEDs around the vehicle while they are on. T
     - `side`: side of the commander of the vehicle
 - When: a running Boomerang detects a shot (at most once per report interval of the vehicle, so not per bullet).
 
+## Acoustic Drone Detection
+
+### `ewc_acoustic_trackUpdated`
+
+- Raised on: the server always. Also on the machines of the players friendly to `side` (by the side of their group), but only while the setting shows the tracks on the map. To use the tracks in a script, handle the event on the server.
+- Payload: `[id, side, position, heading, speed, height, path, triangulated, kind, sensor]`
+    - `id`: number of the track, the same for all updates of one drone and side
+    - `side`: side of the sensors that hear the drone
+    - `position`: estimated position of the drone (with its error), ASL
+    - `heading`: in degrees, rounded
+    - `speed`: in km/h, rounded
+    - `height`: above the ground in m, rounded
+    - `path`: positions `[x, y]` the drone passed, oldest first
+    - `triangulated`: two or more sensors located it, otherwise one sensor guessed the distance
+    - `kind`: `0` fixed wing, `1` rotary wing
+    - `sensor`: the sensor that hears the drone best
+- When: every 2 seconds for every drone the sensors of a side hear.
+
+### `ewc_acoustic_trackLost`
+
+- Raised on: the server always, and on the machines that got the last `ewc_acoustic_trackUpdated` of the track.
+- Payload: `[id, side]`
+- When: no sensor of the side has heard the drone for the track timeout, or the detection was switched off. A client also gets it on its own when it stops getting a track that goes on, because its player changed side or the setting stopped showing the tracks on the map. On the server that means the track still runs.
+
 ## For addon authors
 
 ### `ewc_common_vehicleInit`
@@ -76,6 +100,6 @@ Raised by the DUKEs, which hold the IEDs around the vehicle while they are on. T
 
 ## Internal events
 
-These carry commands or keep the machines in sync. Do not rely on them: `ewc_compat_cup_duke_toggle`, `ewc_compat_rnt_toggle`, `ewc_boomerang_toggle`, `ewc_compat_bwa3_ecmToggled`, `ewc_compat_rhs_afrf_mastToggled`, the `syncJammer` events of the compat addons, `ewc_boomerang_vehicleFired`, `listChanged`, `requestList` and `deafChanged`.
+These carry commands or keep the machines in sync. Do not rely on them: `ewc_compat_cup_duke_toggle`, `ewc_compat_rnt_toggle`, `ewc_boomerang_toggle`, `ewc_compat_bwa3_ecmToggled`, `ewc_compat_rhs_afrf_mastToggled`, the `syncJammer` events of the compat addons, `ewc_boomerang_vehicleFired`, `listChanged`, `requestList` and `deafChanged`, `ewc_acoustic_addSensor` and `ewc_acoustic_removeSensor` (use the functions of the same name).
 
 To switch a jammer from a script, use the public functions `ewc_common_fnc_setJammer` and `ewc_common_fnc_addJammer` for the Crow's jammer, or the module of Crow's. A system with a switch (DUKE, Hummel) keeps its own state, so the crew's switch and a jammer set from a script can disagree.

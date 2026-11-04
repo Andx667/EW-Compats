@@ -5,7 +5,7 @@
 The project is entirely open-source and any contributions are welcome.
 
 !!! info "Requirements"
-    EW Compats requires [CBA_A3](https://github.com/CBATeam/CBA_A3/releases/latest) and Crow's Electronic Warfare. Every addon below is skipped when the mod it extends is not loaded. Crow's Electronic Warfare is needed by every addon except the Boomerang, which includes its CUP and RHS USAF parts.
+    EW Compats requires [CBA_A3](https://github.com/CBATeam/CBA_A3/releases/latest) and Crow's Electronic Warfare. Every addon below is skipped when the mod it extends is not loaded. Crow's Electronic Warfare is needed by every addon except the Boomerang, which includes its CUP and RHS USAF parts, and the Acoustic Drone Detection.
 
 ## Addons
 
@@ -18,6 +18,7 @@ The project is entirely open-source and any contributions are welcome.
 | [Compat CUP DUKE](compat-cup-duke.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Vehicles with a shown DUKE antenna get a DUKE switch that jams radios and IEDs |
 | [Compat CUP Drones](compat-cup-drones.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | The MQ-9 and Pchela-1T get the spectrum signal of Crow's Electronic Warfare, so drone jammers can jam them |
 | [Boomerang](boomerang.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371), [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Common core of the Boomerang shot finder of CUP (HMMWV, RG-31) and RHS USAF (M1245 SOCOM): a switch for shot detection with hints and markers on the map and, with cTab, on the tablets. Does not need Crow's Electronic Warfare |
+| [Acoustic Drone Detection](acoustic.md) | - | Acoustic drone sensors that hear drones from their sound and track them on the map or cTab. Does not need Crow's Electronic Warfare |
 | [Compat RHS USAF DUKE](compat-rhs-usaf.md) | [RHS USAF](https://steamcommunity.com/sharedfiles/filedetails/?id=843577117) | Vehicles with a DUKE also jam radios, and the Stryker family gets the DUKE RHS leaves out |
 | [Compat RHS AFRF](compat-rhs-afrf.md) | [RHS AFRF](https://steamcommunity.com/sharedfiles/filedetails/?id=843425103) | The GAZ-66 (R-142N) jams radios and drones with its mast deployed |
 | [Compat RnT Vehicles](compat-rnt.md) | [Redd'n'Tank Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=1128145626) | The Fuchs 1A4 Hummel, a jammer vehicle based on the Jaeger that jams radios while it is switched on |

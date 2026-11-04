@@ -85,6 +85,7 @@ nav:
       - DUKE: compat-cup-duke.md
       - Drones: compat-cup-drones.md
   - Boomerang: boomerang.md
+  - Acoustic Drone Detection: acoustic.md
   - Compat RnT: compat-rnt.md
   - Compat RHS:
       - USAF DUKE: compat-rhs-usaf.md

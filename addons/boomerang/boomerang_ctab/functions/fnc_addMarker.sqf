@@ -35,7 +35,7 @@ private _lifetime = GVAR(markerLifetime);
 // Nothing to do when the setting does not show the shots on cTab, or the markers are switched off
 if (GVAR(markerTarget) != MARKER_TARGET_CTAB || _lifetime <= 0 || {isNull _vehicle}) exitWith {};
 
-private _key = [_side] call FUNC(ctab_getEncryptionKey);
+private _key = [_side] call EFUNC(common,getCtabEncryptionKey);
 
 // The markers of this side that are still on cTab. A player can delete one on the tablet before its time is up
 private _onTablet = ([cTab_userMarkerLists, _key, []] call cTab_fnc_getFromPairs) apply {_x select 0};
