@@ -2,25 +2,25 @@
 
 Changes we would like in the mods EW Compats builds on, and where each one stands. Each request names the workaround in this repo that it would let us remove. Out-of-development mods (RHS, CUP, BWmod) are left out on purpose.
 
-Last updated: 2026-11-02.
+Last updated: 2026-11-05.
 
 ## Filed
 
-The first batch was filed on 2026-11-02. We want to see how the maintainers react before filing more, see [Parked](#parked-not-filed-yet).
+The first batch was filed on 2026-11-02. All five got an answer within two days. File the next batch once the open PRs are merged, see [Parked](#parked-not-filed-yet).
 
 | Mod | Issue | Request | Status |
 |---|---|---|---|
-| Crow's EW | [#189](https://github.com/Crowdedlight/Crows-Electronic-Warfare/issues/189) | A ready signal (`crowsEW_main_ready`), so scripts know when the jammer events are handled | open, no reply yet |
-| Crow's EW | [#190](https://github.com/Crowdedlight/Crows-Electronic-Warfare/issues/190) | Events `jammerAdded`, `jammerRemoved` and `jammerToggled` | open, no reply yet |
-| Crow's EW | [#191](https://github.com/Crowdedlight/Crows-Electronic-Warfare/issues/191) | Option (`crowsEW_main_hideActions`) to not add the (de)activate actions to a jammer | open, no reply yet |
-| Advanced Equipment | [#444](https://github.com/y0014984/Advanced-Equipment/issues/444) | One `AE3_network_fnc_canConnect` check for every connection path, with conditions other mods can add | open, no reply yet |
-| Advanced Equipment | [#445](https://github.com/y0014984/Advanced-Equipment/issues/445) | Public effective wireless range with modifiers, and documented getters for routers and clients | open, no reply yet |
+| Crow's EW | [#189](https://github.com/Crowdedlight/Crows-Electronic-Warfare/issues/189) | A ready signal (`crowsEW_main_ready`), so scripts know when the jammer events are handled | dropped: a maintainer said `CBA_missionTime > 0` is enough, PR [#193](https://github.com/Crowdedlight/Crows-Electronic-Warfare/pull/193) closed |
+| Crow's EW | [#190](https://github.com/Crowdedlight/Crows-Electronic-Warfare/issues/190) | Events `jammerAdded`, `jammerRemoved` and `jammerToggled` | accepted, as local events without JIP replay. PR [#192](https://github.com/Crowdedlight/Crows-Electronic-Warfare/pull/192) open |
+| Crow's EW | [#191](https://github.com/Crowdedlight/Crows-Electronic-Warfare/issues/191) | Option (`crowsEW_main_hideActions`) to hide the (de)activate actions of a jammer | accepted, as a variable checked in the action condition. PR [#195](https://github.com/Crowdedlight/Crows-Electronic-Warfare/pull/195) open |
+| Advanced Equipment | [#444](https://github.com/y0014984/Advanced-Equipment/issues/444) | One `AE3_network_fnc_canConnect` check for every connection path, with conditions other mods can add | maintainer asks to test QA release [2.1.0.5](https://github.com/y0014984/Advanced-Equipment/releases/tag/2.1.0.5) (network variables centralised) |
+| Advanced Equipment | [#445](https://github.com/y0014984/Advanced-Equipment/issues/445) | Public effective wireless range with modifiers, and documented getters for routers and clients | maintainer asks to test QA release [2.1.0.5](https://github.com/y0014984/Advanced-Equipment/releases/tag/2.1.0.5) (network variables centralised) |
 
-All five offer a PR for whichever shape the maintainers prefer. Related Crow's issues: #130 (the compat idea behind this repo, closed), #133 (the early `addJammer` race), #168 (a generic EMP event, open and accepted in principle).
+All five offered a PR for whichever shape the maintainers prefer. Related Crow's issues: #130 (the compat idea behind this repo, closed), #133 (the early `addJammer` race), #168 (a generic EMP event, open and accepted in principle).
 
 What we remove when they land:
 
-- #189: the `CBA_missionTime > 0` waits in `bft_jamming` `fnc_registerBftJammer`, `ewc_common_fnc_setJammer`, the R-142N `fnc_initVehicle` and the wait for the Spectrum signals in `compat_cup_drones`.
+- #189: nothing, it was dropped. The `CBA_missionTime > 0` waits in `bft_jamming` `fnc_registerBftJammer`, `ewc_common_fnc_setJammer`, the R-142N `fnc_initVehicle` and the wait for the Spectrum signals in `compat_cup_drones` stay.
 - #190: the full scans in `bft_jamming` `fnc_onUpdateJammersServer` and `ewc_common_fnc_removeCrowsActions`.
 - #191: `ewc_common_fnc_clearCrowsActions`, `fnc_removeCrowsActions` and the direct clean-up for hosted servers in `fnc_addJammer`.
 - #444 and #445: the polling loop and the private AE3 variables in `wifi_jamming` (PR #73), which drops laptops after the fact today.
