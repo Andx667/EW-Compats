@@ -20,6 +20,8 @@ Zeus can switch the jammer on and off like any Crow's Electronic Warfare jammer 
 
 Zeus Enhanced has two modules in the same **Crows Electronic Warfare** category: **Set as BFT Jammer** and **Remove BFT Jammer**. Place **Set as BFT Jammer** on an object, or on the ground for a data terminal that is spawned there. The dialog has the attributes above, with *Active when placed* instead of *Active at Mission Start* and the frequency as a slider between 520 and 1090 MHz. **Remove BFT Jammer** removes the jammer from the object it is placed on, the Spectrum signal goes with it and the object stays. It only removes BFT jammers, the radio and drone jammers are removed with the module of Crow's Electronic Warfare.
 
+An object is one jammer. A jammer module on an object that already is a jammer replaces that jammer, like the modules of Crow's Electronic Warfare do: setting a BFT jammer on a Wi-Fi or radio jammer turns it into a BFT jammer only, and the other way round. The Spectrum signal of the old jammer goes with it.
+
 ## Jamming types
 
 - **Blackout**: units in the whole range (effective plus falloff radius) disappear from the BFT.

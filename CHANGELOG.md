@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Wi-Fi Jamming - New addon `wifi_jamming` for [Advanced Equipment](https://steamcommunity.com/workshop/filedetails/?id=2888888564) (AE3): the editor module and the Zeus module **Set as Wi-Fi Jammer** (and **Remove Wi-Fi Jammer**) turn an object into a Crow's Electronic Warfare jammer that cuts the wireless connections of AE3 laptops to AE3 routers. Inside the effective radius no connection survives, in the falloff band the jamming strength shortens the wireless range of the router by that share. It uses the connect condition API of AE3 (needs AE3 2.1.0.5 or later): a jammed laptop cannot connect, and AE3 drops connected laptops in its own wireless sweep (every 5 s). The jammer shows in the Spectrum Device like the other types. Event `ewc_wifi_jamming_API_connectionJammed` (#73) by Andx
+
 ## [1.5.0] - 2026-11-04
 
 ### Added
