@@ -97,6 +97,8 @@ if (_stage != GVAR(stage)) then {
     [QGVAR(API_stageChanged), [_unit, _stage]] call CBA_fnc_localEvent;
 };
 
+// The duty factor functions are not public in ACE, but the only way to change its fatigue (ACE uses them itself in
+// field_rations). Without them, here after a rename in ACE, the vanilla branch below has no effect under ACE fatigue
 if (!isNil "ace_advanced_fatigue_fnc_addDutyFactor" && {missionNamespace getVariable ["ace_advanced_fatigue_enabled", false]}) then {
     // Only tell ACE about a change that matters, and about the end of the factor
     if (abs (_factor - GVAR(dutyFactor)) >= FATIGUE_FACTOR_STEP || {(_factor == 1) != (GVAR(dutyFactor) == 1)}) then {

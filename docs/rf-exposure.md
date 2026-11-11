@@ -50,7 +50,7 @@ The maximum pain is limited to half of `ace_medical_painUnconsciousThreshold`, s
 The jammers are read from the jammer map of Crow's Electronic Warfare, so every jammer counts that is registered there: the vehicles of the compat addons (DUKE, CG13, R-142N, Hummel), the [BFT](bft-jamming.md) jammer, and Crow's own radio and drone jammers. With *Vehicle-mounted only* the static ones are left out.
 
 !!! note "Coupling to other mods"
-    The integration uses public CBA events and global variables of Crow's Electronic Warfare and ACE, and the duty factor functions of ACE advanced fatigue, which ACE does not mark as public. An update of either mod could change them. Test after version bumps.
+    The integration uses public CBA events and global variables of Crow's Electronic Warfare and ACE, and the duty factor functions of ACE advanced fatigue, which ACE does not mark as public (ACE has no public way to change the fatigue). An update of either mod could change them. If ACE changes the duty factor functions, the fatigue stops working with ACE advanced fatigue while the headache stays. Test after version bumps.
 
 ## Dependencies
 

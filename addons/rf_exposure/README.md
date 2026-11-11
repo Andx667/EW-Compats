@@ -60,7 +60,7 @@ The exposure is readable in the debug console as `ewc_rf_exposure_exposure`.
 
 ## Coupling to other mods
 
-The integration uses public CBA events and global variables of Crow's Electronic Warfare and ACE, and one function of ACE that is not marked as public (`ace_advanced_fatigue_fnc_addDutyFactor` and `removeDutyFactor`, which ACE uses itself and that are meant for such factors). A future update could change them and silently break the addon. Test after version bumps.
+The integration uses public CBA events and global variables of Crow's Electronic Warfare and ACE, and two functions of ACE that are not marked as public: `ace_advanced_fatigue_fnc_addDutyFactor` and `removeDutyFactor`. This is a deliberate exception to the rule to use only public functions of other mods: ACE has no public way to change the fatigue, it uses these itself (`field_rations`), and without them there is no fatigue for players with ACE advanced fatigue. Both are called behind an `isNil` check, so if ACE renames them the fatigue falls back to the vanilla branch, which has no effect while ACE advanced fatigue runs: the fatigue is then silently gone, the headache stays. A change of their arguments would break the fatigue as well. Test after version bumps of ACE.
 
 - `crowsEW_main_updateJammers`, `crowsEW_main_jamMap`
 - `ace_medical_fnc_adjustPainLevel`, `ace_medical_pain`, `ace_medical_painUnconsciousThreshold`, `ace_medical_enabled`
