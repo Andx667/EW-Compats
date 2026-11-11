@@ -12,6 +12,7 @@ The project is entirely open-source and any contributions are welcome.
 | Addon | Extends | What it does |
 |---|---|---|
 | [BFT Jamming](bft-jamming.md) | [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) | Editor module that turns an object into a jammer for cTab's Blue Force Tracker |
+| [RF Exposure](rf-exposure.md) | [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) | Optional, off by default: staying near an active jammer on foot gives a mild headache and then fatigue. Somebody in a vehicle is safe |
 | [Wi-Fi Jamming](wifi-jamming.md) | [Advanced Equipment](https://steamcommunity.com/workshop/filedetails/?id=2888888564) | Editor module that turns an object into a jammer that cuts the wireless connections of AE3 laptops to AE3 routers |
 | [Compat BWA3](compat-bwa3.md) | [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) | The Dingo 2 CG13 also jams radios |
 | [Compat CUP](compat-cup.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Shared base of the CUP DUKE and the CUP part of the Boomerang: finds the vehicles with a DUKE or Boomerang antenna and provides the switch |

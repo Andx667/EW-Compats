@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ewc">
+    <Package name="rf_exposure">
+        <Key ID="STR_ewc_rf_exposure_category">
+            <English>RF Exposure</English>
+            <French>Exposition RF</French>
+            <Spanish>Exposición RF</Spanish>
+            <Polish>Ekspozycja na RF</Polish>
+            <Russian>Радиочастотное облучение</Russian>
+            <German>HF-Belastung</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_hint_fatigue">
+            <English>The headache wears you out.</English>
+            <French>Le mal de tête vous épuise.</French>
+            <Spanish>El dolor de cabeza te agota.</Spanish>
+            <Polish>Ból głowy wyczerpuje cię.</Polish>
+            <Russian>Головная боль изматывает вас.</Russian>
+            <German>Die Kopfschmerzen laugen dich aus.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_hint_headache">
+            <English>You get a headache.</English>
+            <French>Vous avez mal à la tête.</French>
+            <Spanish>Te duele la cabeza.</Spanish>
+            <Polish>Boli cię głowa.</Polish>
+            <Russian>У вас болит голова.</Russian>
+            <German>Du bekommst Kopfschmerzen.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_enable">
+            <English>Enable RF exposure</English>
+            <French>Activer l'exposition RF</French>
+            <Spanish>Activar exposición RF</Spanish>
+            <Polish>Włącz ekspozycję na RF</Polish>
+            <Russian>Включить радиочастотное облучение</Russian>
+            <German>HF-Belastung aktivieren</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_enable_tooltip">
+            <English>Staying close to an active jammer on foot gives a mild headache (pain of ACE medical), and fatigue once the headache is bad enough. Somebody in a vehicle is safe. A gameplay feature, not a medical claim.</English>
+            <French>Rester à pied près d'un brouilleur actif provoque un léger mal de tête (douleur d'ACE medical), puis de la fatigue quand il devient assez fort. Une personne dans un véhicule est protégée. Une fonction de gameplay, pas une affirmation médicale.</French>
+            <Spanish>Permanecer a pie cerca de un inhibidor activo provoca un dolor de cabeza leve (dolor de ACE medical) y fatiga cuando es lo bastante fuerte. Quien está en un vehículo está a salvo. Una función de juego, no una afirmación médica.</Spanish>
+            <Polish>Dłuższe przebywanie pieszo blisko aktywnej zagłuszarki powoduje lekki ból głowy (ból z ACE medical), a gdy jest wystarczająco silny, także zmęczenie. Osoba w pojeździe jest bezpieczna. Mechanika rozgrywki, nie twierdzenie medyczne.</Polish>
+            <Russian>Длительное пребывание пешком рядом с активной станцией помех вызывает лёгкую головную боль (боль из ACE medical), а когда она достаточно сильна, ещё и усталость. Находящийся в технике в безопасности. Игровая механика, а не медицинское утверждение.</Russian>
+            <German>Wer zu Fuß längere Zeit nahe an einem aktiven Störsender bleibt, bekommt leichte Kopfschmerzen (Schmerz aus ACE medical) und, sobald sie stark genug sind, Erschöpfung. Wer in einem Fahrzeug sitzt, ist sicher. Eine Spielfunktion, keine medizinische Aussage.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_farRadius">
+            <English>Far radius (m)</English>
+            <French>Rayon éloigné (m)</French>
+            <Spanish>Radio lejano (m)</Spanish>
+            <Polish>Zasięg daleki (m)</Polish>
+            <Russian>Дальний радиус (м)</Russian>
+            <German>Fernradius (m)</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_farRadius_tooltip">
+            <English>Distance from the hull of the jammer at which a full exposure takes the far time. Beyond it there is no exposure. In between the time grows linearly.</English>
+            <French>Distance à la coque du brouilleur à laquelle une exposition complète prend le temps éloigné. Au-delà, il n'y a pas d'exposition. Entre les deux, le temps augmente linéairement.</French>
+            <Spanish>Distancia al casco del inhibidor a la que una exposición completa tarda el tiempo lejano. Más allá no hay exposición. Entre ambos, el tiempo crece linealmente.</Spanish>
+            <Polish>Odległość od kadłuba zagłuszarki, przy której pełna ekspozycja trwa tyle, ile czas daleki. Dalej nie ma ekspozycji. Pomiędzy czas rośnie liniowo.</Polish>
+            <Russian>Расстояние от корпуса станции помех, на котором полное облучение занимает дальнее время. Дальше облучения нет. Между ними время растёт линейно.</Russian>
+            <German>Abstand zur Wanne des Störsenders, bei dem eine volle Belastung die Fernzeit dauert. Darüber hinaus gibt es keine Belastung. Dazwischen steigt die Zeit linear.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_farTime">
+            <English>Time at the far radius (s)</English>
+            <French>Durée au rayon éloigné (s)</French>
+            <Spanish>Tiempo en el radio lejano (s)</Spanish>
+            <Polish>Czas w zasięgu dalekim (s)</Polish>
+            <Russian>Время на дальнем радиусе (с)</Russian>
+            <German>Zeit im Fernradius (s)</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_farTime_tooltip">
+            <English>Seconds at the far radius until the exposure is complete. The time adds up, 30 minutes (1800 s) by default.</English>
+            <French>Secondes au rayon éloigné jusqu'à une exposition complète. Le temps s'additionne, 30 minutes (1800 s) par défaut.</French>
+            <Spanish>Segundos en el radio lejano hasta completar la exposición. El tiempo se acumula, 30 minutos (1800 s) por defecto.</Spanish>
+            <Polish>Sekundy w zasięgu dalekim do pełnej ekspozycji. Czas się sumuje, domyślnie 30 minut (1800 s).</Polish>
+            <Russian>Секунды на дальнем радиусе до полного облучения. Время суммируется, по умолчанию 30 минут (1800 с).</Russian>
+            <German>Sekunden im Fernradius bis zur vollen Belastung. Die Zeit summiert sich, standardmäßig 30 Minuten (1800 s).</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_fatigueFactor">
+            <English>Fatigue factor</English>
+            <French>Facteur de fatigue</French>
+            <Spanish>Factor de fatiga</Spanish>
+            <Polish>Współczynnik zmęczenia</Polish>
+            <Russian>Коэффициент усталости</Russian>
+            <German>Erschöpfungsfaktor</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_fatigueFactor_tooltip">
+            <English>Extra effort of every movement at the full fatigue, 0.5 means 50 % more (ACE advanced fatigue). It is half of that when the fatigue starts. 0 turns the fatigue off.</English>
+            <French>Effort supplémentaire de chaque mouvement à pleine fatigue, 0,5 signifie 50 % de plus (ACE advanced fatigue). C'est la moitié au début de la fatigue. 0 désactive la fatigue.</French>
+            <Spanish>Esfuerzo adicional de cada movimiento con la fatiga completa, 0,5 significa un 50 % más (ACE advanced fatigue). Es la mitad cuando empieza la fatiga. 0 desactiva la fatiga.</Spanish>
+            <Polish>Dodatkowy wysiłek każdego ruchu przy pełnym zmęczeniu, 0,5 oznacza o 50 % więcej (ACE advanced fatigue). Na początku zmęczenia to połowa tej wartości. 0 wyłącza zmęczenie.</Polish>
+            <Russian>Дополнительное усилие при каждом движении при полной усталости, 0,5 означает на 50 % больше (ACE advanced fatigue). В начале усталости это половина. 0 отключает усталость.</Russian>
+            <German>Zusätzlicher Aufwand jeder Bewegung bei voller Erschöpfung, 0,5 bedeutet 50 % mehr (ACE advanced fatigue). Zu Beginn der Erschöpfung ist es die Hälfte davon. 0 schaltet die Erschöpfung ab.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_fatigueThreshold">
+            <English>Pain for fatigue</English>
+            <French>Douleur pour la fatigue</French>
+            <Spanish>Dolor para la fatiga</Spanish>
+            <Polish>Ból powodujący zmęczenie</Polish>
+            <Russian>Боль для усталости</Russian>
+            <German>Schmerz für Erschöpfung</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_fatigueThreshold_tooltip">
+            <English>Pain of the jammer from which the fatigue starts. A value above the maximum pain is never reached, so there is no fatigue.</English>
+            <French>Douleur du brouilleur à partir de laquelle la fatigue commence. Une valeur supérieure à la douleur maximale n'est jamais atteinte, il n'y a donc pas de fatigue.</French>
+            <Spanish>Dolor del inhibidor a partir del cual empieza la fatiga. Un valor superior al dolor máximo nunca se alcanza, así que no hay fatiga.</Spanish>
+            <Polish>Ból od zagłuszarki, od którego zaczyna się zmęczenie. Wartość powyżej maksymalnego bólu nigdy nie jest osiągana, więc zmęczenia nie ma.</Polish>
+            <Russian>Боль от станции помех, с которой начинается усталость. Значение выше максимальной боли никогда не достигается, поэтому усталости нет.</Russian>
+            <German>Schmerz des Störsenders, ab dem die Erschöpfung beginnt. Ein Wert über dem maximalen Schmerz wird nie erreicht, dann gibt es keine Erschöpfung.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_nearRadius">
+            <English>Near radius (m)</English>
+            <French>Rayon proche (m)</French>
+            <Spanish>Radio cercano (m)</Spanish>
+            <Polish>Zasięg bliski (m)</Polish>
+            <Russian>Ближний радиус (м)</Russian>
+            <German>Nahradius (m)</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_nearRadius_tooltip">
+            <English>Distance from the hull of the jammer within which a full exposure takes the near time.</English>
+            <French>Distance à la coque du brouilleur à l'intérieur de laquelle une exposition complète prend le temps proche.</French>
+            <Spanish>Distancia al casco del inhibidor dentro de la cual una exposición completa tarda el tiempo cercano.</Spanish>
+            <Polish>Odległość od kadłuba zagłuszarki, w której pełna ekspozycja trwa tyle, ile czas bliski.</Polish>
+            <Russian>Расстояние от корпуса станции помех, в пределах которого полное облучение занимает ближнее время.</Russian>
+            <German>Abstand zur Wanne des Störsenders, innerhalb dessen eine volle Belastung die Nahzeit dauert.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_nearTime">
+            <English>Time at the near radius (s)</English>
+            <French>Durée au rayon proche (s)</French>
+            <Spanish>Tiempo en el radio cercano (s)</Spanish>
+            <Polish>Czas w zasięgu bliskim (s)</Polish>
+            <Russian>Время на ближнем радиусе (с)</Russian>
+            <German>Zeit im Nahradius (s)</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_nearTime_tooltip">
+            <English>Seconds within the near radius until the exposure is complete. The time adds up, 15 minutes (900 s) by default.</English>
+            <French>Secondes dans le rayon proche jusqu'à une exposition complète. Le temps s'additionne, 15 minutes (900 s) par défaut.</French>
+            <Spanish>Segundos dentro del radio cercano hasta completar la exposición. El tiempo se acumula, 15 minutos (900 s) por defecto.</Spanish>
+            <Polish>Sekundy w zasięgu bliskim do pełnej ekspozycji. Czas się sumuje, domyślnie 15 minut (900 s).</Polish>
+            <Russian>Секунды в ближнем радиусе до полного облучения. Время суммируется, по умолчанию 15 минут (900 с).</Russian>
+            <German>Sekunden im Nahradius bis zur vollen Belastung. Die Zeit summiert sich, standardmäßig 15 Minuten (900 s).</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_painMax">
+            <English>Maximum pain</English>
+            <French>Douleur maximale</French>
+            <Spanish>Dolor máximo</Spanish>
+            <Polish>Maksymalny ból</Polish>
+            <Russian>Максимальная боль</Russian>
+            <German>Maximaler Schmerz</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_painMax_tooltip">
+            <English>Pain (0 to 1) of a full exposure, a mild headache. Limited to half of the pain above which ACE medical can make a unit unconscious, so the jammer never gets anybody close to it. Pain from wounds is not added to it.</English>
+            <French>Douleur (0 à 1) d'une exposition complète, un léger mal de tête. Limitée à la moitié de la douleur à partir de laquelle ACE medical peut rendre une unité inconsciente, le brouilleur n'en approche donc jamais personne. La douleur des blessures ne s'y ajoute pas.</French>
+            <Spanish>Dolor (0 a 1) de una exposición completa, un dolor de cabeza leve. Limitado a la mitad del dolor a partir del cual ACE medical puede dejar inconsciente a una unidad, así que el inhibidor nunca acerca a nadie a él. El dolor de las heridas no se suma.</Spanish>
+            <Polish>Ból (0 do 1) przy pełnej ekspozycji, lekki ból głowy. Ograniczony do połowy bólu, od którego ACE medical może uśpić jednostkę, więc zagłuszarka nigdy nikogo do niego nie zbliża. Ból z ran nie jest dodawany.</Polish>
+            <Russian>Боль (от 0 до 1) при полном облучении, лёгкая головная боль. Ограничена половиной боли, с которой ACE medical может привести юнита в бессознательное состояние, поэтому станция помех никого к ней не приближает. Боль от ран не суммируется.</Russian>
+            <German>Schmerz (0 bis 1) einer vollen Belastung, leichte Kopfschmerzen. Auf die Hälfte des Schmerzes begrenzt, ab dem ACE medical eine Einheit bewusstlos machen kann, der Störsender bringt also niemanden in die Nähe davon. Schmerz von Wunden wird nicht addiert.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_recoveryTime">
+            <English>Recovery time (s)</English>
+            <French>Temps de récupération (s)</French>
+            <Spanish>Tiempo de recuperación (s)</Spanish>
+            <Polish>Czas regeneracji (s)</Polish>
+            <Russian>Время восстановления (с)</Russian>
+            <German>Erholungszeit (s)</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_recoveryTime_tooltip">
+            <English>Seconds away from the jammers (or in a vehicle) until a full exposure is gone. The pain then fades the way ACE medical lets pain fade.</English>
+            <French>Secondes loin des brouilleurs (ou dans un véhicule) jusqu'à la disparition d'une exposition complète. La douleur s'estompe ensuite comme le fait ACE medical.</French>
+            <Spanish>Segundos lejos de los inhibidores (o en un vehículo) hasta que desaparece una exposición completa. El dolor se desvanece después como lo hace ACE medical.</Spanish>
+            <Polish>Sekundy z dala od zagłuszarek (lub w pojeździe), po których pełna ekspozycja znika. Ból ustępuje potem tak, jak robi to ACE medical.</Polish>
+            <Russian>Секунды вдали от станций помех (или в технике), после которых полное облучение исчезает. Боль затем проходит так, как это делает ACE medical.</Russian>
+            <German>Sekunden fern der Störsender (oder in einem Fahrzeug), bis eine volle Belastung abgeklungen ist. Der Schmerz klingt danach so ab, wie ACE medical Schmerz abklingen lässt.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_sources">
+            <English>Jammers that count</English>
+            <French>Brouilleurs pris en compte</French>
+            <Spanish>Inhibidores que cuentan</Spanish>
+            <Polish>Zagłuszarki, które się liczą</Polish>
+            <Russian>Учитываемые станции помех</Russian>
+            <German>Zählende Störsender</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_setting_sources_tooltip">
+            <English>Which active jammers expose somebody: all of them (including static ones like the data terminal), or only those mounted on a vehicle.</English>
+            <French>Quels brouilleurs actifs exposent une personne : tous (y compris les fixes comme le terminal de données), ou seulement ceux montés sur un véhicule.</French>
+            <Spanish>Qué inhibidores activos exponen a alguien: todos (incluidos los fijos como el terminal de datos) o solo los montados en un vehículo.</Spanish>
+            <Polish>Które aktywne zagłuszarki narażają osobę: wszystkie (także stacjonarne, jak terminal danych) albo tylko zamontowane na pojeździe.</Polish>
+            <Russian>Какие активные станции помех облучают человека: все (включая стационарные, например терминал данных) или только установленные на технике.</Russian>
+            <German>Welche aktiven Störsender jemanden belasten: alle (auch ortsfeste wie das Datenterminal) oder nur die auf einem Fahrzeug montierten.</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_sources_all">
+            <English>All jammers</English>
+            <French>Tous les brouilleurs</French>
+            <Spanish>Todos los inhibidores</Spanish>
+            <Polish>Wszystkie zagłuszarki</Polish>
+            <Russian>Все станции помех</Russian>
+            <German>Alle Störsender</German>
+        </Key>
+        <Key ID="STR_ewc_rf_exposure_sources_vehicles">
+            <English>Vehicle-mounted only</English>
+            <French>Montés sur véhicule uniquement</French>
+            <Spanish>Solo montados en vehículo</Spanish>
+            <Polish>Tylko na pojazdach</Polish>
+            <Russian>Только на технике</Russian>
+            <German>Nur fahrzeugmontierte</German>
+        </Key>
+    </Package>
+</Project>

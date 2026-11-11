@@ -41,6 +41,7 @@ Every feature is its own addon and is skipped when the mod it extends is not loa
 | Addon | Extends | What it does |
 |---|---|---|
 | [`bft_jamming`](./addons/bft_jamming/README.md) | [cTab](https://steamcommunity.com/sharedfiles/filedetails/?id=3438246217) | Editor module that turns an object into a jammer for cTab's Blue Force Tracker (blackout, position drift or both) |
+| [`rf_exposure`](./addons/rf_exposure/README.md) | [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) | Optional, off by default: staying near an active jammer on foot gives a mild headache (ACE pain) and then fatigue. Somebody in a vehicle is safe |
 | [`wifi_jamming`](./addons/wifi_jamming/README.md) | [Advanced Equipment](https://steamcommunity.com/workshop/filedetails/?id=2888888564) | Editor module that turns an object into a jammer that cuts the wireless connections of AE3 laptops to AE3 routers, with an effective and a falloff radius |
 | [`compat_bwa3`](./addons/compat_bwa3/README.md) | [BWmod](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) | The Dingo 2 CG13 also jams radios while its IED jammer is switched on |
 | [`compat_cup`](./addons/compat_cup/README.md) | [CUP Vehicles](https://steamcommunity.com/sharedfiles/filedetails/?id=541888371) | Shared base of the CUP sub-addons `compat_cup_duke` and `compat_cup_boomerang` below: finds the vehicles with a DUKE or Boomerang antenna and provides the switch (scroll wheel or ACE) and its settings |

@@ -84,6 +84,14 @@ Raised by the DUKEs, which hold the IEDs around the vehicle while they are on. T
 - Payload: `[id, side]`
 - When: no sensor of the side has heard the drone for the track timeout, or the detection was switched off. A client also gets it on its own when it stops getting a track that goes on, because its player changed side or the setting stopped showing the tracks on the map. On the server that means the track still runs.
 
+## RF Exposure
+
+### `ewc_rf_exposure_API_stageChanged`
+
+- Raised on: the client of the player (local event)
+- Payload: `[unit, stage]`, the stage is `0` none, `1` headache, `2` fatigue
+- When: the stage of the exposure of the player changed. A respawn or a new unit raises `0` for the old unit if it had a stage. See [RF Exposure](rf-exposure.md#events).
+
 ## Wi-Fi Jamming
 
 ### `ewc_wifi_jamming_API_connectionJammed`
