@@ -79,6 +79,7 @@ nav:
   - Events: events.md
   - BFT Jamming: bft-jamming.md
   - RF Exposure: rf-exposure.md
+  - Wi-Fi Jamming: wifi-jamming.md
   - Compat BWA3: compat-bwa3.md
   - Compat CUP:
       - Overview: compat-cup.md

@@ -92,6 +92,14 @@ Raised by the DUKEs, which hold the IEDs around the vehicle while they are on. T
 - Payload: `[unit, stage]`, the stage is `0` none, `1` headache, `2` fatigue
 - When: the stage of the exposure of the player changed. A respawn or a new unit raises `0` for the old unit if it had a stage. See [RF Exposure](rf-exposure.md#events).
 
+## Wi-Fi Jamming
+
+### `ewc_wifi_jamming_API_connectionJammed`
+
+- Raised on: the server (local event)
+- Payload: `[laptop, router, strength]`, the strength being 0 to 1
+- When: one frame after the wireless sweep of AE3 dropped a laptop because a Wi-Fi jammer cut its link, once per dropped connection. A refused attempt to connect raises nothing. See [Wi-Fi Jamming](wifi-jamming.md#events).
+
 ## For addon authors
 
 ### `ewc_common_vehicleInit`
