@@ -65,7 +65,7 @@ The addon registers a connect condition with AE3. AE3 asks it before a laptop jo
 There are deliberately no CBA settings: without a placed module nothing happens anyway, and the frequency is a module attribute.
 
 !!! note "Coupling to other mods"
-    The integration uses public CBA events and global variables of Crow's Electronic Warfare, and the public API of AE3 (`AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`). It needs **AE3 2.1.0.5 or later**. An update of either mod could change them. Test after version bumps of both.
+    The integration uses public CBA events and global variables of Crow's Electronic Warfare, and only the public network API of AE3 (`addConnectCondition`, `getWirelessRange`, `getRouters`, `getClients`). It needs **AE3 2.1.0.5 or later** (checked against 2.1.0.7). An update of Crow's Electronic Warfare could still change its events and variables. Test after version bumps of both.
 
 ## Dependencies
 

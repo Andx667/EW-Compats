@@ -76,11 +76,11 @@ There are deliberately no CBA settings: without a placed module nothing happens 
 
 ## Coupling to other mods
 
-The integration uses public CBA events and global variables of Crow's Electronic Warfare, and the public API of AE3 (`AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`), which needs **AE3 2.1.0.5 or later**. The only variables of AE3 outside that API are `AE3_cap_isRouter` and `AE3_network_parent`. A future update of either mod could change them and silently break the addon. Test after version bumps of both.
+The integration uses public CBA events and global variables of Crow's Electronic Warfare, and only the public network API of AE3, which needs **AE3 2.1.0.5 or later** (checked against 2.1.0.7, whose network code is unchanged). No private variable of AE3 is read. Crow's Electronic Warfare has no such API, so a future update of it could still silently break the addon. Test after version bumps of both.
 
 - `crowsEW_main_addJammer`, `crowsEW_main_removeJammer`, `crowsEW_main_updateJammers`, `crowsEW_main_jamMap`
 - `crowsEW_spectrum_addBeacon`, `crowsEW_spectrum_removeBeacon`, `crowsEW_spectrum_beacons`
-- `AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`, `AE3_cap_isRouter`, `AE3_network_parent`
+- `AE3_network_fnc_addConnectCondition`, `AE3_network_fnc_getWirelessRange`, `AE3_network_fnc_getRouters`, `AE3_network_fnc_getClients`
 
 ## Dependencies
 

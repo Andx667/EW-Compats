@@ -12,7 +12,7 @@
  * a jammer therefore keeps a connection to a router that is close by, and loses one to a router far away.
  *
  * Registered on every machine, the answer of the server is the one that counts. Routers cascaded to another router are
- * left alone, like AE3 does.
+ * left alone, like AE3 does. Uses only the public API of AE3 (getWirelessRange, getRouters, getClients).
  *
  * Raises the event ewc_wifi_jamming_connectionJammed on the server for a connected laptop that is refused: AE3 drops it in
  * the same call of its wireless sweep, so one frame later the laptop is no longer a child of the router. A refusal that
@@ -33,7 +33,7 @@
 
 params [["_device", objNull, [objNull]], ["_router", objNull, [objNull]]];
 
-if (isNull _device || {isNull _router} || {_device getVariable [AE3_VAR_IS_ROUTER, false]}) exitWith {[true, ""]};
+if (isNull _device || {isNull _router}) exitWith {[true, ""]};
 
 private _jammers = [];
 
@@ -47,6 +47,10 @@ private _jammers = [];
 
 if (_jammers isEqualTo []) exitWith {[true, ""]};
 
+// Asked only once a jammer is on, so there is no cost without one. The sweep of AE3 never passes a router (getClients
+// leaves them out), but a cascade from the ACE menu can
+if (_device in (call AE3_network_fnc_getRouters)) exitWith {[true, ""]};
+
 private _strength = ([_router, _jammers] call FUNC(getJamStrength)) max ([_device, _jammers] call FUNC(getJamStrength));
 
 if (_strength <= 0) exitWith {[true, ""]};
@@ -56,7 +60,8 @@ private _range = [_router, _device] call AE3_network_fnc_getWirelessRange;
 
 if (_strength < 1 && {(_device distance _router) <= (_range * (1 - _strength))}) exitWith {[true, ""]};
 
-if (isServer && {(_device getVariable [AE3_VAR_PARENT, objNull]) isEqualTo _router} && {!(_device getVariable [QGVAR(jamPending), false])}) then {
+// A laptop that is a client of the router is connected and dropped by the sweep, one that is not tries to connect
+if (isServer && {!(_device getVariable [QGVAR(jamPending), false])} && {_device in ([_router] call AE3_network_fnc_getClients)}) then {
     _device setVariable [QGVAR(jamPending), true];
 
     [{
@@ -64,7 +69,7 @@ if (isServer && {(_device getVariable [AE3_VAR_PARENT, objNull]) isEqualTo _rout
 
         _device setVariable [QGVAR(jamPending), nil];
 
-        if !(isNull _device || {(_device getVariable [AE3_VAR_PARENT, objNull]) isEqualTo _router}) then {
+        if !(isNull _device || {_device in ([_router] call AE3_network_fnc_getClients)}) then {
             // For missions and mods that follow the connections: [laptop, router, strength 0 to 1], on the server
             [QGVAR(connectionJammed), [_device, _router, _strength]] call CBA_fnc_localEvent;
         };

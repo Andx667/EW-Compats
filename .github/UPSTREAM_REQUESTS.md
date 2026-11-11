@@ -23,7 +23,7 @@ What we remove when they land:
 - #189: nothing, it was dropped. The `CBA_missionTime > 0` waits in `bft_jamming` `fnc_registerBftJammer`, `ewc_common_fnc_setJammer`, the R-142N `fnc_initVehicle` and the wait for the Spectrum signals in `compat_cup_drones` stay.
 - #190: the full scans in `bft_jamming` `fnc_onUpdateJammersServer` and `ewc_common_fnc_removeCrowsActions`.
 - #191: `ewc_common_fnc_clearCrowsActions`, `fnc_removeCrowsActions` and the direct clean-up for hosted servers in `fnc_addJammer`.
-- #444 and #445: the polling loop and the private AE3 variables in `wifi_jamming` (PR #73), which drops laptops after the fact today.
+- #444 and #445: done in `wifi_jamming` (PR #73). It uses the connect condition API instead of its own polling loop, and `AE3_network_fnc_getRouters` / `getClients` instead of the private variables `AE3_cap_isRouter` and `AE3_network_parent`. Both issues are still open upstream, waiting for our test of the QA release.
 
 ## Parked (not filed yet)
 

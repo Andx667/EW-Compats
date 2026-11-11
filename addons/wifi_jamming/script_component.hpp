@@ -40,10 +40,7 @@
 #define CROWSEW_JAM_MAP_NAME "crowsEW_main_jamMap"
 #define CROWSEW_BEACONS crowsEW_spectrum_beacons
 
-// Advanced Equipment (AE3) we integrate with, through its connect condition API (AE3 2.1.0.5 and later). Its network is no
-// radio: a router has a wireless range, and AE3 itself drops a client that no longer passes AE3_network_fnc_canConnect
+// Advanced Equipment (AE3) we integrate with, through its public network API only (AE3 2.1.0.5 and later, checked
+// against 2.1.0.7). Its network is no radio: a router has a wireless range, and AE3 itself drops a client that no longer
+// passes AE3_network_fnc_canConnect
 #define AE3_CONNECT_CONDITION_ID "ewc_wifi_jamming"
-// Variable AE3 marks a router with (a cascaded router is no laptop and left alone)
-#define AE3_VAR_IS_ROUTER "AE3_cap_isRouter"
-// Router a device is connected to (objNull when none), read to see whether the sweep of AE3 dropped it
-#define AE3_VAR_PARENT "AE3_network_parent"

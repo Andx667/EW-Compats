@@ -36,7 +36,7 @@ if (!isServer) exitWith {};
         private _hasBeacon = _beaconIndex != -1;
 
         // Adding the module again to the same object replaces the jammer, so the signal can be there with old values
-        if (_hasBeacon && {_enabled} && {(CROWSEW_BEACONS select _beaconIndex) params ["", "_oldFrequency", "_oldRange"]; _oldFrequency != _frequency || {_oldRange != _range}}) then {
+        if (_hasBeacon && _enabled && {(CROWSEW_BEACONS select _beaconIndex) params ["", "_oldFrequency", "_oldRange"]; _oldFrequency != _frequency || _oldRange != _range}) then {
             [CROWSEW_REMOVE_BEACON_EVENT, [_unit, WIFI_JAM_SPECTRUM_TYPE]] call CBA_fnc_localEvent;
             _hasBeacon = false;
         };
