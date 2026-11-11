@@ -14,7 +14,7 @@
  * Registered on every machine, the answer of the server is the one that counts. Routers cascaded to another router are
  * left alone, like AE3 does. Uses only the public API of AE3 (getWirelessRange, getRouters, getClients).
  *
- * Raises the event ewc_wifi_jamming_connectionJammed on the server for a connected laptop that is refused: AE3 drops it in
+ * Raises the event ewc_wifi_jamming_API_connectionJammed on the server for a connected laptop that is refused: AE3 drops it in
  * the same call of its wireless sweep, so one frame later the laptop is no longer a child of the router. A refusal that
  * does not end a connection (a laptop that tries to connect) raises nothing.
  *
@@ -35,15 +35,10 @@ params [["_device", objNull, [objNull]], ["_router", objNull, [objNull]]];
 
 if (isNull _device || {isNull _router}) exitWith {[true, ""]};
 
-private _jammers = [];
+if (GVAR(jammers) isEqualTo []) exitWith {[true, ""]};
 
-{
-    _y params ["_jammer", "_radFalloff", "_radEffective", "_enabled", "_capabilities"];
-
-    if (_enabled && {WIFI_JAM_CAP in _capabilities} && {alive _jammer}) then {
-        _jammers pushBack [_jammer, _radEffective, _radFalloff];
-    };
-} forEach (missionNamespace getVariable [CROWSEW_JAM_MAP_NAME, createHashMap]);
+// A destroyed jammer stays in the jamMap until the cleanup of Crows
+private _jammers = GVAR(jammers) select {alive (_x select 0)};
 
 if (_jammers isEqualTo []) exitWith {[true, ""]};
 
@@ -71,9 +66,10 @@ if (isServer && {!(_device getVariable [QGVAR(jamPending), false])} && {_device 
 
         if !(isNull _device || {_device in ([_router] call AE3_network_fnc_getClients)}) then {
             // For missions and mods that follow the connections: [laptop, router, strength 0 to 1], on the server
-            [QGVAR(connectionJammed), [_device, _router, _strength]] call CBA_fnc_localEvent;
+            [QGVAR(API_connectionJammed), [_device, _router, _strength]] call CBA_fnc_localEvent;
         };
     }, [_device, _router, _strength]] call CBA_fnc_execNextFrame;
 };
 
-[false, LLSTRING(connection_jammed)]
+// The answer of a client is only shown on that client (hint of the ACE menu), the one of the server goes to the player
+[false, [LLSTRING(connection_jammed), WIFI_JAM_REASON_SERVER] select isServer]

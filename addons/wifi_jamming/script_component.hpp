@@ -36,11 +36,14 @@
 #define CROWSEW_UPDATE_JAMMERS_EVENT "crowsEW_main_updateJammers"
 #define CROWSEW_ADD_BEACON_EVENT "crowsEW_spectrum_addBeacon"
 #define CROWSEW_REMOVE_BEACON_EVENT "crowsEW_spectrum_removeBeacon"
-#define CROWSEW_JAM_MAP crowsEW_main_jamMap
 #define CROWSEW_JAM_MAP_NAME "crowsEW_main_jamMap"
 #define CROWSEW_BEACONS crowsEW_spectrum_beacons
 
 // Advanced Equipment (AE3) we integrate with, through its public network API only (AE3 2.1.0.5 and later, checked
 // against 2.1.0.7). Its network is no radio: a router has a wireless range, and AE3 itself drops a client that no longer
 // passes AE3_network_fnc_canConnect
-#define AE3_CONNECT_CONDITION_ID "ewc_wifi_jamming"
+#define AE3_CONNECT_CONDITION_ID QUOTE(ADDON)
+
+// Refusal reason the server gives AE3. AE3 sends it to the player's Network app as it is and never translates it (its own
+// reasons are English too), so a text localized on the server would be in the server's language, not the player's
+#define WIFI_JAM_REASON_SERVER "Jammed"

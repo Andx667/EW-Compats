@@ -20,8 +20,12 @@
 
 params [["_pos", [0, 0, 0], [[]], 3], ["_unit", objNull, [objNull]]];
 
-private _entry = [[], CROWSEW_JAM_MAP getOrDefault [netId _unit, []]] select !isNull _unit;
-private _capabilities = _entry param [4, []];
+private _capabilities = [];
+
+// Crows only fills its jamMap on a machine once the first jammer update arrives
+if (!isNull _unit) then {
+    _capabilities = ((missionNamespace getVariable [CROWSEW_JAM_MAP_NAME, createHashMap]) getOrDefault [netId _unit, []]) param [4, []];
+};
 
 if !(WIFI_JAM_CAP in _capabilities) exitWith {
     hint LLSTRING(zeus_remove_error);

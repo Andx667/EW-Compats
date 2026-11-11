@@ -84,6 +84,14 @@ Raised by the DUKEs, which hold the IEDs around the vehicle while they are on. T
 - Payload: `[id, side]`
 - When: no sensor of the side has heard the drone for the track timeout, or the detection was switched off. A client also gets it on its own when it stops getting a track that goes on, because its player changed side or the setting stopped showing the tracks on the map. On the server that means the track still runs.
 
+## Wi-Fi Jamming
+
+### `ewc_wifi_jamming_API_connectionJammed`
+
+- Raised on: the server (local event)
+- Payload: `[laptop, router, strength]`, the strength being 0 to 1
+- When: one frame after the wireless sweep of AE3 dropped a laptop because a Wi-Fi jammer cut its link, once per dropped connection. A refused attempt to connect raises nothing. See [Wi-Fi Jamming](wifi-jamming.md#events).
+
 ## For addon authors
 
 ### `ewc_common_vehicleInit`

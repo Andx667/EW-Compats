@@ -23,7 +23,7 @@ What we remove when they land:
 - #189: nothing, it was dropped. The `CBA_missionTime > 0` waits in `bft_jamming` `fnc_registerBftJammer`, `ewc_common_fnc_setJammer`, the R-142N `fnc_initVehicle` and the wait for the Spectrum signals in `compat_cup_drones` stay.
 - #190: the full scans in `bft_jamming` `fnc_onUpdateJammersServer` and `ewc_common_fnc_removeCrowsActions`.
 - #191: `ewc_common_fnc_clearCrowsActions`, `fnc_removeCrowsActions` and the direct clean-up for hosted servers in `fnc_addJammer`.
-- #444 and #445: done in `wifi_jamming` (PR #73). It uses the connect condition API instead of its own polling loop, and `AE3_network_fnc_getRouters` / `getClients` instead of the private variables `AE3_cap_isRouter` and `AE3_network_parent`. `addRangeModifier` is not used: AE3 checks the range before the connect conditions, so a jammed laptop would show "Out of range" instead of "Jammed" and `connectionJammed` would lose its hook. Close both issues upstream after the in-game test.
+- #444 and #445: done in `wifi_jamming` (PR #73). It uses the connect condition API instead of its own polling loop, and `AE3_network_fnc_getRouters` / `getClients` instead of the private variables `AE3_cap_isRouter` and `AE3_network_parent`. `addRangeModifier` is not used: AE3 checks the range before the connect conditions, so a jammed laptop would show "Out of range" instead of "Jammed" and `API_connectionJammed` would lose its hook. Close both issues upstream after the in-game test.
 
 ## Parked (not filed yet)
 
@@ -44,7 +44,7 @@ File these after the first batch has had a reaction: if the maintainers answer a
 ### Advanced Equipment
 
 1. **Connect and disconnect events with a reason.**
-    - Today: only internal commands (`ae3_network_connectDevice`, `ae3_network_disconnectDevice`) and the payload-less UI refresh `ae3_desktop_sysChanged`. `wifi_jamming` raises its own `connectionJammed`.
+    - Today: only internal commands (`ae3_network_connectDevice`, `ae3_network_disconnectDevice`) and the payload-less UI refresh `ae3_desktop_sysChanged`. `wifi_jamming` raises its own `API_connectionJammed`.
     - Request: `ae3_network_connected` and `ae3_network_disconnected` with `[device, router, reason]`, reasons such as range, router off, user.
 2. **A power state event.**
     - Today: since 2.1.0.5 there is the getter `AE3_power_fnc_isPoweredOn`, but no event, so a change can only be polled.

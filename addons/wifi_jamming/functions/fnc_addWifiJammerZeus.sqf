@@ -51,7 +51,7 @@ private _onConfirm = {
         [
             "SLIDER",
             [LLSTRING(moduleAddWifiJammer_falloffRadius_displayName), LLSTRING(moduleAddWifiJammer_falloffRadius_tooltip)],
-            [WIFI_JAM_MIN_RADIUS, WIFI_JAM_MAX_RADIUS, WIFI_JAM_DEFAULT_FALLOFF_RADIUS, 0]
+            [0, WIFI_JAM_MAX_RADIUS, WIFI_JAM_DEFAULT_FALLOFF_RADIUS, 0]
         ],
         [
             "SLIDER",

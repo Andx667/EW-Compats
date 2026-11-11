@@ -27,6 +27,11 @@ if (!isServer) exitWith {};
 {
     _y params ["_unit", "_radFalloff", "_radEffective", "_enabled", "_capabilities"];
 
+    // Another jammer module on the same object replaces the jammer under the same net ID, and Crows leaves our signal
+    if (!(WIFI_JAM_CAP in _capabilities) && {!isNull _unit} && {CROWSEW_BEACONS findIf {(_x select 0) isEqualTo _unit && {(_x select 3) == WIFI_JAM_SPECTRUM_TYPE}} != -1}) then {
+        [CROWSEW_REMOVE_BEACON_EVENT, [_unit, WIFI_JAM_SPECTRUM_TYPE]] call CBA_fnc_localEvent;
+    };
+
     if (WIFI_JAM_CAP in _capabilities && {!isNull _unit}) then {
         private _frequency = _unit getVariable [QGVAR(frequency), WIFI_JAM_DEFAULT_FREQUENCY];
         private _range = _radFalloff + _radEffective;

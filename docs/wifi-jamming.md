@@ -8,9 +8,11 @@ Place the module in the editor and optionally synchronise it with the object tha
 
 | Attribute | Default | Purpose |
 |---|---|---|
-| Effective Radius | 100 m | Full-strength zone around the jammer. |
-| Falloff Radius | 100 m | Extra band *beyond* the effective radius in which the effect fades out. |
+| Effective Radius | 100 m | Full-strength zone around the jammer, 0 to 5000 m. |
+| Falloff Radius | 100 m | Extra band *beyond* the effective radius in which the effect fades out, 0 to 5000 m. 0 is a hard edge. |
 | Frequency | 915 MHz | Shown in the Spectrum Device. Must be inside the experimental antenna's range (520 to 1090 MHz). |
+
+Values outside these ranges are set to the nearest limit.
 | Active at Mission Start | true | Starts on, or is switched on later (for example by Zeus). |
 
 Zeus can switch the jammer on and off like any Crow's Electronic Warfare jammer and sees it on the map. Unlike Crow's Electronic Warfare's own jammers it makes no sound.
@@ -36,7 +38,7 @@ The strength of a link is the stronger of the strengths at the laptop and at the
 
 ## Quirks
 
-- **Connected laptops are dropped.** A laptop whose link is cut loses its address, as if it had left the range of its router. The Network app shows *Jammed*, and the laptop has to connect again.
+- **Connected laptops are dropped.** A laptop whose link is cut loses its address, as if it had left the range of its router. The Network app shows *Jammed* (in English, like the other connection messages of AE3), and the laptop has to connect again.
 - **New connections are refused.** The Network app and the ACE menu ask AE3 before they connect, and the jammer is part of that check. A jammed laptop gets the reason *Jammed*.
 - **Cascaded routers are left alone**, like AE3 does for its own range check.
 - **Everybody in range is jammed**, including the own side.
@@ -45,10 +47,10 @@ The strength of a link is the stronger of the strengths at the laptop and at the
 
 ## Events
 
-`ewc_wifi_jamming_connectionJammed` is raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised one frame after the sweep of AE3 dropped the laptop, once per dropped connection. A refused attempt to connect raises nothing.
+`ewc_wifi_jamming_API_connectionJammed` is raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised one frame after the sweep of AE3 dropped the laptop, once per dropped connection. A refused attempt to connect raises nothing.
 
 ``` cpp
-["ewc_wifi_jamming_connectionJammed", {
+["ewc_wifi_jamming_API_connectionJammed", {
     params ["_laptop", "_router", "_strength"];
     systemChat format ["%1 lost %2 (%3 %% jamming)", _laptop, _router, round (_strength * 100)];
 }] call CBA_fnc_addEventHandler;

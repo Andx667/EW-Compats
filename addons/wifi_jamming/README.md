@@ -8,7 +8,7 @@ Place the module in the editor and optionally synchronise it with the object tha
 
 Module attributes:
 
-- **Effective Radius** / **Falloff Radius** (metres): full strength inside the effective radius, fading out linearly over the falloff band beyond it.
+- **Effective Radius** / **Falloff Radius** (metres): full strength inside the effective radius, fading out linearly over the falloff band beyond it. Both 0 to 5000 m, a falloff of 0 is a hard edge; `fnc_registerWifiJammer` sets other values to the nearest limit, because the Edit fields of the editor module have no range.
 - **Frequency**: frequency in MHz under which the active jammer shows in the Spectrum Device. Must be inside the range of the experimental antenna (520 to 1090 MHz). Real Wi-Fi is on 2.4 and 5 GHz, which no antenna of the Spectrum Device reaches, so the frequency is a gameplay value.
 - **Active at Mission Start**: whether the jammer starts on, or is switched on later (for example by Zeus).
 
@@ -45,16 +45,16 @@ Crow's Electronic Warfare registers its `addJammer` handler only in its own `pos
 
 An active Wi-Fi jammer shows in the Spectrum Device as signal type `sweep_wifi` on the module's frequency. `fnc_onUpdateJammersServer` compares the signal with the on/off state on every `crowsEW_main_updateJammers`, reading the actual state from `crowsEW_spectrum_beacons`, because Crows' own toggle only re-adds the signals of its radio and drone jammers.
 
-On every machine `XEH_postInit` registers `fnc_connectCondition` with `AE3_network_fnc_addConnectCondition`. AE3 asks its connect conditions before a laptop joins a router (Network app, ACE menu) and in its own wireless sweep (server, every 5 s), which drops the laptops that no longer pass and tells the Network app the reason. The condition works out the strength from `crowsEW_main_jamMap` and refuses the link when the laptop is farther from the router than the range that is left. Without a jammer that is on it answers at once, so there is no cost without one.
+On every machine `XEH_postInit` registers `fnc_connectCondition` with `AE3_network_fnc_addConnectCondition`. AE3 asks its connect conditions before a laptop joins a router (Network app, ACE menu) and in its own wireless sweep (server, every 5 s), which drops the laptops that no longer pass and tells the Network app the reason. AE3 sends that reason as it is and never translates it, so the server answers with the English *Jammed* (`WIFI_JAM_REASON_SERVER`) and only a client, whose answer is shown on that client, uses the stringtable. The condition works out the strength from the Wi-Fi jammers that are on, which `XEH_preInit` takes from the jamMap on every `crowsEW_main_updateJammers` (on every machine) instead of on every call, and refuses the link when the laptop is farther from the router than the range that is left. Without a jammer that is on it answers at once, so there is no cost without one.
 
 There are deliberately no CBA settings: without a placed module nothing happens anyway, and the frequency is a module attribute.
 
 ## Events
 
-- `ewc_wifi_jamming_connectionJammed`: raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised one frame after the sweep of AE3 dropped the laptop, once per dropped connection. A refused attempt to connect raises nothing.
+- `ewc_wifi_jamming_API_connectionJammed`: raised on the server (local event) for every connection the jamming ends, with `[laptop, router, strength]`, the strength being 0 to 1. A mission can use it for a task that depends on an uplink, a message for the operator, or a log. It is raised one frame after the sweep of AE3 dropped the laptop, once per dropped connection. A refused attempt to connect raises nothing.
 
 ```sqf
-["ewc_wifi_jamming_connectionJammed", {
+["ewc_wifi_jamming_API_connectionJammed", {
     params ["_laptop", "_router", "_strength"];
     systemChat format ["%1 lost %2 (%3 %% jamming)", _laptop, _router, round (_strength * 100)];
 }] call CBA_fnc_addEventHandler;
