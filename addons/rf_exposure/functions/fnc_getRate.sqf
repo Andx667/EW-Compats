@@ -24,16 +24,14 @@ private _nearRadius = GVAR(nearRadius);
 private _farRadius = GVAR(farRadius) max _nearRadius;
 private _nearRate = 1 / GVAR(nearTime);
 private _farRate = 1 / GVAR(farTime);
-private _vehiclesOnly = GVAR(sources) == SOURCES_VEHICLES;
-
 private _rate = 0;
 
 {
-    _y params ["_jammer", "", "", "_enabled"];
+    _x params ["_jammer", "", "_boundingRadius"];
 
-    if (_enabled && {!isNull _jammer} && {alive _jammer} && {!_vehiclesOnly || {VEHICLE_CLASSES findIf {_jammer isKindOf _x} != -1}}) then {
+    if (JAMMER_COUNTS(_x)) then {
         // Far from the jammer, no need to work out the distance to its hull
-        if ((_unit distance _jammer) <= (_farRadius + ((boundingBoxReal _jammer) select 2))) then {
+        if ((_unit distance _jammer) <= (_farRadius + _boundingRadius)) then {
             private _distance = [_unit, _jammer] call FUNC(getDistance);
 
             if (_distance <= _farRadius) then {
@@ -47,6 +45,6 @@ private _rate = 0;
             };
         };
     };
-} forEach CROWSEW_JAM_MAP;
+} forEach GVAR(jammers);
 
 _rate

@@ -28,18 +28,18 @@ Each client works out the exposure of its own player, a number from 0 to 1. The 
 
 - **Time adds up.** Within the near radius a full exposure takes 15 minutes, at the far radius 30 minutes, in between the time grows linearly, and beyond the far radius there is none. Leaving does not reset it, it falls over the recovery time. The strongest jammer counts, jammers do not add up.
 - **Vehicles are safe.** Anybody inside of a vehicle (driver, passenger, gunner) has no exposure, whatever jammer is near, and recovers. That includes the crew of the jammer.
-- **Headache.** The pain of ACE medical rises towards `exposure * maximum pain`. It is only topped up to that value and never above, so it does not add to the pain of wounds, and ACE fades it by itself afterwards. ACE medical has one pain value and none for the head, and it shows its own effects for pain (blur, flashes). The player gets a hint when the headache starts.
+- **Headache.** The pain of ACE medical rises towards `exposure * maximum pain`. It is only topped up to that value and never above, so it does not add to the pain of wounds a player already has, and ACE fades it by itself afterwards. ACE medical has one pain value and none for the head, and it shows its own effects for pain (blur, flashes). The player gets a hint when the headache starts.
 - **Fatigue.** When the pain of the jammer reaches the threshold, every movement costs more effort: half of the fatigue factor at first, all of it at the maximum pain. Without ACE advanced fatigue the vanilla fatigue rises slowly instead, if the stamina is on. The player gets a hint when it starts.
 - A new unit (respawn, Zeus remote control) starts without exposure.
 
-The maximum pain is limited to half of `ace_medical_painUnconsciousThreshold`, so the jammer never brings anybody near the pain at which ACE can make a unit unconscious.
+The maximum pain is limited to half of `ace_medical_painUnconsciousThreshold`, so the jammer alone never brings anybody near the pain at which ACE can make a unit unconscious. Pain from a wound on top of it adds up as usual and can go over.
 
 ## Events
 
-`ewc_rf_exposure_stageChanged` is raised on the client of the player (local event) when the stage of the exposure changes, with `[unit, stage]`. The stage is `0` none, `1` headache (from an exposure of 0.25, until it is nearly gone) and `2` fatigue. A mission can use it for extra effects, a medic task or a log. A respawn or a new unit sets it back to `0`.
+`ewc_rf_exposure_API_stageChanged` is raised on the client of the player (local event) when the stage of the exposure changes, with `[unit, stage]`. The stage is `0` none, `1` headache (from an exposure of 0.25, until it is nearly gone) and `2` fatigue. A mission can use it for extra effects, a medic task or a log. A respawn or a new unit sets it back to `0`.
 
 ``` cpp
-["ewc_rf_exposure_stageChanged", {
+["ewc_rf_exposure_API_stageChanged", {
     params ["_unit", "_stage"];
     systemChat format ["RF exposure stage: %1", _stage];
 }] call CBA_fnc_addEventHandler;

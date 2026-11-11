@@ -14,10 +14,9 @@
 // Classes of a vehicle-mounted jammer. A static jammer (the data terminal) or a prop is none
 #define VEHICLE_CLASSES ["LandVehicle", "Air", "Ship"]
 
-// Public CBA event and global of Crow's Electronic Warfare we read the jammers from, the jamMap of every client is
-// [object, falloff radius, effective radius, enabled, capabilities] by net ID
-#define CROWSEW_UPDATE_JAMMERS_EVENT "crowsEW_main_updateJammers"
-#define CROWSEW_JAM_MAP (missionNamespace getVariable ["crowsEW_main_jamMap", createHashMap])
+// A jammer of GVAR(jammers) that counts: alive, and a vehicle if only those count. Entries are [object, is a vehicle,
+// bounding radius]
+#define JAMMER_COUNTS(entry) (alive (entry select 0) && {GVAR(sources) != SOURCES_VEHICLES || {entry select 1}})
 
 // Pain of ACE medical: the variable, the setting above which a unit can go unconscious from damage, and the pain the
 // headache never gets above, as a share of it (it stays a mild one)

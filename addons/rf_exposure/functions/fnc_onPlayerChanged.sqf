@@ -18,5 +18,8 @@
  * Public: No
  */
 
-call FUNC(reset);
+params [["_newUnit", objNull, [objNull]], ["_oldUnit", objNull, [objNull]]];
+
+// The stage that ends belonged to the old unit
+[_oldUnit] call FUNC(reset);
 call FUNC(updateLoop);

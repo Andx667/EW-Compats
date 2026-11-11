@@ -28,18 +28,19 @@ Each client works out the exposure of its own player, a number from 0 to 1. Noth
 - **Distance** is measured to the bounding box of the jammer, so 2 m is two metres from the hull of a vehicle, not from its centre.
 - **Rate**: within the near radius the exposure grows by `1 / nearTime` per second, at the far radius by `1 / farTime`, in between linearly, and beyond the far radius it does not grow. The strongest jammer counts, jammers do not add up. With the defaults that is 15 minutes within 2 m or 30 minutes at 5 m. The time adds up: leaving does not reset the exposure, it falls over `recoveryTime`.
 - **Vehicles**: anybody inside of a vehicle (driver, passenger, gunner) has no exposure, whatever jammer is near, and recovers.
-- **Headache**: the pain of ACE medical is raised towards `exposure * painMax` through `ace_medical_fnc_adjustPainLevel`. It is only topped up to that value and never above, so it does not add to the pain of wounds, and ACE fades it by itself afterwards. ACE medical has a single pain value and none for the head, and it shows its own effects for pain (blur, flashes). The player gets a hint when the headache starts.
+- **Headache**: the pain of ACE medical is raised towards `exposure * painMax` through `ace_medical_fnc_adjustPainLevel`. It is only topped up to that value and never above, so it does not add to the pain of wounds a player already has, and ACE fades it by itself afterwards. `painMax` is limited to half of `ace_medical_painUnconsciousThreshold`, so the jammer alone stays clear of it; a wound taken on top adds its pain as usual (`adjustPainLevel` adds) and can go over, which is intended. ACE medical has a single pain value and none for the head, and it shows its own effects for pain (blur, flashes). The player gets a hint when the headache starts.
 - **Fatigue**: when the pain of the jammer (`exposure * painMax`) reaches `fatigueThreshold` the movement costs more effort, by half of `fatigueFactor` at first and by all of it at `painMax`. It is a duty factor (`ewc_rf_exposure`) of ACE advanced fatigue. Without ACE advanced fatigue the vanilla fatigue rises slowly instead, if the stamina is on. The player gets a hint when it starts.
-- A new unit (respawn, Zeus remote control) starts without exposure.
+- A new unit (respawn, Zeus remote control) starts without exposure. The `0` of the event goes with the old unit.
+- **Jammers**: `XEH_preInit` takes the jammers that are on from the map of every `crowsEW_main_updateJammers` into `ewc_rf_exposure_jammers` (`[object, is a vehicle, bounding radius]`) and starts the loop from there. It reads the map of the event and not the global `crowsEW_main_jamMap`, because the handler of Crows that updates the global runs after ours. A destroyed jammer is skipped and does not keep the loop running.
 
 The exposure is readable in the debug console as `ewc_rf_exposure_exposure`.
 
 ## Events
 
-- `ewc_rf_exposure_stageChanged`: raised on the client of the player (local event) when the stage of the exposure changes, with `[unit, stage]`. The stage is `0` none, `1` headache (from an exposure of 0.25, until it is nearly gone) and `2` fatigue. A mission can use it for extra effects, a medic task or a log. Reset by a respawn or a new unit (stage `0`).
+- `ewc_rf_exposure_API_stageChanged`: raised on the client of the player (local event) when the stage of the exposure changes, with `[unit, stage]`. The stage is `0` none, `1` headache (from an exposure of 0.25, until it is nearly gone) and `2` fatigue. A mission can use it for extra effects, a medic task or a log. Reset by a respawn or a new unit (stage `0`).
 
 ```sqf
-["ewc_rf_exposure_stageChanged", {
+["ewc_rf_exposure_API_stageChanged", {
     params ["_unit", "_stage"];
     systemChat format ["RF exposure stage: %1", _stage];
 }] call CBA_fnc_addEventHandler;

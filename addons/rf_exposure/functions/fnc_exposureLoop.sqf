@@ -41,7 +41,8 @@ GVAR(exposure) = if (_rate > 0) then {
 
 [_unit, _deltaTime] call FUNC(applyEffects);
 
-if (GVAR(exposure) <= 0 && {(values CROWSEW_JAM_MAP) findIf {_x select 3} == -1}) then {
+// A destroyed jammer stays on in the jamMap until the cleanup of Crows, it does not keep the loop running
+if (GVAR(exposure) <= 0 && {GVAR(jammers) findIf {JAMMER_COUNTS(_x)} == -1}) then {
     [GVAR(loopHandle)] call CBA_fnc_removePerFrameHandler;
     GVAR(loopHandle) = -1;
 };

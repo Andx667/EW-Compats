@@ -7,12 +7,13 @@
  * The headache is a rise of the pain of ACE medical towards exposure * maximum pain. ACE has no pain per body part, so it is
  * the general pain, and ACE adds its own effects for it. The pain is only topped up to that value and never above, so it
  * does not add to pain from wounds, and it fades by itself (ACE medical) once the exposure falls. The maximum is limited to
- * half of the pain above which ACE can make a unit unconscious, so the jammer never gets a player near it.
+ * half of the pain above which ACE can make a unit unconscious, so the jammer alone never gets a player near it. Pain from a
+ * wound that comes on top of it is added by ACE as usual and can go over.
  *
  * The fatigue starts when the pain of the jammer has reached the fatigue threshold, and grows with it from there. It is a
  * factor on the effort of every movement in ACE advanced fatigue, or a small rise of the vanilla fatigue without it.
  *
- * Raises the event ewc_rf_exposure_stageChanged when the stage of the exposure changes.
+ * Raises the event ewc_rf_exposure_API_stageChanged when the stage of the exposure changes.
  *
  * Arguments:
  * 0: Unit, the local player <OBJECT>
@@ -93,7 +94,7 @@ if (_factor > 1) then {
 if (_stage != GVAR(stage)) then {
     GVAR(stage) = _stage;
 
-    [QGVAR(stageChanged), [_unit, _stage]] call CBA_fnc_localEvent;
+    [QGVAR(API_stageChanged), [_unit, _stage]] call CBA_fnc_localEvent;
 };
 
 if (!isNil "ace_advanced_fatigue_fnc_addDutyFactor" && {missionNamespace getVariable ["ace_advanced_fatigue_enabled", false]}) then {

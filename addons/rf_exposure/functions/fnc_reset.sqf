@@ -6,18 +6,20 @@
  * The pain is left to fade, as ACE does with any pain.
  *
  * Arguments:
- * None
+ * 0: Unit the exposure belonged to <OBJECT> (default: ACE_player)
  *
  * Return Value:
  * None
  *
- * Raises the event ewc_rf_exposure_stageChanged if there was a stage.
+ * Raises the event ewc_rf_exposure_API_stageChanged if there was a stage.
  *
  * Example:
- * call ewc_rf_exposure_fnc_reset
+ * [ACE_player] call ewc_rf_exposure_fnc_reset
  *
  * Public: No
  */
+
+params [["_unit", ACE_player, [objNull]]];
 
 if (!hasInterface) exitWith {};
 
@@ -28,7 +30,7 @@ GVAR(hintedFatigue) = false;
 if (GVAR(stage) != 0) then {
     GVAR(stage) = 0;
 
-    [QGVAR(stageChanged), [ACE_player, 0]] call CBA_fnc_localEvent;
+    [QGVAR(API_stageChanged), [_unit, 0]] call CBA_fnc_localEvent;
 };
 
 if (GVAR(dutyFactor) != 1) then {
