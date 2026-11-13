@@ -26,4 +26,27 @@ GVAR(jammers) = [];
     };
 }] call CBA_fnc_addEventHandler;
 
+// Labels of the debug overlay of ewc_common for the routers of AE3 and the laptops connected to them. AE3 has no public
+// getter for laptops that are not connected, so those get none
+if (hasInterface) then {
+    [
+        QUOTE(ADDON),
+        {false},
+        {_this call FUNC(debugLines)},
+        {
+            // An AE3 older than 2.1.0.5 has no such function, see XEH_postInit
+            if (isNil "AE3_network_fnc_getRouters") exitWith {[]};
+
+            private _routers = call AE3_network_fnc_getRouters;
+            private _objects = +_routers;
+
+            {
+                _objects append ([_x] call AE3_network_fnc_getClients);
+            } forEach _routers;
+
+            _objects
+        }
+    ] call EFUNC(common,registerDebug);
+};
+
 ADDON = true;

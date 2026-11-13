@@ -2,6 +2,8 @@ PREP(addWifiJammer);
 PREP(addWifiJammerZeus);
 PREP(calcJamStrength);
 PREP(connectCondition);
+PREP(debugLines);
+PREP(getConnectionJam);
 PREP(getJamStrength);
 PREP(onUpdateJammersServer);
 PREP(registerWifiJammer);

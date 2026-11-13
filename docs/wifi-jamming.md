@@ -45,6 +45,7 @@ The strength of a link is the stronger of the strengths at the laptop and at the
 - **Nothing is restored when the jammer stops.** The laptops connect again by hand.
 - **Up to 5 seconds of delay** for a switch of the jammer or a moving laptop or router, because AE3 checks its connections every 5 seconds.
 - **An object is one jammer.** A jammer module on an object that already is a jammer replaces that jammer, like the modules of Crow's Electronic Warfare do: setting a Wi-Fi jammer on a BFT or radio jammer turns it into a Wi-Fi jammer only, and the other way round. The Spectrum signal of the old jammer goes with it. Use this to change the radii or the frequency of a Wi-Fi jammer.
+- **Debug overlay.** With the client setting `ewc_common_debug` (see [Common](common.md)) AE3 routers show their wireless range, the range a jammer leaves and their clients, and connected laptops show their router, the distance and whether the link is connected, jammed or out of range. Laptops that are not connected get no label, AE3 has no public way to find them.
 
 ## Events
 

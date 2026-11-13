@@ -16,7 +16,8 @@
 #define CROWS_EVENT_REMOVE_JAMMER "crowsEW_main_removeJammer"
 #define CROWS_EVENT_TOGGLE_JAMMER "crowsEW_main_toggleJammer"
 #define CROWS_EVENT_UPDATE_JAMMERS "crowsEW_main_updateJammers"
-// Public map of the jammers, net ID -> [vehicle, falloff radius, full radius, enabled, capabilities]
+// Public map of the jammers, net ID -> [vehicle, falloff, full radius, enabled, capabilities]. The falloff is the width of
+// the band beyond the full radius, the jamming ends at full radius + falloff
 #define CROWS_VAR_JAM_MAP "crowsEW_main_jamMap"
 // Spectrum beacons: the event that adds one, its type for a jammable drone and the variables that hold the list and the bands
 #define CROWS_EVENT_ADD_BEACON "crowsEW_spectrum_addBeacon"
