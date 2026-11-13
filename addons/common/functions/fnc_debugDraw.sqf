@@ -2,8 +2,9 @@
 /*
  * Author: Andx
  * Draws the debug overlay, called every frame by the Draw3D handler that fnc_debugToggle adds:
- * - over every vehicle with a Crows jammer or a system of this mod: the state of the jammer (radii, capabilities),
- *   of its switches and the lines of fnc_registerDebug, and rings on the ground for the full radius and the end of the falloff
+ * - over every vehicle with a Crows jammer or a system of this mod, and the objects fnc_registerDebug adds: the state of
+ *   the jammer (radii, capabilities), of its switches and the lines of fnc_registerDebug, and rings on the ground for the
+ *   full radius and the end of the falloff
  * - over IEDs within the full radius of an active jammer: jammed (simulation off) or armed
  * - over the ghosts of a BFT Spoof jammer: a line to the unit they copy
  * - over units and drones within the radii of an active jammer: the jam strength per signal (radio, BFT, drone)
@@ -47,12 +48,21 @@ private _drawRing = {
     };
 };
 
-// Crows keeps the jammers in a public map. Each entry is [vehicle, falloff radius, full radius, enabled, capabilities]
+// Crows keeps the jammers in a public map. Each entry is [vehicle, falloff, full radius, enabled, capabilities], the
+// falloff being the width of the band beyond the full radius
 private _jammers = (values (missionNamespace getVariable [CROWS_VAR_JAM_MAP, createHashMap])) select {!isNull (_x select 0)};
 private _active = _jammers select {_x select 3};
 
-// Vehicles: the ones with a jammer and the ones with a system of this mod
+// Objects of other mods that a provider of fnc_registerDebug wants labelled, [[id of the provider, objects], ...]
+private _extraObjects = (keys GVAR(debugProviders)) apply {[_x, call ((GVAR(debugProviders) get _x) select 2)]};
+
+// Vehicles: the ones with a jammer, the ones with a system of this mod and the objects added by a provider
 private _vehicles = (_jammers apply {_x select 0}) + (vehicles select {_x isKindOf "LandVehicle"});
+
+{
+    _vehicles append ((_x select 1) select {!isNull _x});
+} forEach _extraObjects;
+
 _vehicles = _vehicles arrayIntersect _vehicles;
 
 {
@@ -72,6 +82,14 @@ _vehicles = _vehicles arrayIntersect _vehicles;
 
         _systems params ["_switchIds", "_providerIds"];
 
+        {
+            _x params ["_id", "_objects"];
+
+            if (_vehicle in _objects) then {
+                _providerIds = _providerIds + ([_id] - _providerIds);
+            };
+        } forEach _extraObjects;
+
         private _jammerIndex = _jammers findIf {(_x select 0) isEqualTo _vehicle};
         private _jammer = [[], _jammers param [_jammerIndex, []]] select (_jammerIndex != -1);
 
@@ -82,7 +100,7 @@ _vehicles = _vehicles arrayIntersect _vehicles;
                 _jammer params ["", "_falloffRadius", "_radius", "_enabled", "_capabilities"];
 
                 _lines pushBack [
-                    format ["jammer %1 | %2 m, falloff to %3 m | %4", ["off", "ON"] select _enabled, round _radius, round (_falloffRadius max _radius), _capabilities joinString ", "],
+                    format ["jammer %1 | %2 m, falloff to %3 m | %4", ["off", "ON"] select _enabled, round _radius, round (_radius + _falloffRadius), _capabilities joinString ", "],
                     [[0.8, 0.8, 0.8, 1], [0.3, 1, 0.3, 1]] select _enabled
                 ];
 
@@ -101,8 +119,8 @@ _vehicles = _vehicles arrayIntersect _vehicles;
 
                     [_center, _radius, [0.3, 1, 0.3, 1]] call _drawRing;
 
-                    if (_falloffRadius > _radius) then {
-                        [_center, _falloffRadius, [1, 0.8, 0.2, 0.5]] call _drawRing;
+                    if (_falloffRadius > 0) then {
+                        [_center, _radius + _falloffRadius, [1, 0.8, 0.2, 0.5]] call _drawRing;
                     };
                 };
             };
@@ -184,7 +202,7 @@ private _targets = (allUnits select {alive _x && {isNull objectParent _x}}) + (v
 
             if (_jammerVehicle isNotEqualTo _target) then {
                 private _distance = (getPosASL _jammerVehicle) distance (getPosASL _target);
-                private _strength = linearConversion [_radius, _falloffRadius max (_radius + 1), _distance, 1, 0, true];
+                private _strength = linearConversion [_radius, _radius + (_falloffRadius max 1), _distance, 1, 0, true];
 
                 if (_strength > 0) then {
                     {
