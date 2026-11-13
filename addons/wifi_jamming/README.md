@@ -47,6 +47,8 @@ An active Wi-Fi jammer shows in the Spectrum Device as signal type `sweep_wifi` 
 
 On every machine `XEH_postInit` registers `fnc_connectCondition` with `AE3_network_fnc_addConnectCondition`. AE3 asks its connect conditions before a laptop joins a router (Network app, ACE menu) and in its own wireless sweep (server, every 5 s), which drops the laptops that no longer pass and tells the Network app the reason. AE3 sends that reason as it is and never translates it, so the server answers with the English *Jammed* (`WIFI_JAM_REASON_SERVER`) and only a client, whose answer is shown on that client, uses the stringtable. The condition works out the strength from the Wi-Fi jammers that are on, which `XEH_preInit` takes from the jamMap on every `crowsEW_main_updateJammers` (on every machine) instead of on every call, and refuses the link when the laptop is farther from the router than the range that is left. Without a jammer that is on it answers at once, so there is no cost without one.
 
+With the debug overlay of `ewc_common` (client setting `ewc_common_debug`) the routers of AE3 and the laptops connected to them get a label: a router its wireless range, the range a jammer leaves and its clients, a laptop its router, the distance and whether the link is jammed. `XEH_preInit` hands them to `ewc_common_fnc_registerDebug`. AE3 has no public getter for laptops that are not connected, so those get no label.
+
 There are deliberately no CBA settings: without a placed module nothing happens anyway, and the frequency is a module attribute.
 
 ## Events
@@ -71,7 +73,9 @@ There are deliberately no CBA settings: without a placed module nothing happens 
 | `fnc_zeusRegister` | clients | Registers the two Zeus modules with Zeus Enhanced in the category of Crow's Electronic Warfare |
 | `fnc_onUpdateJammersServer` | server | Keeps the Spectrum signal in line with the on/off state of the jammers |
 | `fnc_connectCondition` | any | Connect condition of AE3: refuses a link whose range the jamming has cut |
-| `fnc_getJamStrength` | server | Strongest jamming at an object from all jammers that are on |
+| `fnc_getConnectionJam` | any | Strength on a link and whether it is jammed, shared by the connect condition and the debug overlay |
+| `fnc_debugLines` | clients | Lines of the debug overlay for a router or a connected laptop |
+| `fnc_getJamStrength` | any | Strongest jamming at an object from all jammers that are on |
 | `fnc_calcJamStrength` | any | Jamming strength 0 to 1 from the distance, the effective radius and the falloff radius |
 
 ## Coupling to other mods

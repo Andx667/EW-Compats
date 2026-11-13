@@ -46,14 +46,9 @@ if (_jammers isEqualTo []) exitWith {[true, ""]};
 // leaves them out), but a cascade from the ACE menu can
 if (_device in (call AE3_network_fnc_getRouters)) exitWith {[true, ""]};
 
-private _strength = ([_router, _jammers] call FUNC(getJamStrength)) max ([_device, _jammers] call FUNC(getJamStrength));
+([_device, _router, _jammers] call FUNC(getConnectionJam)) params ["_strength", "_jammed"];
 
-if (_strength <= 0) exitWith {[true, ""]};
-
-// AE3 checked the unjammed range before it asked us, the jammer only takes a share of it
-private _range = [_router, _device] call AE3_network_fnc_getWirelessRange;
-
-if (_strength < 1 && {(_device distance _router) <= (_range * (1 - _strength))}) exitWith {[true, ""]};
+if (!_jammed) exitWith {[true, ""]};
 
 // A laptop that is a client of the router is connected and dropped by the sweep, one that is not tries to connect
 if (isServer && {!(_device getVariable [QGVAR(jamPending), false])} && {_device in ([_router] call AE3_network_fnc_getClients)}) then {
