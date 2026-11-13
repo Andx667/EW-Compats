@@ -8,7 +8,7 @@
  *               property = "my_jammer_type";            // config entry of the vehicle that marks it
  *               value = 1;                              // optional, the entry has to be this number. Without it the entry has to be a non-empty text
  *               radius = 50;                            // full jamming radius in m
- *               falloffFactor = 1.5;                    // the effect has faded out at this times the radius
+ *               falloffFactor = 1.5;                    // width of the falloff band beyond the radius, in radii: fades out at (1 + this) times the radius
  *               capabilities[] = {"VoiceCommsJammer"};  // optional, Crows capabilities, defaults to radio
  *           };
  *       };

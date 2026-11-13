@@ -44,6 +44,15 @@ private _range = [_router, _object] call AE3_network_fnc_getWirelessRange;
 
 ([_object, _router, _jammers] call FUNC(getConnectionJam)) params ["_strength", "_jammed"];
 
+// AE3 checks the range before the connect conditions, so an out of range laptop is dropped as that, not as jammed.
+// canConnect would tell the whole answer, but it runs our condition, which raises API_connectionJammed on the server
+private _state = switch (true) do {
+    case (!alive _router): {"router destroyed"};
+    case ((_object distance _router) > _range): {"OUT OF RANGE, AE3 drops it in its next sweep"};
+    case (_jammed): {"JAMMED, AE3 drops it in its next sweep"};
+    default {"connected"};
+};
+
 [format [
     "Wi-Fi client of %1 | %2 m of %3 m | jam %4%5 | %6",
     getText (configOf _router >> "displayName"),
@@ -51,5 +60,5 @@ private _range = [_router, _object] call AE3_network_fnc_getWirelessRange;
     round _range,
     round (_strength * 100),
     "%",
-    ["connected", "JAMMED, AE3 drops it in its next sweep"] select _jammed
+    _state
 ]]

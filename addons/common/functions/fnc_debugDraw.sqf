@@ -53,22 +53,16 @@ private _drawRing = {
 private _jammers = (values (missionNamespace getVariable [CROWS_VAR_JAM_MAP, createHashMap])) select {!isNull (_x select 0)};
 private _active = _jammers select {_x select 3};
 
-// Objects of other mods that a provider of fnc_registerDebug wants labelled, hashValue -> [object, ids of those providers].
-// Objects cannot be keys of a hashmap
-private _extraProviders = createHashMap;
-
-{
-    private _id = _x;
-
-    {
-        if (!isNull _x) then {
-            ((_extraProviders getOrDefaultCall [hashValue _x, {[_x, []]}, true]) select 1) pushBackUnique _id;
-        };
-    } forEach (call ((GVAR(debugProviders) get _id) select 2));
-} forEach (keys GVAR(debugProviders));
+// Objects of other mods that a provider of fnc_registerDebug wants labelled, [[id of the provider, objects], ...]
+private _extraObjects = (keys GVAR(debugProviders)) apply {[_x, call ((GVAR(debugProviders) get _x) select 2)]};
 
 // Vehicles: the ones with a jammer, the ones with a system of this mod and the objects added by a provider
-private _vehicles = (_jammers apply {_x select 0}) + (vehicles select {_x isKindOf "LandVehicle"}) + ((values _extraProviders) apply {_x select 0});
+private _vehicles = (_jammers apply {_x select 0}) + (vehicles select {_x isKindOf "LandVehicle"});
+
+{
+    _vehicles append ((_x select 1) select {!isNull _x});
+} forEach _extraObjects;
+
 _vehicles = _vehicles arrayIntersect _vehicles;
 
 {
@@ -88,7 +82,13 @@ _vehicles = _vehicles arrayIntersect _vehicles;
 
         _systems params ["_switchIds", "_providerIds"];
 
-        _providerIds = _providerIds + (((_extraProviders getOrDefault [hashValue _vehicle, [objNull, []]]) select 1) - _providerIds);
+        {
+            _x params ["_id", "_objects"];
+
+            if (_vehicle in _objects) then {
+                _providerIds = _providerIds + ([_id] - _providerIds);
+            };
+        } forEach _extraObjects;
 
         private _jammerIndex = _jammers findIf {(_x select 0) isEqualTo _vehicle};
         private _jammer = [[], _jammers param [_jammerIndex, []]] select (_jammerIndex != -1);
