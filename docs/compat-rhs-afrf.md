@@ -21,7 +21,7 @@ RHS sets the fuel of the vehicle to 0 while the mast is deployed, so the engine 
 | Falloff band beyond that | **750 m** |
 | Outer edge | **1250 m** |
 
-The effective radius is the setting *R-142N jamming radius*, the falloff band is 1.5 times that. The falloff only applies to radios: Crow's Electronic Warfare jams drones within the effective radius only, with no falloff band.
+The effective radius is the setting *R-142N jamming radius*, the falloff band is 1.5 times that. Drones lose their control link only within the effective radius. In the falloff band Crow's Electronic Warfare blurs the video of a drone that a player controls, the closer to the effective radius the stronger.
 
 ## Settings
 

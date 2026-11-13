@@ -34,7 +34,7 @@ With both Jam radios and Jam drones off, the R-142N does not jam.
 
 ## Limitations
 
-- Drones are jammed within the full radius only, Crow's Electronic Warfare has no falloff band for them. Radios fade out over the falloff band.
+- Drones lose their control link within the full radius only. In the falloff band Crow's Electronic Warfare only blurs the video of a drone a player controls (`fnc_jammerPlayerLocal`). Radios fade out over the falloff band.
 - The radius, falloff and the choice of a radio and drone jammer are not taken from RHS or a data sheet, they are a gameplay choice. The real R-142N is a command and staff radio vehicle.
 - Everybody in range is jammed, including the own crew and allies. Crow's Electronic Warfare has no immunity apart from Zeus.
 - The mast has no damage of its own, only the destruction of the vehicle stops the jammer.
