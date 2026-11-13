@@ -27,7 +27,7 @@ if !(missionNamespace getVariable [QGVAR(enable), false]) exitWith {
         GVAR(loopHandle) = -1;
     };
 
-    call FUNC(reset);
+    [] call FUNC(reset);
 };
 
 if (GVAR(loopHandle) >= 0) exitWith {};
