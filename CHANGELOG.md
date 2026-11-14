@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-11-14
+
 ### Added
 
 - RF Exposure - New addon `rf_exposure`, off by default (setting `ewc_rf_exposure_enable`): staying close to an active jammer on foot gives a mild headache (the pain of ACE medical, never above half of the pain that can make a unit unconscious) and, once the pain of the jammer reaches a threshold, fatigue (a duty factor of ACE advanced fatigue). A full exposure takes 15 minutes within 2 m of the hull of a jammer or 30 minutes at 5 m, the time adds up and falls again over 5 minutes away from the jammers. Somebody inside of a vehicle is safe. A setting decides whether all jammers count or only those mounted on a vehicle. Event `ewc_rf_exposure_API_stageChanged` (#74) by Andx
