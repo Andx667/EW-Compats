@@ -13,5 +13,4 @@ PREP(notifyState);
 PREP(onStateChanged);
 PREP(registerDebug);
 PREP(registerSwitch);
-PREP(removeCrowsActions);
 PREP(setJammer);

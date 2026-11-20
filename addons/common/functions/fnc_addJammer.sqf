@@ -44,8 +44,12 @@ if (_capabilities isEqualTo []) then {
 _vehicle setVariable [QGVAR(jammerState), [_enabled, _radius]];
 _vehicle setVariable [QGVAR(jammerCapabilities), _capabilities];
 
-// Public, so every machine knows the jammer is one of ours when it removes the Crows actions (fnc_removeCrowsActions)
+// Public, so every machine knows the jammer is one of ours
 _vehicle setVariable [QGVAR(isJammer), true, true];
+
+// Crows adds its own (de)activate actions to every jammer. They'd toggle Crows without the compat addon and desync the
+// two, so they are hidden. Crows checks the variable in the condition of the actions, set before the jammer is added
+_vehicle setVariable [CROWS_VAR_HIDE_ACTIONS, true, true];
 
 [CROWS_EVENT_ADD_JAMMER, [
     _vehicle,
@@ -57,9 +61,3 @@ _vehicle setVariable [QGVAR(isJammer), true, true];
 
 // For missions and addons that follow the jammers of the vehicles: [vehicle, jammer is on, full radius in m]
 [QGVAR(jammerChanged), [_vehicle, _enabled, _radius]] call CBA_fnc_localEvent;
-
-// On a hosted server Crows adds its actions after it broadcasts the jammer list, so the cleanup on
-// that update (fnc_removeCrowsActions) runs too early. The event above is handled synchronously
-if (hasInterface) then {
-    _vehicle call FUNC(clearCrowsActions);
-};
