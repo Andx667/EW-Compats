@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Common, Compat CUP, Compat BWA3, Compat RHS AFRF, Compat RHS USAF, Compat RnT - The (de)activate actions of Crow's Electronic Warfare on the vehicle jammers are hidden with its variable `crowsEW_main_hideActions` instead of being removed after Crow's has added them, so no client walks the actions of new jammers on an update of the jammer list any more. Needs a Crow's Electronic Warfare newer than 2.7.1 (#88) by Andx
+
+### Deprecated
+
+- Common - `ewc_common_fnc_clearCrowsActions`. Set `crowsEW_main_hideActions` on the jammer instead. The function still works, logs a warning and will be removed in 2.0.0 (#88) by Andx
+
 ## [1.6.0] - 2026-11-14
 
 ### Added
