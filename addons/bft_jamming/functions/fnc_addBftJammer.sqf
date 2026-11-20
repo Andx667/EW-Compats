@@ -8,8 +8,8 @@
  * CrowsEW doesn't recognize the tag, so it just carries it along in its jamMap/broadcasts -
  * this is the entire integration surface, nothing in CrowsEW is modified.
  *
- * The Spectrum beacon (detectability) is not added here - fnc_onUpdateJammersServer.sqf
- * reconciles it from crowsEW_main_updateJammers, which also fires once this event completes.
+ * The Spectrum beacon (detectability) is not added here - fnc_onJammerChangedServer.sqf
+ * reconciles it on crowsEW_main_jammerAdded, which CrowsEW raises once this event completes.
  * It reads its frequency back off the jammer object (QGVAR(frequency)), set below, since
  * CrowsEW's jamMap entry format has no room for it.
  *

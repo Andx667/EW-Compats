@@ -27,7 +27,7 @@ Names follow `ewc_<component>_<what happened>`. Every event says where it is rai
 
 - Raised on: the server (local event)
 - Payload: `[vehicle, enabled, radius]`, the radius is the full jamming radius in m
-- When: the radio jammer of a vehicle of the compat addons was registered in Crow's Electronic Warfare, replaced for another radius, or switched on or off. The jammers of the BFT Jamming addon and the jammers of Crow's itself do not raise it, use `crowsEW_main_updateJammers` for those.
+- When: the radio jammer of a vehicle of the compat addons was registered in Crow's Electronic Warfare, replaced for another radius, or switched on or off. The jammers of the BFT Jamming addon and the jammers of Crow's itself do not raise it, use the local events `crowsEW_main_jammerAdded`, `crowsEW_main_jammerToggled` and `crowsEW_main_jammerRemoved` of Crow's for those (a Crow's Electronic Warfare newer than 2.7.1).
 
 ## IEDs
 

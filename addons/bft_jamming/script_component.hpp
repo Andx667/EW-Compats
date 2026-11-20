@@ -64,7 +64,9 @@
 // CrowsEW's own public CBA event/global names we integrate with (see readme.md for details).
 #define CROWSEW_ADD_JAMMER_EVENT "crowsEW_main_addJammer"
 #define CROWSEW_REMOVE_JAMMER_EVENT "crowsEW_main_removeJammer"
-#define CROWSEW_UPDATE_JAMMERS_EVENT "crowsEW_main_updateJammers"
+// Local events raised on every machine, payload [netId, entry] and [netId, enabled, entry] (Crows newer than 2.7.1)
+#define CROWSEW_JAMMER_ADDED_EVENT "crowsEW_main_jammerAdded"
+#define CROWSEW_JAMMER_TOGGLED_EVENT "crowsEW_main_jammerToggled"
 #define CROWSEW_ADD_BEACON_EVENT "crowsEW_spectrum_addBeacon"
 #define CROWSEW_REMOVE_BEACON_EVENT "crowsEW_spectrum_removeBeacon"
 #define CROWSEW_JAM_MAP crowsEW_main_jamMap

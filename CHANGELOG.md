@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- BFT Jamming, Wi-Fi Jamming - The Spectrum signal of a BFT or Wi-Fi jammer is kept in line with its on/off state on the new events `crowsEW_main_jammerAdded` and `crowsEW_main_jammerToggled` of Crow's Electronic Warfare, for that one jammer, instead of walking all jammers on every update of the jammer list. Needs a Crow's Electronic Warfare newer than 2.7.1 (#89) by Andx
+
 ## [1.6.0] - 2026-11-14
 
 ### Added
