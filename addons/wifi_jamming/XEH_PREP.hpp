@@ -5,7 +5,7 @@ PREP(connectCondition);
 PREP(debugLines);
 PREP(getConnectionJam);
 PREP(getJamStrength);
-PREP(onUpdateJammersServer);
+PREP(onJammerChangedServer);
 PREP(registerWifiJammer);
 PREP(removeWifiJammerZeus);
 PREP(zeusRegister);

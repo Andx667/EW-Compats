@@ -5,7 +5,7 @@
 The project is entirely open-source and any contributions are welcome.
 
 !!! info "Requirements"
-    EW Compats requires [CBA_A3](https://github.com/CBATeam/CBA_A3/releases/latest) and Crow's Electronic Warfare. Every addon below is skipped when the mod it extends is not loaded. Crow's Electronic Warfare is needed by every addon except the Boomerang, which includes its CUP and RHS USAF parts, and the Acoustic Drone Detection.
+    EW Compats requires [CBA_A3](https://github.com/CBATeam/CBA_A3/releases/latest) and Crow's Electronic Warfare (a release newer than 2.7.1). Every addon below is skipped when the mod it extends is not loaded. Crow's Electronic Warfare is needed by every addon except the Boomerang, which includes its CUP and RHS USAF parts, and the Acoustic Drone Detection.
 
 ## Addons
 

@@ -36,7 +36,7 @@ The jamming itself runs on each client: cTab rebuilds `cTabBFTmembers`, `cTabBFT
 
 The drift offset is smoothed per unit and jammer: the target offset is re-rolled every few pulses and interpolated in between, so the icon moves instead of jumping. Each offset is computed once per pulse, because a unit can be in two lists (the leader of the player's group is in both `cTabBFTmembers` and `cTabBFTgroups`) and would otherwise drift twice as fast.
 
-An active BFT jammer shows in the Spectrum Device as signal type `sweep_bft` on the module's frequency, whatever the jamming type. `fnc_onUpdateJammersServer` compares the signal with the on/off state on every `crowsEW_main_updateJammers`, reading the actual state from `crowsEW_spectrum_beacons`.
+An active BFT jammer shows in the Spectrum Device as signal type `sweep_bft` on the module's frequency, whatever the jamming type. `fnc_onJammerChangedServer` compares the signal of that one jammer with its on/off state on Crow's local events `crowsEW_main_jammerAdded` and `crowsEW_main_jammerToggled` (server), reading the actual state from `crowsEW_spectrum_beacons`. Crow's own toggle only re-adds the signals of its radio and drone jammers, and a removal strips every signal of the jammer on its side. The events need a Crow's Electronic Warfare newer than 2.7.1.
 
 There are deliberately no CBA settings: without a placed module nothing happens anyway, the frequency is a module attribute, and the drift tuning (`BFT_JAM_MAX_DRIFT_DISTANCE`, `BFT_JAM_DRIFT_UPDATE_INTERVAL` in `script_component.hpp`) is fixed so drift behaves the same on every server.
 
@@ -49,7 +49,7 @@ There are deliberately no CBA settings: without a placed module nothing happens 
 | `fnc_addBftJammerZeus` | Zeus client | Zeus module: ZEN dialog with the attributes, then registers the selected object (or a spawned data terminal) |
 | `fnc_removeBftJammerZeus` | Zeus client | Zeus module: removes the jammer from the selected object, only a BFT jammer |
 | `fnc_zeusRegister` | clients | Registers the two Zeus modules with Zeus Enhanced in the category of Crow's Electronic Warfare |
-| `fnc_onUpdateJammersServer` | server | Keeps the signal in the Spectrum Device in line with the on/off state of the jammers on every `crowsEW_main_updateJammers` |
+| `fnc_onJammerChangedServer` | server | Keeps the signal in the Spectrum Device in line with the on/off state of a jammer when it is added or toggled |
 | `fnc_onBftListsUpdated` | clients | Handler of `ctab_listsUpdated`: removes or drifts the entries of the cTab lists that are in range of a jammer |
 | `fnc_applyBftJam` | clients | Applies the active jammers to one entry of a cTab list, shared by the three lists |
 | `fnc_calcBftJamStrength` | any | Jamming strength 0 to 1 from the distance, the effective radius and the falloff radius |
@@ -59,7 +59,7 @@ There are deliberately no CBA settings: without a placed module nothing happens 
 
 The integration uses the public CBA events and global variables of Crow's Electronic Warfare and cTab, not a documented plugin API:
 
-- `crowsEW_main_addJammer`, `crowsEW_main_updateJammers`, `crowsEW_main_jamMap`
+- `crowsEW_main_addJammer`, `crowsEW_main_jammerAdded`, `crowsEW_main_jammerToggled`, `crowsEW_main_jamMap`
 - `crowsEW_spectrum_addBeacon`, `crowsEW_spectrum_removeBeacon`, `crowsEW_spectrum_beacons`
 - `ctab_listsUpdated`, `cTabBFTmembers` / `cTabBFTgroups` / `cTabBFTvehicles`
 

@@ -6,11 +6,15 @@ ADDON = false;
 
 /*
  * Registered in preInit, not postInit: the module function may raise Crows' addJammer as early as mission init, and a
- * crowsEW_main_updateJammers broadcast that arrives before our handler exists would leave that jammer without its
- * Spectrum signal until the next jammer change.
+ * crowsEW_main_jammerAdded that is raised before our handler exists would leave that jammer without its Spectrum signal
+ * until it is toggled.
  */
 if (isServer) then {
-    [CROWSEW_UPDATE_JAMMERS_EVENT, FUNC(onUpdateJammersServer)] call CBA_fnc_addEventHandler;
+    [CROWSEW_JAMMER_ADDED_EVENT, FUNC(onJammerChangedServer)] call CBA_fnc_addEventHandler;
+    [CROWSEW_JAMMER_TOGGLED_EVENT, {
+        params ["_netId", "", "_entry"];
+        [_netId, _entry] call FUNC(onJammerChangedServer);
+    }] call CBA_fnc_addEventHandler;
 };
 
 // The connect condition runs for every wireless client in every sweep of AE3, so the Wi-Fi jammers that are on are taken

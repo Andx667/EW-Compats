@@ -1,6 +1,6 @@
 PREP(addBftJammer);
 PREP(addBftJammerZeus);
-PREP(onUpdateJammersServer);
+PREP(onJammerChangedServer);
 PREP(onBftListsUpdated);
 PREP(applyBftJam);
 PREP(calcBftJamStrength);
